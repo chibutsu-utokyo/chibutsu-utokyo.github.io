@@ -1,0 +1,115 @@
+%  .sty file for various symbols
+%    DATE   : 2007/06/24
+%  Copyright: Junya Miki
+
+\NeedsTeXFormat{pLaTeX2e}[2005/01/04]
+
+\usepackage{graphicx, color}
+  \usepackage[%
+    bookmarks=true, bookmarksnumbered=true,%
+    bookmarkstype=toc, colorlinks=true, linkcolor=blue,%
+    pdftitle={Exercise for undergraduate students},%
+    pdfsubject={An Introduction of SHELL: command line interface for UNIX/Linux},%
+    pdfauthor={YOSHITAKE Ryo},%
+    pdfkeywords={UNIX, Linux, shell, bash, command line}]{hyperref}
+  \newcommand{\mail}[1]{\href{mailto:#1}{#1}}
+
+\usepackage{amsmath}
+\usepackage{framed}
+
+\def\since{%
+\setlength{\unitlength}{1pt}%
+\thinlines %
+\begin{picture}(12,12)%
+\put(0 ,8){.}
+\put(5 , 0){.}
+\put(10,8){.}
+\end{picture}%
+}%
+
+\def\therefore{%
+\setlength{\unitlength}{1pt}%
+\thinlines %
+\begin{picture}(12,12)%
+\put(0, 0){.}
+\put(5, 8){.}
+\put(10,0){.}
+\end{picture}%
+}%
+
+\newlength\narrowframewidth
+\setlength\narrowframewidth{9.3em}
+
+\newenvironment{terminal}{%
+  \vspace{-.5zw}
+  \setlength\FrameSep{3pt}%
+  \setlength\FrameRule{1pt}
+    \definecolor{shadecolor}{gray}{.2}
+    \definecolor{framecolor}{rgb}{.8,.2,0}
+    \definecolor{framecontcolor}{rgb}{1,.85,.41}
+    \definecolor{textcolor}{gray}{.85}
+  \begingroup%
+   \color{textcolor}
+   \begin{narrowshaded}{\narrowframewidth}%
+    \par\small\baselineskip=.85\baselineskip%
+    \begingroup
+     \mytt
+}{%
+    \endgroup\par
+   \end{narrowshaded}%
+  \endgroup
+  \endlist
+  \vspace{-.5zw}
+}
+
+\newenvironment{file}{%
+  \vspace{-.5zw}
+  \setlength\FrameSep{4pt}%
+  \setlength\FrameRule{.4pt}
+  \ifColorOutput
+    \definecolor{shadecolor}{rgb}{.96,.88,.96}
+    \definecolor{framecolor}{rgb}{0,.55,.27}
+    \definecolor{framecontcolor}{rgb}{.94,.82,.94}
+%     \definecolor{frametextcolor}{gray}{.05}
+    \definecolor{textcolor}{gray}{.05}
+  \else
+    \definecolor{shadecolor}{gray}{1}
+    \definecolor{framecolor}{gray}{0}
+    \definecolor{framecontcolor}{gray}{.4}
+    \definecolor{textcolor}{gray}{.1}
+  \fi
+  \begingroup%
+   \color{textcolor}
+   \begin{narrowshaded}{\narrowframewidth}%
+    \par\small\baselineskip=.85\baselineskip%
+    \begingroup
+     \mytt
+}{%
+    \endgroup\par
+   \end{narrowshaded}%
+  \endgroup
+  \endlist
+  \vspace{-.5zw}
+}
+
+
+%\begin{macro}{\return}
+%
+% リターンキーの記号です。
+%
+%\begin{macrocode}
+\def\return{{\unitlength=1pt
+  \setbox0=\hbox{\normalfont\ttfamily [}%
+  \dimen0=\ht0
+  \removept{\dimen0}{\tempA}%
+  \advance \dimen0 by -1pt
+  \removept{\dimen0}{\tempB}%
+  \begin{picture}(\tempA,\tempA)
+    \put(\tempA,1){\line(0,1){\tempB}}
+    \put(\tempA,1){\vector(-1,0){\tempA}}
+  \end{picture}}}
+%\newcommand{\return}{\keytop{\RETMARK}}
+%\end{macrocode}
+%\end{macro}
+
+

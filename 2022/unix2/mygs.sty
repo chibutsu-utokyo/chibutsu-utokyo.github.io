@@ -1,0 +1,1064 @@
+%%とりあえず使ってみる
+%%
+%% This is file `mygs.sty'
+%% Copying: Daisuke Wakabayashi
+%% E-mail:  wakk@eps.s.u-tokyo.ac.jp
+%% Date:    2010/03/28
+%%
+
+%%
+%% 2011/04/05 changed by Masahiro Nomoto
+%% E-mail: s92626@geoph.eps.s.u-tokyo.ac.jp
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mygs}[2006/04/26 Tadafumi Ochi]
+
+
+\def\jFileDate{\number\year/\number\month/\number\day}
+\def\jFileVersion{2.0}
+\def\MyRoom{居室:地震研究所1号館615号室}
+\def\MyMail{mail:ueda@eri.u-tokyo.ac.jp}
+
+\author{担当 上田拓(地震研究所修士1年)}
+\title{UNIX （その２）}
+\date{2017/04/13}
+
+\global\let\@preface\@empty
+\long\def\preface#1{\gdef\@preface{#1}}
+\preface{%
+   \parbox{.8\textwidth}{%
+    \parindent1\zw%
+    計算機演習も４回目です．端末には慣れてきたでしょうか．%
+    今回はこれまでに学んだ端末の基本的な使い方の復習と，より応用的な使い方に向けた%
+    説明を行います．\par
+    Unix 端末は，最初はとっつきにくい部分もありますが，%
+    使いこなせるようになることで，他の汎用 OS 以上の機能や%
+    カスタマイズ性を実現することができます．そのためにシステムの%
+    理解は不可欠であり，講義の後半ではそのための基礎的な知識を%
+    説明したいと思います．\par
+    まだ CUI に慣れない，という人も多いかと思いますので，前半は%
+    端末の使い方の復習を中心に行います．演習に付いてこれている人も%
+    そうでない人も，Unix 端末に対する理解を是非深めてください．\par
+    なお，このテキストは2008年に三木順哉さんによって作成されたものを元に作成しています.%
+                        }%
+        }%
+
+\RequirePackage{epic}\relax%
+\RequirePackage{eepic}\relax%
+\RequirePackage{pict2e}[2004/02/19]%
+\RequirePackage{amsmath}[2000/07/18]
+\RequirePackage{amssymb}[2002/01/22]
+\RequirePackage{array}[2003/12/17]
+\RequirePackage{bm}[2004/02/26]
+\RequirePackage{booktabs}[2005/04/14]
+\RequirePackage{calc}[1998/07/07]
+\RequirePackage{cmtt}[1996/05/25]
+\RequirePackage{delarray}[1994/03/14]
+\RequirePackage{dcolumn}[2001/05/28]
+%\RequirePackage{dropping}[1997/06/12]
+\RequirePackage{enumerate}[1999/03/05]
+\RequirePackage{fancybox}[2000/09/19]
+\RequirePackage{fancyvrb}
+\RequirePackage{ifthen}[2001/05/26]
+%\RequirePackage{labelfig}\relax
+\RequirePackage{latexsym}[1998/08/17]
+\RequirePackage{leftidx}\relax
+\RequirePackage{listings}[2004/09/07]% v1.3
+\RequirePackage{longtable}[2004/02/01]
+\RequirePackage{makeidx}[2000/03/29]
+%\RequirePackage{manfnt}\relax
+\RequirePackage{mflogo}[1999/03/10]
+\RequirePackage{multicol}[2004/02/14]
+\RequirePackage{multirow}\relax%
+\RequirePackage{tabularx}[1999/01/07]
+\RequirePackage{theorem}[1995/11/23]
+\RequirePackage[obeyspaces,spaces]{url}\relax
+\RequirePackage{verbatim}[2003/08/22]
+\RequirePackage{wrapfig}[2003/01/31]
+\RequirePackage{xspace}[1997/10/13]
+%\RequirePackage{jlisting}[2004/03/24]
+\RequirePackage{amsmath}[200/07/18]
+\RequirePackage[usenames]{color}[1999/02/16]%
+\RequirePackage{graphicx}[1999/02/16]%
+
+\ifx\pfmtname\@undefined\else
+  \RequirePackage {okumacro}[2003/11/24]%
+\fi
+
+\RequirePackage[T1]{fontenc}%
+\RequirePackage{textcomp}%
+
+\IfFileExists{txfonts.sty}{%
+   \RequirePackage[varg]{txfonts}%
+}{%
+   \IfFileExists{pxfonts.sty}{%
+      \RequirePackage{pxfonts}%
+   }{%
+      \IfFileExists{type1cm.sty}{%
+         \RequirePackage{type1cm}%
+      }{%
+         \PackageWarning{You may get type3 fonts in your\space
+            \jobname.pdf or \jobname.ps Please try to get\space
+            type1 font package(s)}%
+      }%
+   }%
+}%
+
+\ifx\hogeHyper\@undefined\else
+\newif\ifHyper
+\Hypertrue
+\RequirePackage[unicode,
+   bookmarks=true,%
+   bookmarkstype=toc,%
+   bookmarksnumbered=false,%
+   bookmarksopen=true,%
+   colorlinks=true,%
+   linkcolor=blue,%
+   citecolor=blue,%
+   filecolor=blue,%
+   menucolor=magenta,%
+   pagecolor=blue,%
+   urlcolor=blue,%
+   plainpages=false%
+]{hyperref}
+
+\setcounter{secnumdepth}{3}
+\def\section{\@startsection{section}{1}%
+   {\z@}{1zh}{1sp}{\Large\bfseries}}
+\def\subsection{\@startsection{subsection}{2}%
+   {\z@}{\z@}{1sp}{\large\bfseries}}
+\def\subsubsection{\@startsection{subsubsection}{3}%
+   {\z@}{\z@}{1sp}{\Huge\bfseries}}
+
+
+\special{pdf:docinfo <<
+   /Author   ( Tadafumi Ochi )
+   /Title    ( The basic introduction to LaTeX2e )
+   /Subject  ( For Some Macro Packages Using )
+   /Creator  ( LuaLaTeX with hyperref )
+   /Keywords ( TeX, LaTeX, LuaLaTeX, geoph ) >>}%
+\AtBeginDocument{%
+  \def\theHProb{\theHchapter.\arabic{Prob}}%
+  \def\theHExe{\theHchapter.\arabic{Prob}}%
+  \def\theHItem{\theHchapter.\arabic{Item}}%
+}
+\fi
+
+\addtolength{\topmargin}{-2.5\baselineskip}
+\addtolength{\textheight}{3\baselineskip}
+\newlength{\ftextwidth}
+\setlength{\ftextwidth}{\textwidth}
+\addtolength{\ftextwidth}{-2\fboxsep}
+\addtolength{\ftextwidth}{-2\fboxrule}
+\newlength{\ffullwidth}
+\setlength{\ffullwidth}{\fullwidth}
+\addtolength{\ffullwidth}{-2\fboxsep}
+\addtolength{\ffullwidth}{-2\fboxrule}
+\setlength\marginparpush{.5\baselineskip}
+\setlength\footskip{3\zw}
+
+\ifx\headfont\@undefined\else
+  \renewcommand\headfont{\normalfont\gtfamily\sffamily}%\bfseries}%
+\fi
+
+\lstset{%
+  language={[LaTeX]TeX},%
+  backgroundcolor={\color[gray]{.90}},%
+  basicstyle={\normalsize\ttfamily\mcfamily},%
+%  identifierstyle={\small},%
+%  commentstyle={\small\normalfont},%
+%  keywordstyle={\small\bfseries},%
+%  ndkeywordstyle={\small},%
+%  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,%
+  columns=fullflexible,%
+  numbers=left,%
+  stepnumber=1,%
+  xrightmargin=0\zw,%
+  xleftmargin=1.5\zw,%
+  numberstyle={\scriptsize\itshape},%
+  stepnumber=1,
+  numbersep=1\zw,%
+  lineskip=-0.5ex,%
+  showspaces=true
+}
+
+%\newenvironment{inputex}{\Verbatim[showspaces=true,frame=lines,numbers=left]}{\endVerbatim}
+\newenvironment{inputex}{\lstlisting}{\endlstlisting}
+%\ifdraft
+%\newenvironment{inputex}{\verbatim}{\endverbatim}
+%\else
+%\lstnewenvironment{inputex}{\lstset{language={[LaTeX]TeX}}}{}
+%\fi
+
+\def\lstlistlistingname{ソースコード目次}
+
+\def\lstlistingname{ソースコード}
+
+\setlength{\wrapoverhang}{\fullwidth}
+
+\addtolength{\wrapoverhang}{-\textwidth}
+
+\addtolength{\wrapoverhang}{\marginparsep}
+
+\addtolength{\wrapoverhang}{-2\zw}
+
+\newcommand*{\bs}{\symbol{'134}}
+
+\newcommand*{\cmd}[1]{\texttt{\bs#1}}
+
+\newcommand*\C[1]{%
+  \def\at@mark{@}%
+  \let\out@char\@empty
+  \@tfor\char@temp:=#1\do{%
+     \if\at@mark\char@temp
+      \edef\out@char{\out@char"\at@mark}%"
+     \else
+       \edef\out@char{\out@char\char@temp}%
+     \fi}%
+  \edef\gloss@hoge{\noexpand\glossary{%
+     \out@char\string @\string%
+     \hspace*{-1.2ex}\string\texttt{\string\BS\space\out@char}}}%
+  \gloss@hoge %\cindex@hoge
+  \texttt{\BS#1}}%
+
+\newcommand*{\env}[1]{\texttt{#1}}%
+
+\newcommand*{\E}[1]{%
+   \index{環境!#1@\texttt{#1}}%
+   \glossary{#1かんきよう@\texttt{#1}環境}%
+   \texttt{#1}}%
+\newcommand*{\word}[1]{#1}
+\newcommand*{\Z}[1]{\index{#1}#1}
+\DeclareRobustCommand*\zdash{\char\jis"213D\kern-.5\zw%"
+   \char\jis"213D\kern-.5\zw\char\jis"213D\relax}
+\newcommand*\zindind[2]{\index{#1!\zdash#2}}
+\newcommand*\indindz[2]{\index{#1!#2\zdash}}
+\newcommand*{\prog}{\@ifnextchar[{\yomi@prog}{\@prog}}%]
+\newcommand*{\@prog}[1]{#1}
+\newcommand*{\yomi@prog}[2][]{#2}
+\newcommand*{\Prog}{\@ifnextchar[{\yomi@Prog}{\@Prog}}
+\newcommand*{\@Prog}[1]{%
+   \index{プログラム!#1}\index{#1}#1}
+\newcommand*{\yomi@Prog}[2][]{%
+   \index{プログラム!#1@\protect#2}%
+   \index{#1@\protect#2}#2}
+\newcommand*{\fl}[1]{\texttt{#1}}
+\newcommand*{\Fl}[1]{%
+   \index{ファイル!#1@\texttt{#1}}%
+   \index{#1@\texttt{#1}}\texttt{#1}}
+\newcommand*{\cls}[1]{\textsf{#1}}
+\newcommand*{\D}[1]{%
+   \index{クラス!#1@\textsf{#1}}%
+   \index{#1@\textsf{#1}}\textsf{#1}}
+\newcommand*{\sty}[1]{\textsf{#1}}
+\newcommand*{\Y}[1]{%
+   \index{パッケージ!#1@\textsf{#1}}%
+   \index{#1@\textsf{#1}}\textsf{#1}}%
+\newcommand*\bibi[1]{%
+  \index{#1@\texttt{#1} (\BibTeX)}\texttt{#1}%
+  \index{BibTeX@\BibTeX!#1@\texttt{#1}}%
+}
+\newcommand*\bubu[1]{%
+  \index{#1@\texttt{#1}（文献の種類）}\texttt{#1}%
+  \index{ぶんけんのしゅるい@文献の種類!#1@\texttt{#1}}%
+}
+\newcommand*{\bst}[1]{\textsf{#1}}
+\newcommand*{\Bst}[1]{%
+\index{文献スタイル!#1@\textsf{#1}}%
+\index{#1@\textsf{#1}}\textsf{#1}}%
+\newcommand*\latexno[1]{\index{LaTeX@\LaTeX!\zdash #1}}
+\newcommand*{\hito}{\@ifnextchar[{\yomi@hito}{\@hito}}
+\newcommand*{\yomi@hito}[2][]{#2氏}
+\newcommand*{\@hito}[1]{#1氏}
+\newcommand*{\Hito}{\@ifnextchar[{\yomi@Hito}{\@Hito}}
+\newcommand*{\yomi@Hito}[2][]{%
+\index{人名!#1@\protect{#2}}%
+\index{#1@\protect{#2}}#2氏}
+\newcommand*{\@Hito}[1]{\index{人名!#1}\index{#1}#1氏}
+\newcommand*\ppl[1]{\index{人名!#1}#1氏}
+\newcommand*{\kount}[1]{\texttt{#1}}
+\newcommand*{\K}[1]{%
+  \index{#1@\texttt{#1}\pp{カウンタ}}\index{カウンタ!#1@\texttt{#1}}%
+  \texttt{#1}}
+\newcommand*{\suf}[1]{\texttt{.#1}}
+\newcommand*{\Suf}[1]{%
+  \index{拡張子!#1@\texttt{\protect\hspace*{-1ex}.#1}}%
+  \index{#1@\texttt{\protect\hspace*{-1ex}.#1} (拡張子)}%
+  \texttt{.#1}}
+\newcommand{\va}[1]{{\normalfont$\langle$\mbox{}#1\mbox{}$\rangle$}}
+\newcommand{\Va}[2]{%
+   $\langle$\mbox{}\textit{#1}\mbox{}$\rangle$\exten{#2}}
+\newcommand{\str}[1]{{\normalfont\ttfamily\mdseries\string#1}}
+\newcommand{\pa}[1]{{\ttfamily\string{}\va{#1}{\ttfamily\string}}}%
+\newcommand{\opa}[1]{{\ttfamily[}\va{#1}{\ttfamily]}}%
+\newcommand{\xy}[2]{\string({\itshape#1}\texttt, {\itshape#2}\string)}
+\newcommand{\option}[1]{\textsl{#1}}
+\newcommand{\Option}[1]{%
+\index{#1@\textsl{#1}}%
+\index{オプション!#1@\textsl{#1}}%
+\textsl{#1}}
+\newcommand{\copt}[1]{\texttt{#1}}
+\newcommand*{\qu}[1]{`#1'}
+\newcommand*{\qq}[1]{``#1''}
+\newcommand*{\yo}[1]{「#1」}
+\newcommand*{\yy}[1]{『#1』}
+\newcommand*{\pp}[1]{（#1）}
+\newcommand*{\wasyo}[1]{『#1』}
+\newcommand*{\yousyo}[1]{\emph{#1}}
+\newcommand*\Em[1]{{\gtfamily\bfseries#1}}
+\def\optionlist#1{%
+   \@tempcnta=\z@ \@tempcntb=\z@
+   \@for\member:=#1\do{\advance\@tempcnta\@ne}%
+   \@for\member:=#1\do{\advance\@tempcntb\@ne
+      \ifnum\@tempcntb<\@tempcnta
+            \textsl{\member}，%
+      \else
+         \ifnum\@tempcntb=\@tempcnta
+             \textsl{\member}%
+        \fi
+      \fi
+   }%
+}
+\def\Optionlist#1{%
+   \@tempcnta=\z@ \@tempcntb=\z@
+   \@for\member:=#1\do{\advance\@tempcnta\@ne}%
+   \@for\member:=#1\do{\advance\@tempcntb\@ne
+      \ifnum\@tempcntb<\@tempcnta
+         \index{\member @\textsl{\member}}%
+         \index{オプション!\member @\textsl{\member}}%
+         \textsl{\member}，%
+      \else
+          \ifnum\@tempcntb=\@tempcnta
+             \index{\member @\textsl{\member}}%
+             \index{オプション!\member @\textsl{\member}}%
+             \textsl{\member}%
+          \fi%
+      \fi
+   }%
+}
+\definecolor{mygray}{gray}{.85}
+\newcommand*{\toolbar}[1]{{%
+   \fboxsep=0pt\fboxrule=0pt\colorbox{mygray}{[#1]}}}
+\newenvironment{myquote}%
+  {\list{}{\rightmargin\leftmargin}\item\relax}{\endlist}
+\newenvironment{myquotation}{%
+  \list{}{%
+    \listparindent\parindent
+    \itemindent\listparindent
+    \rightmargin\leftmargin}%
+  \item\relax}{\endlist}
+
+\newcommand*{\m}[1]{$#1$&\texttt{\string#1}}
+\newcommand*{\M}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+\hskip1em($\protect\csname #1\endcsname$)}%
+   $\csname #1\endcsname$&\texttt{\bs#1}}
+\newcommand*{\BM}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+\hskip1em($\protect\csname #1\endcsname$)}%
+   \texttt{\bs#1}}
+\newcommand*{\T}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs\string#1}%
+\hskip1em(\csname#1\endcsname)}%
+   \csname#1\endcsname&\texttt{\bs\string#1}}
+\newcommand*{\KM}{記号&命令}
+\newcommand*{\A}[1]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+      \hskip1em(\csname#1\endcsname)}%
+   \csname#1\endcsname&\texttt{\bs#1}}
+\newcommand*{\B}[2]{%
+   \glossary{#1@\hspace*{-1.2ex}\texttt{\protect\bs#1}%
+      \hskip1em(\csname#1\endcsname{#2}\relax)}%
+   \csname#1\endcsname{#2}&%
+    \texttt{\protect\bs\string#1\string{#2\string}}}
+\newcommand*{\W}[2]{%
+  \glossary{#1@\hspace*{-1.2ex}\texttt{\bs#1}%
+    \hskip1em($\csname#1\endcsname{#2}$)}%
+  $\csname#1\endcsname{#2}$ & %
+  \texttt{\bs#1\string{#2\string}}}%
+\newcommand*{\demowidth}[1]{%
+   \rule{0.3pt}{1.3ex}\rule{#1}{0.3pt}\rule{0.3pt}{1.3ex}}
+\newcounter{hoge}
+\newcommand*{\bool}{ブール値}%?
+{\theoremstyle{plain}
+   \theorembodyfont{\normalfont\rmfamily}
+   \theoremheaderfont{\normalfont\bfseries}
+%   \newtheorem{Prob}{{\manfnt \char'170}問題}[chapter]}
+{\theoremstyle{plain}
+   \theorembodyfont{\normalfont\rmfamily}
+   \theoremheaderfont{\normalfont\bfseries}
+%   \newtheorem{Exe}[Prob]{$\triangleright$例題}}
+\newenvironment{InText}{%
+  \list{}{\leftmargin=2\zw \rightmargin=0\zw}
+   \item\small\verbatim}{\endverbatim \endlist}%
+\newenvironment{OutText}{\unitlength=1pt
+\begin{shadebox}}{\end{shadebox}}
+\newif\if@TYPE
+\newcommand*\type{\@ifnextchar[{\@@type}{\@type}}
+\def\@hoge{\begingroup \urlstyle{tt}\Url}
+\def\@@type[#1]{\if@TYPE\item[{\ttfamily#1}]\fi
+   \begingroup \urlstyle{tt}\Url}
+\def\@type#1{\if@TYPE \item\@hoge{#1}%
+      \else\underline{\@hoge{#1}}\fi}
+\newcommand*\key{\thinspace\@key}%
+\def\@key#1{\@tempcnta=\z@%
+ \@for\member:=#1\do{%
+   \ifnum\@tempcnta<1%
+      \keytop{\member}%
+   \else%
+      \texttt{+}\keytop{\member}%
+   \fi%
+   \advance\@tempcnta\@ne}%
+ \thinspace}%
+\newenvironment{InTerm}{\@TYPEtrue
+   \list{\mbox{\texttt\$}}{%
+      \rightmargin=0pt
+      \itemsep=-.5ex
+      \parsep=-.5ex}}%
+   {\endlist \@TYPEfalse}
+
+\ifdraft
+\newenvironment{OutTerm}{%
+   \list{}{\leftmargin=1.5\zw \rightmargin=1.5\zw}
+   \item\small\verbatim}{\endverbatim \endlist}%
+\else
+\newenvironment{OutTerm}{%
+   \list{}{\leftmargin=1.5\zw \rightmargin=1.5\zw}
+   \item\small\verbatim}{\endverbatim \endlist}%
+%\newenvironment{OutTerm}{\small\verbatim}{\endverbatim}
+%\lstnewenvironment{OutTerm}{%
+%  \lstset{%
+%    columns=[l]{fullflexible},
+%    basicstyle={\small\ttfamily},%
+%    backgroundcolor={\color{GreenYellow}},%
+%    identifierstyle={\small},%
+%    commentstyle={\small},%
+%    keywordstyle={\small\bfseries},%
+%    ndkeywordstyle={\small},%
+%    numbers=none,%
+%    formfeed=\linebreak,%
+%    frameshape={y}{yn}{y}{y},
+%    xrightmargin=1.5\zw,%
+%    xleftmargin=1.5\zw,%
+%    showspaces=false,
+%    }}{}%
+\fi%
+
+\newenvironment{Syntax}%
+  {\bgroup \parindent=0pt%
+    \par\addvspace{1ex plus 0.8ex minus 0.5ex}%
+    \vskip-\parskip\begin{Sbox}%
+    \begin{minipage}{\ftextwidth}}%
+  {\end{minipage}\end{Sbox}\fbox{\TheSbox}%\IOlabel%
+    \par\addvspace{1ex plus 0.8ex minus 0.5ex}%
+    \vskip-\parskip\egroup\par\noindent\ignorespacesafterend}%
+\newcommand*{\pref}[1]{\pageref{#1}~ページ}
+\newcommand*{\chapref}[1]{\ref{#1}~章}
+\newcommand*{\secref}[1]{\ref{#1}~節}
+\newcommand*{\fullref}[1]{\pref{#1}\secref{#1}~参照}
+\newcommand*{\figref}[1]{\figurename~\ref{#1}}
+\newcommand*{\tabref}[1]{\tablename~\ref{#1}}
+\def\eqref#1{式~(\ref{#1})}
+\DeclareRobustCommand*{\Xy}{%
+   \leavevmode\hbox{\kern-.1em X\kern-.3em\lower.4ex\hbox{Y\kern-.15em}}%
+   \xspace
+}
+\DeclareRobustCommand*{\PIC}{PIC\xspace}
+\DeclareRobustCommand*{\Tpic}{{\normalfont\textsc{Tpic}}\xspace}
+\DeclareRobustCommand*{\JLaTeXe}{%
+   \leavevmode%
+   \lower.5ex\hbox{\rm J}\kern-.1em\LaTeXe\xspace
+}
+\DeclareRobustCommand*{\XyMTeX}{%
+   X\kern-.3em\smash{\raise.5ex\hbox{$\m@th\Upsilon$}}%
+   \kern-.3em{M}\kern-0.1em\TeX\xspace
+}
+\DeclareRobustCommand*{\eTeX}{$\m@th\varepsilon$-\TeX\xspace}
+\DeclareRobustCommand*{\eLaTeX}{$\m@th\varepsilon$-\LaTeX\xspace}
+\DeclareRobustCommand*\NTS{%
+   \leavevmode\hbox{$\cal N\kern-0.35em\lower0.5ex\hbox{$\cal T$}%
+   \kern-0.2emS$}\xspace
+}
+\DeclareRobustCommand*{\AmSLaTeX}{\AmS-\LaTeX\xspace}
+\newcommand*{\LMANUAL}{文書処理システム{\LaTeXe}}
+\newcommand*{\COMP}{{\LaTeX}コンパニオン}
+\newcommand*{\GCOMP}{{\LaTeX}グラフィックスコンパニオン}
+\newcommand*{\WCOMP}{{\LaTeX} Webコンパニオン}
+\newcommand*{\TEXBOOK}{\TeX book\xspace}% 原著
+\newcommand*{\METAFONTBOOK}{\MF ブック} % 訳著
+\newcommand*{\ANOTHERMANUAL}{Another Manual\xspace}
+\newcommand*{\PS}{PostScript\xspace}
+\newcommand*{\IM}{ImageMagick\xspace}
+\newcommand*{\GS}{Ghostscript\xspace}
+\newcommand*{\BB}{BoundingBox\xspace}
+\newcommand*{\laTEX}{\TeX/\LaTeX\xspace}
+\newcommand{\dos}[1]{%
+   \colorbox{black}{\color{white}{%
+   \small\normalfont\ttfamily #1\hfil}}}
+\newcommand{\dosh}[1]{%
+   \noindent\colorbox{black}{%
+   \hbox to \ftextwidth{\color{white}{%
+   \small\normalfont\ttfamily #1\hfil}}}}
+\newlength{\IOm}
+\setlength{\IOm}{\textwidth}
+\addtolength{\IOm}{-\fullwidth}
+\newwrite\example@out
+\newcounter{IOcnt}
+\setcounter{IOcnt}{1}
+\newcommand{\IOmargin}{%
+  \stepcounter{IOcnt}%
+  \expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax
+  \else
+    \ifHyper
+      \ifodd\HyPsd@pageref{exa:\theIOcnt}\hspace*{0pt}%
+      \else \hspace*{\IOm}%
+      \fi
+    \else
+      \ifodd\pageref{exa:\theIOcnt}\hspace*{0pt}%
+      \else \hspace*{\IOm}%
+      \fi
+    \fi
+  \fi}%
+\newcommand{\IOlabel}{\label{exa:\theIOcnt}}
+
+\newenvironment{InOuts}{\begingroup\@bsphack%
+       \immediate\openout\example@out\jobname.exa%
+       \let\do\@makeother\dospecials \catcode`\^^M\active%
+       \def\verbatim@processline{%
+          \immediate\write\example@out{\the\verbatim@line}}%
+          \verbatim@start}{\immediate\closeout\example@out\@esphack\endgroup%
+   \stepcounter{IOcnt}%
+   \setlength{\parindent}{0pt}%
+   \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip-\parskip%
+%   \expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax\else%
+   \expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax%\else%
+%   \ifHyper
+%     \ifodd\HyPsd@pageref{exa:\theIOcnt}\hspace*{0pt}%
+%     \else\hspace*{\IOm}\fi%
+%   \else\ifodd\pageref{exa:\theIOcnt}\hspace*{0pt}%
+%     \else\hspace*{\IOm}\fi%
+%   \fi\fi%
+   \fi%\fi%
+   \vspace{-1\zw}%
+   \makebox[0pt][l]{%
+%   {\begin{minipage}[c]{.48\fullwidth}%
+   {\begin{minipage}[c]{.50\textwidth}%
+      \begin{screen}
+%      \verbatiminput{\jobname.exa}%
+      \small\verbatiminput*{\jobname.exa}%
+      \end{screen}%
+      \vspace{1\zw}%
+   \end{minipage}}%
+%   \hfill\manerrarrow\hfill{}
+   $\Rightarrow$
+%   \hspace{0.05\fullwidth}%
+%   {\begin{minipage}{.48\fullwidth}%
+   {\begin{minipage}{.45\textwidth}%
+      \begin{shadebox}
+      \begin{trivlist}\item\input{\jobname.exa}%
+%      \begin{trivlist}\item\small\input{\jobname.exa}%
+      \end{trivlist}%
+      \end{shadebox}%
+   \end{minipage}}%
+   }\label{exa:\theIOcnt}%
+   \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip-\parskip\noindent}%
+\newenvironment{InOut}{\begingroup\@bsphack%
+       \immediate\openout\example@out\jobname.exa%
+       \let\do\@makeother\dospecials \catcode`\^^M\active%
+       \def\verbatim@processline{%
+          \immediate\write\example@out{\the\verbatim@line}}%
+          \verbatim@start}{\immediate\closeout\example@out\@esphack\endgroup%
+   \stepcounter{IOcnt}%
+   \setlength{\parindent}{0pt}%
+   \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip-\parskip%
+%   \expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax\else%
+   \expandafter\ifx\csname r@exa:\theIOcnt\endcsname\relax%\else%
+%   \ifHyper
+%     \ifodd\HyPsd@pageref{exa:\theIOcnt}\hspace*{0pt}%
+%     \else\hspace*{\IOm}\fi%
+%   \else\ifodd\pageref{exa:\theIOcnt}\hspace*{0pt}%
+%     \else\hspace*{\IOm}\fi%
+%   \fi\fi%
+   \fi%\fi%
+   \vspace{-1\zw}%
+   \makebox[0pt][l]{%
+%   {\begin{minipage}[c]{.48\fullwidth}%
+   {\begin{minipage}[c]{.50\textwidth}%
+      \begin{screen}
+%      \verbatiminput{\jobname.exa}%
+      \small\verbatiminput{\jobname.exa}%
+      \end{screen}%
+      \vspace{1\zw}%
+   \end{minipage}}%
+%   \hfill\manerrarrow\hfill{}
+   $\Rightarrow$
+%   \hspace{0.05\fullwidth}%
+%   {\begin{minipage}{.48\fullwidth}%
+   {\begin{minipage}{.45\textwidth}%
+      \begin{shadebox}
+      \begin{trivlist}\item\input{\jobname.exa}%
+%      \begin{trivlist}\item\small\input{\jobname.exa}%
+      \end{trivlist}%
+      \end{shadebox}%
+   \end{minipage}}%
+   }\label{exa:\theIOcnt}%
+   \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip-\parskip\noindent}%
+
+\newcommand{\image}[4][]{%
+\begin{figure}[htbp]
+ \begin{center}
+   \includegraphics[#1]{#2}
+   \caption{#3}\label{fig:#4}
+ \end{center}
+\end{figure}}
+\newcommand*{\kutiref}[1]{口絵~\ref{kuti:#1}}
+\newcommand*{\kuti}[1]{\refstepcounter{enumi}口絵\theenumi~#1}
+\newenvironment{column}{\begin{small}\paragraph*{コラム}}{\end{small}}
+\DeclareRobustCommand*{\pdfTeX}{pdf\TeX\xspace}
+\DeclareRobustCommand*{\pdfeTeX}{pdf\eTeX\xspace}
+\DeclareRobustCommand*{\pdfLaTeX}{pdf\LaTeX\xspace}
+\DeclareRobustCommand*{\pdfeLaTeX}{pdf\eLaTeX\xspace}
+\DeclareRobustCommand*{\Context}{Con{\TeX}t\xspace}
+\DeclareRobustCommand*{\texinfo}{texinfo\xspace}
+\DeclareRobustCommand*{\txfonts}{\texttt{TX}\textsf{Fonts}\xspace}
+\newcommand*{\myKuten}{．}
+\newcommand*{\myTouten}{、}
+%\DeclareFontShape{JY1}{gt}{m} {sc}{<->ssub*gt/m/n}{}
+%\DeclareFontShape{JT1}{gt}{m} {sc}{<->ssub*gt/m/n}{}
+%\DeclareFontShape{JY1}{gt}{bx}{it}{<->ssub*gt/m/n}{}
+%\DeclareFontShape{JT1}{gt}{bx}{it}{<->ssub*gt/m/n}{}
+%\DeclareFontShape{JT1}{gt}{bx}{sl}{<->ssub*gt/m/n}{}
+%\DeclareFontShape{JY1}{gt}{bx}{sl}{<->ssub*gt/m/n}{}
+%\DeclareFontShape{JY1}{mc}{m} {ui}{<->ssub*mc/m/n}{}
+%\DeclareFontShape{JT1}{mc}{m} {ui}{<->ssub*mc/m/n}{}
+
+%\setcounter{tocdepth}{2}
+%\renewcommand{\tableofcontents}{%
+%  \if@twocolumn
+%    \@restonecoltrue\onecolumn
+%  \else
+%    \@restonecolfalse
+%  \fi
+%  \chapter*{\contentsname%
+%  \@mkboth{\contentsname}{\contentsname}%
+%   \@ifundefined{texorpdfstring}{}{%
+%           \pdfbookmark{\contentsname}{contents}}%
+%   }%
+%  \@starttoc{toc}%
+%  \if@restonecol\twocolumn\fi
+%}
+
+%\renewcommand{\l@chapter}[2]{%
+%  \ifnum \c@tocdepth >\m@ne
+%    \addpenalty{-\@highpenalty}%
+%    \addvspace{1.0em \@plus\p@}
+%    \begingroup
+%      \parindent\z@
+%      \rightskip\@tocrmarg
+%      \parfillskip-\rightskip
+%      \leavevmode\large\headfont
+%      \setlength\@lnumwidth{4.683\zw}%
+%      \advance\leftskip\@lnumwidth \hskip-\leftskip
+%      \hb@xt@\z@{\color{mygray}\vrule height 1em width 4pt depth1em\hss}%
+%      \hskip 8pt #1\nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss#2}\par
+%        {\color{mygray}\hrule\@width\linewidth depth 4pt}\par\nobreak\vskip8pt
+%      \penalty\@highpenalty
+%    \endgroup
+%  \fi}
+
+\renewcommand*{\l@figure}{\@dottedtocline{1}{1\zw}{3.683\zw}}
+\renewcommand{\listoffigures}{%
+  \if@twocolumn\@restonecoltrue\onecolumn
+  \else\@restonecolfalse\fi
+  \chapter*{\listfigurename
+  \@mkboth{\listfigurename}{\listfigurename}}%
+  \@starttoc{lof}%
+  \if@restonecol\twocolumn\fi
+}
+\renewcommand{\listoftables}{%
+  \if@twocolumn\@restonecoltrue\onecolumn
+  \else\@restonecolfalse\fi
+  \chapter*{\listtablename
+  \@mkboth{\listtablename}{\listtablename}}%
+  \@starttoc{lot}%
+  \if@restonecol\twocolumn\fi
+}
+\let\l@lstlisting\l@figure
+\setcounter{secnumdepth}{2}
+%\setcounter{tocdepth}{1}
+\makeindex
+\makeglossary
+\def\indexname{索 引}
+\def\glossaryname{命 令 索 引}
+\renewenvironment{theindex}{% 索引を3段組で出力する環境
+    \if@twocolumn
+      \onecolumn\@restonecolfalse
+    \else
+      \clearpage\@restonecoltrue
+    \fi
+    \columnseprule.4pt \columnsep 2\zw
+    \ifx\multicols\@undefined
+      \twocolumn[\@makeschapterhead{\indexname}%
+        \addcontentsline{toc}{chapter}{\indexname}]%
+    \else
+      \ifdim\textwidth<\fullwidth
+        \setlength{\evensidemargin}{\oddsidemargin}
+        \setlength{\textwidth}{\fullwidth}
+        \setlength{\linewidth}{\fullwidth}
+        \begin{multicols}{3}[\chapter*{\indexname}%
+        \addcontentsline{toc}{chapter}{\indexname}]%
+      \else
+        \begin{multicols}{2}[\chapter*{\indexname}%
+        \addcontentsline{toc}{chapter}{\indexname}]%
+      \fi
+    \fi
+    \@mkboth{\indexname}{\indexname}%
+    \plainifnotempty % \thispagestyle{plain}
+    \parindent\z@
+    \parskip\z@ \@plus .3\p@\relax
+    \let\item\@idxitem
+    \raggedright
+    \small\narrowbaselines\normalfont
+  }{
+    \ifx\multicols\@undefined
+      \if@restonecol\onecolumn\fi
+    \else
+      \end{multicols}
+    \fi
+    \clearpage
+  }
+
+%\newenvironment{theglossary}{% 命令索引を3段組で出力する環境
+%    \if@twocolumn
+%      \onecolumn\@restonecolfalse
+%    \else
+%      \clearpage\@restonecoltrue
+%    \fi
+%    \columnseprule.4pt \columnsep 2\zw
+%    \ifx\multicols\@undefined
+%      \twocolumn[\@makeschapterhead{\glossaryname}%
+%      \addcontentsline{toc}{chapter}{\glossaryname}%
+%      ]%
+%    \else
+%      \ifdim\textwidth<\fullwidth
+%        \setlength{\evensidemargin}{\oddsidemargin}
+%        \setlength{\textwidth}{\fullwidth}
+%        \setlength{\linewidth}{\fullwidth}
+%        \begin{multicols}{3}[\chapter*{\glossaryname}%
+%        \addcontentsline{toc}{chapter}{\glossaryname}%
+%        ]%
+%      \else
+%        \begin{multicols}{2}[\chapter*{\glossaryname}%
+%        \addcontentsline{toc}{chapter}{\glossaryname}%
+%        ]%
+%      \fi
+%    \fi
+%    \@mkboth{\glossaryname}{\glossaryname}%
+%    \plainifnotempty % \thispagestyle{plain}
+%    \parindent\z@
+%    \parskip\z@ \@plus .3\p@\relax
+%    \let\item\@idxitem
+%    \raggedright
+%    \footnotesize\narrowbaselines
+%  }{
+%    \ifx\multicols\@undefined
+%      \if@restonecol\onecolumn\fi
+%    \else
+%      \end{multicols}
+%    \fi
+%    \clearpage
+%  }%
+\renewenvironment{thebibliography}[1]{%
+  \global\let\presectionname\relax
+  \global\let\postsectionname\relax
+  \chapter*{\bibname\@mkboth{\bibname}{\bibname}}%
+      \addcontentsline{toc}{chapter}{\bibname}%
+   \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\settowidth\labelwidth{\@biblabel{#1}}%
+         \leftmargin\labelwidth
+         \advance\leftmargin\labelsep
+         \@openbib@code
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+   \sloppy
+   \clubpenalty4000
+   \@clubpenalty\clubpenalty
+   \widowpenalty4000%
+   \sfcode`\.\@m}
+  {\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+   \endlist
+}
+\DeclareRobustCommand*\iiiemdash{%
+  ---\kern-.5em---\kern-.5em---\kern-.5em---\kern-.5em---}
+\let\orig@bibitem\bibitem
+\let\temp@str\@empty
+\global\def\bibitem#1#2\newblock{%
+   \orig@bibitem{#1}%
+   \def\temp@str{#2}
+   \ifx\temp@str\previous@str
+      \iiiemdash.\space\newblock
+   \else
+      #2\newblock
+   \fi
+   \def\previous@str{#2}%
+}
+
+\def\@chapter[#1]#2{%
+  \ifnum \c@secnumdepth >\m@ne
+    \if@mainmatter
+      \refstepcounter{chapter}%
+      \addcontentsline{toc}{chapter}%
+        {\protect\numberline{\@chapapp\thechapter\@chappos}#1}%
+    \else\addcontentsline{toc}{chapter}{#1}\fi
+  \else
+    \addcontentsline{toc}{chapter}{#1}%
+  \fi
+  \chaptermark{#1}%
+  \addtocontents{lof}{\protect\addvspace{10\p@}}%
+  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  \addtocontents{lol}{\protect\addvspace{10\p@}}% listings 用
+  \if@twocolumn
+    \@topnewpage[\@makechapterhead{#2}]%
+  \else
+    \@makechapterhead{#2}%
+    \@afterheading
+  \fi}
+\def\@makechapterhead#1{%
+  \vspace*{2\Cvs}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+\hb@xt@\fullwidth{\hfill%
+          \Huge\headfont\@chapapp\thechapter\@chappos}%
+        \par\nobreak
+\vskip\Cvs %
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \hbox to \fullwidth{\hfill\Huge\headfont#1}
+    \par\nobreak\vskip\fboxsep
+    \hrule height 1ex
+    \par\vskip2\Cvs}}%
+\def\@makeschapterhead#1{%
+  \vspace*{2\Cvs}% 欧文は50pt
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \hb@xt@\fullwidth{\hfill\Huge \headfont #1}\par\nobreak\vskip\fboxsep
+    \hrule height 1ex
+    \par\vskip2\Cvs}}% 欧文は40pt
+
+%\def\@sect#1#2#3#4#5#6[#7]#8{%
+%  \ifnum #2>\c@secnumdepth
+%    \let\@svsec\@empty
+%  \else
+%    \refstepcounter{#1}%
+%    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+%  \fi
+%  \@tempskipa #5\relax
+%  \ifdim \@tempskipa<\z@
+%    \def\@svsechd{%
+%      #6{\hskip #3\relax
+%      \@svsec #8}%
+%      \csname #1mark\endcsname{#7}%
+%      \addcontentsline{toc}{#1}{%
+%        \ifnum #2>\c@secnumdepth \else
+%          \protect\numberline{\csname the#1\endcsname}%
+%        \fi
+%        #7}}% 目次にフルネームを載せるなら #8
+%  \else
+%    \begingroup
+%      \interlinepenalty \@M % 下から移動
+%%%%%%%
+%    \ifnum #2=\@ne
+%      \colorbox{mygray}{%
+%        \hb@xt@\ftextwidth{#6{\@hangfrom{\@svsec}#8}%
+%          \hfil}%
+%}\@@par%
+%    \else
+%        \ifnum #2=\tw@
+%           {\large$\blacktriangledown$\hskip3pt}%
+%           #6{\@hangfrom{\hskip #3\relax\@svsec}%
+%              \relax#8\@@par}%
+%        \else
+%           #6{\@hangfrom{\hskip #3\relax\@svsec}#8\@@par}%
+%        \fi
+%    \fi
+%    \endgroup
+%%%%%%
+%    \csname #1mark\endcsname{#7}%
+%    \addcontentsline{toc}{#1}{%
+%      \ifnum #2>\c@secnumdepth \else
+%       \protect\numberline{\csname the#1\endcsname}%
+%      \fi
+%      #7}% 目次にフルネームを載せるならここは #8
+%  \fi
+%  \@xsect{#5}}
+\def\@xsect#1{%
+  \@tempskipa #1\relax
+  \ifdim \@tempskipa<\z@
+    \@nobreakfalse
+    \global\@noskipsectrue
+    \everypar{%
+      \if@noskipsec
+        \global\@noskipsecfalse
+       {\setbox\z@\lastbox}%
+        \clubpenalty\@M
+        \begingroup \@svsechd \endgroup
+        \unskip
+        \@tempskipa #1\relax
+        \hskip -\@tempskipa
+      \else
+        \clubpenalty \@clubpenalty
+        \everypar{\everyparhook}%
+      \fi\everyparhook}%
+  \else
+    \par \nobreak
+    \vskip \@tempskipa
+    \@afterheading
+  \fi
+  \par  % 2000-12-18
+  \ignorespaces}
+\def\@ssect#1#2#3#4#5{%
+  \@tempskipa #3\relax
+  \ifdim \@tempskipa<\z@
+    \def\@svsechd{#4{\hskip #1\relax #5}}%
+  \else
+    \begingroup
+      #4{%
+        \@hangfrom{\hskip #1}%
+          \interlinepenalty \@M #5\@@par}%
+    \endgroup
+  \fi
+  \@xsect{#3}}
+\if@twocolumn
+  \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
+    {\z@}{-1\zw}% 改行せず 1\zw のアキ
+    {\normalfont\normalsize\headfont}}
+\else
+  \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
+    {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+    {-1\zw}% 改行せず 1\zw のアキ
+    {\normalfont\normalsize\headfont}}
+\fi
+\renewenvironment{abstract}{%
+  \thispagestyle{plainhead}%
+  \begin{list}{}{%
+    \linewidth=\fullwidth
+    \gtfamily\sffamily
+    \listparindent=1\zw
+    \itemindent=\listparindent
+    \leftmargin=.3\textwidth
+    \rightmargin=0pt
+    }\item[]}{\end{list}}%
+\let\draft@mark\@empty
+\newif\iftume
+\newcommand{\rtume}{
+\iftume
+ \setlength{\unitlength}{10mm}%
+ \begin{picture}(0,0)%
+   \put(0.5,-\value{chapter}){%
+      {\color{black}\rule[-.2\unitlength]{2\unitlength}{\unitlength}}}%
+   \put(0.8,-\value{chapter}){\makebox(0,.5)[l]{%
+      {\color{white}\large\sffamily\thechapter}}}%
+ \end{picture}\else\relax\fi}%
+
+%\def\ps@myhead{%
+%  \def\@evenfoot{% Even Foot
+%     \if@mparswitch\hss\fi%
+%        \hbox to \fullwidth{%
+%           \autoxspacing\textbf{\thepage}\hfill}%
+%    \if@mparswitch\else\hss\fi}%
+%  \def\@oddfoot{% Odd Foot
+%        \hbox to \fullwidth{%
+%           \autoxspacing\hfill\textbf{\thepage}}\hss}%
+%  \def\@evenhead{% Even Head
+%    \if@mparswitch \hss \fi
+%    \underline{\hbox to \fullwidth{\autoxspacing
+%        \leftmark\hfill\@title\draft@mark}}%
+%    \if@mparswitch\else \hss \fi}%
+%  \def\@oddhead{%
+%     \underline{%
+%        \hbox to \fullwidth{%
+%          \autoxspacing\@title\hfill{\if@twoside\rightmark\else\leftmark\fi}%
+%  }}{\rtume\draft@mark}\hss}%
+%  \let\@mkboth\markboth
+%  \def\chaptermark##1{\markboth{% chaptermark
+%    \ifnum \c@secnumdepth >\m@ne
+%      \if@mainmatter
+%        \@chapapp\thechapter\@chappos\hskip1\zw
+%      \fi
+%    \fi
+%    ##1}{}}%
+%  \def\sectionmark##1{\markright{% sectionmark
+%    \ifnum \c@secnumdepth >\z@ \thesection \hskip1\zw\fi
+%    ##1}}%
+%}% end of ps@myhead
+\def\ps@plainhead{%
+  \let\@mkboth\@gobbletwo
+  \def\@oddhead{\hbox to\fullwidth{\autoxspacing\hfill\rtume\draft@mark}\hss}%
+  \let\@evenhead\@empty
+  \def\@evenfoot{%
+    \if@mparswitch \hss \fi
+    \hbox to \fullwidth{\textbf{\thepage}\hfil}%
+    \if@mparswitch\else \hss \fi}%
+  \def\@oddfoot{%
+    \hbox to \fullwidth{\hfil\textbf{\thepage}}\hss}}
+
+\let\ps@plain\ps@plainhead
+
+%\pagestyle{myhead}
+%\pagestyle{plane}
+
+\renewcommand{\maketitle}{%
+  \begin{titlepage}%
+    \parindent=0pt%
+    \let\footnotesize\small%
+    \let\footnoterule\relax%
+    \let\footnote\thanks%
+    \null\vskip3\zw%
+    \hbox to \fullwidth{%
+        \Huge\bfseries\@title\hfill}\par\vskip\fboxsep
+%    \hrule height 1ex\par\vskip\fboxsep
+    \hbox to \fullwidth{\hfill{\Large\@author}}\par\vskip\parskip
+    \hbox to \fullwidth{\hfill \ttfamily{\MyMail}}\par\vskip\parskip
+    \hbox to \fullwidth{\hfill \ttfamily{\MyRoom}}\par\vskip\parskip
+    \hbox to \fullwidth{\hfill{\Large\@date}}\par
+    \vfill
+    \ifx\@preface\@empty\@thanks\vfil\null%
+    \else\vfill\raggedleft{\large\@preface}\vskip 3ex\fi%
+  \end{titlepage}%
+\setcounter{footnote}{0}%
+}
+
+\newcommand{\printokuduke}{{%
+  \if@twocolumn \onecolumn \else \clearpage \fi
+  \thispagestyle{empty}%
+  \null\vfill
+  \parindent=0pt
+  {\LARGE\bfseries\@title\hfill}\par\vskip1\zw
+  {\hfill\copyright\space\@author\space 2005, 2006}\par\vskip1\zw
+  {\hrule width\textwidth height1.5pt}\par\vskip1\zw
+  \begin{tabular}{ll}
+    発行日 & 2005年 03 月  17 日 第 0.1 版 配布\\
+           & 2006年 02 月  27 日 第 0.2 版 配布\\
+    編集   & {\@author}                     \\
+  \end{tabular}\hfill
+  {\hrule width\textwidth height1.5pt}%
+  }%
+}
+\newcommand\kuchie{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \@mainmatterfalse
+  \pagenumbering{Roman}}
+\endinput
+%%
+%% End of file `lll.sty'.

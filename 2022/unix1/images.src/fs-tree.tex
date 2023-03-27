@@ -1,0 +1,74 @@
+\documentclass{jsarticle}
+
+\usepackage{txfonts}
+
+\makeatletter
+%%%%%%%% beginning of eclclass.sty %%%%%%%%
+% eclclass.sty by Hideki Isozaki  1992.9.10
+
+\newbox\cls@box
+\newbox\cls@boxi
+
+\def\classify#1{%
+   \leavevmode\hbox\bgroup\vtop\bgroup
+   \offinterlineskip
+   \gdef\cls@dp{0pt}%
+   \hbox{#1}\vtop\bgroup\hbox\bgroup\hskip\cls@hshift\vrule
+   \vtop\bgroup\setbox\cls@box\hbox{}\ignorespaces}
+
+\def\endclassify{%
+\dp\cls@box-\cls@vshift\box\cls@box
+\egroup\egroup\egroup
+\hrule\@depth\cls@dp\@height\z@\@width\z@
+\egroup\egroup\ignorespaces}
+
+\def\class#1{\box\cls@box
+\setbox\cls@box\hbox{\cls@rule\hspace{.5em}#1\vrule
+\@height\normalbaselineskip\@width\z@\@depth\z@}%
+\@tempdima\dp\cls@box\advance\@tempdima\cls@vshift
+\xdef\cls@dp{\the\@tempdima}%
+\ignorespaces}
+
+\def\classf#1{\class{\fbox{#1}}}
+
+\def\cls@rule{\rule[\cls@vshift]{1em}{0.4pt}}
+
+% Parameters for Horizontal Lines
+\def\cls@vshift{0.5ex}
+\def\cls@hshift{0.5em}
+%%%%%%%%%%% end of eclclass.sty %%%%%%%%%%%
+\makeatother
+
+\pagestyle{empty}
+\newcommand{\path}[1]{\texttt{#1}}
+\addtolength{\baselineskip}{-4pt}
+
+\begin{document}
+\gtfamily
+\begin{classify}{\path{/~~~} ルートディレクトリ}
+  \class{\path{/bin~~~} 基本コマンド}
+  \class{\path{/boot~~} 起動に必要なファイル}
+  \class{\path{/dev~~~} デバイスファイル}
+  \class{\path{/etc~~~} 設定ファイル}
+  \class{\path{/home~~} \begin{minipage}[t]{25zw}
+                         ユーザのホームディレクトリ \\
+                         (210 では\path{/home}1, \path{/home}2 に分かれている)
+                        \end{minipage}}
+  \class{\path{/lib~~~} 共有ライブラリ}
+  \class{\path{/mnt~~~} 一時的なマウントポイント}
+  \class{\path{/opt~~~} 追加アプリケーション}
+  \class{\path{/proc~~} (Linux 固有) プロセス情報など}
+  \class{\path{/sys~~~} (Linux 固有) カーネルの内部状態}
+  \class{\path{/root~~} root 用ホームディレクトリ}
+  \class{\path{/sbin~~} システム管理用コマンドなど}
+  \class{\path{/tmp~~~} 一時的なファイル (再起動するごとに消される)}
+  \class{\begin{classify}%
+        {\path{/usr~~~} 各種プログラムなど}
+    \class{\path{/usr/local~~} 管理者が独自にインストールしたシステム}
+         \end{classify}}
+  \class{\begin{classify}%
+        {\path{/var~~~} 頻繁に変更されるデータ}
+    \class{\path{/var/tmp~~~~} 一時的なファイル (再起動後にも残る)}
+         \end{classify}}
+\end{classify}
+\end{document}

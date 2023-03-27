@@ -1,0 +1,661 @@
+%section 6
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{数式}
+数式の入力は、{\TeX}の最も得意とするところです。
+
+\subsection{数式の基本}
+数式には、\emph{本文中の数式}と\emph{別行立ての数式}があります。本文中に
+数式を書く場合、数式の部分を``\verb+$+''と``\verb+$+''で囲みます。
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+$a+b$は省略しても$ab$にはならない。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+$a+b$は省略しても$ab$にはならない。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+そうではなく、別の行に出力したいこともあります。そのときは``\verb+\[+''と
+``\verb+\]+''で囲みます\footnote{\verb+$$+...\verb+$$+とする方法も存在しますが、plain{\TeX}のコマンドなので推奨されません。}。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+そんなわけで、\[ c=a-b \]となりました。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+そんなわけで、\[ c=a-b \]となりました。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+改行は無視されますから、これは\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+そんなわけで、
+\[ c=a-b \]
+となりました。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+そんなわけで、
+\[ c=a-b \]
+となりました。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+と書いても同じことです。別行立ての数式は、原稿のほうでも改行しておいたほ
+うがわかりやすいかもしれません。
+
+\subsection{空白の扱い}
+数式中の空白は基本的に無視されます。空白は{\LaTeX}が自動で調整します。で
+すから、次の2つはまったく同じことです。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+$ a + ( - b ) = a - b  $ \\
+$a+(-b)=a-b$
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+$ a + ( - b ) = a - b  $ \\
+$a+(-b)=a-b$
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+注意深く見ると、左辺と右辺では$-$と$b$の間が異なっているのがわかります。
+これは、{\LaTeX}が符号の$-$と演算子の$-$を自動で判別しているからです。で
+すから特別なことがない限り、人間が空白を入れる必要はありません。
+
+それでも空白を入れたいということがあるかもしれません。というか、あります。
+このときは表\ref{tab:space}に示したような命令が使えます。
+空白の調節は数式の超絶技巧には不可欠なのですが、ここでは例を一つ挙げる
+のにとどめます。
+\begin{table}[htbp]
+\begin{center}
+\caption{数式中での空白の制御}
+\label{tab:space}
+\begin{tabular}{lll}
+\hline
+空白の大きさ     & 命令        & 数式モード外での使用 \\
+\hline
+かなり小さい空白 & \verb+\,+     & 可   \\
+小さい空白       & \verb+\:+     & 不可 \\
+少し小さい空白   & \verb+\;+     & 不可 \\
+半角の空白       & \verb*+\ +  & 可   \\
+全角の空白       & \verb+\quad+  & 可   \\
+全角の2倍の空白  & \verb+\qquad+ & 可   \\
+負の空白         & \verb+\!+     & 不可 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+どちらが見慣れた式ですか？
+\[ \int \int f(x,y) dx dy \]
+\[ \int \!\!\! \int f(x,y) \, dx \, dy \]
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+どちらが見慣れた式ですか？
+\[ \int \int f(x,y) dx dy \]
+\[ \int \!\!\! \int f(x,y) \, dx \, dy \]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{添え字}
+添え字は次のように\verb+^+と\verb+_+を使って入力します。
+\begin{screen}
+\begin{verbatim}
+値^{上付き}
+値_{下付き}
+\end{verbatim}
+\end{screen}
+添え字が2文字以上になる場合は、上のように波カッコで囲む必要があります。
+別に1文字でも囲ってかまわないので、最初からそのようにするとよいでしょう。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+上付きは$x^2$，2文字以上なら$x^{22}$\\
+下付きは$a_2$，2文字以上なら$a_{22}$\\
+$x^22$とか$a_22$とかは間抜けですね。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+上付きは$x^2$，2文字以上なら$x^{22}$\\
+下付きは$a_2$，2文字以上なら$a_{22}$\\
+$x^22$とか$a_22$とかは間抜けですね。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{大きさの変わる数学記号}
+ここで扱うのは、分数・総和(シグマ)などの上下方向に場所をとる記号です。
+まずは書き方を表\ref{tab:frac}にまとめましたので、見てください。
+\begin{table}[htbp]
+\begin{center}
+\caption{大きさの変わる数学記号}
+\label{tab:frac}
+\begin{tabular}{lll}
+\hline
+種類   & 命令        & 出力例 \\
+\hline
+分数   & \verb+\frac{分子}{分母}+
+       & $\displaystyle \frac{\text{分子}}{\text{分母}}$ \\
+根号   & \verb+\sqrt{値}+
+       & $\displaystyle \sqrt{\text{値}}$ \\
+多乗根 & \verb+\sqrt{根}{値}+
+       & $\displaystyle \sqrt[\text{根}]{\text{値}}$ \\
+定積分 & \verb+\int_{下付き}^{上付き}+
+       & $\displaystyle \int_{\text{下付き}}^{\text{上付き}}$ \\
+総和   & \verb+\sum_{下付き}^{上付き}+
+       & $\displaystyle \sum_{\text{下付き}}^{\text{上付き}}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+これらの記号を別行立ての中で使っている分にはまったく問題ありません。しか
+し、本文中に使うとなると、表\ref{tab:frac}からもわかるように場所をとっ
+てバランスが悪くなります。そこで、これらの記号を本文中で使うと次のよう
+にデザインが変わります。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+本文中では$\frac{1}{2},\sum_{n=1}^{N},
+\int_{0}^{1}$みたいにせまっ苦しいけど、
+別行立てでは
+\[
+\frac{1}{2},\sum_{n=1}^{N},\int_{0}^{1}
+\]
+みたいに広々するね。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+本文中では$\frac{1}{2},\sum_{n=1}^{N},
+\int_{0}^{1}$みたいにせまっ苦しいけど、
+別行立てでは
+\[
+\frac{1}{2},\sum_{n=1}^{N},\int_{0}^{1}
+\]
+みたいに広々するね。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+これが気に入らないという人は、\verb+\displaystyle+という命令を分数なり総和
+なりの前においてやることによって解決できます。実際、表\ref{tab:frac}も
+そうやって書きました。ただし少なくとも分数に関しては、本文中では$a/b$
+のように書くのが正しいようです。\\
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+本文中でも$\displaystyle \frac{1}{2},
+\sum_{n=1}^{N},\int_{0}^{1}$で大きくなる
+けど、これはこれで狭いっす。\\
+でも$a/b$は狭くない。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+本文中でも$\displaystyle \frac{1}{2},
+\sum_{n=1}^{N},\int_{0}^{1}$で大きくなる
+けど、これはこれで狭いっす。\\
+でも$a/b$は狭くない。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{関数}
+``$\sin x$''という出力をするつもりで\verb+$sinx$+と書くと、出力は
+``$sinx$''となりがっかりしてしまいます。がっかりするだけならともかく、
+これでは$s\times i\times n \times x$としか解釈しようがなく、意味まで変わ
+ってきてしまいます。$\sin$のような関数は\emph{立体}
+で書くのが普通です。そこで{\LaTeX}ではあらかじめ表\ref{tab:function}に
+示したような関数が定義されています。極限など添え字を取るものは、普通の添え字と同じ要領でできます。\\
+\begin{table}[htbp]
+\begin{center}
+\caption{主な数学関数}
+\label{tab:function}
+\begin{tabular}{ll|ll|ll|ll}
+ \verb|\arccos| & $\arccos$ & \verb|\csc| & $\csc$ & \verb|\ker|    & $\ker$    & \verb|\min|  & $\min$  \\
+ \verb|\arcsin| & $\arcsin$ & \verb|\deg| & $\deg$ & \verb|\lg|     & $\lg$     & \verb|\Pr|   & $\Pr$   \\
+ \verb|\arctan| & $\arctan$ & \verb|\det| & $\det$ & \verb|\lim|    & $\lim$    & \verb|\sec|  & $\sec$  \\
+ \verb|\arg|    & $\arg$    & \verb|\dim| & $\dim$ & \verb|\liminf| & $\liminf$ & \verb|\sin|  & $\sin$  \\
+ \verb|\cos|    & $\cos$    & \verb|\exp| & $\exp$ & \verb|\limsup| & $\limsup$ & \verb|\sinh| & $\sinh$ \\
+ \verb|\cosh|   & $\cosh$   & \verb|\gcd| & $\gcd$ & \verb|\ln|     & $\ln$     & \verb|\sup|  & $\sup$  \\
+ \verb|\cot|    & $\cot$    & \verb|\hom| & $\hom$ & \verb|\log|    & $\log$    & \verb|\tan|  & $\tan$  \\
+ \verb|\coth|   & $\coth$   & \verb|\inf| & $\inf$ & \verb|\max|    & $\max$    & \verb|\tanh| & $\tanh$
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\[ \lim_{x\to 0} \frac{\sin x}{x} = 1 \]
+は高校で学びますか？
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\[ \lim_{x\to 0} \frac{\sin x}{x} = 1 \]
+は高校で学びますか？
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{ギリシャ文字}
+この学科にいれば、ギリシャ文字を使いたくなることも多いことでしょう。小文
+字は表\ref{tab:GreeLow}にまとめてあります。ただし、$o$(omicron)は
+アルファベットの$o$(オー)と同じなので特に用意されていません。
+またギリシャ文字の小文字には、表\ref{tab:GreevarLow}に示すような異体文字
+もあります。大文字は表\ref{tab:GreeUp}の11通り以外は英語のアルファベット
+と同じです。慣習に従って、小文字は斜体、大文字は立体で出力されます。
+\begin{table}[htbp]
+\begin{center}
+\caption{ギリシャ文字(小文字)}
+\label{tab:GreeLow}
+\begin{tabular}{lc|lc|lc|lc}
+ \verb+\alpha+   & $\alpha$   & \verb+\eta+     & $\eta$     &
+ \verb+\nu+      & $\nu$      & \verb+\tau+     & $\tau$     \\
+ \verb+\beta+    & $\beta$    & \verb+\theta+   & $\theta$   &
+ \verb+\xi+      & $\xi$      & \verb+\upsilon+ & $\upsilon$ \\
+ \verb+\gamma+   & $\gamma$   & \verb+\iota+    & $\iota$    &
+ \verb+o+      & $o$        & \verb+\phi+     & $\phi$     \\
+ \verb+\delta+   & $\delta$   & \verb+\kappa+   & $\kappa$   &
+ \verb+\pi+      & $\pi$      & \verb+\chi+     & $\chi$     \\
+ \verb+\epsilon+ & $\epsilon$ & \verb+\lambda+  & $\lambda$  &
+ \verb+\rho+     & $\rho$     & \verb+\psi+     & $\psi$     \\
+ \verb+\zeta+    & $\zeta$    & \verb+\mu+      & $\mu$      &
+ \verb+\sigma+   & $\sigma$   & \verb+\omega+   & $\omega$
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{ギリシャ文字(小文字の異体字)}
+\label{tab:GreevarLow}
+\begin{tabular}{lc|lc|lc}
+ \verb+\varepsilon+ & $\varepsilon$ & \verb+\varpi+  & $\varpi$  &
+ \verb+\varsigma+   & $\varsigma$   \\
+ \verb+\vartheta+   & $\vartheta$   & \verb+\varrho+ & $\varrho$ &
+ \verb+\varphi+     & $\varphi$
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\caption{ギリシャ文字(大文字)}
+\label{tab:GreeUp}
+\begin{tabular}{lc|lc|lc|lc}
+ \verb+\Gamma+   & $\Gamma$   & \verb+\Lambda+  & $\Lambda$  &
+ \verb+\Sigma+   & $\Sigma$   & \verb+\Psi+     & $\Psi$     \\
+ \verb+\Delta+   & $\Delta$   & \verb+\Xi+      & $\Xi$      &
+ \verb+\Upsilon+ & $\Upsilon$ & \verb+\Omega+   & $\Omega$   \\
+ \verb+\Theta+   & $\Theta$   & \verb+\Pi+      & $\Pi$      &
+ \verb+\Phi+     & $\Phi$     &               &            \\
+\end{tabular}
+\end{center}
+\end{table}
+ギリシャ文字の大文字は標準で立体ですが、数式モード中のアルファベットは
+標準でイタリックになっており、これではアンバランスです。これは
+\verb+\mathrm{A}+とかしてやることで解決します。
+
+\subsection{その他の記号}
+その他よく使いそうな記号を表\ref{tab:misc}にまとめました。
+
+\begin{table}[htbp]
+\begin{center}
+\caption{関係子・二項演算子・矢印}
+\label{tab:misc}
+\begin{tabular}{lc|lc|lc|lc}
+ \verb+\le+    & $\le$    & \verb+\pm+     & $\pm$     & \verb+\hbar+    &
+ $\hbar$  & \verb+\leftarrow+ & $\leftarrow$ \\
+ \verb+\ge+    & $\ge$    & \verb+\mp+     & $\mp$     & \verb+\Re+      &
+ $\Re$  & \verb+\Leftarrow+ & $\Leftarrow$\\
+ \verb+\ll+    & $\ll$    & \verb+\times+  & $\times$  & \verb+\Im+      &
+ $\Im$   & \verb+\longleftarrow+ & $\longleftarrow$ \\
+ \verb+\gg+    & $\gg$    & \verb+\div+    & $\div$    & \verb+\imath+   &
+ $\imath$  & \verb+\Longleftarrow+ & $\Longleftarrow$\\
+ \verb+\in+    & $\in$    & \verb+\ast+    & $\ast$    & \verb+\jmath+   &
+ $\jmath$ & \verb+\rightarrow+ & $\rightarrow$ \\
+ \verb+\ni+    & $\ni$    & \verb+\star+   & $\star$   & \verb+\ell+     &
+ $\ell$ & \verb+\Rightarrow+ & $\Rightarrow$  \\
+ \verb+\neq+   & $\neq$   & \verb+\cdot+   & $\cdot$   & \verb+\partial+ &
+ $\partial$ & \verb+\longrightarrow+ & $\longrightarrow$ \\
+ \verb+\equiv+ & $\equiv$ & \verb+\circ+   & $\circ$   & \verb+\infty+   &
+ $\infty$ & \verb+\Longrightarrow+ & $\Longrightarrow$  \\
+ \verb+\sim+   & $\sim$   & \verb+\bullet+ & $\bullet$ & \verb+\nabla+   &
+ $\nabla$ & \verb+\leftrightarrow+ & $\leftrightarrow$ \\
+ \verb+\subset+ & $\subset$ & \verb+\bigcirc+ & $\bigcirc$ & \verb+\natural+ &
+ $\natural$ & \verb+\Leftrightarrow+ & $\Leftrightarrow$ \\
+ \verb+\supset+ & $\supset$ & \verb+\vee+ & $\vee$ & \verb+\flat+ & $\flat$  &
+ \verb+\longleftrightarrow+ & $\longleftrightarrow$ \\
+ \verb+\parallel+ & $\parallel$ & \verb+\wedge+ & $\wedge$ & \verb+\sharp+ &
+ $\sharp$ & \verb+\Longleftrightarrow+ & $\Longleftrightarrow$
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{大きさの変わるカッコ}\label{sec:pa}
+カッコの類は普通に書いてもよいのですが、例えば次の2つ目の例はあまり
+美しくありません。やはりカッコは全体を囲っていて欲しいものです。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\[ 3 \times (2+5) = 21 \]
+はいいけど、
+\[ \frac{1}{2} \times
+ (
+  \frac{4}{7} - \frac{5}{13}
+ )
+\neq \frac{19}{162} \]
+はかっこわるいですね。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\[ 3 \times (2+5) = 21 \]
+はいいけど、
+\[ \frac{1}{2} \times
+ (
+  \frac{4}{7} - \frac{5}{13}
+ )
+\neq \frac{19}{162} \]
+はかっこわるいですね。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+これは以下のように書くことで解決します。
+中身に応じてカッコが伸び縮みします。
+\begin{screen}
+\begin{verbatim}
+\left{括弧} \right{括弧}
+\end{verbatim}
+\end{screen}
+たとえば、こんな感じです。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\[
+\frac{1}{2} \times
+ \left(
+        \frac{4}{7} - \frac{5}{13}
+ \right)
+= \frac{17}{182}
+\]
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\[
+\frac{1}{2} \times
+ \left(
+        \frac{4}{7} - \frac{5}{13}
+ \right)
+= \frac{17}{182}
+\]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{行列}
+もともとの{\LaTeX}には行列をかけるようなコマンドは存在しません。その代わ
+り、いま出てきた「大きさの変わるカッコ」の中に数字を整列させて入れてやり
+ます。これであたかも行列のように見えるというわけです。
+
+数字の整列にはarray環境を使います。その使い方は以下のとおりです。
+\begin{screen}
+\verb+\begin{array}{列指定子}+ \\
+$\begin{array}{cccccc}
+ a_{1,1} & \verb+&+ & \cdots & \verb+&+ & a_{1,n} & \verb+\\+ \\
+ \vdots  & \verb+&+ & \ddots & \verb+&+ & \vdots  & \verb+\\+ \\
+ a_{m,1} & \verb+&+ & \cdots & \verb+&+ & a_{m,n} &
+\end{array}$\\
+\verb+\end{array}+
+\end{screen}
+これではいまいちよくわからないと思いますが。先に説明します。\emph{列指定
+子}には、行列の中の要素の配置場所と罫線の引き方を指定します。
+表\ref{tab:clm}にまとめました。
+\begin{table}[htbp]
+\begin{center}
+\caption{array環境の主な列指定子}
+\label{tab:clm}
+\begin{tabular}{cl}
+\hline
+列指定子 & 意味 \\
+\hline
+\verb+l+  & 行列のたて一列を左揃えにする \\
+\verb+c+  & 行列のたて一列を中央揃えにする \\
+\verb+r+  & 行列のたて一列を右揃えにする \\
+\verb+|+  & たての罫線を引く \\
+\verb+||+ & たての二重罫線を引く\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+具体例を見てみましょう。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+まずは中央揃え
+\[
+ \begin{array}{cc}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{array}
+\]
+左揃えにすると
+\[
+ \begin{array}{ll}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{array}
+\]
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+まずは中央揃え
+\[
+ \begin{array}{cc}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{array}
+\]
+左揃えにすると
+\[
+ \begin{array}{ll}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{array}
+\]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+あとはこれ全体を\ref{sec:pa}節で説明した「大きさの変わるカッコ」で囲っ
+てやれば、めでたく行列の完成となります。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+回転行列！
+\[
+ \left(
+ \begin{array}{cc}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{array}
+ \right)
+\]
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+回転行列！
+\[
+ \left(
+ \begin{array}{cc}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{array}
+ \right)
+\]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{\AmS-\LaTeX}
+ここまでは標準の{\LaTeX}で使用できる機能のみを用いて数式を書いてきまし
+た。しかしさすがに行列くらいになると、実際に使い物にするには少しつらい
+ものがあります。
+
+というわけで、本格的に数式を書くときはアメリカ数学会が作成した
+{\AmS-\LaTeX}の使用をお勧めします。とりあえずプリアンブルで
+\begin{screen}
+\verb+\usepackage{amsmath}+
+\end{screen}
+と書けば使えます。
+例えば行列や積分は、\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\[
+  A =
+ \begin{pmatrix}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{pmatrix}
+\]
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\[
+  A =
+ \begin{pmatrix}
+   \cos x  & -\sin x \\
+   \sin x  &  \cos x
+ \end{pmatrix}
+\]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+{\LaTeX}の場合、
+
+\[ \int \int f(x,y) dx dy \]
+\[ \int \!\!\! \int f(x,y) dx dy \]
+
+{\AmS-\LaTeX}の場合、
+
+\[ \iint f(x,y) dx dy \]
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+{\LaTeX}の場合、
+
+\[ \int \int f(x,y) dx dy \]
+\[ \int \!\!\! \int f(x,y) dx dy \]
+
+{\AmS-\LaTeX}の場合、
+
+\[ \iint f(x,y) dx dy \]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+と、かなり簡単に綺麗に書くことができます。
+
+他にもgather環境やalign環境などいろいろあるので調べてみてください。
+
+\subsection{練習}
+プロジェクトtex\_exerciseの中にある\underline{exercise3.tex}を編集して、
+\begin{itemize}
+ \item[-] $\sin$が間抜けなのでどうにかする
+ \item[-] きれいなカッコにしてみる
+ \item[-] equation環境はどういうときに使うか考えてみる
+ \item[-] eqnarray環境\footnote{{\AmS-\LaTeX}を使う時は、align環境で代替します。}はどういうときに使うか考えてみる
+\end{itemize}
+ということをやってみてください。
+
+\pagebreak

@@ -1,0 +1,67 @@
+%#!platex latex2022.tex
+\documentclass{jsarticle}
+\usepackage{fancybox,ascmac}
+\usepackage{epstopdf}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{alltt}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\usepackage{url}
+
+\topmargin -0.8in
+\oddsidemargin -0.3in
+\textheight 10in
+\textwidth 7in
+
+\pagestyle{fancy}
+    \lhead{{\LaTeX 入門}} %ヘッダ左
+    %\chead{ヘッダ中央} %ヘッダ中央
+    \rhead{2022年4月13日(水) \ 地球惑星物理学演習} %ヘッダ右．コンパイルした日付を表示
+    % \lfoot{} %フッタ左
+    \cfoot{—\, \thepage \, —} %フッタ中央．ページ番号を表示
+    %\rfoot{© 著作権} %フッタ右
+
+
+\title{\LaTeX 入門}
+\author{高田 大成\thanks{固体地球科学講座 田中愛幸研究室 修士1年, Email: takata@eps.s.u-tokyo.ac.jp}}
+\date{2022年4月13日(水) \\
+\vspace*{2cm}
+\begin{flushleft}
+\section*{はじめに}
+\ \ \ 本郷に進学し、みなさんはこれからレポートなどの文書を作成する機会も益々多
+ くなることと思います。特にこの学科にいれば、数式・図を多く含んだ文書を
+ 作りたくなるでしょう。\\
+\ \ \ 今回は、\LaTeX という組版ソフトを紹介します。皆さんの中にはもうすでに使ったことがある方もいらっしゃるかもしれません。
+このソフトはいわゆるワー
+ プロソフトと比べると最初はとっつきにくさを感じるかもしれませんが、出来
+ 上がった文書の美しさはすばらしいものがあります。とにかく使ってみま
+ しょう。\\
+\ \ \ (\copyright
+このテキストは落さんが作ったテキストを三木さんが改良したものを白川さんが改良して、
+それをまた東森さんが改良したものを斉藤さんが改良し高木さんが改良し河野さんが改良し、さらに長谷川さんが改良し中村さんが改良し滝川さんが改良し山谷さんが改良し水越さんが改良し、最後に寺田さんが改良したものを基に作成しました。)
+\end{flushleft}
+}
+
+\begin{document}
+
+
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\clearpage
+
+%\input{latex2022-package}
+\input{latex2022-sec1}
+\input{latex2022-sec2}
+\input{latex2022-sec3}
+\input{latex2022-sec4}
+\input{latex2022-sec5}
+\input{latex2022-sec6}
+\input{latex2022-sec7}
+\input{latex2022-sec8}
+\input{latex2022-kadai}
+\input{latex2022-app}
+\end{document}
+

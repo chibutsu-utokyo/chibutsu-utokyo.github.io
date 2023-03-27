@@ -1,0 +1,408 @@
+%section 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{環境}
+これまで見てきたコマンドたちはみな、
+\begin{screen}
+\begin{verbatim}
+\命令
+\命令{引数}
+\end{verbatim}
+\end{screen}
+という形をしていました。例えば、\verb+\maketitle+と書けば表題が表示されま
+したし、\verb+\textbf{もじもじくん}+と書けば\textbf{もじもじくん}のよう
+にゴシックになったわけです。これに対して、
+\begin{itemize}
+ \item[-] ある領域を全部中央揃えにしたい
+ \item[-] ある領域を全部引用用に段落を下げたい
+\end{itemize}
+ということもあります。こんなときは、
+\begin{screen}
+\begin{verbatim}
+\begin{環境}
+  ある領域
+\end{環境}
+\end{verbatim}
+\end{screen}
+という\emph{環境型のコマンド}を使います。いくつか具体例を見ていきましょう。
+
+\subsection{左揃え・中央揃え・右揃え}
+とりあえず何かお知らせみたいなものを作成したいとき、この3つはよく使うと
+思います。それぞれ表\ref{tab:flush}のような環境が用意されています。
+\begin{table}[htbp]
+\begin{center}
+\caption{行を揃える環境}
+\label{tab:flush}
+\begin{tabular}{ll}
+\hline
+種類     & 環境             \\
+\hline
+左揃え   & \verb+flushleft+  \\
+中央揃え & \verb+center+     \\
+右揃え   & \verb+flushright+ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+これらを使って、\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+ \small
+\begin{verbatim}
+\begin{flushleft}
+佐藤様 \\
+鈴木様
+\end{flushleft}
+
+\begin{flushright}
+2022年4月1日\\
+地物太郎
+\end{flushright}
+
+\begin{center}
+本年度の夏期賞与について
+\end{center}
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\begin{flushleft}
+佐藤様 \\
+鈴木様
+\end{flushleft}
+
+\begin{flushright}
+2022年4月1日\\
+地物太郎
+\end{flushright}
+
+\begin{center}
+本年度の夏期賞与について
+\end{center}
+
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+などと書くことができます。
+
+\subsection{箇条書き}
+長い長い文書の中に箇条書きを放り込むと、メリハリをつけることができます。
+{\LaTeX}には
+\begin{description}
+ \item[itemize環境] 項目の頭に$\bullet$のようなマークをつける
+	    \emph{記号つき箇条書き}です。入れ子にすると、それに伴って付
+	    くマークも変わっていきます。
+ \item[enumerate環境] 項目の頭に$1,2,3,\cdots$のような通し番号がつ
+	    く\emph{番号つき箇条書き}です。入れ子にすると、それに伴って番
+	    号がアルファベットになったりローマ数字になったりします。
+ \item[description環境] 項目の頭が単語になっている\emph{説明つき箇
+	    条書き}です。今のこの箇条書きが、まさにdescription環境
+	    です。
+\end{description}
+という3つの箇条書き環境が用意されています。
+これらはみな、
+\begin{screen}
+\begin{verbatim}
+\begin{箇条書き環境名}
+  \item[オプション]
+\end{箇条書き環境名}
+\end{verbatim}
+\end{screen}
+のように使います。
+
+例えば、itemize環境を使うと、\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+我々の太陽系に属する天体は
+\begin{itemize}
+ \item planet
+ \item dwarf planet
+  \begin{itemize}
+   \item ex) 冥王星，エリス
+  \end{itemize}
+ \item small solar system bodies
+  \begin{itemize}
+   \item 小惑星
+    \begin{itemize}
+     \item ex) リュウグウ
+    \end{itemize}
+   \item 彗星
+   \item ほとんどのTNO
+   \item その他の小天体
+  \end{itemize}
+\end{itemize}
+に分類される(IAU Resolution 5A)
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+我々の太陽系に属する天体は
+\begin{itemize}
+ \item planet
+ \item dwarf planet
+  \begin{itemize}
+   \item ex) 冥王星，エリス
+  \end{itemize}
+ \item small solar system bodies
+  \begin{itemize}
+   \item 小惑星
+    \begin{itemize}
+     \item ex) リュウグウ
+    \end{itemize}
+   \item 彗星
+   \item ほとんどのTNO
+   \item その他の小天体
+  \end{itemize}
+\end{itemize}
+に分類される(IAU Resolution 5A)
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+のような箇条書きが作れます。入れ子に入るにつれて記号が変化している様子が
+わかると思います。また、description環境は、次のように\verb+\item+
+の後のオプションの部分に項目名を書いてやります。\\
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+地球惑星物理学演習では以下の内容を修得します：
+\begin{description}
+ \item[UNIX] 計算機の前で途方にくれないようにします
+ \item[Fortran] Fortran90のプログラミングを学びます
+ \item[Python] Pythonのプログラミングを学びます
+ \item[行列] 逆行列の計算・連立1次方程式の計算方法を学びます
+ \item[時間発展] 時間発展問題のシミュレーションをします
+ \item[データ解析] 時系列データの解析の基礎を学びます
+\end{description}
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.50\textwidth}
+\begin{shadebox}
+地球惑星物理学演習では以下の内容を修得
+します：
+\begin{description}
+ \item[UNIX] 計算機の前で途方にくれない
+           ようにします
+ \item[Fortran] Fortran90のプログラミ
+           ングを学びます
+ \item[Python] Pythonのプログラミングを学びます
+ \item[行列] 逆行列の計算・連立1次方程
+           式の計算方法を学びます
+ \item[時間発展] 時間発展問題のシミュレー
+           ションをします
+ \item[データ解析] 時系列データの解析の基
+           礎を学びます
+\end{description}
+\end{shadebox}
+\end{minipage}\\
+\vspace*{5mm}
+
+\subsection{引用}
+先ほど、単語や文の引用の仕方を説明しました。しかし文といっても段落丸ご
+ととなると話は変わってきます。例えば、\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\emph{Aki and Richards} [2002]には，``A faulting
+ source is an event  associated with an internal
+ surface, such as slip across a fracture  plane.
+ A volume source is an event associated with an
+ internal volume, such as a sudden (explosive)
+expansion throughout a volumetric source
+ region. We shall find that a unified treatment
+ of both source type is possible,the common link
+ being the concept of an internal surface  across
+ which discontinuities can occur in displacemant
+ (for the  faulting source) or in strain (for the
+ volume source).''というくだりがある。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\emph{Aki and Richards} [2002]には，``A faulting source is an event
+ associated with an internal surface, such as slip across a fracture
+ plane. A volume source is an event associated with an internal volume,
+ such as a sudden (explosive) expansion throughout a volumetric source
+ region. We shall find that a unified treatment of both source type is
+ possible,the common link being the concept of an internal surface
+ across which discontinuities can occur in displacemant (for the
+ faulting source) or in strain (for the volume source).''というくだりがあ
+ る。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+なんてのはどう見てもちょっと勘弁して欲しいです。段落丸ごとを引用するとき
+は、やはり別のかたまりになっていたほうが見やすいと思います。
+
+そこで、段落の引用用に行頭の字下
+げをしないquoteと字下げをするquotationという環境が用意され
+ています。複数段落を引用するのなら、quotationのほうがよいでしょう。
+これを使うと上の例では\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\emph{Aki and Richards} [2002]には，
+\begin{quote}
+ A faulting source is an event  associated with
+ an internal surface, such as slip across a
+ fracture plane. A volume source is an event
+ associated (中略) surface across which
+ discontinuities can occur in displacemant
+ (for the  faulting source) or in strain (for the
+ volume source).
+\end{quote}
+というくだりがある。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\emph{Aki and Richards} [2002]には，
+\begin{quote}
+ A faulting source is an event  associated with
+ an internal surface, such as slip across a
+ fracture plane. A volume source is an event
+ associated (中略) surface across which
+ discontinuities can occur in displacemant
+ (for the  faulting source) or in strain (for the
+ volume source).
+\end{quote}
+というくだりがある。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+となります。
+
+\subsection{逐語引用}
+これからレポート等で文書にプログラミングのソースコードを
+載せる機会があるかもしれません。そうした時は、単にソースコード
+をコピペで貼り付けても{\LaTeX}はそれをソースコードとして認識せず
+空白や改行を勝手につぶしてしまい、全くコードとしては読めなくなってしまい
+ます。これはquote環境を使っても解決できません。\\
+\begin{minipage}[c]{.45\textwidth}
+\begin{screen}
+ \small
+\begin{verbatim}
+以下にFortranプログラムのサンプルを載せる。
+program main
+  implicit none
+  integer ::i
+
+  do i=1,100
+     write (*,*) 'Hello, World !'
+  end do
+
+  stop
+end program main
+以上。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.50\textwidth}
+\begin{shadebox}
+以下にFortranプログラムのサンプルを載せる。
+program main
+  implicit none
+  integer ::i
+
+  do i=1,100
+     write (*,*) 'Hello, World !'
+  end do
+
+  stop
+end program main
+以上。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+だからといって読めるように改行等の装飾を施して
+いたのでは日が暮れてしまいます。
+こういう時はverbatim環境を用いましょう。
+verbatim環境では、内容が改行や空白も
+{\LaTeX}処理されずに
+``そのまま''に出力されます。\\
+\begin{minipage}[c]{.45\textwidth}
+\begin{screen}
+\small
+\begin{alltt}
+以下にFortranプログラムのサンプルを載せる。
+\verb+\begin{verbatim}+
+program main
+  implicit none
+  integer ::i
+
+  do i=1,100
+     write (*,*) 'Hello, World !'
+  end do
+
+  stop
+end program main
+\verb+\end{verbatim}+
+以上.
+\end{alltt}
+\end{screen}
+\end{minipage}
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.50\textwidth}
+\begin{shadebox}
+以下にFortranプログラムのサンプルを載せる。
+\begin{verbatim}
+program main
+  implicit none
+  integer ::i
+
+  do i=1,100
+     write (*,*) 'Hello, World !'
+  end do
+
+  stop
+end program main
+\end{verbatim}
+以上。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+似たような働きを持つものに\verb+\verb+コマンドがあります。
+これは改行を含まない内容を``+''で囲んでそのまま出力します。
+このverbatim環境は囲んだ部分を{\LaTeX}処理しないので、
+texのソースを内部に書いても``そのまま''出力します。
+このテキストももちろんtexで作られていますが、作成時
+にこのverbatim環境は至る所で使われています。どの部分
+に使われているかは言わずもがなですよね...。
+
+
+\subsection{練習}
+プロジェクトtex\_exerciseの中にある\underline{exercise2.tex}と
+\underline{/home2/takata2022/exercise/}にある
+\underline{exercise2a.pdf}
+を見比べてみてください。
+どうやらpdfファイルと同じ文章を作りたかったようですが、
+急いで作ったのか見栄えがいまいちです。ここまでで学習したコマンドを用いて
+この文書をきれいに修正してみてください。またitemizeをenumerateに
+してみるのもいいでしょう。
+
+\pagebreak

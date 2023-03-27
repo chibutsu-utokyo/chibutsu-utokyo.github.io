@@ -1,0 +1,316 @@
+%section 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\LaTeX の基本(2)}
+
+\subsection{特別な意味を持つ記号}
+ここまでの話で\verb+\+とか\verb+{+とか\verb+}+といった記号には特別な意
+味があって、その記号自体は出力されないということに気づいた人もいるかも
+しれません。それは正解で、
+\begin{quote}
+\verb+\ { } $ & # ^ _ ~ %+
+\end{quote}
+の10文字はそのまま入力することはできません。このうち、\verb+\+、\verb+^+、
+\verb+~+以外は文字の前に\verb+\+をつけることで対処できます。
+
+\subsection{特殊記号の入力}
+もう少し勘のよい人は、{\LaTeX}というロゴはどうやって出力しているのだろう
+と疑問に思うかもしれません。{\LaTeX}には表\ref{tab:char}に示すように、
+いくつかの特殊記号・特殊文字が定義されています。
+\begin{table}[htbp]
+\begin{center}
+\caption{{\LaTeX}で利用できる特殊記号}
+\label{tab:char}
+\begin{tabular}{ll|ll|ll|ll|ll}%\hline
+\verb+\{+ & \{ & \verb+\aa+ & \aa & \verb+\l+  & \l  & \verb+\dag+  & \dag  & \verb+!`+         & !`         \\
+\verb+\}+ & \} & \verb+\AA+ & \AA & \verb+\L+  & \L  & \verb+\ddag+ & \ddag & \verb+?`+         & ?`         \\
+\verb+\$+ & \$ & \verb+\ae+ & \ae & \verb+\o+  & \o  & \verb+\S+    & \S    & \verb+\pounds+    & \pounds    \\
+\verb+\&+ & \& & \verb+\AE+ & \AE & \verb+\O+  & \O  & \verb+\P+    & \P    & \verb+\copyright+ & \copyright \\
+\verb+\#+ & \# & \verb+\oe+ & \oe & \verb+\ss+ & \ss & \verb+\i+    & \i    & \verb+\TeX+       & \TeX       \\
+\verb+\_+ & \_ & \verb+\OE+ & \OE & \verb+\SS+ & \SS & \verb+\j+    & \j    & \verb+\LaTeX+     & \LaTeX     \\
+\verb+\%+ & \% &            &     &            &     &              &       & \verb+\LaTeXe+    & \LaTeXe
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{書体}
+{\LaTeX}では書体の種類は、
+\begin{description}
+\item[ファミリー] 文字のデザインの違い；``{\rmfamily NHK}''にはひげがあ
+	   るけど``{\sffamily NHK}''にはひげがない
+\item[シリーズ] 文字の太さの違い；``{\bfseries YKK}''は太くて
+	   ``{\mdseries YKK}''は細い
+\item[シェイプ] 形状の違い；``{\itshape This}''はイタリックで``{\scshape 
+	   This}''は小文字も大文字と同じ形
+\end{description}
+の3種類に分けられます。書体を変更したいときは
+\begin{screen}
+\begin{verbatim}
+\書体を変更する命令{変更したい文字列}
+\end{verbatim}
+\end{screen}
+のように書きます。\emph{書体を変更する命令}は表\ref{tab:design}に示すようなものがあります。
+
+これらの命令を使って、次のように書体を変更できます。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+She is my mother, but I am
+\textbf{not} her daughter.\\
+She is my mother, but I am
+\textit{not} her daughter.
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+She is my mother, but I am
+\textbf{not} her daughter.\\
+She is my mother, but I am
+\textit{not} her daughter.
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+また、これらの命令は組み合わせて使うこともでき、例えば「太字でイタリック
+にしたい」と思ったときは次のようにします。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+She is my brother, but I am
+\textbf{\textit{not}} her daughter.
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+She is my mother, but I am
+\textbf{\textit{not}} her daughter.
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+\begin{table}[htbp]
+\begin{center}
+\caption{書体の変更}
+\label{tab:design}
+\begin{tabular}{lll}
+\hline
+書体名                     & 命令         & 出力例                       \\
+\hline
+ローマンファミリー         & \verb+\textrm+ & \textrm{This is Roman.}      \\
+サンセリフファミリー       & \verb+\textsf+ & \textsf{This is San Serif.}  \\
+タイプライタファミリー     & \verb+\texttt+ & \texttt{This is Typewriter.} \\
+\hline
+ミディアムシリーズ         & \verb+\textmd+ & \textmd{This is Mediumface.} \\
+ボールドシリーズ           & \verb+\textbf+ & \textbf{This is Boldface.}   \\
+\hline
+イタリックシェイプ         & \verb+\textit+ & \textit{This is Italic.}     \\
+スラントシェイプ           & \verb+\textsl+ & \textsl{This is Slanted.}    \\
+スモールキャピタルシェイプ & \verb+\textsc+ & \textsc{This is Small Caps.} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+一方、全角文字は標準では明朝とゴシックしかなく、表\ref{tab:design2}の命
+令を使います。以下に使用例を示します。\verb+\textmc+はなにもしないのと同じです。\\
+\begin{table}[htbp]
+\begin{center}
+\caption{全角文字の書体の変更}
+\label{tab:design2}
+\begin{tabular}{lll}
+\hline
+書体名             & 命令         & 出力例                    \\
+\hline
+明朝ファミリー     & \verb+\textmc+ & \textmc{明朝体です。}     \\
+ゴシックファミリー & \verb+\textgt+ & \textgt{ゴシック体です。} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+強調したいところは\textgt{ゴシック体}を
+使います。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+強調したいところは\textgt{ゴシック体}を
+使います。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{文字の大きさ}
+もちろん文字の大きさも変更できます。文字の大きさを変更するには、
+\begin{screen}
+\verb+{\+文字の大きさを変える命令 (変えたい文字)\verb+}+
+\end{screen}
+のようにします。\emph{文字の大きさを変える命令}は表\ref{tab:size}に示
+すように10種類あります。\verb+\normalsize+は何もしないのと同じです。\\
+\begin{table}[htbp]
+\begin{center}
+\caption{文字の大きさの変更}
+\label{tab:size}
+\begin{tabular}{lll}
+\hline
+ 命令 & 出力例 & 使うべき要素(参考) \\
+\hline
+ \verb+\tiny+         & {\tiny とても小さい}       & 振り仮名           \\
+ \verb+\scriptsize+   & {\scriptsize かなり小さい} &                    \\
+ \verb+\footnotesize+ & {\footnotesize 小さい}     & 脚注               \\
+ \verb+\small+        & {\small 少し小さい}        & 図表見出し         \\
+ \verb+\normalsize+   & {\normalsize 普通}         & 本文・小小節見出し \\
+ \verb+\large+        & {\large 少し大きい}        & 小節見出し         \\
+ \verb+\Large+        & {\Large 大きい}            & 節見出し           \\
+ \verb+\LARGE+        & {\LARGE とても大きい}      &                    \\
+ \verb+\huge+         & {\huge かなり大きい}       &                    \\
+ \verb+\Huge+         & {\Huge 超大きい}           & 章・節見出し       \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+ただし、無意味に文字の大きさを変えても読みにくくなるだけです。文字の大き
+さを変えると、例えば次のようなことができます。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+テーブルから紙ナプキンが
+{\tiny ど}
+{\scriptsize ん}
+{\footnotesize が}
+{\small ら}
+{\normalsize が}
+{\large っ}
+{\Large し}
+{\LARGE ゃ}
+{\huge ー}
+{\Huge ん}
+と落ちた。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+テーブルから紙ナプキンが
+{\tiny ど}
+{\scriptsize ん}
+{\footnotesize が}
+{\small ら}
+{\normalsize が}
+{\large っ}
+{\Large し}
+{\LARGE ゃ}
+{\huge ー}
+{\Huge ん}
+と落ちた。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+表\ref{tab:size}には、標準の設定にしたときに文書中のどの要素でどの大き
+さが使われるかも書いておきましたので、参考にしてください。
+
+\subsection{脚注}
+脚注をつけるには、つけたいところに
+\begin{screen}
+\begin{verbatim}
+脚注をつけたい文字列\footnote{脚注の内容}
+\end{verbatim}
+\end{screen}
+のように書きます\footnote{こんなふうに書きます。}。番号は自動的に振ら
+れます。
+
+\subsection{コメント}
+もとのファイルに何かコメントを残しておきたい場合、\verb+%+につづけて書き
+ます。この部分は何を書いても出力されません。次の例が理解できれば大丈夫でしょう。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+ここは出力されますが%ここは出力されない。
+%この行は丸ごとコメントなので
+出力されないでしょう。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+ここは出力されますが%ここは出力されない。
+%この行は丸ごとコメントなので
+出力されないでしょう。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{引用}
+一般的に単語を引用したい場合、シングルクオート` 'を使いますし、一文を引
+用したいときはダブルクオート`` ''を使います。ところが、キーボードを見て
+みるとわかりますが、`という記号はどこにもありません。ためしに
+\keytop{Shift}$+$\keytop{7}の\keytop{'}と\keytop{Shift}$+$\keytop{2}の
+\keytop{"}とで何とかしてみようと思うと、\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+Bob said, "This 'B' is strange".
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+Bob said, "This 'B' is strange".
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+のように引用の始まりも終わりも同じになってがっかりしてしまいます。
+
+正しくは、引用の始まりには\keytop{Shift}$+$\keytop{@}の\emph{バッククオ
+ート}\keytop{`}を使います。終わりはそのまま\keytop{Shift}$+$\keytop{7}の
+\keytop{'}でかまいません。
+この2文字の組をシングルクオートの場合は1つずつ、\emph{ダブルクオートの場
+合は2つずつ}入力します。\emph{決して}\keytop{Shift}$+$\keytop{2}\emph{の}
+\keytop{"}\emph{で代用してはいけません．}\\
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+Bob said, ``This `B' is strange''.
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+Bob said, ``This `B' is strange''.
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{練習}
+さっきのexercise1.texの書体、文字の大きさなどを適当に変えて遊んで
+みましょう。
+
+\pagebreak
+

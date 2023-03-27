@@ -1,0 +1,98 @@
+\documentclass{jsarticle}
+\usepackage{fancybox,ascmac}
+\usepackage{epstopdf}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{alltt}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{physics}
+\usepackage[version=3]{mhchem}
+\usepackage{siunitx}
+
+\begin{document}
+\section{便利なパッケージ}
+\subsection{Physics}
+物理系なら使うべきパッケージ．
+
+入力が面倒な微分や行列などを簡潔に入力できるようになる．
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\usepackage{physics}
+
+\int y \dd{x} = \int y \dv{x}{t} \dd{t}
+\pdv[2]{u}{t} = c^2 \qty(\pdv[2]{u}{x})
+A = \mqty( \imat{3} )
+B = \mqty(\xmat*{b}{2}{3}) 
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\[\int y \dd{x} = \int y \dv{x}{t} \dd{t} \]
+\[\pdv[2]{u}{t} = c^2 \qty(\pdv[2]{u}{x}) \]
+\[A = \mqty( \imat{3} ) \]
+\[B = \mqty(\xmat*{b}{2}{3})\]
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{mhchem}
+化学式の入力が簡単にできるようになる．
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\usepackage[version=3]{mhchem}
+
+\ce{H2O}
+\ce{CrO4-}, \ce{NH4+}, \ce{Cu^2+}
+\ce{Mg3Si2O5(OH)4 -> Mg3Si2O7 + 2H2O}
+\ce{^{227}_{90}Th+}
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\ce{H2O} \\
+\ce{CrO4-}, \ce{NH4+},\ce{Cu^2+} \\
+\ce{Mg3Si2O5(OH)4 -> Mg3Si2O7 + 2H2O}
+\ce{^{227}_{90}Th+}
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+\subsection{siunitx}
+単位を書くときに非常に便利．
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\usepackage{sinuitx}
+
+\SI{4.4}{m/s}
+\SI{6.6720E11}{N m^2/ kg}
+\SI{\kilo\gram\metre\per\square\second}
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+\SI{4.4}{m/s} \\
+\SI{6.6720E11}{N m^2/ kg} \\
+\si{\kilo\gram\metre\per\square\second}
+\end{shadebox}
+\end{minipage}
+\end{document}

@@ -1,0 +1,51 @@
+\documentclass{jsarticle}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage[top=4cm, bottom=4cm, left=4.7cm, right=4.7cm]{geometry}
+\usepackage{amsmath}
+\def \pa{\partial}
+\begin{document}
+\begin{center}
+\ovalbox{課題名、名前、学籍番号、提出日を書いて下さい。}
+\end{center}
+\vspace*{1cm}
+
+宇宙空間はプラズマと呼ばれる電離気体で満たされている。
+以下で示す電磁流体の方程式を用いることで、我々は宇宙空間での現象をしばしば説明することができる
+\footnote{これらの式を用いるだけで、太陽コロナや降着円盤、その他の宇宙現象をシミュレーションなどで再現することが可能である。宇宙空間は夢と希望とプラズマに満ちている。}。
+\begin{gather}
+  \frac{\pa \rho}{\pa t} + \nabla \cdot (\rho \vec{v})=0\\
+  \frac{\pa}{\pa t}(\rho \vec{v})+\vec{v}\cdot\nabla(\rho \vec{v})=-\nabla p + \frac{1}{c}\vec{j} \times \vec{B}\\
+  \frac{\pa}{\pa t}\left( \frac{p}{\gamma - 1} \right) + \nabla \cdot \left( \frac{\gamma}{\gamma -1}p\vec{v} \right) = (\vec{v}\cdot \nabla)p + \frac{4\pi}{c^2}\bar{\eta}\vec{j}^2\\
+  \frac{\pa \vec{B}}{\pa t} = -c\nabla \times \vec{E}\\
+  \vec{j} = \frac{c}{4\pi}\nabla \times \vec{B}\\
+  \vec{E}+\frac{\vec{v}\times \vec{B}}{c}=\frac{4\pi}{c^2}\bar{\eta}\vec{j}^2
+\end{gather}
+以下の表に各式とその式の示す物理的意味をまとめておこう。
+\begin{center}
+\begin{tabular}{|c|c|}
+  \hline
+  式番号　& 物理的意味\\
+  \hline
+  (1) & 質量保存\\
+  \hline
+  (2) & 運動量保存(運動方程式)\\
+  \hline
+  (3) & エネルギー保存(熱流方程式)\\
+  \hline
+  (4) & Faradayの電磁誘導の法則\\
+  \hline
+  (5) & Ampereの法則\\
+  \hline
+  (6) & Ohmの法則\\
+  \hline
+\end{tabular}
+
+\vspace*{2.5cm}
+
+\ovalbox{ここに図を貼り付ける}
+\end{center}
+
+
+\end{document}
+

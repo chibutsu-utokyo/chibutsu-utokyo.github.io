@@ -1,0 +1,309 @@
+%section 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\LaTeX の基本(1)}
+
+\subsection{文書の構造}
+1.2節において、{\LaTeX}の文書は以下のように作るという説明
+をしました。
+\begin{screen}
+\begin{verbatim}
+\documentclass{jsarticle}
+\begin{document}
+
+\end{document}
+\end{verbatim}
+\end{screen}
+もう少し正確にいうと、{\LaTeX}の文書は以下のような構造をしています。
+\begin{screen}
+\begin{verbatim}
+\documentclass[オプション]{クラス}
+「プリアンブル」
+\begin{document}
+「本体」
+\end{document}
+\end{verbatim}
+\end{screen}
+まずはこの説明からしましょう。
+
+\subsection{ドキュメントクラス}
+\verb+\documentclass+の部分では、どのような用途の文書を作成したいかを指
+定します。例えばちょっとしたレポートなら、上下左右にてきとうに空白が開い
+てページ下の中央にページ番号が入ればよいですが、本を作成するとなれば右ペ
+ージと左ページで余白の大きさは違うでしょうし、ページ番号も外側に出力し
+たくなるでしょう。
+
+このように、文書の大まかな書式を\emph{クラス}といいます．\verb+{クラス}+の
+部分には、以下のようなものが指定できます。\\
+\begin{description}
+ \item[jsarticle] 和文のレポート・雑誌記事など、当面ほとんどの用途はこれ
+ \item[jsbook] 和文の書籍や論文；論文は後述のオプションにreportを指定する
+ \item[article] 欧文のレポート、雑誌記事など
+ \item[report] 欧文の論文など
+ \item[book] 欧文の書籍；ページ数の偶奇で余白が異なる
+\end{description}
+\verb|article|、\verb|report|、\verb|book|は欧文用で、
+余白のとり方、段落の下がり方などがちょっと違います。和文用クラスには、\verb|jarticle|、\verb|jreport|、\verb|jbook|というものもありますが、より新しく改良されている\verb|jsarticle|、\verb|jsbook|を用いた方が良いようです。
+
+また、大まかに書式は同じでも文字の大きさだけ変えたいとか、用紙サイズだけ
+変えたい、などという希望もあると思います。これは\verb+[オプション]+の部分で指定
+します。\verb+[オプション]+にはいろいろなものが指定できますが、少しだけ紹介
+すると、
+\begin{description}
+ \item[文字サイズ] 10pt, 11pt, 12ptのいずれか
+	    が使えます。何も指定しなければ10ptです。
+ \item[用紙サイズ]  a4paper, b5paper, a5paper,
+	    letterpaperなどが使えます。何も指定しなければ
+	    a4paperです。
+\item[段組] onecolumnなら1段組、twocolumnなら2段組です。
+	    何も指定しなければonecolumnです。
+\item[用紙方向] landscapeなら横長の向きになります。何も指定しな
+	    ければ縦長です。
+\end{description}
+のようになります。\verb+[オプション]+は``,''で区切って複数の
+\verb+[オプション]+を指定することが可能です。
+
+\subsection{タイトル}
+文書を作るときは、\emph{表題}、\emph{作者}、\emph{日付}を書くのが一般的
+です。プリアンブルの部分に
+\begin{screen}
+\begin{verbatim}
+\title{表題}
+\author{作者}
+\date{日付}
+\end{verbatim}
+\end{screen}
+を記述しておいてから、\verb+\begin{document}+のあとで
+\begin{screen}
+\begin{verbatim}
+\maketitle
+\end{verbatim}
+\end{screen}
+とすることで書くことができます。
+
+\subsection{見出し}
+
+ちょっとしたメモはともかくとして、ある程度まとまった文章を書こうとした場
+合、まず「章」があって、その次に「節」があって…、というように論理的に組
+み立てていくことが大切になります。
+{\LaTeX}ではこの作業を半自動的に行うコマンドが用意されています。
+表\ref{tab:headline}に示すような命令を使うと，見出し用に文字の大きさな
+どがわかり、番号も自動的に振られます。
+\begin{table}[htbp]
+\begin{center}
+\caption{{\LaTeX}での見出しの定義の種類}
+\label{tab:headline}
+\begin{tabular}{c|c}\hline
+ \verb+\part{見出し}+         & 部 \\
+ \verb+\chapter{見出し}+       & 章${}^{*}$ \\
+ \verb+\section{見出し}+       & 節 \\
+ \verb+\subsection{見出し}+    & 小節 \\
+ \verb+\subsubsection{見出し}+ & 小小節 \\
+ \verb+\paragraph{見出し}+     & 段落 \\
+ \verb+\subparagraph{見出し}+  & 小段落 \\
+ \hline
+\end{tabular}\\
+{\small ${}^{*}$\verb+(js)article+には章は定義されていません}
+\end{center}
+\end{table}
+
+使用例を見てみましょう。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\section{はじめに}
+ ハナ肇の話をしましょう。
+ \subsection{経歴}
+ \subsection{クレイジーキャッツ}
+\section{おわりに}
+ \subsection{最近の旅行}
+ 尾張に行きました。
+\end{verbatim}
+\end{screen}
+\end{minipage}
+%\manerarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+{\Large \textbf{1 はじめに}}\\
+ハナ肇の話をしましょう．\\
+\hspace*{1em}{\large \textbf{1.1 経歴}}\\
+\hspace*{1em}{\large \textbf{1.2 クレイジーキャッツ}}\\
+\vspace*{-0.4zw}\\
+{\Large \textbf{2 おわりに}}\\
+\hspace*{1em}{\large \textbf{2.1 最近の旅行}}\\
+\hspace*{1em}{尾張に行きました．}
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+番号が振られ、文字が太字になり、見出しの階層に応じてサイズが大きくなりました。さら
+に、あとから一つ節を加えると、\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+\section{はじめに}
+ ハナ肇の話をしましょう．
+ \subsection{経歴}
+ \subsection{クレイジーキャッツ}
+\section{なかに}
+\section{おわりに}
+ \subsection{最近の旅行}
+ 尾張に行きました．
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+{\Large \textbf{1 はじめに}}\\
+ハナ肇の話をしましょう．\\
+\hspace*{1em}{\large \textbf{1.1 経歴}}\\
+\hspace*{1em}{\large \textbf{1.2 クレイジーキャッツ}}\\
+\vspace*{-0.4zw}\\
+{\Large \textbf{2 なかに}}\\
+\vspace*{-0.4zw}\\
+{\Large \textbf{3 おわりに}}\\
+\hspace*{1em}{\large \textbf{3.1 最近の旅行}}\\
+\hspace*{1em}{尾張に行きました．}
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+というように番号が変わります。したがって{\LaTeX}では番号の振り間違いはあ
+りえません。このおかげで、\emph{内容の編集に集中できる}のです\footnote{\verb+\section*{}+というように\verb+*+を挟むことで番号を振らないようにすることもできます。}。
+
+\subsection{改行の扱い}
+ワープロソフトでは\keytop{Enter}を押せば行が変わって表示
+されますし、印刷すれば実際にそこで改行されていることがわかります。
+しかし{\TeX}は前述の通り、どこで改行すべきかをある規則にのっとって自動的
+に計算します。例えば、単語の途中で改行してはいけないですし、ある行は40文
+字なのに次の行は20文字しかない、というのもキモイです。
+したがって基本的に、\emph{自分で入力した改行は無視されます}。通常は入力
+画面の右端に近づいたら改行すればよいですし、電子メールのように区切りのよ
+いところで改行するのもよいでしょう。
+ただし、改行だけの(\keytop{Enter}だけが入力してある)行があると、{\TeX}
+はこれを段落の区切りと解釈します。
+
+では具体例を見てみましょう: \\
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+改行は
+無視されます。
+どんなに
+ぶち
+ぶち
+切っても
+へっちゃらで
+す。
+ただし何も入力しない行があると
+
+段落の区切りと解釈し、次の段落が始まります。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+改行は
+無視されます。
+どんなに
+ぶち
+ぶち
+切っても、
+へっちゃらで
+す。
+ただし何も入力しない行があると
+
+段落の区切りと解釈し、次の段落が始まります。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+もしどうしても強制的に改行したい場合は、\verb+\\+とバックスラッシュを2個
+続けて入力すればいいのですが、これは慎重にやったほうがよいでしょう。
+
+\subsection{空白の扱い}
+空白はやや丁寧に考えてみましょう。いま、英文を入力しようと思ったとします
+。ワープロソフトを用いた場合、単語の間には通常半角空白を1つ入れるでしょ
+う。また、センテンスとセンテンスの間には単語間よりも大きめの空白を入れま
+すから、タイプライタではふつう、半角空白を2つ入れます。{\LaTeX}では単語
+の区切りさえ示しておけば、これらの作業が半自動で行われます。例えば1998年
+度の東京大学入試問題の一節をタイプセットしてみると、次のようになります
+%(\verb*+ +は空白が入力されていることを示します)
+。\\
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+Simple Peter held the mirror up to
+his face and peered into it. First he
+turned one way, then he turned the
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+Simple Peter held the mirror up to
+his face and peered into it. First he
+turned one way, then he turned the
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+上の文章はすべて空白を1つずつしか入れていませんが、{\LaTeX}は``it''と
+``First''の間を大きくしていることがわかると思います。また、1行目と2行目
+とで右端もきちんとそろっています。
+ですから結論から言うと、\emph{空白は}{\LaTeX}\emph{に任せる}べきです。
+
+そうはいっても、どうしても空白を作りたいこともあると思います。そんなとき
+は、空白を\verb|\|で区切ります。例えば\verb|\|を5個書けば、
+半角空白が6個分出力されます。また、空白の途中で改行されては困るときは、
+\verb|~|を入力します。\verb|~|であけた空白では改行が起こりません。
+具体的にはこんな感じです。\\
+
+\begin{minipage}[c]{.50\textwidth}
+\begin{screen}
+\small
+\begin{verbatim}
+Fill in the blank below:\\
+So Peter (                      ).\\
+これでは残念賞。\\
+So Peter ( \ \ \ \ \ \ \ \ \ \ \ ).\\
+So Peter (~~~~~~~~~~~~).\\
+これなら書き込めるぞ。
+\end{verbatim}
+\end{screen}
+\end{minipage}%
+%\manerrarrow\hfill{}
+$\Rightarrow$
+\begin{minipage}{.45\textwidth}
+\begin{shadebox}
+Fill in the blank below:\\
+So Peter (                      ).\\
+これでは残念賞。\\
+So Peter ( \ \ \ \ \ \ \ \ \ \ \ ).\\
+So Peter (~~~~~~~~~~~~).\\
+これなら書き込めるぞ。
+\end{shadebox}
+\end{minipage}
+\vspace*{1mm}\\
+
+\subsection{練習}
+ここまでの練習をしましょう。プロジェクトtex\_exerciseの中にある\underline{exercise1.tex}を適当に編集してみてください。具体的には
+\begin{itemize}
+ \item[-] \verb+\title+などを自分仕様に変えてみる
+ \item[-] \verb+\date+を省略するとどんな振る舞いをするか観察する
+ \item[-] \verb+\section+やら\verb+\subsection+やらを使ってみる
+ \item[-] 改行や空白を適宜放り込んで振る舞いを観察する
+\end{itemize}
+などという作業をやってみてください。
+
+\pagebreak

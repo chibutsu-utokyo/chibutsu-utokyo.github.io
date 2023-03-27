@@ -1,0 +1,196 @@
+%Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+
+\section{文字コードの設定}
+texファイルの文字コードが適切でないと(559のeduではUTF-8でないと)、文字化けを起こしてしまいます。最悪の場合、platexの段階でエラーを起こしてdviファイルが出来上がらないこともあります。ここではその対処法をまとめておきます。
+
+\subsection{Emacsの文字コードの設定}
+以下のコマンドは、打った文字をそのままに、保存する文字コードをUTF-8に設定するものです。
+\begin{screen}
+\keytop{Ctrl}$+$\keytop{x} \keytop{Enter} \keytop{f}
+\end{screen}
+しかし、この方法ではEmacsのウィンドウを閉じるたびに文字コードがEUC-JPに戻ってしまいます。毎回これを打ち直すのは面倒ですから、設定ファイル\verb+.emacs+を覗きにいきましょう。
+
+Emacsで.emacsを開きましょう。この中から、
+\begin{screen}
+\begin{verbatim}
+;; YaTeX-mode
+(setq auto-mode-alist
+      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
+(setq dvi2-command "xdvi"
+      tex-command "platex"
+      dviprint-command-format "dvips %s -o !lpr -Pionia"
+      YaTeX-kanji-code 3)
+\end{verbatim}
+\end{screen}
+を見つけてください。この中の、\underline{YaTeX-kanji-code 3}が、YaTeXでEUC-JPを使うように、と設定しています。ここを\underline{YaTeX-kanji-code 4}と書き換えます。
+\begin{screen}
+\begin{verbatim}
+;; YaTeX-mode
+(setq auto-mode-alist
+      (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
+(setq dvi2-command "xdvi"
+      tex-command "platex"
+      dviprint-command-format "dvips %s -o !lpr -Pionia"
+      YaTeX-kanji-code 4)
+\end{verbatim}
+\end{screen}
+これでYaTeXがUTF-8を使ってくれるようになります。
+
+先ほどのコマンドとそっくりですが、
+\begin{screen}
+\keytop{Ctrl}$+$\keytop{x} \keytop{Enter} \keytop{r}
+\end{screen}
+というものがあります。これはEmacsでファイルを開いたら文字化けした場合に使います。「UTF-8で書いたはずのものが文字化けした」というときにはこれを使って、ミニバッファに`utf-8'と入力すれば良いです。何か聞かれたら`yes'と答えておきましょう。
+
+興味のある人は、\verb+.emacs+内の、
+\begin{screen}
+\begin{verbatim}
+(set-default-coding-systems    'utf-8)
+(set-terminal-coding-system    'utf-8)
+(set-keyboard-coding-system    'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(set-clipboard-coding-system   'utf-8)
+(setq default-enable-multibyte-characters t)
+\end{verbatim}
+\end{screen}
+がどういう意味なのか調べてみてください。
+
+\subsection{ターミナルの文字コードの設定}
+既に環境変数についてならっていることと思います。ターミナルの文字コードは、この環境変数で設定できます。
+
+現在の文字コードを確認するには、ターミナルで\underline{echo \$LANG}とします。
+'\verb+ja_JP.EUC-JP+'と表示されたらEUC-JP、`\verb+ja_JP.utf8+'と表示されたらUTF-8です。UTF-8にしたければ、ターミナル上で\underline{export LANG=ja\_JP.utf8}とします。しかし、この方法では、変更はターミナルを開いている間のみ有効で、一度ターミナルを閉じると、再びEUC-JPに設定されてしまいます。
+
+さて、ホームディレクトリに\verb+.bashrc+というファイルがありましたね。この中身をのぞくと、下の方に
+\begin{screen}
+\begin{verbatim}
+export LANG=ja_JP.EUC-JP
+\end{verbatim}
+\end{screen}
+という行があると思います。ターミナルの文字コードは環境変数\verb+LANG+によって決められており、\verb+.bashrc+によって現在はEUC-JPに設定されています。そこでこの行の頭に\#をつけてコメントアウトし、直後に一行付け加えて、
+\begin{screen}
+\begin{verbatim}
+#export LANG=ja_JP.EUC-JP
+export LANG=ja_JP.utf8
+\end{verbatim}
+\end{screen}
+とすることで、ターミナルを立ち上げるたびにUTF-8に設定されるようになります。今すぐにこの変更を適用するには、\underline{source .bashrc}が必要でしたね。
+
+\pagebreak
+
+
+\section{執筆支援環境}
+これまで見てきたとおり、{\LaTeX}の文書はただ文を入力すればよいのではありません。
+これは初学者にとっては非常に疲れることです。EmacsにはYaTeXと呼ばれる素晴らしい執筆支援環境があるので紹介します。
+
+\subsection{EmacsとYaTeX(野鳥)}
+興味のある人はホームディレクトリにある
+.emacsというファイルを\underline{less .emacs}とかでのぞいてみてください。
+そこにEmacsでの{\LaTeX}の設定などが書いてあります。
+かなりマニアックですが…。
+
+YaTeXの細かい機能は
+\begin{screen}
+\begin{verbatim}
+http://www.yatex.org/
+\end{verbatim}
+\end{screen}
+からたどれますが、この中から主な機能を抜き出すと次のようになります。
+以下、例えば\keytop{SPC}はスペースキーを押すことをあらわします。
+
+\subsubsection{補完入力}
+\begin{description}
+ \item[begin型補完]
+   \keytop{Ctrl}$+$\keytop{C} \keytop{Ctrl}$+$\keytop{B} \keytop{SPC}と入力すると、ミニバッファで
+   \begin{screen}
+     {\tt Begin environment(default document):}
+   \end{screen}
+   とか聞いてきます。この状態でそのまま\keytop{Enter}を入力すれ
+   ば、
+   \begin{screen}
+\begin{verbatim}
+\begin{document}
+
+\end{document}
+\end{verbatim}
+   \end{screen}
+   のような\verb+\begin{環境名} +$\cdots$
+   \verb+\end{環境名}+の組み合わせが出てきま
+   す。もし、自分が入力したいのはほかの環境名だぜ、というときは、
+   その環境の名前({\tt equation}とか)を入力して\keytop{Enter}
+   すればよいのですが、たいていは頭文字({\tt equation}なら
+   \keytop{E})と\keytop{Tab}で補完してくれます。
+
+ \item[section型補完]
+   \keytop{Ctrl}$+$\keytop{C} \keytop{Ctrl}$+$\keytop{S} と入力すると
+   \begin{screen}
+     {\tt (C-v for view-section) ???\{\}(default documentclass):}
+   \end{screen}
+   とか聞いてくるので、以下同じ。
+
+ \item[large型補完]
+   \keytop{Ctrl}$+$\keytop{C} \keytop{Ctrl}$+$\keytop{L}と入力すると，
+   \begin{screen}
+     {\tt \{??? \}(default large):}
+   \end{screen}
+   とか聞いてきます。もう予想はつくと思いますが、ここで
+   \keytop{Enter}すれば、\verb+{+\verb+\large+ \verb+}+となって、
+   カーソルは``\verb+{+''と``\verb+}+''の間に移ります。
+
+ \item[随時補完] このほかにも、\verb+\bigskip+のような長いコマンドを入力す
+   るときは、最初の数文字と\keytop{Ctrl}$+$\keytop{C}
+   \keytop{SPC}で補ってくれます。自分の希望するものでなければ
+   \keytop{Tab}を入力すれば一覧が出ます。
+
+ \item[ギリシア文字，数式記号補完]
+	    ギリシア文字や数式記号も一発で補完してくれます。ギリシア文字
+	    を打ちたかったら、数式環境の中で\keytop{:}\keytop{頭のアルファ
+	      ベット}を入力すればよく、数式記号は\keytop{;}に続いて割り当
+	    てられてキーを打てばいけます。どのキーが対応するかはググって
+	    みましょう。
+            例えば$\displaystyle \frac{\partial \alpha}{\partial\beta}$も\\
+	    \verb+\frac{\partial \alpha}{\partial\beta}+\\
+            なんていちいち入力せずに\\
+	    \keytop{;} \keytop{f} \keytop{Enter}, \keytop{;} \keytop{6}
+	    \keytop{Enter}, \keytop{:} \keytop{a} \keytop{Enter},
+	    \keytop{Enter}, \keytop{;} \keytop{6} \keytop{Enter},
+	    \keytop{:} \keytop{b} \keytop{Enter}\\
+	    となる訳です。慣れると格段にスピードが上がります。
+
+\end{description}
+
+\subsubsection{おまかせ改行}
+itemize，enumerate,description環境の中では、改行した
+ら次の行の頭には\verb+\item+とか\verb+\item[*]+とか入力することが多いわけで
+す。こんなときは\keytop{Esc}$+$\keytop{Enter}\footnote{これでうまくいかない場合は、\keytop{Alt}$+$\keytop{Enter}}で勝手に\verb+\item+を補って
+くれます。
+
+\subsubsection{プロセス起動}
+{\LaTeX}のソースを編集中、\keytop{Ctrl}$+$\keytop{C} \keytop{Ctrl}$+$\keytop{T}と入力すると、ミニバッファに
+\begin{screen}
+\begin{verbatim}
+J)latex R)egion E)nv B)ibtex mk(I)dx latex+p(D)f K)ill P)review V)iewErr L)pr
+\end{verbatim}
+\end{screen}
+のように表示されます。この説明に従って、例えば\keytop{J}と入力すれば{\LaTeX}のタイプセットが始まりますし、\keytop{P}とすればxdviが起動します。極めつけに\keytop{D}と入力すると、タイプセットした上でpdfまで作ってくれます。
+
+\subsection{WindowsやMax OS XでEmacs$+$YaTeX}
+Windowsな方のために、GNU Emacsによく似たxyzzyというテキストエディタがあ
+ります。これにKaTeX(
+$\leftarrow$かてふ)というメジャーモードを重ねると、Emacs$+$YaTeX
+とほぼ同等の扱いができるようになります。詳しくは
+\begin{screen}
+ http://www.jsdlab.co.jp/\~kamei/\\
+ http://osuneko.at.infoseek.co.jp/xyzzy/xyzzy.html
+\end{screen}
+あたりからどうぞ。
+
+Mac OS XはそもそもUNIX系OSなので、Emacsは比較的簡単にインストールできます。もちろんCygwinやMSYS2などのUNIX仮想環境を入れれば、Windows上でも本家GNU Emacsを動かすことができます。
+
+\subsection{{\LaTeX}の統合執筆環境}
+Emacs$+$YaTeXは、必要十分な機能が揃っていて、何よりもEmacsの操作に長けた人には最適な執筆支援環境です。一方で{\LaTeX}に特化したGUIの統合開発(執筆)環境\footnote{統合開発環境とは、プログラミングに必要なコンパイラやテキストエディタ、プレビューアをGUI(グラフィカルユーザインターフェース)でまとめたソフトウェア環境のことです。例えば、XcodeやVisual Studio,Eclipseなどが有名です。}もたくさん存在し、かなり普及しています。気になる人は調べてみると良いでしょう。統合執筆環境とEmacs$+$YaTeXの大きな違いは、マウス操作でコマンドを選択できる点と、見た目が現代的なことです。ソフトごとに特色があり好みが分かれますが、最近はTeXStudioやLyxなどが流行っているようです。Lyxに至っては、Wordのようにリアルタイムに数式や文章構造の視覚的フィードバックを得ながら{\LaTeX}文書を書くことができます。
