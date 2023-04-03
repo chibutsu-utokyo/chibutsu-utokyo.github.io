@@ -31,21 +31,28 @@ setpagesize=false,
  citecolor=black,
 }
 
+
+\lstset{
+numbers=left,
+frame=single,
+basicstyle={\ttfamily},
+}
+
 %\usepackage[headheight=55pt]{geometry}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
   \lhead{\includegraphics[scale=0.08]{fig/penguin.png}}
   \chead{}
   \rhead{{\slshape \thepage}}
-  \lfoot{{\slshape 地球惑星物理学演習 第1回(2023/4/5 Wed) $\sim$ Login \& Emacs \& Network $\sim$ (担当: 橋本・上野)}}
+  \lfoot{{\slshape 地球惑星物理学演習 第1回(2023/4/5 Wed) $\sim$ Login \& TextEditor \& Network $\sim$ (担当: 上野・橋本)}}
   \cfoot{}
   \rfoot{}
     \renewcommand{\headrulewidth}{0.6pt}
   \renewcommand{\footrulewidth}{0.6pt}
 
 \title{\bf{地球惑星物理学科　計算機演習}\\
-$\sim$ Login \& Emacs \& Network $\sim$}
-\author{橋本　恵一\footnote{大気海洋科学講座 三浦研究室 修士2年, khashimoto@eps.s.u-tokyo.ac.jp}・上野　和雅\footnote{大気海洋科学講座 三浦研究室 修士1年, kazumasa-e67@eps.s.u-tokyo.ac.jp}\footnote{\copyright 本資料は歴代の地球惑星物理学科の先輩方によって作成されたものを再構成・改訂して作成しています}}
+$\sim$ Login \& TextEditor \& Network $\sim$}
+\author{上野　和雅\footnote{大気海洋科学講座 三浦研究室 修士1年, kazumasa-e67@eps.s.u-tokyo.ac.jp}・橋本　恵一\footnote{大気海洋科学講座 三浦研究室 修士2年, khashimoto@eps.s.u-tokyo.ac.jp}\footnote{\copyright 本資料は歴代の地球惑星物理学科の先輩方によって作成されたものを再構成・改訂して作成しています}}
 
 \date{令和5年4月5日}
 \begin{document}
@@ -465,8 +472,9 @@ Slackとは、ビジネス用チャットアプリです。
 
 \newpage
 \section{テキストエディタ}
-テキストエディタとは，文字や記号などのテキストで構成されているテキストファイルを編集するソフトのことです．Windowsのメモ帳などもテキストエディタの一つです．
+テキストエディタとは，文字や記号などのテキストで構成されているテキストファイルを編集するソフトのことです．Windowsのメモ帳などもテキストエディタの一つです．本章ではメジャーな3つのテキストエディタについて紹介します．使用するエディタはどれでも構わないですが，最低どれか一つを使ってファイルの編集をできるようになりましょう．
 \subsection{Emacs}
+Emacsはテキストエディタの一つです．ターミナル上でファイルの確認や編集を行うことができます．また，ファイルの編集以外にもEmailの送受信をしたり，簡単なゲーム（テトリスなど）をしたりすることもできます．ここでは基本的な機能であるファイル編集について見ていきましょう．
 % \subsection{Emacsとは}
 % % では，より実践的な内容として今後プログラミングをしていく上で頻繁に使うことになる{\bf Emacs}について勉強しましょう．
 
@@ -479,69 +487,101 @@ Slackとは、ビジネス用チャットアプリです。
 % \end{flushright}
 
 % \subsection{使ってみよう}
-\subsubsection{起動}
-まずはさっそくEmacsを起動しましょう．ターミナル上でのコマンド入力によっ
-て起動します．\\
-\quad \quad \quad {\bf{\$ emacs \&}}\\
-と入力してください．下のようなウインドウが開き，Emacsが起動します．
+% \subsubsection{起動}
+% まずはさっそくEmacsを起動しましょう．ターミナル上でのコマンド入力によって起動します．\\
+% \quad \quad \quad {\bf{emacs \&}}\\
+% と入力してください．下のようなウインドウが開き，Emacsが起動します．
 
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=70mm,pagebox=cropbox,clip]{fig/emacs001.pdf}
-  \end{center}
-\end{figure} 
+% \begin{figure}[ht]
+%   \begin{center}
+%     \includegraphics[width=70mm,pagebox=cropbox,clip]{fig/emacs001.pdf}
+%   \end{center}
+% \end{figure} 
 
-まず目につくのは上部の広いワークスペースです．ファイルの編集はこの部分
-で行います．次に下の方を見てください．下から２行目にEmacsの動作状況につ
-いてたくさん表示されています．この行を{\bf モードライン}と呼びます．モードライ
-ンの下の部分は{\bf ミニバッファ}と呼ばれます．ミニバッファは入力中のコマンドを
-Emacsが表示するための領域として，またファイルを読み込むときにファイル名
-を指定するための領域として，あるいはまたサーチや置換の対象となる文字列を
-入力する時の領域として利用されます．
+% まず目につくのは上部の広いワークスペースです．ファイルの編集はこの部分
+% で行います．次に下の方を見てください．下から２行目にEmacsの動作状況につ
+% いてたくさん表示されています．この行を{\bf モードライン}と呼びます．モードライ
+% ンの下の部分は{\bf ミニバッファ}と呼ばれます．ミニバッファは入力中のコマンドを
+% Emacsが表示するための領域として，またファイルを読み込むときにファイル名
+% を指定するための領域として，あるいはまたサーチや置換の対象となる文字列を
+% 入力する時の領域として利用されます．
 
-\subsubsection{新しくウィンドウを開かないで起動}
-emacsコマンドを-nwのオプションをつけて起動すると，コマンドを入力したターミナル上にEmacsが表示されます．\\
-\quad \quad \quad {\bf{\$ emacs -nw}}\\
-ターミナル上で編集作業をすることが多くなると思います．また，後述のリモートログインをしている場合などは，-nwをつけた時同様，新たにEmacsのウィンドウは表示されません．
+\subsubsection{ファイルを開く}
+まずはさっそくEmacsを起動してファイルを表示しましょう．ターミナル上で以下のコマンドを入力してください．\\
+\quad \quad \quad {\bf{emacs -nw ./text.txt}}\\
+するとあなたがいるディレクトリに\verb| text.txt |というファイルが作られ，同時にEmacsの編集画面が立ち上がります. \ \footnote{ディレクトリについては次回の授業で学びます．}
 
+なお，ファイル名のところ（上の例では./text.txt）は，既に存在するファイルを指定すればそのファイルが開かれます．ファイルが存在しない場合に，新しいファイルが作られます．
+
+\subsubsection{ファイルの保存}
+ファイルをそのままの名前で保存したい場合には，CTRL-x CTRL-sと入力してく
+ださい．また別名で保存したい場合にはCTRL-x CTRL-wと入力し，ミニバッファ
+にファイル名を入力してEnterを押してください．ただし，-（ハイフン）は「同時押し」の意味です．（これ以降も「同時押し」の意味で-表記します．）
 
 \subsubsection{終了}
-Emacsを終了する時はCTRL-x CTRL-cと入力してください．これ以降，-（ハイフン）は「同時押し」の意味で使われます．
+Emacsを終了する時はCTRL-x CTRL-cと入力してください．
 
 \subsubsection{作業中止}
 現在行っている作業を中止したいときにはCTRL-gと入力します．
 
 % \subsection{ファイル編集}
-\subsubsection{ファイルを開く}
-次はEmacsを使ってファイルの編集を行ってみましょう．ファイルを開くために
-はCTRL-x CTRL-fと入力します．すると，ミニバッファに
+% \subsubsection{ファイルを開く}
+% 次はEmacsを使ってファイルの編集を行ってみましょう．ファイルを開くために
+% はCTRL-x CTRL-fと入力します．すると，ミニバッファに
+
+% \begin{figure}[ht]
+%   \begin{center}
+%     \includegraphics[width=130mm,pagebox=cropbox,clip]{fig/emacs002.pdf}
+%   \end{center}
+% \end{figure}
+
+% \noindent
+% と表示されます．ここにファイル名を入力してEnterを押してください(例えば $\sim$/test.txt)．なお，
+% 入力したファイルが存在しない場合はその名前の新規ファイルが作成されます．
+
+% \subsubsection{新しくウィンドウを開かないでファイルを開く}
+% ターミナル上で以下のコマンドを入力すると，直接ファイルを開いて編集することができます．\\
+% \quad \quad \quad {\bf{emacs -nw 開きたいファイル名}}\\
+% 開きたいファイル名は例えば$\sim$/test.txtのようなものです．入力したファイルが存在しない場合はその名前の新規ファイルが作成されます．
+
+% \subsubsection{日本語入力}
+% 日本語入力に切り替えるためには CTRL-$\backslash$ (バックスラッシュ)と入力します．日本語変換の際に便利なコマンドの一覧は次節にまとめてあります．
+
+% \subsection{便利な機能} 
+\subsubsection{コピー\&ペースト or カット\&ペースト}
+文章を編集している際に，よく使うテクニックにコピー\&ペーストとカット\&
+ペーストというものがあります．前者は選択した部分を残して，その複写を目的
+の場所に貼付けることで，後者は選択した部分を削除し，その複写を目的の場所
+に貼付けることを指します．Emacs上ではこれらの操作もコマンドで行います．
+
+実際には次のように行います．
+まずコピーしたい領域の最初の文字にカーソルを移動し，
+CTRL-SPCまたはCTRL-@を押します．
+すると，ミニバッファに
 
 \begin{figure}[ht]
   \begin{center}
-    \includegraphics[width=130mm,pagebox=cropbox,clip]{fig/emacs002.pdf}
+    \includegraphics[width=130mm,pagebox=cropbox,clip]{fig/emacs003.pdf}
   \end{center}
 \end{figure}
 
 \noindent
-と表示されます．ここにファイル名を入力してEnterを押してください(例えば $\sim$/test.txt)．なお，
-入力したファイルが存在しない場合はその名前の新規ファイルが作成されます．
+と表示されます．次に，コピーしたい領域の最後の文字までポイントを移動させ
+ます．移動が完了したら{\bf ESC-w}でコピー，{\bf CTRL-w}でカットします．最後に目的の
+場所で{\bf CTRL-y}を押せばペーストできます．
 
-\subsubsection{新しくウィンドウを開かないでファイルを開く}
-ターミナル上で以下のコマンドを入力すると，直接ファイルを開いて編集することができます．\\
-\quad \quad \quad {\bf{\$ emacs -nw 開きたいファイル名}}\\
-開きたいファイル名は例えば$\sim$/test.txtのようなものです．入力したファイルが存在しない場合はその名前の新規ファイルが作成されます．
+あるいは行ごとカット\&ペースト(CTRL-k CTRL-y)を行うことでカットした行を復元しつつ，目的の場所で{\bf CTRL-y}を押すことで行を簡単に複製できます．今後プログラムを書く作業で重宝するので心に留めておきましょう．
 
-\subsubsection{日本語入力}
-日本語入力に切り替えるためには CTRL-$\backslash$ (バックスラッシュ)と入力します．日本語変
-換の際に便利なコマンドの一覧は次節にまとめてあります．
+\subsubsection{操作の取り消し}
+一つ前の操作を取り消したい時はCTRL-/ と入力します．入力した回数だけ以前
+の操作を取り消すことができます．
 
-\subsubsection{ファイルの保存}
-ファイルをそのままの名前で保存したい場合には，CTRL-x CTRL-sと入力してく
-ださい．また別名で保存したい場合にはCTRL-x CTRL-wと入力し，ミニバッファ
-にファイル名を入力してEnterを押してください．
+\subsubsection{その他のコマンド}
+この他にも，{\bf 問い合わせ置換(ESC-\% [変換前の文字列] [変換後の文字列])}やシェルの起動，
+コンパイルなど多くのコマンドがあります．適宜調べて使ってみて下さい．
+作業がずっとスムーズにできるようになると思います．
 
-% \subsection{便利な機能} 
-\subsubsection{便利なコマンド一覧}
+\subsubsection{便利なショートカットコマンド一覧}
 
 \begin{table}[H]
  \begin{minipage}{0.5\hsize}
@@ -599,69 +639,143 @@ C-x 1 → CTRL-x 1など）
 
 ※特に重要なものを太字で記載．
 
-\subsubsection{コピー\&ペースト or カット\&ペースト}
-文章を編集している際に，よく使うテクニックにコピー\&ペーストとカット\&
-ペーストというものがあります．前者は選択した部分を残して，その複写を目的
-の場所に貼付けることで，後者は選択した部分を削除し，その複写を目的の場所
-に貼付けることを指します．Emacs上ではこれらの操作もコマンドで行います．
-
-実際には次のように行います．
-まずコピーしたい領域の最初の文字にカーソルを移動し，
-CTRL-SPCまたはCTRL-@を押します．
-すると，ミニバッファに
-
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=130mm,pagebox=cropbox,clip]{fig/emacs003.pdf}
-  \end{center}
-\end{figure}
-
-\noindent
-と表示されます．次に，コピーしたい領域の最後の文字までポイントを移動させ
-ます．移動が完了したら{\bf ESC-w}でコピー，{\bf CTRL-w}でカットします．最後に目的の
-場所で{\bf CTRL-y}を押せばペーストできます．
-
-あるいは行ごとカット\&ペースト(CTRL-k CTRL-y)を行うことでカットした行を復元しつつ，目的の場所で{\bf CTRL-y}を押すことで行を簡単に複製できます．今後プログラムを書く作業で重宝するので心に留めておきましょう．
-
-\subsubsection{操作の取り消し}
-一つ前の操作を取り消したい時はCTRL-/ と入力します．入力した回数だけ以前
-の操作を取り消すことができます．
-
-\subsubsection{その他のコマンド}
-この他にも，{\bf 問い合わせ置換(ESC-\% [変換前の文字列] [変換後の文字列])}やシェルの起動，
-コンパイルなど多くのコマンドがあります．適宜調べて使ってみて下さい．
-作業がずっとスムーズにできるようになると思います．
 
 \subsubsection{参考になりそうなページ}
-GNU EmacsのHP（https://www.gnu.org/software/emacs/emacs.html） \\
-慶應大学のページ（https://cns-guide.sfc.keio.ac.jp/2000/4/index.html）\\
-ショートカット一覧（https://qiita.com/katsuta/items/7d492889820008d55e3b）
+\noindent
+GNU EmacsのHP（\url{https://www.gnu.org/software/emacs/emacs.html}） \\
+慶應大学のページ（\url{https://cns-guide.sfc.keio.ac.jp/2000/4/index.html}）\\
+ショートカット一覧（\url{https://qiita.com/katsuta/items/7d492889820008d55e3b}）
+
+\subsection{vim}
+Emacsと並んで広く使われているテキストエディタ「vim」について説明します.\
+
+\subsubsection{vimとは}
+vimはEmacsと人気を二分するテキストエディタです．ターミナル上で,{\bf キーボードのみを使って操作ができる}（マウスを使う必要がない）ことが大きな特徴です．このためSSH先のリモートマシン上のテキストを編集する用途で特に好まれます．以下ではvimのごく基礎的な操作方法を解説します．なお日本語入力の状態ではvimのコマンドを打つことができないため，あらかじめ英字モードに切り替えておいてください.\
+
+\subsubsection{ファイルを開く}
+ターミナル上で\ \\
+\quad \quad \quad {\bf{vi ./text.txt}}\\
+と入力してみましょう．するとあなたがいるディレクトリに\verb| text.txt |というファイルが作られ，同時にvimの編集画面が立ち上がります. \ \footnote{ディレクトリについては次回の授業で学びます．}
+
+\subsubsection{文字を入力する}
+vimは起動時点で，{\bf ノーマルモード} というモードになっています．ノーマルモードではカーソルの移動を行うことができますが，現段階でこのテキストファイルは空ですからカーソル移動の練習は不可能です．まずは何か文字を入力してみましょう．\\
+　文字を入力するためには，{\bf 挿入モード}に切り替える必要があります．{\bf i}のキーを押すと，挿入モードに入ることができます．複数行にわたって適当な文字列を打ち込んでみてください．入力が終わったら、{\bf esc}キーを押してノーマルモードに戻ります.\
+
+\subsubsection{カーソル移動}
+ノーマルモードで、以下のキーを押すとカーソル移動ができます．通常のカーソルキーを使うこともできますが，vimのコマンドを使うとホームポジションを崩すことなく高速に作業することができます.\
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|l|l|} \hline
+    コマンド & 移動先 \\ \hline
+    j & 一文字左 \\ \hline
+    k & 一文字右 \\ \hline
+    i & 一行上 \\ \hline
+    m & 一行下 \\ \hline
+    w & 次の単語の頭 \\ \hline
+    e & 次の単語の末尾 \\ \hline
+    0 & 行頭 \\ \hline
+    \$ & 行末 \\ \hline
+    gg & 最初の行 \\ \hline
+    G & 最後の行 \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{文字を消す}
+{\bf x}キーで一文字ずつ文字を消去できます． また{\bf dd}で一行まるごと消去できます.\
+
+\subsubsection{元に戻す・やり直す}
+{\bf u}キーで直前の操作を元に戻すことができます．また{\bf Ctrl+r}でやり直すことができます.\
+
+\subsubsection{vimを閉じる}
+テキストの編集が終わったら，{\bf :wq}と打ち込みましょう．作業内容を保存してvimを閉じることができます．{\bf :w}だけを打つと，ファイルの保存だけが行われます．作業内容を破棄してvimを閉じたいときは{\bf :q!}です.\
+
+\subsubsection{チュートリアルで覚えよう！}
+以上が、vimを使ってテキストを編集するために必要な最低限のコマンドです．しかしこれだけでは，vimを滑らかに操作して効率よく作業を進めることはできません．vimには，実際に練習しながら高度なコマンドを覚えられるチュートリアルが用意されています．ターミナルで\ \\
+\quad \quad \quad {\bf{vimtutor}}\\
+と打つとチュートリアルが始まります．ぜひ時間のあるときに，何度か繰り返し練習してみてください.\
+
+\subsubsection{参考になりそうなページ}
+\noindent
+vim入門（\url{https://qiita.com/okamos/items/c97970ab34ff55ff3167}）\\
+vimコミュニティサイト（\url{https://vim-jp.org/}）
 
 \subsection{VSCode}
-GUIベースで使用するテキストエディタとして，Visual Studio Code（VSCode）を紹介します．複数のファイルの編集からリモート接続まで様々なことをでき，非常に便利です．
+GUIベースで使用するテキストエディタとして，Visual Studio Code（VSCode）を紹介します．複数のファイルの編集からリモート接続まで様々なことをでき，非常に便利です．（ただし，edu端末でのVSCodeの使用にはかなり制限があるようです．edu端末での使用がうまくいかない場合は，自分のPCで試してみるかTAを呼ぶようにしてください．）
 
 \subsubsection{起動}
-
-\subsubsection{日本語化}
-
-\subsubsection{ファイルの操作}
-
-\subsubsection{VSCode上のターミナル}
+LaunchpadからVisual Studio Codeを開きます．そうすると，以下のような画面が起動します．
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7.5cm]{fig/VSCode1.png}
+\end{figure}
 
 \subsubsection{ターミナルからVSCodeを開く方法}
+エディタで$\sim$/.bashrcファイルを開き編集します．適当な場所に以下の記述を追加して保存します．\\
+
+追加する記述\\
+\quad \quad \quad {\bf{export PATH=\$PATH:/Applications/Visual\textbackslash\ Studio\textbackslash\ Code.app/Contents/Resources/app/bin}}\\
+
+例としてemacsでの編集の仕方を紹介します．まず，ファイルを開く\\
+\quad \quad \quad {\bf{emacs -nw $\sim$/.bashrc}}\\
+
+記述を追加
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7.5cm]{fig/VSCode5.png}
+\end{figure}
+CTRL-x\ CTRL-sでファイルを保存，CTRL-x\ CTRL-cでemacsを終了．\\
+
+編集が終わったら，ターミナル上で以下のコマンドを実行してください．\\
+
+\quad \quad \quad {\bf{source $\sim$/.bashrc}}\\
+
+これで完了です．ターミナル上で{\bf{code}}と打ち込むとVSCodeが起動すると思います．\footnote{ここでやっているのはPATHを通すという作業です．詳しくはUNIXの第２回で習います．}
+
+\subsubsection{日本語化}
+デフォルトの言語は英語になっていますが，拡張機能をインストールすることにより日本語に変更することができます．Extensions（左端のバーの正方形が4つ並んでいるアイコン）をクリックし，検索窓にJapanese Languageと打ち込みます．Japanese Language Pack for Visual Studio Codeを選択して，installしましょう．（既にインストールされている場合はそのままで大丈夫です．）
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7.5cm]{fig/VSCode2.png}
+\end{figure}
+
+上のナビゲーションのViewからCommand Paletteを選択して，検索窓を表示させます．そこにConfigure Display Languageと入力してReturnしましょう．jaを選択すると再起動を促されます．再起動すると日本語表示に変わります．\\
+ただ，eduの端末だと日本語表示に切り替わらない可能性があります．
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7.5cm]{fig/VSCode3.png}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7.5cm]{fig/VSCode4.png}
+\end{figure}
+
+\subsubsection{ファイルの操作}
+上のナビゲーションのFile（ファイル）から開くことができます．ディレクトリを開いて複数ファイルを開くこともできます．
+
+\subsubsection{VSCode上のターミナル}
+上のナビゲーションのTerminal（ターミナル）からVSCode上でターミナルを開くことができます．開くと以下のような画面になります．コードを編集していてシームレスにコマンドを実行することができるため，便利です．
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7.5cm]{fig/VSCode6.png}
+\end{figure}
+
 
 \subsubsection{参考になりそうなページ}
+\noindent
+公式サイト（\url{https://code.visualstudio.com/}）\\
+Visual Studio Codeの使い方（\url{https://www.javadrive.jp/vscode/}）\\
+codeコマンドを使用可能にする（\url{https://qiita.com/P-man\_Brown/items/b18f31e3bb98b08ff31b}）\\
 
 
-\section{課題その1}
+\section{課題}
 ここまででテキストエディタの基本的な使い方を学びましたので，関連する課題を出します．
 
-お好みのテキストエディタで簡単な{\bf 自己紹介文}（特に，現段階で固体地球科学，大気海洋科学，宇宙
-惑星科学のどの分野に興味があるのか・{\bf 興味のある地球惑星科学的な現象}（例：
-  地震，プラズマ，火山噴火，エルニーニョ，オーロラ，氷床変動，ハリケーン，竜巻，etc...))と{\bf 本日の演習の感想}を記載したファイルを作って
-ください．悩み事や演習に関係のない質問なども自由に書いてもらって構いません．
-自己紹介文の書式は特に指定しませんが，最低限{\bf 名前}と{\bf アカウント名}は載せてくだ
-さい．ファイル名は{\bf 「s2326??\_1st.txt」}としてください．
+お好みのテキストエディタで簡単な{\bf 自己紹介文}（特に，現段階で固体地球科学，大気海洋科学，宇宙惑星科学のどの分野に興味があるのか・{\bf 興味のある地球惑星科学的な現象}（例：地震，プラズマ，火山噴火，エルニーニョ，オーロラ，氷床変動，ハリケーン，竜巻，etc...))と{\bf 本日の演習の感想}を記載したファイルを作ってください．悩み事や演習に関係のない質問なども自由に書いてもらって構いません．
+自己紹介文の書式は特に指定しませんが，最低限{\bf 名前}と{\bf アカウント名}は載せてください．ファイル名は{\bf 「s2326??\_1st.txt」}としてください．
 
 ファイルが作成できたら，メールに添付して
 \begin{center}
@@ -904,12 +1018,13 @@ $ exit
 
 ここで大事なことですが，sshの後に「-X」(大文字であることに注意！)というオプションをつけないと，リモートホストでウィンドウを開く系の作業ができません．このオプションをつけることで，X window system (ウィンドウを開いてくれるシステム)も自動的に転送されるようになり，
 リモートで開いたウィンドウがローカルで見えて操作できるようになるのです\footnote{たまに{\bf -X}をつけてもうまくいかない場合があります．
-その場合は{\bf -XY}とすると解決することがあります．}．試しに「-X」なしでログインしてから，
-\begin{verbatim}
-$ emacs &
-\end{verbatim}
-と入力してEmacsを起動しようとしてみてください．新しいウィンドウを開けずに，エラーとなってしまうはずです
-\footnote{{\bf \$ emacs -nw \&}のように{\bf nw}オプションをつけると，現在のシェル上にEmacsが起動するためエラーにはなりません．}．その他のアプリケーションについても，ウィンドウを開くことができないはずです．
+その場合は{\bf -XY}とすると解決することがあります．}．
+% 試しに「-X」なしでログインしてから，
+% \begin{verbatim}
+% $ emacs &
+% \end{verbatim}
+% と入力してEmacsを起動しようとしてみてください．新しいウィンドウを開けずに，エラーとなってしまうはずです
+% \footnote{{\bf \$ emacs -nw \&}のように{\bf nw}オプションをつけると，現在のシェル上にEmacsが起動するためエラーにはなりません．}．その他のアプリケーションについても，ウィンドウを開くことができないはずです．
 
 なお，この機能を利用するためにはローカルのマシンにXサーバという種類のソフトがインストールされている必要があります．もちろん計算機室の端末({\bf edu})のマシンでしたら既にインストールされているので問題ありませんが，自宅からリモートログインする際には注意してください(後述).\\
 
@@ -1177,12 +1292,12 @@ admin210の連絡先は，\verb|admin210@eps.s.u-tokyo.ac.jp|です．
 シケプリをアップする時などに使うと便利かも知れません．
 \end{itemize}
 
-\section{課題その2}
-\url{http://www-geoph.eps.s.u-tokyo.ac.jp/~s2326??/kadai/index.html}に何かしら文章なり単語なり絵なりを表示してください．
-内容は問いませんが，外部(不特定多数)の人間からも見ることができるということは頭に入れておいてください．
-基本的にはファイルが見つからないエラー「{\bf 404 Not Found}」にさえならなければOKです．
-できたと思ったらブラウザから見たりして，ちゃんと表示されているか確認してください．
-% 期限は，来週\textbf{2018年4月15日(月)13時(JST)}までとします．
+% \section{課題その2}
+% \url{http://www-geoph.eps.s.u-tokyo.ac.jp/~s2326??/kadai/index.html}に何かしら文章なり単語なり絵なりを表示してください．
+% 内容は問いませんが，外部(不特定多数)の人間からも見ることができるということは頭に入れておいてください．
+% 基本的にはファイルが見つからないエラー「{\bf 404 Not Found}」にさえならなければOKです．
+% できたと思ったらブラウザから見たりして，ちゃんと表示されているか確認してください．
+% % 期限は，来週\textbf{2018年4月15日(月)13時(JST)}までとします．
 
 \vspace{1em}
 
