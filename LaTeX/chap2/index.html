@@ -38,7 +38,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/headline.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -394,35 +396,35 @@
 
 <h1 id="latex1">LaTeXの基本(1)</h1>
 <p>LaTeXの文書の基本構造は以下のようになります．なおファイルの拡張子は<code>tex</code>です．
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">\documentclass</span><span style="color: #a6e22e">[オプション]</span><span style="color: #f8f8f2">{</span>クラス<span style="color: #f8f8f2">}</span>
-<span style="color: #75715e">%%プリアンブル%%</span>
-<span style="color: #66d9ef">\begin</span><span style="color: #f8f8f2">{</span>document<span style="color: #f8f8f2">}</span>
-<span style="color: #75715e">%%本文%%</span>
-<span style="color: #66d9ef">\end</span><span style="color: #f8f8f2">{</span>document<span style="color: #f8f8f2">}</span>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #ff7b72">\documentclass</span><span style="color: #c9d1d9">[オプション]{</span>クラス<span style="color: #c9d1d9">}</span>
+<span style="color: #8b949e; font-style: italic">%%プリアンブル%%</span>
+<span style="color: #ff7b72">\begin</span><span style="color: #c9d1d9">{</span>document<span style="color: #c9d1d9">}</span>
+<span style="color: #8b949e; font-style: italic">%%本文%%</span>
+<span style="color: #ff7b72">\end</span><span style="color: #c9d1d9">{</span>document<span style="color: #c9d1d9">}</span>
 </code></pre></div></td></tr></table></div>
 LaTeXにおける基本的なルールを見ていきましょう．</p>
 <h2 id="_1">命令と環境</h2>
 <h3 id="_2">命令</h3>
 <p>LaTeXに対して何らかの処理を行うように指示を与える，<code>\</code>から始まる文字列のことを<strong>命令</strong>や<strong>コマンド</strong>といいます．命令と地の文はしっかりと区別しなければエラーが出て止まってしまいます．以下に正しく動く書き方とエラーが出る場合の例を挙げておきます．
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">\LaTeX</span> の練習  <span style="color: #75715e">%コマンドの後に半角スペース-&gt;正しく動く</span>
-<span style="color: #f8f8f2">{</span><span style="color: #66d9ef">\LaTeX</span><span style="color: #f8f8f2">}</span>の練習 <span style="color: #75715e">%コマンドを{}で囲う-&gt;正しく動く</span>
-<span style="color: #66d9ef">\LaTeX</span><span style="color: #f8f8f2">{}</span>の練習 <span style="color: #75715e">%コマンドの後に{}を入力-&gt;正しく動く</span>
-<span style="color: #66d9ef">\LaTeX</span>の練習       <span style="color: #75715e">%コマンドに続けて地の文を入力-&gt;エラー</span>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #ff7b72">\LaTeX</span> の練習  <span style="color: #8b949e; font-style: italic">%コマンドの後に半角スペース-&gt;正しく動く</span>
+<span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\LaTeX</span><span style="color: #c9d1d9">}</span>の練習 <span style="color: #8b949e; font-style: italic">%コマンドを{}で囲う-&gt;正しく動く</span>
+<span style="color: #ff7b72">\LaTeX</span><span style="color: #c9d1d9">{}</span>の練習 <span style="color: #8b949e; font-style: italic">%コマンドの後に{}を入力-&gt;正しく動く</span>
+<span style="color: #ff7b72">\LaTeX</span>の練習       <span style="color: #8b949e; font-style: italic">%コマンドに続けて地の文を入力-&gt;エラー</span>
 </code></pre></div></td></tr></table></div>
 なお<code>\$</code>のような記号・数字の場合には半角スペースを入れる必要はありません．</p>
 <p>コマンドによっては引数を取るものもあります．引数には2種類あり，必ず必要な引数を<strong>必須引数</strong>，省略可能な引数を<strong>オプション引数</strong>といいます．必須引数は<code>{}</code>で囲い，オプション引数は<code>[]</code>で囲います．
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #75715e">%\somecs[]{}型のコマンドの場合</span>
-<span style="color: #66d9ef">\somecs</span><span style="color: #f8f8f2">{</span>f<span style="color: #f8f8f2">}</span>
-<span style="color: #66d9ef">\somecs</span><span style="color: #a6e22e">[x]</span><span style="color: #f8f8f2">{</span>f<span style="color: #f8f8f2">}</span>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">%\somecs[]{}型のコマンドの場合</span>
+<span style="color: #ff7b72">\somecs</span><span style="color: #c9d1d9">{</span>f<span style="color: #c9d1d9">}</span>
+<span style="color: #ff7b72">\somecs</span><span style="color: #c9d1d9">[x]{</span>f<span style="color: #c9d1d9">}</span>
 </code></pre></div></td></tr></table></div></p>
 <h3 id="_3">環境</h3>
 <p>LaTeXの命令のうち，特に<code>\begin</code>と<code>\end</code>の組み合わせのことを<strong>環境</strong>といいます．例えばhoge環境の場合には<code>\begin{hoge}</code>から始まり<code>\end{hoge}</code> で終わります．</p>
@@ -459,10 +461,10 @@ LaTeXにおける基本的なルールを見ていきましょう．</p>
 <h3 id="_7">改行</h3>
 <p>入力ファイルにおいての改行，すなわちEnterキーを1回打ったものは出力結果では無視され，出力結果には反映されません．そのため入力ファイルでは適当な長さごとに改行をしておくと読みやすい文章になるでしょう．</p>
 <p>出力ファイルで改行（正確には改段落）する場合には入力ファイルで空白行を与える，すなわちEnterキーを2回打つことで可能です．</p>
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>このように入力ファイルで改行しても
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>このように入力ファイルで改行しても
 出力では改行されません
 
 空白行を入れることで改行（改段落）されます
@@ -471,12 +473,12 @@ LaTeXにおける基本的なルールを見ていきましょう．</p>
 <h3 id="_8">空白</h3>
 <p>入力ファイルにおいて全角空白を入力すると入力した分だけ全角空白が出力されます．</p>
 <p>一方の半角空白はいくつ並べても1つ分の半角空白しか出力されません．いくつも出したい場合には半角空白の前に<code>\</code>を入力します．また，連続した空白の途中で改行されたくない場合には<code>~</code>を使います．</p>
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>全角空白なら　　　　しっかり出力される<span style="color: #66d9ef">\\</span>
-半角空白だと     1個しか出力されない<span style="color: #66d9ef">\\</span>
-これなら<span style="color: #66d9ef">\ \ \ \ \ </span>しっかり出る<span style="color: #66d9ef">\\</span>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>全角空白なら　　　　しっかり出力される<span style="color: #ff7b72">\\</span>
+半角空白だと     1個しか出力されない<span style="color: #ff7b72">\\</span>
+これなら<span style="color: #ff7b72">\ \ \ \ \ </span>しっかり出る<span style="color: #ff7b72">\\</span>
 これでも~~~~~しっかり出る
 </code></pre></div></td></tr></table></div>
 <h2 id="_9">特殊な記号</h2>

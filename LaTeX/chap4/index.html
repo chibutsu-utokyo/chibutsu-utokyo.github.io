@@ -40,7 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/headline.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -502,25 +504,25 @@
 ディスプレイ数式の場合，数式番号なしであれば<code>\[</code>と<code>\]</code>で囲みます．
 数式番号ありの場合にはequation環境を使います．</p>
 <p>これらはLaTeXで実装されているものになりますが，より高度な数式表示をしたい場合には<strong>AMS-LaTeX</strong>を利用します．具体的には数式に関するコマンドや環境を定義した<strong>amsmath</strong>パッケージや数学記号などを定義した<strong>amssymb</strong>パッケージなどがあります．皆さんは数式を頻繁に使うので，これらのパッケージは毎回読み込んでおいて損はないでしょう．本資料では詳しい説明は割愛しますが，<strong>align</strong>環境といった非常に有用な環境が使えるようになったりします．
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #75715e">%インライン数式</span>
-分数は<span style="color: #e6db74">$</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">\frac{b}{c}</span><span style="color: #e6db74">$</span>とします
-<span style="color: #75715e">%ディスプレイ数式（数式番号なし）</span>
-<span style="color: #e6db74">\[</span>
-<span style="color: #f8f8f2">    a </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> \frac{b}{c}</span>
-<span style="color: #e6db74">\]</span>
-<span style="color: #75715e">%ディスプレイ数式（数式番号なし）</span>
-<span style="color: #66d9ef">\begin</span><span style="color: #f8f8f2">{</span>equation<span style="color: #f8f8f2">}</span>
-    a = <span style="color: #66d9ef">\frac</span><span style="color: #f8f8f2">{</span>b<span style="color: #f8f8f2">}{</span>c<span style="color: #f8f8f2">}</span>
-<span style="color: #66d9ef">\end</span><span style="color: #f8f8f2">{</span>equation<span style="color: #f8f8f2">}</span>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">%インライン数式</span>
+分数は<span style="color: #a5d6ff">$</span><span style="color: #c9d1d9">a</span><span style="color: #ff7b72; font-weight: bold">=</span><span style="color: #79c0ff">\frac</span><span style="color: #c9d1d9">{b}{c}</span><span style="color: #a5d6ff">$</span>とします
+<span style="color: #8b949e; font-style: italic">%ディスプレイ数式（数式番号なし）</span>
+<span style="color: #a5d6ff">\[</span>
+<span style="color: #c9d1d9">    a </span><span style="color: #ff7b72; font-weight: bold">=</span><span style="color: #c9d1d9"> </span><span style="color: #79c0ff">\frac</span><span style="color: #c9d1d9">{b}{c}</span>
+<span style="color: #a5d6ff">\]</span>
+<span style="color: #8b949e; font-style: italic">%ディスプレイ数式（数式番号なし）</span>
+<span style="color: #ff7b72">\begin</span><span style="color: #c9d1d9">{</span>equation<span style="color: #c9d1d9">}</span>
+    a = <span style="color: #ff7b72">\frac</span><span style="color: #c9d1d9">{</span>b<span style="color: #c9d1d9">}{</span>c<span style="color: #c9d1d9">}</span>
+<span style="color: #ff7b72">\end</span><span style="color: #c9d1d9">{</span>equation<span style="color: #c9d1d9">}</span>
 </code></pre></div></td></tr></table></div></p>
 <h2 id="_3">空白</h2>
 <p>数式中の空白は基本的に無視されます．そのため空白を任意に入れたい場合にはコマンドを使う必要があります．以下に例をあげておきます．</p>
@@ -562,11 +564,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>どちらが見慣れた式ですか？
-<span style="color: #e6db74">\[</span><span style="color: #f8f8f2"> \int\int f</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">x,y</span><span style="color: #f92672">)</span><span style="color: #f8f8f2"> dx dy </span><span style="color: #e6db74">\]</span>
-<span style="color: #e6db74">\[</span><span style="color: #f8f8f2"> \int\!\!\!\int f</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">x,y</span><span style="color: #f92672">)</span><span style="color: #f8f8f2"> dx dy </span><span style="color: #e6db74">\]</span>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>どちらが見慣れた式ですか？
+<span style="color: #a5d6ff">\[</span><span style="color: #c9d1d9"> </span><span style="color: #79c0ff">\int\int</span><span style="color: #c9d1d9"> f</span><span style="color: #ff7b72; font-weight: bold">(</span><span style="color: #c9d1d9">x,y</span><span style="color: #ff7b72; font-weight: bold">)</span><span style="color: #c9d1d9"> dx dy </span><span style="color: #a5d6ff">\]</span>
+<span style="color: #a5d6ff">\[</span><span style="color: #c9d1d9"> </span><span style="color: #79c0ff">\int\!\!\!\int</span><span style="color: #c9d1d9"> f</span><span style="color: #ff7b72; font-weight: bold">(</span><span style="color: #c9d1d9">x,y</span><span style="color: #ff7b72; font-weight: bold">)</span><span style="color: #c9d1d9"> dx dy </span><span style="color: #a5d6ff">\]</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="_4">書体</h2>
 <p>数式中の文字はイタリック体になります．基本的にはこれでいいですが，例えば定数を表す「const」などの場合にはローマン体にする方が望ましいでしょう．以下にこのような場合に用いるコマンドの例を挙げたいと思います．</p>
@@ -601,7 +603,8 @@
 </tr>
 </tbody>
 </table>
-<p>また，ベクトルや行列を表す際に太字にする人も多いかと思います．このときには<strong>bm</strong>パッケージを読み込んで<code>$\bm{E(x)}$</code>とすると<span class="arithmatex">\(\boldsymbol{E(x)}\)</span>とすることができます．</p>
+<p>また，ベクトルや行列を表す際に太字にする人も多いかと思います．このときには<strong>bm</strong>パッケージを読み込んで<code>$\bm{E(x)}$</code>とすると<span class="arithmatex">\(\boldsymbol{E(x)}\)</span>とすることができます．
+ また，LuaLaTeXに限りますが，<strong>unicode-math</strong>パッケージを利用する方法もあるようです．</p>
 <h2 id="_5">添字</h2>
 <p>上付き添字は<code>^</code>を，下付き添字は<code>_</code>を使って出力します．</p>
 <table>
@@ -673,7 +676,7 @@
 </tbody>
 </table>
 <p>これらをインライン数式で用いるとバランスが悪くなります．そこで，これらをインライン数式で使う場合は<code>\displaystyle</code>を併用するとデザインが変わります．</p>
-<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>本文中でも<span style="color: #e6db74">$</span><span style="color: #f8f8f2">\displaystyle\int_{a}^{b}</span><span style="color: #e6db74">$</span>とすれば狭くない．
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>本文中でも<span style="color: #a5d6ff">$</span><span style="color: #79c0ff">\displaystyle\int</span><span style="color: #c9d1d9">_{a}^{b}</span><span style="color: #a5d6ff">$</span>とすれば狭くない．
 </code></pre></div></td></tr></table></div>
 <h2 id="_7">関数</h2>
 <p>「sinx」と出力するつもりで<code>$sinx$</code>と書くと<span class="arithmatex">\(sinx\)</span>となってしまいます．これでは<span class="arithmatex">\(s\times i\times n\times x\)</span>としか解釈しようがありません．これらの関数は慣例としてローマン体で書くのが普通です．それらの関数は命令として定義されています．以下に一部をあげます．</p>
@@ -1018,6 +1021,10 @@
 </tbody>
 </table>
 <h2 id="_10">大きさの変わるカッコ</h2>
+<p>以下の例を見てみましょう．</p>
+<div class="arithmatex">\[
+\left(\frac{a}{b}\right) = c
+\]</div>
 <h2 id="_11">行列</h2>
 
 
