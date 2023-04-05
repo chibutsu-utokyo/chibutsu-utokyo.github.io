@@ -12,13 +12,13 @@ pip install pygments
 
 ### ファイル群の説明
 
-`mkdocs_source`ブランチ下の`mkdocs_source`ディレクトリにはMkDocsをもちいてGitHub Pagesのページを作成するために必要なファイル群が入っている．
+`main`ブランチ下の`docs`ディレクトリにはMkDocsをもちいてGitHub Pagesのページを作成するために必要なファイル群が入っている．
 
-基本的には`doc`ディレクトリ下の各担当回名のディレクトリにMarkdown形式のファイルをアップロードする形になる．
+基本的には`docs`ディレクトリ下の各担当回名のディレクトリにMarkdown形式のファイルをアップロードする形になる．
 
 ### 使い方
 
-`mkdocs_source`ブランチをローカルに持ってきてもらい，その上で各Markdownファイルを入れていくことになる．この際どのような出力結果となるかは`mkdocs_source`ディレクトリ（`mkdocs.yml`がある階層）において
+`docs`ディレクトリ以下に各Markdownファイルを配置し，出力結果をトップディレクトリ（`mkdocs.yml`がある階層）において
 
 ```shell
 mkdocs serve
@@ -42,4 +42,4 @@ mkdocs build
 
 で作成される`site`ディレクトリの中身を`gh-pages`ブランチにpushすることになる．
 
-また，`mkdocs_source`ブランチにもpushすることを忘れないようにする．
+また，更新内容を`main`ブランチにもpushすることを忘れないようにする．
