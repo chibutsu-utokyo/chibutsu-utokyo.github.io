@@ -14,10 +14,12 @@ nav:
   # - Gnuplot:
   #   - Gnuplot/sample.md
   - LaTeX:
-    - LaTeX/chap1.md
-    - LaTeX/chap2.md
-    - LaTeX/chap3.md
-    - LaTeX/chap4.md
+    - LaTeX/chap1.md  # LaTeXの基礎知識
+    - LaTeX/chap2.md  # LaTeXの基本(1)
+    - LaTeX/chap3.md  # LaTeXの基本(2)
+    - LaTeX/chap4.md  # 数式
+    - LaTeX/chap5.md  # 画像
+    # - LaTeX/chap6.md
 #theme
 theme: 
   language: ja
