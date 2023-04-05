@@ -1,25 +1,25 @@
 /* コードブロックの調整 */
 .md-typeset pre {
-  color: #f8f8f2;
-}
-.md-typeset .highlighttable {
-  margin-left:-20px;
-  margin-right: -20px;
-  border-radius: 0;
-}
-.md-typeset .highlighttable > * {
-  --md-code-bg-color: #22272D !important;
-  --md-code-fg-color: #fefefe !important;
-}
-.md-typeset .highlighttable .linenos .linenodiv pre span {
-  background-color: #22272D !important;
-  color: #fefefe !important;
-}
-.md-typeset .highlighttable .md-clipboard:before,
-.md-typeset .highlighttable .md-clipboard:after {
-  color: rgba(240,240,240,.8);
-}
-.md-typeset .highlighttable .md-clipboard:hover:before,
-.md-typeset .highlighttable .md-clipboard:hover:after {
-  color: rgba(102,217,224,1);
-}
+	color: #f8f8f2;
+  }
+  .md-typeset .highlighttable {
+	margin-left:-20px;
+	margin-right: -20px;
+	border-radius: 0;
+  }
+  .md-typeset .highlighttable > * {
+	--md-code-bg-color: #22272d !important;
+	--md-code-fg-color: #fefefe !important;
+  }
+  .md-typeset .highlighttable .linenos .linenodiv pre span {
+	background-color: #22272d !important;
+	color: #fefefe !important;
+  }
+  .md-typeset .highlighttable .md-clipboard:before,
+  .md-typeset .highlighttable .md-clipboard:after {
+	color: rgba(240,240,240,.8);
+  }
+  .md-typeset .highlighttable .md-clipboard:hover:before,
+  .md-typeset .highlighttable .md-clipboard:hover:after {
+	color: rgba(102,217,224,1);
+  }
