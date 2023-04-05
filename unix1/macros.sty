@@ -1,0 +1,367 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifColorOutput
+% \ColorOutputtrue  %% when printing on paper especially by BW printers
+\ColorOutputfalse %% when getting PDF file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareOption{color}{
+ \ColorOutputtrue  %% when printing on paper especially by BW printers
+}
+
+\ProcessOptions
+
+%% \AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} %% for Shift_JIS
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}         %% for EUC
+%% \AtBeginDvi{\special{papersize=A4L}}
+
+\def\input@path{{images/}}
+
+\usepackage[dvipdfmx]{graphicx, color}
+\ifColorOutput
+  \usepackage[%
+    dvipdfmx, bookmarks=true, bookmarksnumbered=true,%
+    bookmarkstype=toc, colorlinks=true, linkcolor=blue,%
+    pdftitle={Exercise for undergraduate students},%
+    pdfsubject={An Introduction of SHELL: command line interface for UNIX/Linux},%
+    pdfauthor={YOSHITAKE Ryo},%
+    pdfkeywords={UNIX, Linux, shell, bash, command line}]{hyperref}
+  \newcommand{\mail}[1]{\href{mailto:#1}{#1}}
+\else
+  \usepackage[%
+    dvipdfmx, bookmarks=true, bookmarksnumbered=true,%
+    bookmarkstype=toc, colorlinks=false, linkcolor=black,%
+    pdftitle={Exercise for undergraduate students},%
+    pdfsubject={An Introduction of SHELL: command line interface for UNIX/Linux},%
+    pdfauthor={YOSHITAKE Ryo},%
+    pdfkeywords={UNIX, Linux, shell, bash, command line}]{hyperref}
+%  \usepackage{url}
+%  \def\href#1#2{\url{#2}}
+  \newcommand\mail[1]{\texttt{#1}}
+\fi
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{txfonts}
+\usepackage{textcomp}	% 様々な記号 \text...
+\usepackage{framed}	% framed 環境 (ちょっと改造)
+\usepackage{wrapfig}	% wrapfigure 環境
+\usepackage{dingbat}	% \largepencil (非標準; pkはよいがtype1埋込は面倒い)
+
+%% \normal            => HiraMinPro-W3
+%% \bfseries          => HiraMinPro-W6
+%% \mgfamily          => HiraMaruPro-W4
+%% \gtfamily          => HiraKakuPro-W3
+%% \gtfamily\bfseries => HiraKakuPro-W6
+\IfFileExists{otf.sty}{%
+  \usepackage[deluxe, expert, multi]{otf}%
+}{%
+  \def\mgfamily{\gtfamily}
+}
+
+\usepackage{mediabb}
+\usepackage{multicol}
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{perltex}
+
+\def\fnum@figure{\figurename\nobreak\thefigure:}
+\def\fnum@table{\tablename\nobreak\thetable:}
+
+\newcommand{\重要}[1]{{\gtfamily\bfseries #1}}
+\newcommand{\強調}[1]{{\gtfamily #1}}
+
+\renewcommand{\~}{\raisebox{.8ex}{\bfseries\texttildelow}} % チルダ
+\newcommand{\bs}{\textbackslash}			   % バックスラッシュ
+\renewcommand{\*}{\textrm{\textasteriskcentered}}	   % アスタリスク
+\newcommand{\?}{\texttt{?}}				   % クエスチョン
+\renewcommand{\`}{\textasciigrave}			   % バッククォート
+\renewcommand{\^}{\textasciicircum}			   % ハット
+\newcommand{\vs}{\textvisiblespace}			   % 見えるスペース
+
+\newcommand{\term}{\texttt}
+\newcommand{\command}{\texttt}
+
+%%%%%%%%%% from okumacro.sty %%%%%%%%%% ちょっと改造
+\def\myallowbreak{\@ifnextchar\egroup{}{\penalty\exhyphenpenalty}{}}
+\begingroup
+  \catcode`\-=\active
+  \catcode`\.=\active
+  \catcode`\/=\active
+%   \catcode`\*=\active
+  \catcode`\<=\active
+  \catcode`\>=\active
+%   \catcode`\&=\active
+  \catcode`\^^M=\active%
+  \catcode`\ =\active%
+\gdef\mytth@@k{% 上の行でアクティブにしたから要らないスペースを含めちゃあかん.
+	\catcode`\-=\active	\def-{\char`\-\myallowbreak}%
+	\catcode`\.=\active	\def.{\char`\.\myallowbreak}%
+	\catcode`\/=\active	\def/{\char`\/\myallowbreak}%
+% 	\catcode`\*=\active	\def*{\*\myallowbreak}%
+	\catcode`\<=\active	\def<{\mbox{\textless}}%
+	\catcode`\>=\active	\def>{\mbox{\textgreater}}%
+% 	\catcode`\&=\active	\def&{\char`\&\myallowbreak}%
+	\catcode`\^^M=\active	\def^^M{\par}%
+%	\catcode`\ =\active	\def {\phantom{\vs}}
+% 	\catcode`\ =\active	\def {\phantom{-}}%
+% 	\catcode`\ =\active	\def {\mbox{\textvisiblespace}}%
+	\settowidth{\@tempdima}{\texttt{x}}%
+	\catcode`\ =\active	\def {\hspace{\@tempdima}}%
+}
+\endgroup
+\def\mytt{\ttfamily
+  \catcode`\#=12  \catcode`\&=12  \catcode`\^=12
+  \catcode`\~=12  \catcode`\_=12  \catcode`\ =12
+%   \catcode`\^^M=12
+  \chardef\{=`\{  \chardef\}=`\}  \chardef\_=`\_
+%   \chardef\&=`\&
+  \spaceskip=.32em plus.16em minus.09em
+  \frenchspacing
+  \noautoxspacing
+  \mytth@@k}
+%%%%%%%%%% from okumacro.sty %%%%%%%%%%
+
+%\perlnewcommand{\verb@plcmd}[1]{
+%  $_ = shift;
+%  s/(?<=-)(?=-)/{}/g;
+%  s/(\\[A-Za-z]+) ([^A-Za-z]|$)/$1$2/g;  return "{\\mytt{}$_}";
+%}%$
+%\perlnewcommand{\verb@plcmd@index}[1]{
+%  my $index = "";
+%  $_ = shift;
+%  if (/^([\w.-]+)/) {
+%    $index = "\\index{$1@\\texttt{$1}}";
+%  }
+%  s/(?<=-)(?=-)/{}/g;
+%  s/(\\[A-Za-z]+) ([^A-Za-z]|$)/$1$2/g;  return "{\\mytt{}$_}$index";
+%}%$
+%\def\termin@l#1{\def\@tempa{#1}%
+%  \verb@plcmd{\expandafter\strip@prefix\meaning\@tempa}\endgroup}
+%\newcommand\term{\begingroup \termin@l}
+%
+%\def\termin@l@index#1{\def\@tempa{#1}%
+%  \verb@plcmd@index{\expandafter\strip@prefix\meaning\@tempa}\endgroup}
+%\newcommand\command{\begingroup \termin@l@index}
+%
+\def\UrlBreaks{}
+\def\UrlSpecials{\do\/{\mbox{/}\MyBreakAfterSlash}\do\.{\mbox{.}}}
+
+\def\MyBreakAfterSlash{% for hyphenation
+  \nobreak\hskip\z@skip%
+  \discretionary{\kern-.1em\rlap{\carriagereturn}}{}{}}
+
+\ifColorOutput
+ \definecolor{pathcolor}{rgb}{0.00000,0.40784,0.54510}
+\else
+ \definecolor{pathcolor}{gray}{0}
+\fi
+\renewcommand\path{\begingroup \color{pathcolor} \Url}
+
+
+\ifColorOutput
+ \definecolor{commandcolor}{rgb}{.9,.4,0}
+\else
+ \definecolor{commandcolor}{gray}{0}
+\fi
+
+%\newcommand{\command}[1]{{\mytt #1}}
+%\newcommand{\option}[1]{{\mytt #1}}
+\newcommand{\argument}[1]{{\rmfamily\itshape #1}}
+
+
+\newlength\narrowframewidth
+\setlength\narrowframewidth{9.3em}
+
+\newenvironment{terminal}{%
+  \vspace{-.5zw}
+  \setlength\FrameSep{3pt}%
+  \setlength\FrameRule{1pt}
+  \ifColorOutput
+    \definecolor{shadecolor}{gray}{.2}
+    \definecolor{framecolor}{rgb}{.8,.2,0}
+    \definecolor{framecontcolor}{rgb}{1,.85,.41}
+    \definecolor{textcolor}{gray}{.85}
+  \else
+    \definecolor{shadecolor}{gray}{1}
+    \definecolor{framecolor}{gray}{0}
+    \definecolor{framecontcolor}{gray}{.4}
+    \definecolor{textcolor}{gray}{.1}
+  \fi
+  \begingroup%
+   \color{textcolor}
+   \begin{narrowshaded}{\narrowframewidth}%
+    \par\small\baselineskip=.85\baselineskip%
+    \begingroup
+     \mytt
+}{%
+    \endgroup\par
+   \end{narrowshaded}%
+  \endgroup
+  \endlist
+  \vspace{-.5zw}
+}
+
+\newenvironment{file}{%
+  \vspace{-.5zw}
+  \setlength\FrameSep{4pt}%
+  \setlength\FrameRule{.4pt}
+  \ifColorOutput
+    \definecolor{shadecolor}{rgb}{.96,.88,.96}
+    \definecolor{framecolor}{rgb}{0,.55,.27}
+    \definecolor{framecontcolor}{rgb}{.94,.82,.94}
+%     \definecolor{frametextcolor}{gray}{.05}
+    \definecolor{textcolor}{gray}{.05}
+  \else
+    \definecolor{shadecolor}{gray}{1}
+    \definecolor{framecolor}{gray}{0}
+    \definecolor{framecontcolor}{gray}{.4}
+    \definecolor{textcolor}{gray}{.1}
+  \fi
+  \begingroup%
+   \color{textcolor}
+   \begin{narrowshaded}{\narrowframewidth}%
+    \par\small\baselineskip=.85\baselineskip%
+    \begingroup
+     \mytt
+}{%
+    \endgroup\par
+   \end{narrowshaded}%
+  \endgroup
+  \endlist
+  \vspace{-.5zw}
+}
+
+%% hyperref-dvipdfm fix - make bookmarks working with Preview.app
+\def\@pdfm@dest#1{%
+  \Hy@SaveLastskip
+  \@pdfm@mark{dest (#1) [@thispage /\@pdfview\space @xpos @ypos null]}%
+  \Hy@RestoreLastskip
+}
+
+\newlength\PetitNoteLeftMargin
+\newlength\PetitNoteRightMargin
+\setlength\PetitNoteLeftMargin{1.5zw}
+\setlength\PetitNoteRightMargin{1.5zw}
+\newenvironment{プチノート}{%
+  \vspace{1.5zw}
+  \par
+   \setbox0=\hbox{\largepencil}%
+   \advance\PetitNoteLeftMargin by \wd0
+   \advance\PetitNoteLeftMargin by 1zw
+   \setlength{\leftmargin}{\PetitNoteLeftMargin}
+   \setlength{\rightmargin}{\PetitNoteRightMargin}
+   \advance\linewidth -\leftmargin
+   \advance\linewidth -\rightmargin
+   \advance\@totalleftmargin\leftmargin
+   \@setpar{{\@@par}}%
+   \parshape 1 \@totalleftmargin \linewidth
+   \ignorespaces
+   {\dimen@=\ht0
+    \hskip-\wd0 \hskip-1.5zw
+    \raisebox{-\dimen@}[0pt][0pt]{\unhbox0}\hskip1.5zw}%
+   \small\mgfamily
+}{%
+   \par
+  \vspace{1.5zw}
+}
+
+% (r,g,b) = (0.0000000, 0.2235294, 0.7137255) // "#0039b6" G
+% (r,g,b) = (0.7686275, 0.0705882, 0.0000000) // "#c41200" o
+% (r,g,b) = (0.9529412, 0.7725490, 0.0941176) // "#f3c518" o
+% (r,g,b) = (0.0000000, 0.2235294, 0.7137255) // "#0039b6" g
+% (r,g,b) = (0.1882353, 0.6549020, 0.1843137) // "#30a72f" l
+% (r,g,b) = (0.7686275, 0.0705882, 0.0000000) // "#c41200" e
+\definecolor{g70}{gray}{.7}
+\definecolor{red}{rgb}{.8,0,0}
+\definecolor{yel}{rgb}{.995,.861,.005}
+\definecolor{grn}{rgb}{0,.8,0}
+\definecolor{blue}{rgb}{0,0,1}
+\def\Google{%
+  \ifColorOutput%
+    \leavevmode
+    \hbox{\href{http://www.google.co.jp}{%
+      \rlap{\hspace{.07ex}\raisebox{-.12ex}{\textcolor{g70}{Google}}}%
+      \textcolor{blue}{G}\textcolor{red}{o}\textcolor{yel}{o}%
+      \textcolor{blue}{g}\textcolor{grn}{l}\textcolor{red}{e}%
+      \hspace{.07ex}}}%
+  \else%
+    Google%
+  \fi}
+
+
+\hour\time \divide\hour by 60\relax
+\@tempcnta\hour \multiply\@tempcnta 60\relax
+\minute\time \advance\minute-\@tempcnta
+\def\ProcessDateTime{%
+  \number\year/%
+  \ifnum\month<10{0}\fi\number\month/%
+  \ifnum\day<10{0}\fi\number\day\space
+  (\ifnum\hour<10{0}\fi\number\hour:\ifnum\minute<10{0}\fi\number\minute)}
+
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{7.0em}{4.1em}}
+
+%%% from jsarticle.cls
+\renewcommand{\tableofcontents}{%
+  \columnseprule.4pt \columnsep 2zw
+  \begin{multicols}{2}[\section*{\contentsname}]%
+  \@mkboth{\contentsname}{\contentsname}%
+  \@starttoc{toc}%
+  \end{multicols}%
+}
+
+%%% from jsbook.cls
+\renewenvironment{theindex}{% 索引を3段組で出力する環境
+%    \clearpage\@restonecoltrue
+    \columnseprule.4pt \columnsep 2zw
+%     \ifx\multicols\@undefined
+%       \twocolumn[\@makessectionhead{\indexname}%
+%       \addcontentsline{toc}{section}{\indexname}]%
+%     \else
+%       \ifdim\textwidth<\fullwidth
+        \setlength{\evensidemargin}{\oddsidemargin}
+        \setlength{\textwidth}{\fullwidth}
+        \setlength{\linewidth}{\fullwidth}
+        \begin{multicols}{3}[\section*{\indexname}%
+        \addcontentsline{toc}{section}{\indexname}]%
+%       \else
+%         \begin{multicols}{2}[\section*{\indexname}%
+%         \addcontentsline{toc}{section}{\indexname}]%
+%       \fi
+%     \fi
+    \@mkboth{\indexname}{}%
+    \plainifnotempty % \thispagestyle{plain}
+    \parindent\z@
+    \parskip\z@ \@plus .3\p@\relax
+    \let\item\@idxitem
+    \raggedright
+    \footnotesize\narrowbaselines
+  }{
+%     \ifx\multicols\@undefined
+%       \if@restonecol\onecolumn\fi
+%     \else
+      \end{multicols}
+%     \fi
+    \clearpage
+  }
+\renewcommand{\@idxitem}{\par\hangindent 4zw} % 元 40pt
+\renewcommand{\subitem}{\@idxitem \hspace*{2zw}} % 元 20pt
+\renewcommand{\subsubitem}{\@idxitem \hspace*{3zw}} % 元 30pt
+\renewcommand{\indexspace}{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
+\renewcommand\seename{\if@english see\else →\fi}
+\renewcommand\alsoname{\if@english see also\else →\fi}
+
+
+%%% Local Variables:
+%%% mode: japanese-latex
+%%% TeX-master: "01-shell"
+%%% mode: flyspell
+%%% mode: auto-fill
+%%% fill-column: 75
+%%% End:
+
+
+
