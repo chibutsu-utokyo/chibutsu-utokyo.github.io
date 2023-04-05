@@ -1,0 +1,72 @@
+# site name
+site_name: 地球惑星物理学演習
+# copyright
+copyright: "&copy; 2023 amanotk"
+# navigation
+nav:
+  - はじめに: index.md
+  # - 計算機演習室の使い方:
+  #   - login/sample.md
+  # - UNIX1:
+  #   - UNIX1/sample.md
+  # - UNIX2:
+  #   - UNIX2/sample.md
+  # - Gnuplot:
+  #   - Gnuplot/sample.md
+  - LaTeX:
+    - LaTeX/chap1.md
+    - LaTeX/chap2.md
+    - LaTeX/chap3.md
+    - LaTeX/chap4.md
+#theme
+theme: 
+  language: ja
+  name: material
+  font:
+    text: Noto Sans JP
+    code: Inconsolata
+  palette:
+    primary: blue grey
+  features:
+    - navigation.top
+    # - toc.integrate
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/amanotk/chibutsu-utokyo/tree/main
+
+repo_url: https://github.com/amanotk/chibutsu-utokyo/tree/main
+repo_name: chibutsu-utokyo
+
+plugins:
+  search:
+    lang: 'ja'
+
+extra_javascript: 
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/codeblock.css
+  - stylesheets/headline.css
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - footnotes
+  - pymdownx.highlight:
+      use_pygments: true
+      noclasses: true
+      pygments_style: github-dark
+      linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
