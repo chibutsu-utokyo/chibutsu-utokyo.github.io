@@ -581,7 +581,7 @@
 というホームページが参考になります。
 <a href="https://ss.scphys.kyoto-u.ac.jp/person/yonezawa/contents/program/gnuplot/index.html">ここ</a>
 にもgnuplotの詳しい解説があります。</p>
-<p>なおこのページは、過去の担当者が作成してくださったものをMarkdownに移植し，一部改変したものです。</p>
+<p>なおこのページは、過去の担当者が作成してくださったものをMarkdownに移植し、一部改変したものです。</p>
 <h2 id="gnuplot-gnuplot-quit">gnuplot の起動と終了の仕方（<code>gnuplot, quit</code>など）</h2>
 <p>まず始めに、gnuplotの起動と終了の仕方について説明します。</p>
 <p>gnuplotを起動するにはQTerminal等のウィンドウで<code>gnuplot</code>と入力します。
@@ -627,8 +627,8 @@ gnuplot&gt;
 </ul>
 <p>があります。</p>
 <p><code>quit</code>か<code>q</code>と入力するとgnuplotは終了します。</p>
-<p>なお<code>Terminal type is now 'qt'</code>というのは，ターミナルの種類が<code>qt</code>ですよ，という意味です．
-この後別の種類のターミナルが出てきますから，デフォルトが<code>qt</code>であることは頭の片隅に置いておいてください．</p>
+<p>なお<code>Terminal type is now 'qt'</code>というのは、ターミナルの種類が<code>qt</code>ですよ、という意味です。
+この後別の種類のターミナルが出てきますから、デフォルトが<code>qt</code>であることは頭の片隅に置いておいてください。</p>
 <h2 id="plot-replot">関数を描いてみる（<code>plot, replot</code>）</h2>
 <p>すでに形がわかっている関数を作図してみましょう。
 作図するためのコマンドは<code>plot</code>です。例えば、
@@ -639,7 +639,7 @@ gnuplot&gt;
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>この時、画面上の制御がプロットウインドウに移ってしまい、キーボードやマウスを動かすとウィンドウが動いてしまいます。
-マウスをターミナルに戻せば，制御もターミナルに戻ります．</p>
+マウスをターミナルに戻せば、制御もターミナルに戻ります。</p>
 </div>
 <p>このように、関数形がわかっている曲線をグラフにするには
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; plot &lt;x を変数とする関数&gt;
@@ -649,16 +649,16 @@ gnuplot&gt;
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; replot 2*cos(x**2)
 </code></pre></div></td></tr></table></div>
 先ほどのグラフに、<span class="arithmatex">\(y=2\cos(x^2)\)</span>のグラフが追加されているはずです。
-なお、積は<code>*</code>、冪乗は<code>**</code>です．</p>
+なお、積は<code>*</code>、冪乗は<code>**</code>です。</p>
 <p>いくつかのグラフを一度に作図したい場合には関数をカンマで区切って横に並べます。
 つまり、
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x), 2*cos(x**2)
 </code></pre></div></td></tr></table></div>
 としても同じ結果になります。</p>
 <p>単に<code>plot 2*cos(x**2)</code>と入力すると、最初にあった<span class="arithmatex">\(y=\sin(x)\)</span>のグラフは消えてしまうので注意して下さい。</p>
-<p>ちなみに，gnuplotではコマンドの省略形が用意されています．
-<code>plot</code>の省略形は<code>p</code>，<code>replot</code>の省略形は<code>rep</code>です．
-何度も打つ場合には後者の方がよいでしょう．</p>
+<p>ちなみに、gnuplotではコマンドの省略形が用意されています。
+<code>plot</code>の省略形は<code>p</code>、<code>replot</code>の省略形は<code>rep</code>です。
+何度も打つ場合には後者の方がよいでしょう。</p>
 <h2 id="help">コマンドが分からなくなったら（<code>help</code>）</h2>
 <p>これからgnuplotで使うコマンドのいくつかについて説明をしていきます。
 コマンドの数は決して少なくありません。
@@ -684,12 +684,12 @@ Subtopic of plot:
 </code></pre></div></td></tr></table></div>
 と入力してください。
 ウィンドウがまっさらな状態に戻ります。</p>
-<p>また，これから先、様々なコマンド入力していきます。
+<p>また、これから先、様々なコマンド入力していきます。
 すると、「今どのコマンドが反映されているのか？」が段々分からなくなってきます。
 その場合は
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; reset
 </code></pre></div></td></tr></table></div>
-と入力すると，今まで入力した設定が消えますから，一からやり直すことができます．</p>
+と入力すると、今まで入力した設定が消えますから、一からやり直すことができます。</p>
 
 
 

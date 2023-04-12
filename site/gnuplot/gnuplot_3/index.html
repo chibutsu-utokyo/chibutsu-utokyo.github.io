@@ -375,6 +375,19 @@
     データを読み込んで3Dプロットを作る
   </a>
   
+    <nav class="md-nav" aria-label="データを読み込んで3Dプロットを作る">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    練習問題
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -596,6 +609,19 @@
     データを読み込んで3Dプロットを作る
   </a>
   
+    <nav class="md-nav" aria-label="データを読み込んで3Dプロットを作る">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    練習問題
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -630,7 +656,7 @@
 </code></pre></div></td></tr></table></div>
 のように、データファイルの名前（絶対パスor相対パス）を ' または '' でくくってやります。
 データファイルは一つ以上のスペースで区切られた <span class="arithmatex">\((x,y(,z...))\)</span> の組が複数行から成るものとします。
-以下の<code>univ-19people.dat</code>というファイルを例に説明します．
+以下の<code>univ-19people.dat</code>というファイルを例に説明します。
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
@@ -661,14 +687,14 @@
   2010  1,214    619
   2015  1,200    618
 </code></pre></div></td></tr></table></div>
-最初の2行の冒頭に＃が付いています．これをコメントまたはコメントアウトと言い，
+最初の2行の冒頭に＃が付いています。これをコメントまたはコメントアウトと言い、
 ＃を含む行の＃以降はグラフには反映されません。
 後で見た時にそれが何のデータだったのかわかるような解説を書いておくと良いでしょう。</p>
-<p>さて，<code>reset</code>等でこれまでの設定を無効にしておいてから，
+<p>さて、<code>reset</code>等でこれまでの設定を無効にしておいてから、
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot &#39;univ-19people.dat&#39;
 </code></pre></div></td></tr></table></div>
-と入力してみましょう．
-次のようなグラフが出力されます．</p>
+と入力してみましょう。
+次のようなグラフが出力されます。</p>
 <p><img alt="univ-19people" src="../figs/univ-19people.png" /></p>
 <p>データファイルに書かれているデータが複数列ある時、特に何も指定しなければ、1列目が<span class="arithmatex">\(x\)</span>軸、2列目が<span class="arithmatex">\(y\)</span>軸とみなされます。  </p>
 <p>列を指定してプロットする場合には、<code>plot</code>コマンドに<code>using</code>という引数を付けます。
@@ -684,7 +710,7 @@
 <p><div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; p &#39;univ-19people.dat&#39; using 1:(100*$3/$2) w l
 </code></pre></div></td></tr></table></div>
 なお<code>w l</code>は<code>with lines</code>の省略形です。</p>
-<p>デフォルトでは，スタイルは<code>points</code>になります。
+<p>デフォルトでは、スタイルは<code>points</code>になります。
 これを変更する場合には
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set style data lines
 </code></pre></div></td></tr></table></div>
@@ -722,12 +748,12 @@
 </code></pre></div></td></tr></table></div>
 とすれば、画面水平右向きが<span class="arithmatex">\(x\)</span>軸、鉛直上向きが<span class="arithmatex">\(y\)</span>軸、画面手前向きが<span class="arithmatex">\(z\)</span>軸であった座標系を、<span class="arithmatex">\(x\)</span>軸の周りに<span class="arithmatex">\(50^{\circ}\)</span>、<span class="arithmatex">\(z\)</span>軸の周りに<span class="arithmatex">\(60^{\circ}\)</span>それぞれ回転させたグラフの画面への投射像が得られます。
 また、最近のgnuplotではマウスで図を回転させることも可能です。</p>
-<p>また，このままではメッシュ数が少なすぎて，あまり立体感がありません．
+<p>また、このままではメッシュ数が少なすぎて、あまり立体感がありません。
 そこで
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set isosamples 50
 </code></pre></div></td></tr></table></div>
-としてみてください．
-デフォルトではx,yともに10分割だったものが，かなり細かく描画されていることが分かります．</p>
+としてみてください。
+デフォルトではx,yともに10分割だったものが、かなり細かく描画されていることが分かります。</p>
 <h3 id="set-contoursurface-set-contrparam">コンタープロット（<code>set contour(surface), set contrparam</code>）</h3>
 <p>コンタープロットとは等高線地図を描くことです。
 等高線地図を描くには3次元データをプロットする時に
@@ -752,16 +778,16 @@
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; unset pm3d
 </code></pre></div></td></tr></table></div>
 とすればもとのモードになります。</p>
-<p>グラフの曲面を描かず，等高線のみを<span class="arithmatex">\(xy\)</span>平面に投影したい，という場合があるでしょう．
-その場合には<code>set pm3d map</code>としておきます．
+<p>グラフの曲面を描かず、等高線のみを<span class="arithmatex">\(xy\)</span>平面に投影したい、という場合があるでしょう。
+その場合には<code>set pm3d map</code>としておきます。
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set pm3d map
 gnuplot&gt; splot exp(-(x**2+y**2)/10)
 </code></pre></div></td></tr></table></div></p>
 <p><img alt="pm3dmap" src="../figs/3d_map.png" /></p>
 <h3 id="3d">データを読み込んで3Dプロットを作る</h3>
-<p>データファイルから値を読み込んで3次元プロットを作ることもできます．
-2次元との違いは，3次元データなので3列のデータを用意しなければならない点です．
+<p>データファイルから値を読み込んで3次元プロットを作ることもできます。
+2次元との違いは、3次元データなので3列のデータを用意しなければならない点です。
 例えば
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
@@ -797,13 +823,20 @@ gnuplot&gt; splot exp(-(x**2+y**2)/10)
   3 2 7 
   3 3 12 
 </code></pre></div></td></tr></table></div>
-というファイル（<code>data3d.dat</code>）があったとすると，<code>plot</code>コマンド同様
+というファイル（<code>data3d.dat</code>）があったとすると、<code>plot</code>コマンド同様
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; splot &#39;data3d.dat&#39;
 </code></pre></div></td></tr></table></div>
 とすればよいです
 （注：バージョンによっては<code>splot</code>の前に<code>set parametric</code>を設定しなければならないかもしれません）。
-<code>with line</code>をつければ線画になります．</p>
+<code>with line</code>をつければ線画になります。</p>
 <p>ファイルに空行で区切られた同数のデータが複数書かれている場合、スタイルとして<code>lines</code>（<code>points</code>）を指定するとデータを格子上に結んだグラフが描かれます。</p>
+<h4 id="_2">練習問題</h4>
+<ol>
+<li><span class="arithmatex">\(f(x,y) = x^2 \exp (-x^2) y^2 \exp (-y^2)\)</span>を<span class="arithmatex">\(-3 \le x \le 3\)</span>、<span class="arithmatex">\(-3 \le y \le 3\)</span>の範囲で3次元プロットしてみよう。</li>
+<li>メッシュの数を増やしてみよう。</li>
+<li>等高線を底面に描いてみよう。</li>
+<li>pm3dを用いて、カラーグラデーションのプロットにしてみよう。</li>
+</ol>
 
 
 

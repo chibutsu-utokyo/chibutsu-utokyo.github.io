@@ -669,7 +669,7 @@ gnuplot&gt; set yrange [-2:2]
 ただし<code>set</code>コマンドは設定を変えるだけですから、画面に表示されているグラフは変化しません。
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; replot
 </code></pre></div></td></tr></table></div>
-と入力すれば，画面に表示されているグラフが更新され，正しいグラフになると思います．</p>
+と入力すれば、画面に表示されているグラフが更新され、正しいグラフになると思います。</p>
 <p><img alt="\(y=\sin(x)\)のグラフ" src="../figs/sin_pipi.png" /></p>
 <p>作図範囲の指定を取り消したい場合には
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set autoscale
@@ -703,7 +703,7 @@ gnuplot&gt; set yrange [-2:2]
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; help set style
 </code></pre></div></td></tr></table></div>
 を見てください。
-なお，デフォルトに戻すには<code>set style function lines</code>とします．</p>
+なお、デフォルトに戻すには<code>set style function lines</code>とします。</p>
 <p>複数のグラフをそれぞれ異なったスタイルで描きたい場合には、<code>plot</code>コマンドの際に<code>with</code>をつけて指定します。
 例えば
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x) with points, sin(x)*cos(x) with impulses
@@ -722,13 +722,13 @@ gnuplot&gt; set ylabel &#39;axis 2&#39;
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set title &#39;super title&#39;
 </code></pre></div></td></tr></table></div></p>
 <h3 id="xyset-size-ratio">x軸とy軸のスケール（<code>set size ratio</code>）</h3>
-<p>gnuplotでは，縦横のスケールを指定することが可能です．
-<code>set size ratio r</code>でグラフの横縦の比率が<span class="arithmatex">\(r\)</span>になり，
-<code>set size ratio -r</code>でy軸の単位長さがx軸の<span class="arithmatex">\(r\)</span>倍になります．</p>
-<p>例えば，x軸とy軸のスケールを一致させるには
+<p>gnuplotでは、縦横のスケールを指定することが可能です。
+<code>set size ratio r</code>でグラフの横縦の比率が<span class="arithmatex">\(r\)</span>になり、
+<code>set size ratio -r</code>でy軸の単位長さがx軸の<span class="arithmatex">\(r\)</span>倍になります。</p>
+<p>例えば、x軸とy軸のスケールを一致させるには
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set size ratio -1
 </code></pre></div></td></tr></table></div>
-とします．</p>
+とします。</p>
 <h3 id="set-logscale">対数プロット（<code>set logscale</code>）</h3>
 <p>gnuplotでは対数軸の作図も可能です。例えば
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
@@ -740,44 +740,44 @@ gnuplot&gt; plot exp(x+1)
 <p>対数プロットをやめるには<code>unset logscale y</code>とします。</p>
 <h2 id="set-terminal-postscript-set-output">グラフを保存する（<code>set terminal postscript, set output</code>）</h2>
 <p>作ったグラフを保存してみましょう。
-まず，
+まず、
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set terminal
 </code></pre></div></td></tr></table></div>
-を実行してください．
-利用可能なターミナルの種類が一覧で出てきます（デフォルトは普通<code>qt</code>です）．</p>
-<p>ここに<code>png</code>や<code>jpeg</code>があるか探しましょう．
-もしあれば，png/jpegでの出力が可能です．
-ない場合は，他の出力形式を検討することになります．
-（個人的な意見ですが，pdf出力用の<code>pdfcairo</code>はオススメしません．バグることが多いからです）</p>
-<p>以下では，pngでの出力方法を説明します．
-ここまで色々なコマンドを入力していますから，まず<code>reset</code>でまっさらな状態にしておいてから，
-<code>plot sin(x)</code>しましょう．
+を実行してください。
+利用可能なターミナルの種類が一覧で出てきます（デフォルトは普通<code>qt</code>です）。</p>
+<p>ここに<code>png</code>や<code>jpeg</code>があるか探しましょう。
+もしあれば、png/jpegでの出力が可能です。
+ない場合は、他の出力形式を検討することになります。
+（個人的な意見ですが、pdf出力用の<code>pdfcairo</code>はオススメしません。バグることが多いからです）</p>
+<p>以下では、pngでの出力方法を説明します。
+ここまで色々なコマンドを入力していますから、まず<code>reset</code>でまっさらな状態にしておいてから、
+<code>plot sin(x)</code>しましょう。
 次に
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set terminal png
 gnuplot&gt; set output &#39;output.png&#39;
 </code></pre></div></td></tr></table></div>
-でターミナルをpng用に切り替えるとともに，ファイル名を指定します．
-このままでは出力先を指定しただけですから，ファイルには何も書き込まれていません．
+でターミナルをpng用に切り替えるとともに、ファイル名を指定します。
+このままでは出力先を指定しただけですから、ファイルには何も書き込まれていません。
 そこで
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; replot
 </code></pre></div></td></tr></table></div>
-とします．これで<code>output.png</code>にグラフが書き込まれているはずです．</p>
+とします。これで<code>output.png</code>にグラフが書き込まれているはずです。</p>
 <p>最後に
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set output
 </code></pre></div></td></tr></table></div>
-で出力ファイルを閉じ，ターミナルを元へ戻すために
+で出力ファイルを閉じ、ターミナルを元へ戻すために
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set terminal qt
 </code></pre></div></td></tr></table></div>
 とします。</p>
-<p><strong>注意1 <code>set output</code>をしないで他へ出力に切り替える（<code>set terminal qt</code>等する）とファイルが壊れることがあります．</strong></p>
-<p><strong>注意2 「<code>set terminal png</code>→<code>set output 'output.png'</code>→<code>plot sin(x)</code>」の順で作画したが，ファイルに書き込まれない」という事態が起こった方へ：
-これも，出力先と描きたいグラフを指定しただけで，書き込むという作業は行われていないためです．
-最後に<code>set output</code>を行ってください．</strong></p>
+<p><strong>注意1 <code>set output</code>をしないで他へ出力に切り替える（<code>set terminal qt</code>等する）とファイルが壊れることがあります。</strong></p>
+<p><strong>注意2 「<code>set terminal png</code>→<code>set output 'output.png'</code>→<code>plot sin(x)</code>」の順で作画したが、ファイルに書き込まれない」という事態が起こった方へ：
+これも、出力先と描きたいグラフを指定しただけで、書き込むという作業は行われていないためです。
+最後に<code>set output</code>を行ってください。</strong></p>
 <h2 id="pltload"><code>plt</code>ファイルと<code>load</code></h2>
-<p>ここまではすべて対話方式でコマンドを入力してきましたが、コマンドの数が多くなってくると面倒です．
-複数のコマンドをひとつのファイルに書いておき，まとめて実行することができます。</p>
-<p>まずファイルを作りましょう．ここでは<code>ex.plt</code>とします（一般に<code>plt</code>という拡張子を用いる場合が多いです）。
+<p>ここまではすべて対話方式でコマンドを入力してきましたが、コマンドの数が多くなってくると面倒です。
+複数のコマンドをひとつのファイルに書いておき、まとめて実行することができます。</p>
+<p>まずファイルを作りましょう。ここでは<code>ex.plt</code>とします（一般に<code>plt</code>という拡張子を用いる場合が多いです）。
 エディタで以下の内容を書いてみてください。
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
@@ -795,12 +795,12 @@ p exp(-x) * sin(10*x)
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; load &#39;ex.plt&#39;
 </code></pre></div></td></tr></table></div></p>
 <p><img alt="減衰曲線" src="../figs/expsin.png" /></p>
-<p>以下は筆者の個人的な意見です．
-色々なpltファイルを使っていると，お互いの設定が干渉しあって訳の分からないことになります．
-例えば，ターミナルの種類をpltファイル内で変えたのを忘れてしまい，
-<code>qt</code>ターミナルだと思って作業していたら<code>png</code>用ターミナルだった，などなど．</p>
-<p>これらを防ぐために，pltファイルの先頭や末尾で設定を初期化しておくと安全です．</p>
-<p>以下は，pngファイルを作り終わったら<code>qt</code>ターミナルに戻る例です．
+<p>以下は筆者の個人的な意見です。
+色々なpltファイルを使っていると、お互いの設定が干渉しあって訳の分からないことになります。
+例えば、ターミナルの種類をpltファイル内で変えたのを忘れてしまい、
+<code>qt</code>ターミナルだと思って作業していたら<code>png</code>用ターミナルだった、などなど。</p>
+<p>これらを防ぐために、pltファイルの先頭や末尾で設定を初期化しておくと安全です。</p>
+<p>以下は、pngファイルを作り終わったら<code>qt</code>ターミナルに戻る例です。
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>

@@ -704,10 +704,10 @@ multiplot&gt; plot cos(x)
 </code></pre></div></td></tr></table></div>
 と入力して下さい。</p>
 <h2 id="appendix-2">Appendix 2： アニメーション</h2>
-<p>【以下の内容は過去の資料にあったものですが，やり方が下手すぎます．最近のgnuplotでは<code>for</code>文が使えるので，アニメーションを作りたい人は<code>for</code>文を使ったやり方を検索するとよいと思います．】</p>
+<p>【以下の内容は過去の資料にあったものですが、やり方が下手すぎます。最近のgnuplotでは<code>for</code>文が使えるので、アニメーションを作りたい人は<code>for</code>文を使ったやり方を検索するとよいと思います。】</p>
 <p>コマンドファイルをうまく使うと、アニメーションを作ってやることができます。</p>
-<p>まず，以下のようなファイルを作り，<code>anim.plt</code>などの名前で保存しておきます．
-（<code>pause -1</code>→<code>i=i+0.5</code>→<code>rep</code>の部分は，コピペ等で好きな数だけ繰り返してください）
+<p>まず、以下のようなファイルを作り、<code>anim.plt</code>などの名前で保存しておきます。
+（<code>pause -1</code>→<code>i=i+0.5</code>→<code>rep</code>の部分は、コピペ等で好きな数だけ繰り返してください）
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
@@ -730,7 +730,7 @@ i=i+0.5
 rep
 （以下略）
 </code></pre></div></td></tr></table></div></p>
-<p>これを<code>load</code>すると，リターンを押すごとに画像が動いて見えるはずです。
+<p>これを<code>load</code>すると、リターンを押すごとに画像が動いて見えるはずです。
 <code>pause</code>コマンドは<code>pause 秒数</code>でその秒数だけ停止する、というコマンドです。
 秒数を-1にしたときにはリターンが押されるまでその状態で停止します。
 この技は、微分方程式の時間発展の結果のデータファイルを順番に読み込ませて時間発展の雰囲気を掴んだりする時に有用です。</p>
