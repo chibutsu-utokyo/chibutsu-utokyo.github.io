@@ -1,4 +1,4 @@
-# 簡単な使い方等の説明
+# MkDocsの簡単な使い方
 
 ### 使うための準備
 
@@ -9,6 +9,12 @@ pip install mkdocs
 pip install mkdocs-material
 pip install pygments
 ```
+
+（追記）新しいmacで`zsh: command not found: pip`と出る場合：
+`pip`の代わりに`pip3`とするとうまくいくかもしれない．
+その場合，以下の`mkdocs serve`などは`python3 -m mkdocs serve`などと読みかえる．
+
+
 
 ### ファイル群の説明
 
@@ -25,6 +31,8 @@ mkdocs serve
 ```
 
 とし，表示されるURLを適当なエクスプローラで開くことでリアルタイムに変更結果の確認ができる．
+（終了するには`Ctrl+C`とする）
+
 
 また，Markdownファイルをアップロードするだけではなく，`mkdocs.yml`内の`nav:`の項目を書き換える必要がある．具体的な書き方は適当にしらべるか，LaTeX回の書き方を参照してもらいたい．
 

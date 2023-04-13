@@ -1,0 +1,944 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../gnuplot_3/">
+      
+      
+        <link rel="next" href="../../LaTeX/chap1/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Appendix - 地球惑星物理学演習</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans JP";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/headline.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#appendix" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="地球惑星物理学演習" class="md-header__button md-logo" aria-label="地球惑星物理学演習" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            地球惑星物理学演習
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Appendix
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/amanotk/chibutsu-utokyo/tree/main" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    chibutsu-utokyo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="地球惑星物理学演習" class="md-nav__button md-logo" aria-label="地球惑星物理学演習" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    地球惑星物理学演習
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/amanotk/chibutsu-utokyo/tree/main" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    chibutsu-utokyo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        はじめに
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Gnuplot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gnuplot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnuplot_1/" class="md-nav__link">
+        gnuplot（入門編）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnuplot_2/" class="md-nav__link">
+        基本編
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gnuplot_3/" class="md-nav__link">
+        応用編
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Appendix
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-1-set-multiplot" class="md-nav__link">
+    Appendix 1 複数のグラフを描写する（set multiplot）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-2" class="md-nav__link">
+    Appendix 2： アニメーション
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-3-fx" class="md-nav__link">
+    Appendix 3： 関数の利用（f(x)）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-4" class="md-nav__link">
+    Appendix 4： 三項演算子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-5-set-parametric" class="md-nav__link">
+    Appendix 5： 媒介変数の利用（set parametric）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-6-gnuplotshellshell" class="md-nav__link">
+    Appendix 6： gnuplot上でのshellコマンドの利用（shell, !）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-7" class="md-nav__link">
+    Appendix 7： 最小二乗フィッティング
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-8" class="md-nav__link">
+    Appendix 8： 画像の処理について
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix 8： 画像の処理について">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gv" class="md-nav__link">
+    gv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-magick" class="md-nav__link">
+    Image Magick
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gimp" class="md-nav__link">
+    gimp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-9" class="md-nav__link">
+    Appendix 9： エラーバーを付ける
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          LaTeX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaTeX/chap1/" class="md-nav__link">
+        LaTeXの基礎知識
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaTeX/chap2/" class="md-nav__link">
+        LaTeXの基本(1)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaTeX/chap3/" class="md-nav__link">
+        LaTeXの基本(2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaTeX/chap4/" class="md-nav__link">
+        数式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LaTeX/chap5/" class="md-nav__link">
+        画像
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-1-set-multiplot" class="md-nav__link">
+    Appendix 1 複数のグラフを描写する（set multiplot）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-2" class="md-nav__link">
+    Appendix 2： アニメーション
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-3-fx" class="md-nav__link">
+    Appendix 3： 関数の利用（f(x)）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-4" class="md-nav__link">
+    Appendix 4： 三項演算子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-5-set-parametric" class="md-nav__link">
+    Appendix 5： 媒介変数の利用（set parametric）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-6-gnuplotshellshell" class="md-nav__link">
+    Appendix 6： gnuplot上でのshellコマンドの利用（shell, !）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-7" class="md-nav__link">
+    Appendix 7： 最小二乗フィッティング
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-8" class="md-nav__link">
+    Appendix 8： 画像の処理について
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix 8： 画像の処理について">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gv" class="md-nav__link">
+    gv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-magick" class="md-nav__link">
+    Image Magick
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gimp" class="md-nav__link">
+    gimp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-9" class="md-nav__link">
+    Appendix 9： エラーバーを付ける
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="appendix">Appendix</h1>
+<h2 id="appendix-1-set-multiplot">Appendix 1 複数のグラフを描写する（<code>set multiplot</code>）</h2>
+<p>一度に複数のグラフを描写する場合には<code>set multiplot</code>コマンドを使います。
+このコマンドによりgnuplotは<code>multiplot</code>のモードに入ります。例えば
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set multiplot
+multiplot&gt; set size 1,0.5
+multiplot&gt; set origin 0,0.5
+multiplot&gt; plot sin(x)
+multiplot&gt; set origin 0,0
+multiplot&gt; plot cos(x)
+</code></pre></div></td></tr></table></div>
+とすると、上に<span class="arithmatex">\(\sin x\)</span>、下に<span class="arithmatex">\(\cos x\)</span>のグラフが描かれます。
+<code>set origin</code>コマンドはグラフの左下の位置を決め、
+<code>set size</code>コマンドはグラフの縦横のサイズを変更します。</p>
+<p><img alt="multiplot" src="../figs/multiplot.png" /></p>
+<p><code>multiplot</code>モードを終了させるには
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>multiplot&gt; unset multiplot
+</code></pre></div></td></tr></table></div>
+と入力して下さい。</p>
+<h2 id="appendix-2">Appendix 2： アニメーション</h2>
+<p>【以下の内容は過去の資料にあったものですが、やり方が下手すぎます。最近のgnuplotでは<code>for</code>文が使えるので、アニメーションを作りたい人は<code>for</code>文を使ったやり方を検索するとよいと思います。】</p>
+<p>コマンドファイルをうまく使うと、アニメーションを作ってやることができます。</p>
+<p>まず、以下のようなファイルを作り、<code>anim.plt</code>などの名前で保存しておきます。
+（<code>pause -1</code>→<code>i=i+0.5</code>→<code>rep</code>の部分は、コピペ等で好きな数だけ繰り返してください）
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>set xrange [-20:20]
+set yrange [0:2]
+i=0
+p exp(-(x+i)**2)
+pause -1
+i=i+0.5
+rep
+pause -1
+i=i+0.5
+rep
+（以下略）
+</code></pre></div></td></tr></table></div></p>
+<p>これを<code>load</code>すると、リターンを押すごとに画像が動いて見えるはずです。
+<code>pause</code>コマンドは<code>pause 秒数</code>でその秒数だけ停止する、というコマンドです。
+秒数を-1にしたときにはリターンが押されるまでその状態で停止します。
+この技は、微分方程式の時間発展の結果のデータファイルを順番に読み込ませて時間発展の雰囲気を掴んだりする時に有用です。</p>
+<h2 id="appendix-3-fx">Appendix 3： 関数の利用（<code>f(x)</code>）</h2>
+<p>数式中の変数の値を少し変えただけの複数のグラフを描画したいとき、複雑な数式だと入力する作業が面倒なだけでなく、入力ミスから全然違うグラフを描画してしまうということがおきやすくなります。
+そんな時に便利なのが関数定義という機能です。
+これは数学関数の<span class="arithmatex">\(\sin,\cos\)</span>などのように、gnuplot中で使える一般的な関数<span class="arithmatex">\(f(x)\)</span>を自分で定義することができるというものです。</p>
+<p>例えば次のような関数を表示したいとき
+$$ y = a\sin(x)\cos(x) \quad (a=1,2) $$
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; f(a,x) = a*sin(x)*cos(x)
+gnuplot&gt; plot f(1,x)
+gnuplot&gt; replot f(2,x)
+</code></pre></div></td></tr></table></div>
+とすれば、いちいち似たような数式を入力することなく、2つの場合についてグラフを描くことができます。</p>
+<h2 id="appendix-4">Appendix 4： 三項演算子</h2>
+<p>例えばHeaviside関数（階段関数）のようにxの値によって関数の定義が変わってしまうようなグラフを描画するときに三項演算子というものを利用すると、簡単に描くことができます。</p>
+<p>三項演算子は次のような書き方をします。
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>&lt;条件文&gt; ? &lt;条件が真の時の処理&gt; : &lt;条件が偽の時の処理&gt;
+</code></pre></div></td></tr></table></div>
+具体例として、Heaviside関数を見てみましょう。
+Heaviside関数の定義は次のようになっています。
+$$
+ f(x) = \begin{cases}
+     1 &amp; ( x &gt; 0 )\
+     0 &amp; ( x &lt; 0 ) \
+ \end{cases}
+$$
+これを描くためには次のように入力します。
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set yrange [-0.2:1.2]
+gnuplot&gt; plot (x &lt; 0) ? 0 : 1
+</code></pre></div></td></tr></table></div></p>
+<p><img alt="Heaviside" src="../figs/Heaviside.png" /></p>
+<h2 id="appendix-5-set-parametric">Appendix 5： 媒介変数の利用（<code>set parametric</code>）</h2>
+<p>これまで紹介したものはすべて <span class="arithmatex">\(y=f(x)\)</span> や <span class="arithmatex">\(z=f(x,y)\)</span> と表せるものでした。
+しかしこれだけでは表現できないものもあります。
+そんなとき、gnuplotでは媒介変数を利用することもできます。
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set parametric
+</code></pre></div></td></tr></table></div>
+と入力することで媒介変数モードとなります。
+このとき媒介変数として認識される変数は、二次元プロットなら「t」、
+三次元プロットなら「u,v」となります。
+次に円・球を描く例をのせます。</p>
+<p>円を描く
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set parametric
+gnuplot&gt; plot cos(t),sin(t)
+</code></pre></div></td></tr></table></div></p>
+<p>球を描く
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set parametric
+gnuplot&gt; splot sin(u)*cos(v),sin(u)*sin(v),cos(u)
+</code></pre></div></td></tr></table></div></p>
+<h2 id="appendix-6-gnuplotshellshell">Appendix 6： gnuplot上でのshellコマンドの利用（<code>shell, !</code>）</h2>
+<p>gnuplotから一時的にshellに抜けることができます。そのためには、
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; shell
+</code></pre></div></td></tr></table></div>
+と打ちます。そうするとプロンプトがgnuplot起動前のものに戻るはずです。
+gnuplotに戻りたいときには<code>exit</code>でshellを終了してgnuplotのプロンプトに戻ってきます。</p>
+<p>1行だけのshellコマンドなら、<code>! command</code>のようしてgnuplot内から実行することもできます。
+例えば
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; !ls
+</code></pre></div></td></tr></table></div>
+などとやってみてください。</p>
+<p>また、<code>pwd</code>と<code>cd</code>はgnuplotのコマンドラインからも実行できます（<code>cd</code>は<code>!</code>をつけると使えません）。</p>
+<p>以下の例のように、ディレクトリ名は必ず引用符で括る必要があることに注意してください。
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; cd &#39;../&#39;
+</code></pre></div></td></tr></table></div></p>
+<h2 id="appendix-7">Appendix 7： 最小二乗フィッティング</h2>
+<p>gnuplotの強力な機能の一つとして関数のフィッティング（当てはめ）があります。
+パラメータを含んだ関数を用意すると、データファイルの数値に対して適当なパラメータの数値を自動的に検索してくれます。
+関数は線形、非線形を問いません。</p>
+<p>例として、あるデータファイル'linear.dat'を直線にフィッティングすることを考えます。
+まず、パラメータを含む関数<span class="arithmatex">\(f(x)\)</span>を定義します。
+関数フィッティングには<code>fit</code>コマンドを使います。
+オプションとして検索したいパラメータ名を、<code>via</code>に続けて与えます。</p>
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; f(x) = a*x + b
+ gnuplot&gt; fit f(x) &#39;linear.dat&#39; via a, b
+ gnuplot&gt; plot &#39;linear.dat&#39;
+ gnuplot&gt; replot f(x)
+</code></pre></div></td></tr></table></div>
+<p>収束しない場合は、大雑把に検討をつけた初期値を手で与えてやれば上手くいく場合が多いです。
+例えば、関数 <span class="arithmatex">\(f(x)\)</span>を定義したあとに<span class="arithmatex">\(a = -3\)</span>などとして初期値を与えてから<code>fit</code>します。</p>
+<h2 id="appendix-8">Appendix 8： 画像の処理について</h2>
+<h3 id="gv">gv</h3>
+<p><code>gv</code> はターミナル上で、
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gv ***.ps
+</code></pre></div></td></tr></table></div>
+のように打つと画像がババっと表示されるコマンドです。
+簡単に図を確認する事ができるので今後よく使用すると思います。</p>
+<h3 id="image-magick">Image Magick</h3>
+<p>Image Magickはps, eps, jpg, png, gifなど多くの形式に対応した画像処理ソフトです。
+主に<code>display</code>というコマンドと<code>convert</code>というコマンドを使います。</p>
+<p><code>display</code>はターミナル上で、
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ display ***.ps
+</code></pre></div></td></tr></table></div>
+のように打つとgvと同様に画像が表示されます。</p>
+<p><code>convert</code>は画像処理のためのコマンドです。
+ターミナル上で、
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ convert ***.ps ***.pdf
+</code></pre></div></td></tr></table></div>
+のように打つとpsファイルがpdfファイルに変換されます。</p>
+<p>他にも
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ convert -resize 80 file1 file2
+</code></pre></div></td></tr></table></div>
+と打つとfile1を80％に縮小した画像がfile2に書き込まれたり、
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ convert -delay 50 hoge1.gif hoge2.gif hoge3.gif hogehoge.gif
+</code></pre></div></td></tr></table></div>
+と打つとhoge1から3が0.5秒ずつ流れるgifアニメーションを作ることができたりします。
+このconvertはかなり有用だと思いますので調べて使ってみてください。</p>
+<h3 id="gimp">gimp</h3>
+<p><code>gimp</code>はターミナル上で、
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gimp ***.ps
+</code></pre></div></td></tr></table></div>
+のように打つと同様に画像が表示され、色々と手を加える事もできるコマンドです。</p>
+<h2 id="appendix-9">Appendix 9： エラーバーを付ける</h2>
+<p>観測値や実験値をグラフにする場合の多くは、そこにエラーバーを表示する必要があります。
+このような場合には<code>errorbars</code>というスタイルを指定します。
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set style data errorbars
+</code></pre></div></td></tr></table></div>
+または
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot &#39;observation.dat&#39; with errorbars
+</code></pre></div></td></tr></table></div></p>
+<p>データファイルには、3列または4列のデータが必要です。
+データが3列の場合にはそれぞれの行は <span class="arithmatex">\((x,y,\Delta y)\)</span> の組として解釈され、
+<span class="arithmatex">\((x,y\)</span>-<span class="arithmatex">\(\Delta y)\)</span> から <span class="arithmatex">\((x,y\)</span>+<span class="arithmatex">\(\Delta y)\)</span> までの線が引かれます。
+データが4列の場合には、それそれの列は <span class="arithmatex">\((x,y,y_{low},y_{high})\)</span> として解釈され、
+<span class="arithmatex">\((x,y_{low})\)</span> から <span class="arithmatex">\((x,y_{high})\)</span> までの線が引かれます。
+複数列のデータの中から使用する列を指定する場合には、次のように<code>using</code>を使います。
+<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot &#39;observation.dat&#39; using 1:4:3:5 with errorbars
+</code></pre></div></td></tr></table></div></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            ページトップへ戻る
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 amanotk
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/amanotk/chibutsu-utokyo/tree/main" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

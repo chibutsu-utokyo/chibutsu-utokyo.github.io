@@ -11,8 +11,11 @@ nav:
   #   - UNIX1/sample.md
   # - UNIX2:
   #   - UNIX2/sample.md
-  # - Gnuplot:
-  #   - Gnuplot/sample.md
+  - Gnuplot:
+    - gnuplot/gnuplot_1.md
+    - gnuplot/gnuplot_2.md
+    - gnuplot/gnuplot_3.md
+    - gnuplot/gnuplot_appendix.md
   - LaTeX:
     - LaTeX/chap1.md  # LaTeXの基礎知識
     - LaTeX/chap2.md  # LaTeXの基本(1)
