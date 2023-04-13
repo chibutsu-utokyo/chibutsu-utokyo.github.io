@@ -253,7 +253,11 @@ gnuplot> set output 'cos.ps'
 gnuplot> rep
 gnuplot> save 'cos.plt'
 ```
-としてみましょう。
+としてみましょう。[^1]
+
+[^1]:`ps`とはpostscriptの略です。画像の保存形式の一つと思ってください。
+
+
 これをエディタで開いてみると、
 ```
 #!/usr/bin/gnuplot -persist
