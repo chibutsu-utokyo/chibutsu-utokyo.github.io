@@ -172,7 +172,7 @@ LaTeXでは以下の3種類の箇条書き環境があります．
 \end{thebibliography}
 ```
 
-本文で用いる`\cite`とthebibliography環境ないで用いる`\bibitem`の引数の中身を同じにすることで，自動的に参照番号をつけてくれます．
+本文で用いる`\cite`とthebibliography環境内で用いる`\bibitem`の引数の中身を同じにすることで，自動的に参照番号をつけてくれます．
 また，`\begin{thebibliography}{9}`の数字を参考文献の数に合わせて変える必要があります．参考文献の数が1桁ならば9を，2桁ならば99といった感じです．
 
 ## パッケージ
@@ -199,4 +199,4 @@ TeX Liveに入っているパッケージの使い方はそれぞれのドキュ
 $ texdoc scsnowman
 ```
 
-などのように`texdoc`を用いることで調べることができます．また同様の機能を[https://texdoc.org/index.html]()から使用することができます．
+などのように`texdoc`を用いることで調べることができます．また同様の機能を[https://texdoc.org/index.html](https://texdoc.org/index.html)から使用することができます．
