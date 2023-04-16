@@ -8,7 +8,7 @@ LaTeX の本体はフリーなソフトウェアであり，どのようなエ�
 
 なお，TeX や LaTeX はそれぞれ「テック」「テフ」や「ラテック」「ラテフ」と読みます．また，TeX・LaTeX のロゴのデザインは決まっています．本書のように組版処理による表記ができない場合には**TeX**，**LaTeX**と書くルールになっています．
 
-本演習におけるサンプルファイルは dover の`/home0/ogawa2023/latex/sample`と[https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/sample_file](https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/sample_file)にあります（いずれも中身は同じです）．
+本演習におけるサンプルファイルは dover の`/home0/ogawa2023/latex/sample`と[https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/sample](https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/sample)にあります（いずれも中身は同じです）．
 
 ## 日本語のできるLaTeX
 2023年現在で，日本語を正しく扱える LaTeX は以下の3つです．
