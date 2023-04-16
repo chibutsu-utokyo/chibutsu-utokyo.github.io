@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../chap5/">
+        <link rel="prev" href="../chap6/">
       
-      
-        <link rel="next" href="../chap7/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
-        <title>付録 - 地球惑星物理学演習</title>
+        <title>提出課題 - 地球惑星物理学演習</title>
       
     
     
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              付録
+              提出課題
             
           </span>
         </div>
@@ -419,6 +417,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../chap6/" class="md-nav__link">
+        付録
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -431,12 +443,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          付録
+          提出課題
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        付録
+        提出課題
       </a>
       
         
@@ -455,49 +467,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    知っていると有用なパッケージ
+  <a href="#1" class="md-nav__link">
+    課題1
   </a>
-  
-    <nav class="md-nav" aria-label="知っていると有用なパッケージ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#siunitx" class="md-nav__link">
-    siunitx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listings" class="md-nav__link">
-    listings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xcolor" class="md-nav__link">
-    xcolor
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tikz" class="md-nav__link">
-    TikZ
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    マクロ
+  <a href="#2" class="md-nav__link">
+    課題2
   </a>
   
 </li>
@@ -506,20 +484,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chap7/" class="md-nav__link">
-        提出課題
-      </a>
     </li>
   
 
@@ -558,49 +522,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    知っていると有用なパッケージ
+  <a href="#1" class="md-nav__link">
+    課題1
   </a>
-  
-    <nav class="md-nav" aria-label="知っていると有用なパッケージ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#siunitx" class="md-nav__link">
-    siunitx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listings" class="md-nav__link">
-    listings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xcolor" class="md-nav__link">
-    xcolor
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tikz" class="md-nav__link">
-    TikZ
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    マクロ
+  <a href="#2" class="md-nav__link">
+    課題2
   </a>
   
 </li>
@@ -623,94 +553,25 @@
   
 
 
-<h1 id="_1">付録</h1>
-<p>知っていると有用なパッケージやマクロを非常に簡潔にまとめておきたいと思います．
-興味がある場合には各自調べてください．</p>
-<h2 id="_2">知っていると有用なパッケージ</h2>
-<p>TeX Liveに含まれているパッケージに限らず，ネットの海には非常に多くのパッケージが存在しています．
-そのなかでもTeX Liveに含まれている有用なパッケージをいくつか紹介しておきたいと思います．</p>
-<h3 id="siunitx">siunitx</h3>
-<p>国際単位系であるSI単位の表記法には様々な規則があります．これを自動で正しく表記してくれるパッケージです．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-<span style="color: #ff7b72">\SI</span><span style="color: #c9d1d9">{</span>1.0<span style="color: #c9d1d9">}{</span>kg.m.s<span style="color: #c9d1d9">^{</span>-2<span style="color: #c9d1d9">}}</span>
-</code></pre></div></td></tr></table></div></p>
-<h3 id="listings">listings</h3>
-<p>LaTeXにおいて，逐語的に文字列を表記するのに用いられる環境やコマンドとして，<code>verbatim</code>環境や<code>\verb</code>というものがあります．
-ソースコードを文書に貼りたい場合には上記のコマンドでは少し不十分に感じるときがあります．listingsパッケージではシンタックスハイライト等をつけて，見やすくソースコードを貼ることができます．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-    <span style="color: #ff7b72">\lstset</span><span style="color: #c9d1d9">{</span>language=[90]Fortran,
-        numbers=left,
-        commentstyle=<span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\small\ttfamily</span> <span style="color: #ff7b72">\color</span><span style="color: #c9d1d9">[rgb]{</span>0,0.5,0<span style="color: #c9d1d9">}}</span>,
-        keywordstyle=<span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\small\bfseries</span> <span style="color: #ff7b72">\color</span><span style="color: #c9d1d9">[rgb]{</span>1,0,0<span style="color: #c9d1d9">}}</span>,
-        backgroundcolor=<span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\color</span><span style="color: #c9d1d9">[gray]{</span>.85<span style="color: #c9d1d9">}}</span>,
-        stringstyle=<span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\small\ttfamily</span> <span style="color: #ff7b72">\color</span><span style="color: #c9d1d9">[rgb]{</span>0,0,1<span style="color: #c9d1d9">}}}</span>
-    <span style="color: #ff7b72">\begin</span><span style="color: #c9d1d9">{</span>lstlisting<span style="color: #c9d1d9">}</span>
-    ! test code
-    program main
-        implicit none
-            double precision :: x 
-            x = 1d0
-            write(*,*) x
-            write(*,*) &#39;test&#39;
-        stop
-    end program main
-    <span style="color: #ff7b72">\end</span><span style="color: #c9d1d9">{</span>lstlisting<span style="color: #c9d1d9">}</span>
-</code></pre></div></td></tr></table></div></p>
-<h3 id="xcolor">xcolor</h3>
-<p>LaTeX単体では文字色を変えることはできません．xcolorパッケージを使えば文字色を変えることができます．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-<span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\color</span><span style="color: #c9d1d9">{</span>red<span style="color: #c9d1d9">}</span>赤色<span style="color: #c9d1d9">}</span>
-</code></pre></div></td></tr></table></div></p>
-<h3 id="tikz">Tik<em>Z</em></h3>
-<p>非常に高度な描画パッケージです．あまりに高度すぎるため，マニュアルは2023年現在で1321ページにも及びます．
-すべてを学ぼうとするとあまりに長大ですが，マニュアル冒頭のチュートリアルを学べば基本的な図はかけるようになるでしょう．
+<h1 id="_1">提出課題</h1>
+<p>以下の点に注意して課題に取り組んでください．</p>
+<ul>
+<li>提出期限は授業終了から2週間後の<strong>5/2の00:00</strong>まで</li>
+<li>ファイル名は<code>s23????.tex</code>とすること</li>
+<li>dover の<code>/home0/ogawa2023/latex/submit</code>に提出すること</li>
+</ul>
+<p>何らかの都合で提出ができない場合にはslackで連絡してください．</p>
+<h2 id="1">課題1</h2>
+<p>dover の<code>/home0/ogawa2023/latex/sample</code>または<a href="https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/exercise">https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/exercise</a>に<code>report.pdf</code>および<code>twostream.png</code>というファイルがあります．<code>report.pdf</code>と同じような結果が得られるようなtexファイルを書いてください．
+また，texファイルの頭にどのLaTeXを用いたのかを以下のように明記してください．
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #c9d1d9">{</span>tikpicture<span style="color: #c9d1d9">}</span>
-    <span style="color: #ff7b72">\draw</span> (0.0) circle [radius=1];
-<span style="color: #ff7b72">\end</span><span style="color: #c9d1d9">{</span>tikzpicture<span style="color: #c9d1d9">}</span>
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">%lualatex</span>
+<span style="color: #ff7b72">\documentclass</span><span style="color: #c9d1d9">{</span>ltjsarticle<span style="color: #c9d1d9">}</span>
+...
 </code></pre></div></td></tr></table></div></p>
-<h2 id="_3">マクロ</h2>
-<p>LaTeXにおける非常に有用な機能としてマクロというものがあります．例えば偏微分</p>
-<div class="arithmatex">\[
-\frac{\partial x}{\partial t}
-\]</div>
-<p>を毎回書くのは面倒です．そこで例えば，<code>\pdiff</code>というコマンドを自分で定義し，
-<code>\pdiff{x}{t}</code>とすれば楽に書けそうです．このようなコマンドを定義する方法は大きく分けて以下の3通りがあります．</p>
-<ul>
-<li><strong>xparse</strong>の記法を用いる方法（<code>\NewDocumentCommand</code>など）</li>
-<li><strong>LaTeX</strong>の記法を用いる方法（<code>\newcommand</code>など）</li>
-<li><strong>TeX</strong>の記法を用いる方法（<code>\def</code>など）</li>
-</ul>
-<p>基本的にはどれを用いても同じことができますが，<strong>TeXの記法を用いる方法は使わないようにしましょう</strong>．
-LaTeXの勉強が甘い人が用いるとLaTeXが動かなくなります．
-また，残りの2つについてはどちらも基本的には安全ですが，より自由度の高いxparse記法を使うのがよいでしょう．
-より詳しい使い方の説明は<a href="https://qiita.com/zr_tex8r/items/50168ad7087516c3e139">ここ</a>などに記載されています．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% xparseを用いた例</span>
-<span style="color: #ff7b72">\NewDoccumentCommand\pdiff</span><span style="color: #c9d1d9">{</span>m m<span style="color: #c9d1d9">}{</span><span style="color: #ff7b72">\frac</span><span style="color: #c9d1d9">{</span><span style="color: #ff7b72">\partial</span> #1<span style="color: #c9d1d9">}{</span><span style="color: #ff7b72">\partial</span> #2<span style="color: #c9d1d9">}}</span>
-</code></pre></div></td></tr></table></div></p>
+<h2 id="2">課題2</h2>
+<p>今回の授業の感想・改善点等を書いてください．</p>
 
 
 
