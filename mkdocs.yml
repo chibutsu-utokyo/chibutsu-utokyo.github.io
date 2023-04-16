@@ -23,7 +23,7 @@ nav:
     - LaTeX/chap4.md  # 数式
     - LaTeX/chap5.md  # 画像
     # - LaTeX/chap6.md
-    # - LaTeX/chap7.md # 提出課題
+    - LaTeX/chap7.md # 提出課題
 #theme
 theme: 
   language: ja
