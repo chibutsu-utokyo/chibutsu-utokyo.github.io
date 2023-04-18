@@ -14,5 +14,6 @@
 
 日程などの詳細は[こちら](https://drive.google.com/file/d/1AHzJqs78EF9gW-JgOSva7Y08k-ffuYwM/view?usp=share_link)を参照してください．
 
-## 演習資料
-To be updated
+## 演習資料リンク
+- [Fortran演習](https://amanotk.github.io/fortran-resume-public/)
+- [Python演習](https://amanotk.github.io/python-resume-public/)
