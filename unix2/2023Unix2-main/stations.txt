@@ -1,0 +1,30 @@
+M01 Ogikubo 荻窪 – 0.0 JR Line
+M02 Minami-asagaya 南阿佐ケ谷 1.5 1.5  
+M03 Shin-koenji 新高円寺 1.2 2.7  
+M04 Higashi-koenji 東高円寺 0.9 3.6  
+M05 Shin-nakano 新中野 1.0 4.6   
+M06 Nakano-sakaue 中野坂上 1.1 5.7 Marunouchi Line (for Honancho; some trains through to Honancho), Toei Oedo Line
+M07 Nishi-shinjuku 西新宿 1.1 6.8   
+M08 Shinjuku 新宿 0.8 7.6 Toei Shinjuku Line, Toei Oedo Line, JR Line, Keio Line, Odakyu Line, Seibu Shinjuku Line
+M09 Shinjuku-sanchome 新宿三丁目 0.3 7.9 Fukutoshin Line, Toei Shinjuku Line
+M10 Shinjuku-gyoemmae 新宿御苑前 0.7 8.6  
+M11 Yotsuya-sanchome 四谷三丁目 0.9 9.5  
+M12 Yotsuya 四ツ谷 1.0 10.5 Namboku Line, JR Line 
+M13 Akasaka-mitsuke 赤坂見附 1.3 11.8 Ginza Line, Yurakucho Line, Hanzomon Line, Namboku Line
+M14 Kokkai-gijidomae 国会議事堂前 0.9 12.7 Chiyoda Line, Ginza Line, Namboku Line
+M15 Kasumigaseki 霞ケ関 0.7 13.4 Hibiya Line, Chiyoda Line
+M16 Ginza 銀座 1.0 14.4 Ginza Line, Hibiya Line, Yurakucho Line
+M17 Tokyo 東京 1.1 15.5 JR Line
+M18 otemachi 大手町 0.6 16.1 Tozai Line, Chiyoda Line, Hanzomon Line, Toei Mita Line
+M19 Awajicho 淡路町 0.9 17.0 Toei Shinjuku Line, Chiyoda Line
+M20 Ochanomizu 御茶ノ水 0.8 17.8 JR Line 
+M21 Hongo-sanchome 本郷三丁目 0.8 18.6 E Toei Oedo Line
+M22 Korakuen 後楽園 0.8 19.4 Namboku Line, Toei Mita Line, Toei Oedo Line 
+M23 Myogadani 茗荷谷 1.8 21.2  
+M24 Shin-otsuka 新大塚 1.2 22.4  
+M25 Ikebukuro 池袋 1.8 24.2 Yurakucho Line, Fukutoshin Line, JR Line, Seibu Ikebukuro Line, Tobu Tojo Line
+
+Mb03 Honancho 方南町 – 0.0   Suginami
+Mb04 Nakano-fujimicho 中野富士見町 1.3 1.3   Nakano
+Mb05 Nakano-shimbashi 中野新橋 0.6 1.9  
+

@@ -1,0 +1,51 @@
+{
+    "latex-workshop.intellisense.biblatexJSON.replace": {
+
+    
+    },
+	"latex-workshop.latex.recipes": [
+		{
+		  "name": "lualatex",
+		  "tools": ["lualatex"]
+		}
+	  ],
+"latex-workshop.latex.tools": [
+{
+	"name": "latexmk",
+	"command": "latexmk",
+	"args": [
+	 "-e",
+	 "$latex=q/uplatex %O -kanji=utf8 -no-guess-input-enc -synctex=1 -interaction=nonstopmode -file-line-error %S/",
+	 "-e",
+	 "$bibtex=q/upbibtex %O %B/",
+	 "-e",
+	 "$biber=q/biber %O --bblencoding=utf8 -u -U --output_safechars %B/",
+	 "-e",
+	 "$makeindex=q/upmendex %O -o %D %S/",
+	 "-e",
+	 "$dvipdf=q/dvipdfmx %O -o %D %S/",
+	 "-norc",
+	 "-gg",
+	 "-pdfdvi",
+	 "%DOC%"
+	]
+},
+{
+	"name": "lualatex",
+	"command": "lualatex",
+	"args": [
+	  "--cmdx",
+	  "-file-line-error",
+	  "-synctex=1",
+	  "-interaction=nonstopmode",
+	  "-halt-on-error",
+	  "%DOC%"
+	],
+	"env": {}
+  }
+],
+"json.schemas": [
+
+]
+
+}

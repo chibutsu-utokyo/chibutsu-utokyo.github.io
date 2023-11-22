@@ -1,0 +1,52 @@
+\documentclass{jarticle}
+
+%必要なパッケージの読み込み
+%\usepackage{pstcol}
+\usepackage{pst-eps}
+\usepackage{pst-plot}
+\usepackage{pst-node}
+
+%色の定義
+\definecolor{lightblue}{rgb}{.68, .85, .9}
+
+\begin{document}
+
+\begin{TeXtoEPS}
+%Make an EPS picture out of .dvi file with dvips -E
+%Use 'dvipsk -D600 -E -o fig.eps fig.dvi'
+%Pstrick picture 環境 & 設定
+
+\psset{unit=10mm}
+\begin{pspicture}(-10,-1)(10,4)
+
+%grid(編集用)
+%\psgrid[subgriddiv=1,griddots=5,gridlabels=5pt](-9,-0.5)(9,3.5)
+
+%lines
+\psline[linewidth=1pt,linecolor=black]
+{->}(-6.5,2)(-6.5,1.5)(-2,1.5)
+\psline[linewidth=1pt,linecolor=black]
+{->}(-0.5,1)(-0.5,0.5)(4,0.5)
+
+%boxes
+\psframe[framearc=0.25,linestyle=solid,linecolor=black]
+(-8,2)(-5,3)
+\psframe[framearc=0.25,linestyle=solid,linecolor=black]
+(-2,1)(1,2)
+\psframe[framearc=0.25,linestyle=solid,linecolor=black]
+(4,0)(7,1)
+
+%text
+\rput[c]{0}(-6.5,2.5){{\large /etc/profile}}
+\rput[c]{0}(-0.5,1.5){{\large $\sim$/.bash\_profile}}
+\rput[c]{0}(5.5,0.5){{\large $\sim$/.bashrc}}
+
+\rput[c]{0}(-6.5,3.4){{\normalsize For All Users, Login Shell}}
+\rput[c]{0}(-0.5,2.4){{\normalsize For You, Login Shell}}
+\rput[c]{0}(5.5,1.4){{\normalsize For You, When Shell Starts}}
+
+\end{pspicture} 
+
+\end{TeXtoEPS}
+
+\end{document}
