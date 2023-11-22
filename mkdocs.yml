@@ -5,6 +5,8 @@ copyright: "&copy; 2023 amanotk"
 # navigation
 nav:
   - はじめに: index.md
+  - Setup:
+    - setup/setup.md
   # - 計算機演習室の使い方:
   #   - login/sample.md
   # - UNIX1:
