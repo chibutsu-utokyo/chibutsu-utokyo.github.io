@@ -1,0 +1,21 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "waitFor": "onCreateCommand",
+  "postCreateCommand": "/bin/bash .devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
+    "vscode": {
+      "extensions": [
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vscode-remote.remote-containers",
+        "GitHub.copilot",
+        "shd101wyy.markdown-preview-enhanced"
+      ]
+    }
+  }
+}
