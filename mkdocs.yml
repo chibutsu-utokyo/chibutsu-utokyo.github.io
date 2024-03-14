@@ -4,19 +4,12 @@ site_name: 地球惑星物理学演習
 copyright: "&copy; 2024 chibutsu-utokyo"
 # navigation
 nav:
-  #- はじめに: index.md
   - Setup:
     - setup/setup.md
   - Unix:
     - unix/intro.md
     - unix/kadai1.md
     - unix/kadai2.md
-  # - 計算機演習室の使い方:
-  #   - login/sample.md
-  # - UNIX1:
-  #   - UNIX1/sample.md
-  # - UNIX2:
-  #   - UNIX2/sample.md
   - Gnuplot:
     - gnuplot/gnuplot_1.md
     - gnuplot/gnuplot_2.md
@@ -57,7 +50,7 @@ plugins:
   search:
     lang: 'ja'
 
-extra_javascript: 
+extra_javascript:
   - js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
