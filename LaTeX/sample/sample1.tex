@@ -1,0 +1,56 @@
+%% (u)pLaTeXの場合は下のコメントアウトは外す
+% \RequirePackage{plautopatch}
+
+% --- ドキュメントクラスの指定 ---
+%% pLaTeXの場合
+% \documentclass[platex,dvipdfmx]{jlreq}
+%% upLaTeXの場合
+% \documentclass[uplatex,dvipdfmx]{jlreq}
+%%LuaLaTeXの場合
+\documentclass[lualatex]{jlreq}
+% --- ここからプリアンブル ---
+
+%% (u)pLaTeXの場合は以下も入れる
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+
+%%%%%%%%%%%
+\NewDocumentCommand\somecs{O{t} m}{%
+	$\frac{\partial #2}{\partial #1}$%
+}
+
+% --- ここまでプリアンブル ---
+\begin{document}
+% --- ここから本文 ---
+	% 命令の練習
+	% 命令の基本
+	\LaTeX の練習\\  %コマンドの後に半角スペース->正しく動く
+	{\LaTeX}の練習\\ %コマンドを{}で囲う->正しく動く
+	\LaTeX{}の練習\\ %コマンドの後に{}を入力->正しく動く
+	%\LaTeXの練習   %コマンドに続けて地の文を入力->エラー
+
+	% 引数ありの命令
+	\somecs{f}
+	\somecs[x]{f}
+
+	% 改行の練習
+	このように入力ファイルで改行しても
+	出力では改行されません．
+
+	空白行を入れることで改行（改段落）されます．
+
+	% 空白の練習
+	全角の空白なら　　　　　しっかり出力される\\
+	半角空白だと     1個しか出力されない\\
+	これなら\ \ \ \ \ しっかり出る\\
+	これでも~~~~~しっかり出力される
+
+	% 特殊な記号の例
+	ブレース（左）：\{ \\
+	バックスラッシュ：\textbackslash \\
+	(u)pLaTeXの場合，fonstencとlmodernを入れ忘れると，
+	半角のアングルブラケット<>など一部の記号は正しく出力されない．
+
+% --- ここまで本文 ---
+\end{document}
+% --- ここから下には何も書かない ---
