@@ -7,7 +7,7 @@
 
 何らかの都合で提出ができない場合にはslackで連絡してください．
 ## 課題1
-dover の`/home0/ogawa2023/latex/sample`または[https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/exercise](https://github.com/amanotk/chibutsu-utokyo/tree/main/latex/exercise)に`report.pdf`および`twostream.png`というファイルがあります．`report.pdf`と同じような結果が得られるようなtexファイルを書いてください．
+dover の`/home0/ogawa2023/latex/sample`または[https://github.com/chibutsu-utokyo/chibutsu-utokyo.github.io/tree/main/latex/exercise](https://github.com/chibutsu-utokyo/chibutsu-utokyo.github.io/tree/main/latex/exercise)に`report.pdf`および`twostream.png`というファイルがあります．`report.pdf`と同じような結果が得られるようなtexファイルを書いてください．
 また，texファイルの頭にどのLaTeXを用いたのかを以下のように明記してください．
 ```latex
 %lualatex

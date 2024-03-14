@@ -1,12 +1,16 @@
 # site name
 site_name: 地球惑星物理学演習
 # copyright
-copyright: "&copy; 2023 amanotk"
+copyright: "&copy; 2024 chibutsu-utokyo"
 # navigation
 nav:
-  - はじめに: index.md
+  #- はじめに: index.md
   - Setup:
     - setup/setup.md
+  - Unix:
+    - unix/intro.md
+    - unix/kadai1.md
+    - unix/kadai2.md
   # - 計算機演習室の使い方:
   #   - login/sample.md
   # - UNIX1:
@@ -44,9 +48,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/amanotk/chibutsu-utokyo/tree/main
+      link: https://github.com/chibutsu-utokyo/chibutsu-utokyo.github.io
 
-repo_url: https://github.com/amanotk/chibutsu-utokyo/tree/main
+repo_url: https://github.com/chibutsu-utokyo/chibutsu-utokyo.github.io
 repo_name: chibutsu-utokyo
 
 plugins:
