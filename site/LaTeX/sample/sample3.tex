@@ -1,0 +1,57 @@
+% LuaLaTeXでの利用を想定
+\documentclass[lualatex]{jlreq}
+
+% 数式関連のパッケージの利用
+% 通常はこれらのパッケージの機能を利用する
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+	% 数式の基本
+	% インライン数式
+	分数は$a=\frac{b}{c}$とします
+	% ディスプレイ数式（数式番号なし）
+	\[
+		a = \frac{b}{c}
+	\]
+	% ディスプレイ数式（数式番号なし）
+	\begin{equation}
+		a = \frac{b}{c}
+	\end{equation}
+
+	% 空白の例
+	どちらが見慣れた式ですか？
+	\[ \int\int f(x,y) dx dy \]
+	\[ \int\!\!\!\int f(x,y) dx dy \]
+
+	% \displaystyleの例
+	本文中でも$\displaystyle\int_{a}^{b}$とすれば狭くない．
+
+	% 大きさの変わる括弧
+	% 例1
+	\[
+		\frac{1}{2}\times
+		\left(
+			\frac{4}{7}-\frac{5}{13}
+		\right)
+		\neq\frac{19}{162}
+	\]
+	% 例2
+	\[
+		u_{j}^{n+1} = u_{j}^{n} + \Delta t
+		\left.
+			\frac{\partial u}{\partial t}
+		\right|
+		_{j}^{n}\dots
+	\]
+
+	% 行列
+	\[
+		\left(
+		\begin{array}{ccc}
+			\cos x & -\sin x & 0 \\
+			\sin x & \cos x & 0 \\
+			0 & 0 & 1
+		\end{array}
+		\right)
+	\]
+\end{document}

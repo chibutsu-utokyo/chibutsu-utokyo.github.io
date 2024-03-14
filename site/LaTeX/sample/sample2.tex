@@ -1,0 +1,86 @@
+% LuaLaTeXでの利用の場合を想定
+\documentclass[lualatex]{jlreq}
+% プリアンブルで著者名等を設定すると管理しやすい
+\title{タイトル}
+\author{著者名}
+\date{日付}
+% コンパイルした日の日にちを出したい場合には
+% \dateを使わない
+% 日にちを出したくない場合には
+% \date{}
+% とする
+
+% パッケージの利用
+\usepackage{scsnowman}
+
+\begin{document}
+	% タイトル（タイトル・著者名・日付）の出力
+	\maketitle
+
+	% 目次の出力
+	% 一回では反映されない点に注意
+	\tableofcontents
+	
+	% 節見出し
+	\section{節見出し}
+	適当なイントロ
+	\subsection{小節見出し1}
+	ほげほげ
+	\subsection{小節見出し2}
+	ふがふが
+
+	% 書体の変更
+	このようにして\textgt{ゴシック体}にします．\\
+	違う属性なら\textbf{\textsf{hoge}}みたいにもできます．
+
+	% 文字サイズ変更
+	こんなふうに文字サイズを{\LARGE 大きく}したり{\footnotesize 小さく}できます
+
+	% 箇条書き
+	% itemize環境の場合
+	\begin{itemize}
+		\item 要素1
+		\item 要素2
+	\end{itemize}
+	%description環境の場合
+	\begin{description}
+		\item[大気海洋分野] 適当な説明
+		\item[固体地球分野] 適当な説明
+		\item[宇宙惑星分野] 適当な説明
+	\end{description}
+	\newpage
+	%入れ子にすると頭の記号が変わる
+	\begin{itemize}
+		\item 要素1
+		\begin{itemize}
+			\item 要素1-1
+			\item 要素1-2
+		\end{itemize}
+		\item 要素2
+	\end{itemize}
+
+	% 脚注
+	適当な文章に脚注をつけてみましょう．
+	\footnote{このように脚注をつけられます}
+
+	% 引用
+	% 簡単な引用
+	ほげ山ほげ尾の「ほげの科学」には
+	\begin{quotation}
+		適当な文章
+	\end{quotation}
+	というくだりがある．
+
+	% 参考文献
+	% 本文
+	ほげ山ほげ尾の「ほげの科学」~\cite{ほげ}，ふが川ふが実の「ふが学」~\cite{ふが}によると...
+
+	% パッケージの利用例
+	\scsnowman
+
+	% 参考文献
+	\begin{thebibliography}{9}
+		\bibitem{ほげ} ほげ山ほげ尾『ほげの科学』ほげ出版
+		\bibitem{ふが} ふが川ふが実『ふが学』ふが出版
+	\end{thebibliography}
+\end{document}
