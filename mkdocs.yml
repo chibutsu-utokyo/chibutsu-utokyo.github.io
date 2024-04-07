@@ -4,8 +4,6 @@ site_name: 地球惑星物理学演習
 copyright: "&copy; 2024 chibutsu-utokyo"
 # navigation
 nav:
-  - Setup:
-    - setup/setup.md
   - Unix:
     - unix/intro.md
     - unix/kadai1.md
@@ -24,7 +22,7 @@ nav:
     - LaTeX/chap6.md  # 付録
     - LaTeX/chap7.md  # 提出課題
 #theme
-theme: 
+theme:
   language: ja
   name: material
   font:
