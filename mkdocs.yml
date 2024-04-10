@@ -21,6 +21,12 @@ nav:
     - LaTeX/chap5.md  # 画像
     - LaTeX/chap6.md  # 付録
     - LaTeX/chap7.md  # 提出課題
+  - Remote Access:
+    - RemoteAccess/introduction.md  # イントロダクション
+    - RemoteAccess/SSH.md  # SSH
+    - RemoteAccess/VPN.md  # VPN
+    - RemoteAccess/559servers.md  # 559のサーバー群
+    - RemoteAccess/kadai.md  # 課題
 #theme
 theme:
   language: ja
