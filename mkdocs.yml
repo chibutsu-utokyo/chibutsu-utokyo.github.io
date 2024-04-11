@@ -25,8 +25,9 @@ nav:
     - RemoteAccess/introduction.md  # イントロダクション
     - RemoteAccess/SSH.md  # SSH
     - RemoteAccess/VPN.md  # VPN
-    - RemoteAccess/559servers.md  # 559のサーバー群
     - RemoteAccess/kadai.md  # 課題
+    - RemoteAccess/559servers.md  # 559のサーバー群
+    - RemoteAccess/cyberattack.md  # サイバー攻撃
 #theme
 theme:
   language: ja
