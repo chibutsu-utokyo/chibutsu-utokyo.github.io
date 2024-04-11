@@ -964,12 +964,12 @@
 自分のPCにdockerをインストールするか、Codespaceを使ってください。559のMac miniにはインストールされていません。</p>
 <hr />
 <p>以下、Codespaceで行う場合の手順です。<br />
-まずは、<code>/workspaces/chibutsu-utokyo.github.io/docs/RemoteAccess</code>に移動して、docker_setup.shを実行してください。少し時間がかかります。
+まずは、<code>/workspaces/ubuntu-22.04/remote_access</code>に移動して、docker_setup.shを実行してください。少し時間がかかります。
 <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ cd /workspaces/chibutsu-utokyo.github.io/docs/RemoteAccess
+<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ cd /workspaces/ubuntu-22.04/remote_access
 
 # 権限を要求された場合
 $ chmod 700 docker_setup.sh
@@ -1008,7 +1008,12 @@ chibutsu@localhost: Permission denied (publickey,password).
 <p>今回はブルートフォース攻撃(総当たり攻撃)をやってみようと思います。あり得そうなパスワードのリストを片っ端から試す攻撃手法です。  </p>
 <p>調査の結果、「chibutsu」さんは東京大学の地球惑星物理学科に所属する学生であることが分かりました。
 主に固体地球・大気海洋・宇宙惑星が好きな学生が所属する機関らしいです。<br />
-この情報を元にChatGPTにパスワードリストを作成してもらい、passwords.txtに保存しました。  </p>
+この情報を元に、ChatGPTにパスワードリストを作成してもらい、passwords.txtに保存しました。このテキストファイルを開いて、中身を見てみてください。地物っぽい単語が並んでいると思います。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ChatGPTの有効な活用の仕方については、「プロンプトエンジニアリング」で検索してみてください。<br />
+書籍も数多く出版されていますが、ピンキリです。</p>
+</div>
 <p>それでは、このパスワードリストを用いてSSHログインを試しましょう。<br />
 シェルスクリプトで攻撃コードを組むのは地味に大変なので、今回はPythonで組みました。<br />
 理解できなくても良いので、bruteforce_ssh.pyを眺めてみてください。Pythonの授業が終わる頃には、何をしているかなんとなく分かるようになっているはずです。 </p>
@@ -1086,7 +1091,7 @@ with open(passwords_path, &quot;r&quot;) as file:
 
             sys.exit()
         except paramiko.AuthenticationException:
-            print(f&quot;{PASSWORD} is not correct...&quot;)
+            print(f&quot;{PASSWORD} is not correct&quot;)
         finally:
             ssh.close()
 </code></pre></div></td></tr></table></div>
@@ -1106,12 +1111,12 @@ with open(passwords_path, &quot;r&quot;) as file:
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ python bruteforce_ssh.py 
-earth is not correct...
-planet is not correct...
-physics is not correct...
+earth is not correct
+planet is not correct
+physics is not correct
 ...
-tornado is not correct...
-storm is not correct...
+tornado is not correct
+storm is not correct
 
 SUCCESS!
 username : chibutsu
@@ -1161,6 +1166,7 @@ chibutsu@960522125acf:~$
 <li>ハッキング・ラボのつくりかた 完全版 仮想環境におけるハッカー体験学習</li>
 <li>体系的に学ぶ安全なWebアプリケーションの作り方 第2版 脆弱性が生まれる原理と対策の実践</li>
 <li>実践 bashによるサイバーセキュリティ対策 セキュリティ技術者のためのシェルスクリプト活用術</li>
+<li>セキュリティエンジニアのための機械学習 AI技術によるサイバーセキュリティ対策入門</li>
 <li>詳解セキュリティコンテスト CTFで学ぶ脆弱性攻略の技術</li>
 <li>ソーシャル・エンジニアリング 最大の弱点“人間”をハッカーの魔の手から守るには</li>
 </ul>
