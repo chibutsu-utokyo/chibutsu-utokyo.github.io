@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -789,15 +789,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#utokyo-vpn_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      UTokyo-VPNを使う理由
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -921,15 +912,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#utokyo-vpn_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      UTokyo-VPNを使う理由
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -952,20 +934,14 @@
 <h2 id="vpn_1">VPNとは</h2>
 <p>VPN(Virtual Private Network)とは、インターネットのような公衆回線(0000UTokyo等、多くの人が一緒に使える回線)を自分専用の回線(ケーブルでつながるイメージ)として利用する技術です。<br />
 もちろん、実際にケーブルでつながるわけではなく、暗号化技術を駆使して実現させます。<br />
-通信内容のみを暗号化するものから、通信元や通信先まで含めて暗号化するものまで、いろいろありますが、詳細は省略します。  </p>
-<p>気になる方は、「SSL-VPN」とか「IPsec-VPN」で検索してみてください。
-コンピュータ用語だらけなので、もしコンピュータが嫌いになりそうならブラウザを閉じましょう。  </p>
-<p>ネットワーク接続をするときの、信頼できる仲介業者だと思っていただければOKです。</p>
+通信内容のみを暗号化するものから、通信元や通信先まで含めて暗号化するものまで、いろいろありますが、詳細は省略します。<br />
+気になる方は、「SSL-VPN」とか「IPsec-VPN」で検索してみてください。
+コンピュータ用語だらけなので、もしコンピュータが嫌いになりそうならブラウザを閉じましょう。</p>
 <h2 id="utokyo-vpn">UTokyo-VPN</h2>
 <p>以下のサイトを参考にして、UTokyo-VPNが使えるように自分のPCをセットアップしてください。  </p>
 <p><a href="https://utelecon.adm.u-tokyo.ac.jp/utokyo_vpn/">UTokyo-VPNのリンク</a>  </p>
 <p>UTokyo Accountの多要素認証の有効化が必要であり、有効化されるまでに数十分かかる可能性があります。<br />
 可能なら、演習開始前に多要素認証の設定をしておきましょう。</p>
-<h2 id="utokyo-vpn_1">UTokyo-VPNを使う理由</h2>
-<p>UTokyo-VPNを経由したアクセス(SSH接続など)のみを許可することで、アクセスを要求している人が東大の構成員であることが保証されます(100%ではありませんが)。<br />
-これまでは特に対策をしていなかったため、世界中の誰からでもアクセス要求を出すことができましたが、セキュリティ上危険だということで昨年から導入されました。  </p>
-<p>これにより、<a href="../cyberattack/">サイバー攻撃のページ</a>で紹介するようなブルートフォース攻撃は防ぐことができます。
-もちろん、UTokyo Accountが流出した場合は、それを利用することで攻撃を実行できます。</p>
 
 
 
@@ -1040,7 +1016,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="../../js/mathjax.js"></script>
       
