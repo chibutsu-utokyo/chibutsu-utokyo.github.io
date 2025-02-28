@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -857,66 +857,73 @@
 
 
 <h1 id="2">提出課題2</h1>
+<p>（以下の章番号はデフォルトではLinux標準教科書Ver.4を指していますが，一部Ver.3を指す場合にはその旨明示します．）</p>
 <ol>
 <li>
-<p><code>ls -l /var/log/*.log</code> の出力を <code>log-files.txt</code> という名前のファイルに保存するコマンドを答えよ．（参照： 4.2）</p>
+<p><code>ls -l /var/log/*.log</code> の出力を <code>log-files.txt</code> という名前のファイルに保存するコマンドを答えよ．（参照：6.2）</p>
 </li>
 <li>
-<p><code>ls c c++ fortran python</code> は引数に与えられたディレクトリの内容を表示するコマンドである．ただし存在しないディレクトリが引数に与えられた場合にはエラーメッセージが表示される．このエラーメッセージをリダイレクトを用いて <code>error.txt</code> というファイルに保存するためのコマンドを答えよ．（参照： 4.3）</p>
+<p><code>ls c c++ fortran python</code> は引数に与えられたディレクトリの内容を表示するコマンドである．ただし存在しないディレクトリが引数に与えられた場合にはエラーメッセージが表示される．このエラーメッセージのみをリダイレクトを用いて <code>error.txt</code> というファイルに保存するためのコマンドを答えよ．（参照：6.3）</p>
 </li>
 <li>
-<p><code>ls -l /usr/bin</code> は <code>/usr/bin</code> 以下にあるファイルを表示するコマンドであるが，出力がターミナルの表示範囲に収まりきらなかった．このときパイプとページャを使って出力をスクロールできるようにするためのコマンドを答えよ．（参照： 4.4）</p>
+<p><code>ls -l /usr/bin</code> は <code>/usr/bin</code> 以下にあるファイルを表示するコマンドであるが，出力がターミナルの表示範囲に収まりきらなかった．このときパイプとページャを使って出力をスクロールできるようにするためのコマンドを答えよ．（参照：6.4）</p>
 </li>
 <li>
-<p>前問のコマンド出力からパイプと <code>grep</code> コマンドを使って <code>fortran</code> を含むファイルだけを表示するコマンドを答えよ．（参照： 4.5）</p>
+<p><code>ls -l /usr/bin</code> の出力のうち先頭の10行のみを表示するコマンド，末尾の10行のみを表示するコマンドをそれぞれ答えよ．（参照：6.5）</p>
 </li>
 <li>
-<p>rootユーザーとは何か答えよ．（参照： 7.3.1, 7.3.2）</p>
+<p><code>ls -l /usr/bin</code> の出力からパイプと <code>grep</code> コマンドを使って <code>fortran</code> を含むファイルだけを表示するコマンドを答えよ．（参照：6.9）</p>
 </li>
 <li>
-<p><code>sudo</code>コマンドとは何か答えよ．codespace上の一般ユーザー <code>codespace</code>は <code>sudo</code> コマンドを使うことができる．（参照： 7.3.4）</p>
+<p>rootユーザーとは何か答えよ．（参照：8.2）</p>
 </li>
 <li>
-<p><code>sudo mkdir testdir</code> コマンドで作成したディレクトリの所有者と所有グループを答えよ．（参照： 8.1）</p>
+<p><code>sudo</code>コマンドとは何か答えよ．codespace上の一般ユーザー <code>codespace</code>は <code>sudo</code> コマンドを使うことができる．（参照：8.2）</p>
 </li>
 <li>
-<p><code>sudo chown</code> で <code>testdir</code> の所有者を <code>codespace</code> に変更するコマンドを答えよ．（参照： 8.1.1）</p>
+<p><code>sudo mkdir testdir</code> コマンドで作成したディレクトリの所有者と所有グループを答えよ．（参照：9.1）</p>
 </li>
 <li>
-<p><code>sudo chgrp</code> で <code>testdir</code> の所有グループを <code>codespace</code> に変更するコマンドを答えよ．（参照： 8.1.2）</p>
+<p><code>sudo chown</code> で <code>testdir</code> の所有者を <code>codespace</code> に変更するコマンドを答えよ．（参照：9.1）</p>
 </li>
 <li>
-<p><code>testdir</code> は所有者のみが書き込みできる状態である．これを所有者が書き込みできない（読み込み専用）にするコマンドを答えよ．（参照： 8.2.2）</p>
+<p><code>sudo chgrp</code> で <code>testdir</code> の所有グループを <code>codespace</code> に変更するコマンドを答えよ．（参照：9.1）</p>
 </li>
 <li>
-<p><code>unix/hello.sh</code> はシェルスクリプト（第9章参照）であり，デフォルトでは <code>bash unix/hello.sh</code> のように <code>bash</code> コマンドに対して引数として与えることで実行することができる．このファイルを直接 <code>unix/hello.sh</code> のように（ <code>bash</code> なしで）実行できるように実行権限を付与するコマンドを答えよ．（参照： 8.2.2）</p>
+<p><code>testdir</code> は所有者のみが書き込みできる状態である．これを所有者が書き込みできない（読み込み専用）にするコマンドを答えよ．（参照：9.2）</p>
 </li>
 <li>
-<p>シェルスクリプト <code>unix/sleep.sh</code> を <code>bash unix/sleep.sh</code> と実行したところ，終了までに時間がかかることが分かったので一旦中断したい．どのようなキーボード入力をすればよいか答えよ．（参照： 11.3）</p>
+<p><code>unix/hello.sh</code> はシェルスクリプト（参照：Ver.3-9）であり，デフォルトでは <code>bash unix/hello.sh</code> のように <code>bash</code> コマンドに対して引数として与えることで実行することができる．このファイルを直接 <code>unix/hello.sh</code> のように（ <code>bash</code> なしで）実行できるように実行権限を付与するコマンドを答えよ．（参照：9.2）</p>
 </li>
 <li>
-<p>前問で中断したコマンドを再開したい．このためのコマンドを答えよ．（参照： 11.3）</p>
+<p>シェルスクリプト <code>unix/sleep.sh</code> を <code>bash unix/sleep.sh</code> と実行したところ，終了までに時間がかかることが分かったので一旦中断したい．どのようなキーボード入力をすればよいか答えよ．（参照：Ver.3-11.3）</p>
 </li>
 <li>
-<p>新たに初めからバックグランドで <code>bash unix/sleep.sh</code> を実行したい．このためのコマンドを答えよ．（参照： 11.3）</p>
+<p>前問で中断したコマンドを再開したい．このためのコマンドを答えよ．（参照：Ver.3-11.3）</p>
 </li>
 <li>
-<p>バックグラウンドで実行中のジョブの状態を確認するためのコマンドを答えよ．（参照： 11.3）</p>
+<p>新たに初めからバックグランドで <code>bash unix/sleep.sh</code> を実行したい．このためのコマンドを答えよ．（参照：Ver.3-11.3）</p>
 </li>
 <li>
-<p>特定のプロセス番号（PID）（例：123456）を持つプロセスを強制終了するためのコマンドを答えよ．（参照： 11.5）</p>
+<p>バックグラウンドで実行中のジョブの状態を確認するためのコマンドを答えよ．（参照：Ver.3-11.3）</p>
 </li>
 <li>
-<p>viエディタでインサートモードに切り替えるためのコマンドを答えよ．（参照： 6.1）</p>
+<p>特定のプロセス番号（PID）（例：123456）を持つプロセスを強制終了するためのコマンドを答えよ．（参照：11.3）</p>
 </li>
 <li>
-<p>viエディタでコマンドモードに切り替えるためのコマンドを答えよ．（参照： 6.1）</p>
+<p>viエディタを起動して入力（インサート）モードに切り替えるためにはどうしたらよいか答えよ．（参照：7.2）</p>
 </li>
 <li>
-<p>viエディタで現在の編集内容を保存せずに終了するためのコマンドを答えよ．（参照： 6.1）</p>
+<p>viエディタで入力（インサート）モードから編集（コマンド）モードに切り替えるためはどうしたらよいか答えよ．（参照：7.2）</p>
 </li>
 <li>
-<p>viエディタで現在の編集内容を保存して終了するためのコマンドを答えよ．（参照： 6.1）</p>
+<p>viエディタで現在の編集内容を保存せずに終了するためのコマンドを答えよ．（参照：7.2）</p>
+</li>
+<li>
+<p>viエディタで現在の編集内容を保存して終了するためのコマンドを答えよ．（参照：7.2）</p>
+</li>
+<li>
+<p>viエディタで空のファイル <code>hoge.txt</code> を作成し，ファイルの内容を <code>hello world</code> として保存し，終了するための手順を答えよ．</p>
 </li>
 <li>
 <p>今日の演習の感想を一言述べよ．</p>
@@ -996,7 +1003,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="../../js/mathjax.js"></script>
       

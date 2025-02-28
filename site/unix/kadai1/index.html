@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -857,58 +857,72 @@
 
 
 <h1 id="1">提出課題1</h1>
+<p>（以下の章番号はデフォルトではLinux標準教科書Ver.4を指していますが，一部Ver.3を指す場合にはその旨明示します．）</p>
 <ol>
 <li>
-<p>最初に趣味でUnix互換のOSとして後のLinuxの開発を始めた人物の名前を答えよ．（参照：1.2.4）</p>
+<p>最初に趣味でUnix互換のOSとして後のLinuxの開発を始めた人物の名前を答えよ．（参照：Ver.3-1.2）</p>
 </li>
 <li>
-<p><code>/etc</code> にあるファイルやディレクトリを表示するためのコマンドを答えよ．（参照：3.1.2）</p>
+<p>Linux以外のOSの例を複数挙げよ．（参照：1.2）</p>
 </li>
 <li>
-<p>Linuxではドット <code>.</code> で始まるファイルやディレクトリは通常は表示されない隠しファイルである．このような隠しファイルを表示するためのコマンドを答えよ．（参照：3.1.3）</p>
+<p>Linuxのディストリビューションの例を複数挙げよ．（参照：1.2）</p>
 </li>
 <li>
-<p><code>/etc/hosts</code> を <code>hosts.copy</code> としてコピー（copy）するコマンドを答えよ．（参照：3.1.5）</p>
+<p>Linuxの用途を複数挙げよ．（参照：1.3）</p>
 </li>
 <li>
-<p><code>hosts.copy</code> を <code>hosts.move</code> として移動（move）するコマンドを答えよ．（参照：3.1.6）</p>
+<p>GUIとCUIの特徴をそれぞれ答えよ．（参照：1.4）</p>
 </li>
 <li>
-<p><code>hosts.move</code> を 削除するコマンドを答えよ．（参照：3.1.7）</p>
+<p><code>/etc</code> にあるファイルやディレクトリを表示するためのコマンドを答えよ．（参照：5.1）</p>
 </li>
 <li>
-<p>以下のコマンドによって表示されるのは何か答えよ．（参照：3.2.1, 3.2.2）
+<p>Linuxではドット <code>.</code> で始まるファイルやディレクトリは通常は表示されない隠しファイルである．隠しファイルを含めて <code>/</code> にあるファイルやディレクトリを表示するためのコマンドを答えよ．（参照：5.1）</p>
+</li>
+<li>
+<p><code>/etc/hosts</code> の内容をターミナルに表示するためのコマンドを答えよ．（参照：5.2）</p>
+</li>
+<li>
+<p><code>hoge</code> というディレクトリを作成し，そのディレクトリに移動するためのコマンドを答えよ．（参照：5.4）</p>
+</li>
+<li>
+<p>ホームディレクトリおよびカレントディレクトリとは何か答えよ．（参照：5.5）</p>
+</li>
+<li>
+<p><code>/etc/hosts</code> を <code>hosts.copy</code> としてコピー（copy）するコマンドを答えよ．（参照：5.6）</p>
+</li>
+<li>
+<p><code>hosts.copy</code> を <code>hosts.move</code> として移動（move）するコマンドを答えよ．（参照：5.7）</p>
+</li>
+<li>
+<p><code>hosts.move</code> を 削除するコマンドを答えよ．（参照：5.8）</p>
+</li>
+<li>
+<p><code>/usr/</code> ディレクトリ以下にある <code>gfortran</code> という名前のファイルを検索するコマンドを答えよ．（参照：5.9）</p>
+</li>
+<li>
+<p><code>python</code> というコマンドの絶対パスを調べるコマンドを答えよ．（参照：5.10）</p>
+</li>
+<li>
+<p>以下のコマンドによって表示されるのは何か答えよ．
     <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6e7681"> </span><span style="color: #e6edf3">cd</span>
 $<span style="color: #6e7681"> </span><span style="color: #e6edf3">pwd</span>
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>
-<p><code>hoge</code> というディレクトリを作成しようと思っていたところ，間違って <code>mkdir fuga</code> を実行してしまった．このディレクトリ <code>fuga</code> を削除して正しく <code>hoge</code> という名前のディレクトリを作るためのコマンド（２行）を答えよ．（参照：3.2.3, 3.2.4）</p>
+<p><code>hoge</code> というディレクトリを作成しようと思っていたところ，間違って <code>mkdir fuga</code> を実行してしまった．このディレクトリ <code>fuga</code> を削除して正しく <code>hoge</code> という名前のディレクトリを作るためのコマンド（２行）を答えよ．</p>
 </li>
 <li>
-<p><code>cp /etc/passwd ~/passwd</code> によって <code>/etc/passwd</code> はどこにコピーされるか答えよ．（参照：3.2.5）</p>
+<p><code>cp /etc/passwd ~/passwd</code> によって <code>/etc/passwd</code> はどこにコピーされるか答えよ．</p>
 </li>
 <li>
-<p>以下のコマンドを実行したとき，カレントディレクトリの絶対パスを答えよ．（参照：3.2.6）
+<p>以下のコマンドを実行したとき，カレントディレクトリの絶対パスを答えよ．
     <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6e7681"> </span><span style="color: #e6edf3">cd</span><span style="color: #6e7681"> </span>/usr/share/man
 $<span style="color: #6e7681"> </span><span style="color: #e6edf3">cd</span><span style="color: #6e7681"> </span>../../bin
 </code></pre></div></td></tr></table></div></p>
-</li>
-<li>
-<p>以下のコマンドは何をしているか答えよ．（参照：3.3.1）
-    <div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6e7681"> </span>cat<span style="color: #6e7681"> </span>~/.profile
-</code></pre></div></td></tr></table></div></p>
-</li>
-<li>
-<p>コマンドラインで  <code>~/.bashrc</code> の中身を確認ようとしたところ，内容がターミナルの表示範囲に収まりきらなかった．このとき内容をスクロールできるようにするためには，どのようなコマンドを使えばよいか答えよ．（参照：3.3.2）</p>
-</li>
-<li>
-<p><code>/usr/</code> ディレクトリ以下にある <code>gfortran</code> という名前のファイルを検索するコマンドを答えよ．（参照：3.4）</p>
-</li>
-<li>
-<p><code>python</code> というコマンドの絶対パスを調べるコマンドを答えよ．（参照：3.5.1）</p>
 </li>
 <li>
 <p>今日の演習の感想を一言述べよ．</p>
@@ -988,7 +1002,7 @@ $<span style="color: #6e7681"> </span><span style="color: #e6edf3">cd</span><spa
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="../../js/mathjax.js"></script>
       
