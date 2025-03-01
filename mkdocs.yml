@@ -28,6 +28,9 @@ nav:
     - RemoteAccess/kadai.md  # 課題
     - RemoteAccess/559servers.md  # 559のサーバー群
     - RemoteAccess/cyberattack.md  # サイバー攻撃
+  - Python:
+    - python/intro.md
+    - python/kadai1.md
 #theme
 theme:
   language: ja
