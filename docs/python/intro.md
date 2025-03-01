@@ -45,7 +45,7 @@ Hello, World!
 
 `python` コマンドを使わずに通常のコマンドのようにスクリプトを実行するには
 
-```python
+```python linenums="1"
 #!/usr/bin/env python
 print('Hello, World !')
 ```
