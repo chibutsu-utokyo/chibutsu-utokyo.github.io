@@ -8,23 +8,21 @@ Unixの演習では [Linux標準教科書](https://linuc.org/textbooks/linux/) �
 なお，各課題にはヒントとしてこのテキストの該当する節への参照が示されています．
 
 ## Unix環境について
-Unixの演習では [Github Codespace](https://github.com/chibutsu-utokyo/ubuntu-22.04) を用います．  
+Unixの演習では [Github Codespace](https://github.com/chibutsu-utokyo/debian) を用います．  
 詳細はリンク先を参照してください．
 
 ## 課題提出について
 - [提出課題1](kadai1.md)
 - [提出課題2](kadai2.md)
 
-これらの課題に対する解答を提出してください． 解答の雛形が
-[Codespace](https://github.com/chibutsu-utokyo/ubuntu-22.04) 
+これらの課題に対する解答を提出してください． 解答の雛形が Codespace 
 の `unix/sXXXXXX_kadai1.txt` と `unix/sXXXXXX_kadai2.txt` にそれぞれ置いてあります．  
 これらのファイルに解答を記入し，ファイル名の `sXXXXXX` を **自分のアカウント名に変更** した上で，
 **ECCSメールアドレスから添付ファイルとして** 送付してください．
 また **メールの件名はファイル名と同一** としてください．  
 （提出締め切りや送信先については指示をしますのでそれに従ってください．）
 
-なお，課題の実施は特に指示のない限りは 
-[Codespace](https://github.com/chibutsu-utokyo/ubuntu-22.04) 
+なお，課題の実施は特に指示のない限りは Codespace
 のワークスペースのルートディレクトリで実行するものとします．
 カレントディレクトリが分からなくなったときには，
 ```bash

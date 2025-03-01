@@ -7,7 +7,7 @@
 
 ### VSCode起動方法
 ウェブ上でVSCodeを使って編集ができる．
-[ここ](https://github.com/chibutsu-utokyo/ubuntu-22.04)
+[ここ](https://github.com/chibutsu-utokyo/debian)
 を参考にmainブランチからVSCodeを起動する．  
 必要なソフトウェア（mkdocs, mkdocs-material, pygments）は既にインストール済み．
 
