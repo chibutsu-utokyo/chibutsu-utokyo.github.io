@@ -27,20 +27,21 @@ mkdocs serve
 新しいMarkdownファイルを追加した際には，`mkdocs.yml`内の`nav:`の項目を書き換えると，
 サイト左のメニューバーに表示されるようになる．
 
-### ウェブサイト更新
-ウェブサイトの更新は`gh-pages`ブランチに対してpushすることで反映される．  
-これは
+### 更新
+編集内容を更新は以下の手順で行う．必ず両方行うこと．
+- ウェブサイトの更新
 ```shell
 mkdocs gh-deploy
 ```
-によって自動的に行われる．このコマンドの意味は
+で https://chibutsu-utokyo.github.io/ に（数分程度で）更新が反映される．  
+(`mkdocs build` で更新される `site` ディレクトリの中身が `gh-pages` ブランチにpushされる．)
+- ソースの更新
 ```shell
-mkdocs build
+git commit -a # コミットメッセージを入力
+git push
 ```
-で作成される`site`ディレクトリの中身を`gh-pages`ブランチにpushすることと同じである．
+でリポジトリにソースの更新が反映される．コミットメッセージはごく簡単なものでよい．  
+（更新内容が `main` ブランチにpushされる．）
 
-push権限がない場合には権限をリクエストするか，GitHub上でforkしたリポジトリにpushした上で
-プルリクエストを出す．
-
-### ソースの更新
-ソース（MarkdownファイルやMkDocsの設定ファイル）の更新は`main`ブランチにpushする．
+> [!NOTE]
+> push権限がない場合には管理者に権限をリクエストするか，GitHub上でforkしたリポジトリにpushした上でプルリクエストを出すこと．
