@@ -16,7 +16,7 @@
 
 ## 演習の環境について
 ブラウザだけで演習課題に取り組めるUnixの開発環境として，演習の一部では [Github Codespace](https://github.com/chibutsu-utokyo/debian) を用います．  
-ただし，特に指示がない場合にはCodespaceでも計算機室の端末でも好きな方を使ってください．個人のPCに開発環境を構築して演習に取り組むことも推奨します．演習時間に環境構築サポートの機会も設けますので，積極的に活用してください．
+ただし，特に指示がない場合にはCodespaceでも計算機室の端末でも好きな方を使ってください．個人のPCに開発環境を構築して演習に取り組むことも推奨します．
 
 ## 演習のWiki
 本演習用の[Wikiページ](https://github.com/chibutsu-utokyo/chibutsu-utokyo.github.io/wiki) も用意してありますので適宜活用してください．
