@@ -11,7 +11,7 @@ Unixの演習では [Linux標準教科書](https://linuc.org/textbooks/linux/) �
 Unixの演習では [Github Codespace](https://github.com/chibutsu-utokyo/debian) を用います．  
 詳細はリンク先を参照してください．
 
-## 課題提出について
+## 提出課題について
 - [提出課題1](kadai1.md)
 - [提出課題2](kadai2.md)
 

@@ -67,6 +67,6 @@ $ chmod +x hello.py
 使い方はほとんどGoogle Colabと同じです．必要に応じて [Pythonプログラミング入門](https://utokyo-ipp.github.io/) を参照してください．
 
 
-## 課題提出について
+## 提出課題について
 - [提出課題1](kadai1.md)
 - [提出課題2](kadai2.md)
