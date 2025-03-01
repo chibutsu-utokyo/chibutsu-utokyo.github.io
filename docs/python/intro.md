@@ -69,3 +69,4 @@ $ chmod +x hello.py
 
 ## 課題提出について
 - [提出課題1](kadai1.md)
+- [提出課題2](kadai2.md)

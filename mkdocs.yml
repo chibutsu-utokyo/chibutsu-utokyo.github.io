@@ -31,6 +31,7 @@ nav:
   - Python:
     - python/intro.md
     - python/kadai1.md
+    - python/kadai2.md
 #theme
 theme:
   language: ja
@@ -67,6 +68,9 @@ extra_css:
   - stylesheets/headline.css
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
   - pymdownx.arithmatex:
       generic: true
   - admonition
