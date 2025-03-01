@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -895,6 +893,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1001,34 +1104,21 @@
 <p>まず始めに、gnuplotの起動と終了の仕方について説明します。</p>
 <p>gnuplotを起動するにはQTerminal等のウィンドウで<code>gnuplot</code>と入力します。
 すると、画面には次のように表示されます（細かいところはバージョンによって異なります）。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gnuplot
-
-    G N U P L O T
-    Version 5.4 patchlevel 6    last modified 2023-02-09
-
-    Copyright (C) 1986-1993, 1998, 2004, 2007-2023
-    Thomas Williams, Colin Kelley and many others
-
-    gnuplot home:     http://www.gnuplot.info
-    faq, bugs, etc:   type &quot;help FAQ&quot;
-    immediate help:   type &quot;help&quot;  (plot window: hit &#39;h&#39;)
-
-Terminal type is now &#39;qt&#39;
-gnuplot&gt; 
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ gnuplot
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    G N U P L O T
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Version 5.4 patchlevel 6    last modified 2023-02-09
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    Copyright (C) 1986-1993, 1998, 2004, 2007-2023
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    Thomas Williams, Colin Kelley and many others
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    gnuplot home:     http://www.gnuplot.info
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    faq, bugs, etc:   type &quot;help FAQ&quot;
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    immediate help:   type &quot;help&quot;  (plot window: hit &#39;h&#39;)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Terminal type is now &#39;qt&#39;
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>gnuplot&gt; 
+</code></pre></div></p>
 <p>gnuplotが起動するとプロンプトが<code>gnuplot&gt;</code>に変わります。
 これがgnuplotのコマンドラインで、
 ここにコマンドを対話的に入力しながら作業を進めます。</p>
@@ -1047,8 +1137,8 @@ gnuplot&gt;
 <h2 id="plot-replot">関数を描いてみる（<code>plot, replot</code>）</h2>
 <p>すでに形がわかっている関数を作図してみましょう。
 作図するためのコマンドは<code>plot</code>です。例えば、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gnuplot&gt; plot sin(x)
+</code></pre></div>
 と入力してみましょう。Gnuplotというタイトルのウィンドウが立ち上がり、<span class="arithmatex">\(y=\sin(x)\)</span>のグラフが表示されるはずです。</p>
 <p><img alt="\(y=\sin(x)\)のグラフ" src="../figs/sin.png" /></p>
 <div class="admonition note">
@@ -1057,18 +1147,18 @@ gnuplot&gt;
 マウスをターミナルに戻せば、制御もターミナルに戻ります。</p>
 </div>
 <p>このように、関数形がわかっている曲線をグラフにするには
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; plot &lt;x を変数とする関数&gt;
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a> gnuplot&gt; plot &lt;x を変数とする関数&gt;
+</code></pre></div>
 と入力します。</p>
 <p>既に作図したグラフに更にグラフを重ねる場合には<code>replot</code>を用います。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; replot 2*cos(x**2)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; replot 2*cos(x**2)
+</code></pre></div>
 先ほどのグラフに、<span class="arithmatex">\(y=2\cos(x^2)\)</span>のグラフが追加されているはずです。
 なお、積は<code>*</code>、冪乗は<code>**</code>です。</p>
 <p>いくつかのグラフを一度に作図したい場合には関数をカンマで区切って横に並べます。
 つまり、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x), 2*cos(x**2)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gnuplot&gt; plot sin(x), 2*cos(x**2)
+</code></pre></div>
 としても同じ結果になります。</p>
 <p>単に<code>plot 2*cos(x**2)</code>と入力すると、最初にあった<span class="arithmatex">\(y=\sin(x)\)</span>のグラフは消えてしまうので注意して下さい。</p>
 <p>ちなみに、gnuplotではコマンドの省略形が用意されています。
@@ -1078,32 +1168,30 @@ gnuplot&gt;
 <p>これからgnuplotで使うコマンドのいくつかについて説明をしていきます。
 コマンドの数は決して少なくありません。
 もしもコマンドの使い方を忘れてしまった場合には
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; help &lt;コマンド名&gt;
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gnuplot&gt; help &lt;コマンド名&gt;
+</code></pre></div>
 と入力して下さい。
 オンラインマニュアルが（英語で）表示されます。
 <code>help</code>は<code>?</code>でも代用できます。</p>
 <p>マニュアルがさらにいくつかのサブトピックについてわかれている場合には、大まかな説明が表示された後で、どのサブトピックについて調べるのかを聞いてきます。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; ? plot
-(大まかな説明)
-Subtopic of plot:
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gnuplot&gt; ? plot
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>(大まかな説明)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Subtopic of plot:
+</code></pre></div>
 調べたいサブトピックがあればそれを、これ以上細分化されたマニュアルは必要ないのであれば単にリターンを入力します。</p>
 <p>なお、<code>help</code>の後のコマンド名を省略した場合にはgnuplotに関する全体的なマニュアルが表示されます。</p>
 <h2 id="clear-reset">訳が分からなくなったとき（<code>clear, reset</code>）</h2>
 <p>ウィンドウを動かしてしまい、自分が今どこにいるのか分からなくなることがあります。
 その場合は
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; clear
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gnuplot&gt; clear
+</code></pre></div>
 と入力してください。
 ウィンドウがまっさらな状態に戻ります。</p>
 <p>また、これから先、様々なコマンド入力していきます。
 すると、「今どのコマンドが反映されているのか？」が段々分からなくなってきます。
 その場合は
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; reset
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>gnuplot&gt; reset
+</code></pre></div>
 と入力すると、今まで入力した設定が消えますから、一からやり直すことができます。</p>
 
 

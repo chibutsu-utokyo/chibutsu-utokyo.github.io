@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -910,6 +908,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1022,66 +1125,44 @@
 そのなかでもTeX Liveに含まれている有用なパッケージをいくつか紹介しておきたいと思います．</p>
 <h3 id="siunitx">siunitx</h3>
 <p>国際単位系であるSI単位の表記法には様々な規則があります．これを自動で正しく表記してくれるパッケージです．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-<span style="color: #ff7b72">\SI</span><span style="color: #e6edf3">{</span>1.0<span style="color: #e6edf3">}{</span>kg.m.s<span style="color: #e6edf3">^{</span>-2<span style="color: #e6edf3">}}</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #3D7B7B; font-style: italic">% 使用例</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span style="color: #008000; font-weight: bold">\SI</span><span style="color: #008000">{</span>1.0<span style="color: #008000">}{</span>kg.m.s<span style="color: #008000">^{</span>-2<span style="color: #008000">}}</span>
+</code></pre></div></p>
 <h3 id="listings">listings</h3>
 <p>LaTeXにおいて，逐語的に文字列を表記するのに用いられる環境やコマンドとして，<code>verbatim</code>環境や<code>\verb</code>というものがあります．
 ソースコードを文書に貼りたい場合には上記のコマンドでは少し不十分に感じるときがあります．listingsパッケージではシンタックスハイライト等をつけて，見やすくソースコードを貼ることができます．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-    <span style="color: #ff7b72">\lstset</span><span style="color: #e6edf3">{</span>language=[90]Fortran,
-        numbers=left,
-        commentstyle=<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\small\ttfamily</span> <span style="color: #ff7b72">\color</span><span style="color: #e6edf3">[rgb]{</span>0,0.5,0<span style="color: #e6edf3">}}</span>,
-        keywordstyle=<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\small\bfseries</span> <span style="color: #ff7b72">\color</span><span style="color: #e6edf3">[rgb]{</span>1,0,0<span style="color: #e6edf3">}}</span>,
-        backgroundcolor=<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\color</span><span style="color: #e6edf3">[gray]{</span>.85<span style="color: #e6edf3">}}</span>,
-        stringstyle=<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\small\ttfamily</span> <span style="color: #ff7b72">\color</span><span style="color: #e6edf3">[rgb]{</span>0,0,1<span style="color: #e6edf3">}}}</span>
-    <span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>lstlisting<span style="color: #e6edf3">}</span>
-    ! test code
-    program main
-        implicit none
-            double precision :: x 
-            x = 1d0
-            write(*,*) x
-            write(*,*) &#39;test&#39;
-        stop
-    end program main
-    <span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>lstlisting<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #3D7B7B; font-style: italic">% 使用例</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span style="color: #008000; font-weight: bold">\lstset</span><span style="color: #008000">{</span>language=[90]Fortran,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        numbers=left,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        commentstyle=<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\small\ttfamily</span> <span style="color: #008000; font-weight: bold">\color</span><span style="color: #687822">[rgb]</span><span style="color: #008000">{</span>0,0.5,0<span style="color: #008000">}}</span>,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        keywordstyle=<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\small\bfseries</span> <span style="color: #008000; font-weight: bold">\color</span><span style="color: #687822">[rgb]</span><span style="color: #008000">{</span>1,0,0<span style="color: #008000">}}</span>,
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        backgroundcolor=<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\color</span><span style="color: #687822">[gray]</span><span style="color: #008000">{</span>.85<span style="color: #008000">}}</span>,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        stringstyle=<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\small\ttfamily</span> <span style="color: #008000; font-weight: bold">\color</span><span style="color: #687822">[rgb]</span><span style="color: #008000">{</span>0,0,1<span style="color: #008000">}}}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>lstlisting<span style="color: #008000">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    ! test code
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    program main
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        implicit none
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            double precision :: x 
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            x = 1d0
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            write(*,*) x
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            write(*,*) &#39;test&#39;
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        stop
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    end program main
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>lstlisting<span style="color: #008000">}</span>
+</code></pre></div></p>
 <h3 id="xcolor">xcolor</h3>
 <p>LaTeX単体では文字色を変えることはできません．xcolorパッケージを使えば文字色を変えることができます．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\color</span><span style="color: #e6edf3">{</span>red<span style="color: #e6edf3">}</span>赤色<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #3D7B7B; font-style: italic">% 使用例</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\color</span><span style="color: #008000">{</span>red<span style="color: #008000">}</span>赤色<span style="color: #008000">}</span>
+</code></pre></div></p>
 <h3 id="tikz">Tik<em>Z</em></h3>
 <p>非常に高度な描画パッケージです．あまりに高度すぎるため，マニュアルは2023年現在で1321ページにも及びます．
 すべてを学ぼうとするとあまりに長大ですが，マニュアル冒頭のチュートリアルを学べば基本的な図はかけるようになるでしょう．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 使用例</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>tikpicture<span style="color: #e6edf3">}</span>
-    <span style="color: #ff7b72">\draw</span> (0.0) circle [radius=1];
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>tikzpicture<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span style="color: #3D7B7B; font-style: italic">% 使用例</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>tikpicture<span style="color: #008000">}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span style="color: #008000; font-weight: bold">\draw</span> (0.0) circle [radius=1];
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>tikzpicture<span style="color: #008000">}</span>
+</code></pre></div></p>
 <h2 id="_3">マクロ</h2>
 <p>LaTeXにおける非常に有用な機能としてマクロというものがあります．例えば偏微分</p>
 <div class="arithmatex">\[
@@ -1098,10 +1179,9 @@
 LaTeXの勉強が甘い人が用いるとLaTeXが動かなくなります．
 また，残りの2つについてはどちらも基本的には安全ですが，より自由度の高いxparse記法を使うのがよいでしょう．
 より詳しい使い方の説明は<a href="https://qiita.com/zr_tex8r/items/50168ad7087516c3e139">ここ</a>などに記載されています．
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% xparseを用いた例</span>
-<span style="color: #ff7b72">\NewDoccumentCommand\pdiff</span><span style="color: #e6edf3">{</span>m m<span style="color: #e6edf3">}{</span><span style="color: #ff7b72">\frac</span><span style="color: #e6edf3">{</span><span style="color: #ff7b72">\partial</span> #1<span style="color: #e6edf3">}{</span><span style="color: #ff7b72">\partial</span> #2<span style="color: #e6edf3">}}</span>
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #3D7B7B; font-style: italic">% xparseを用いた例</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span style="color: #008000; font-weight: bold">\NewDoccumentCommand\pdiff</span><span style="color: #008000">{</span>m m<span style="color: #008000">}{</span><span style="color: #008000; font-weight: bold">\frac</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\partial</span> #1<span style="color: #008000">}{</span><span style="color: #008000; font-weight: bold">\partial</span> #2<span style="color: #008000">}}</span>
+</code></pre></div></p>
 
 
 

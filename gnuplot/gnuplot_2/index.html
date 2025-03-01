@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -946,6 +944,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1096,88 +1199,85 @@
 <p>作図範囲を指定するには<code>set xrange</code>（または<code>yrange</code>）コマンドを用います。
 例えば、<span class="arithmatex">\(x\)</span>の作図範囲を<span class="arithmatex">\(-\pi\)</span>から<span class="arithmatex">\(\pi\)</span>まで、<span class="arithmatex">\(y\)</span>の作図範囲を<span class="arithmatex">\(-2\)</span>から<span class="arithmatex">\(2\)</span>までにしたい時には、
 <code>plot sin(x)</code>などの後に
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set xrange [-pi:pi]
-gnuplot&gt; set yrange [-2:2]
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gnuplot&gt; set xrange [-pi:pi]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>gnuplot&gt; set yrange [-2:2]
+</code></pre></div>
 と入力します。
 ただし<code>set</code>コマンドは設定を変えるだけですから、画面に表示されているグラフは変化しません。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; replot
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gnuplot&gt; replot
+</code></pre></div>
 と入力すれば、画面に表示されているグラフが更新され、正しいグラフになると思います。</p>
 <p><img alt="\(y=\sin(x)\)のグラフ" src="../figs/sin_pipi.png" /></p>
 <p>作図範囲の指定を取り消したい場合には
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set autoscale
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gnuplot&gt; set autoscale
+</code></pre></div>
 と入力します。もちろんこの後にも<code>replot</code>と入力する必要があります。
 以降このテキストでは<code>replot</code>の入力は省略しますが、設定を変えた（<code>set</code>コマンドを使った）後は必ず<code>replot</code>と入力して図に反映させる必要があります。</p>
 <h3 id="title-set-key">曲線に名前を付ける（<code>title, set key</code>）</h3>
 <p><code>plot</code>コマンドによってグラフを描くと、右上にそれがどういう曲線か表示されます（凡例）。
 これを変えるには<code>plot</code>コマンドの際に<code>title</code>という引数を加えます。
 曲線の名前の部分を ' または '' でくくることに注意して下さい。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x) title &#39;my cool plot&#39;
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; plot sin(x) title &#39;my cool plot&#39;
+</code></pre></div></p>
 <p>曲線の名前を表示する必要がない時には
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x) title &#39;with name&#39;, cos(x) notitle
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gnuplot&gt; plot sin(x) title &#39;with name&#39;, cos(x) notitle
+</code></pre></div></p>
 <p>のようにします。</p>
 <p>凡例の表示場所を設定するには<code>set key</code>というコマンドを使います。
 ここでは詳しい説明は省略しますので、オンラインマニュアルでその使い方を確かめてみて下さい。</p>
 <h3 id="set-style-function-with-set-grid">描画スタイルを変える（<code>set style function, with, set grid</code>）</h3>
 <p>今まで表示したグラフは連続した曲線で描かれていました。
 この表示方法を変えるコマンドとして<code>set style function</code>があります。例えば
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set style function steps
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gnuplot&gt; set style function steps
+</code></pre></div>
 としてみましょう。グラフが階段状になるはずです。</p>
 <p>段の数（一般にはgnuplotが描画のためにサンプルする点数）を変えるには<code>set samples</code>というコマンドを用います。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set samples 40
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gnuplot&gt; set samples 40
+</code></pre></div>
 とすれば、40段のグラフが描かれます。</p>
 <p>グラフの表示はこの他にも、点線<code>dots</code>や棒グラフ<code>boxes</code>、パルス状のグラフ<code>impulses</code>などが使えます。
 詳しくは、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; help set style
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gnuplot&gt; help set style
+</code></pre></div>
 を見てください。
 なお、デフォルトに戻すには<code>set style function lines</code>とします。</p>
 <p>複数のグラフをそれぞれ異なったスタイルで描きたい場合には、<code>plot</code>コマンドの際に<code>with</code>をつけて指定します。
 例えば
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot sin(x) with points, sin(x)*cos(x) with impulses
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>gnuplot&gt; plot sin(x) with points, sin(x)*cos(x) with impulses
+</code></pre></div>
 のようにします。</p>
 <p><code>set grid</code>コマンドを使うと、<span class="arithmatex">\(x\)</span> 軸、<span class="arithmatex">\(y\)</span> 軸それぞれの目盛が刻まれている値の格子が入ります。
 格子を消すには<code>unset grid</code>とします。</p>
 <h3 id="set-xylabel-title">軸に名前をつける（<code>set x(y)label, title</code>）</h3>
 <p><span class="arithmatex">\(x\)</span>軸と<span class="arithmatex">\(y\)</span>軸が何を意味しているのか表示させてみましょう。
 これには<code>set xlabel</code>（または<code>ylabel</code>）を用います。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set xlabel &#39;axis 1&#39; 
-gnuplot&gt; set ylabel &#39;axis 2&#39;
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>gnuplot&gt; set xlabel &#39;axis 1&#39; 
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>gnuplot&gt; set ylabel &#39;axis 2&#39;
+</code></pre></div>
 グラフ全体の表題を付けるには<code>set title</code>です。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set title &#39;super title&#39;
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gnuplot&gt; set title &#39;super title&#39;
+</code></pre></div></p>
 <h3 id="xyset-size-ratio">x軸とy軸のスケール（<code>set size ratio</code>）</h3>
 <p>gnuplotでは、縦横のスケールを指定することが可能です。
 <code>set size ratio r</code>でグラフの横縦の比率が<span class="arithmatex">\(r\)</span>になり、
 <code>set size ratio -r</code>でy軸の単位長さがx軸の<span class="arithmatex">\(r\)</span>倍になります。</p>
 <p>例えば、x軸とy軸のスケールを一致させるには
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set size ratio -1
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>gnuplot&gt; set size ratio -1
+</code></pre></div>
 とします。</p>
 <h3 id="set-logscale">対数プロット（<code>set logscale</code>）</h3>
 <p>gnuplotでは対数軸の作図も可能です。例えば
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set logscale y
-gnuplot&gt; plot exp(x+1)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>gnuplot&gt; set logscale y
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>gnuplot&gt; plot exp(x+1)
+</code></pre></div>
 としてみましょう。<span class="arithmatex">\(y\)</span>軸が対数表示になるはずです。
 <code>logscale</code>の後を省略した場合には全ての軸が対数軸になります。</p>
 <p>対数プロットをやめるには<code>unset logscale y</code>とします。</p>
 <h2 id="set-terminal-postscript-set-output">グラフを保存する（<code>set terminal postscript, set output</code>）</h2>
 <p>作ったグラフを保存してみましょう。
 まず、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set terminal
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a> gnuplot&gt; set terminal
+</code></pre></div>
 を実行してください。
 利用可能なターミナルの種類が一覧で出てきます（デフォルトは普通<code>qt</code>です）。</p>
 <p>ここに<code>png</code>や<code>jpeg</code>があるか探しましょう。
@@ -1188,22 +1288,21 @@ gnuplot&gt; plot exp(x+1)
 ここまで色々なコマンドを入力していますから、まず<code>reset</code>でまっさらな状態にしておいてから、
 <code>plot sin(x)</code>しましょう。
 次に
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set terminal png
-gnuplot&gt; set output &#39;output.png&#39;
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>gnuplot&gt; set terminal png
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>gnuplot&gt; set output &#39;output.png&#39;
+</code></pre></div>
 でターミナルをpng用に切り替えるとともに、ファイル名を指定します。
 このままでは出力先を指定しただけですから、ファイルには何も書き込まれていません。
 そこで
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; replot
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>gnuplot&gt; replot
+</code></pre></div>
 とします。これで<code>output.png</code>にグラフが書き込まれているはずです。</p>
 <p>最後に
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set output
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a> gnuplot&gt; set output
+</code></pre></div>
 で出力ファイルを閉じ、ターミナルを元へ戻すために
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set terminal qt
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a> gnuplot&gt; set terminal qt
+</code></pre></div>
 とします。</p>
 <p><strong>注意1 <code>set output</code>をしないで他へ出力に切り替える（<code>set terminal qt</code>等する）とファイルが壊れることがあります。</strong></p>
 <p><strong>注意2 「<code>set terminal png</code>→<code>set output 'output.png'</code>→<code>plot sin(x)</code>」の順で作画したが、ファイルに書き込まれない」という事態が起こった方へ：
@@ -1214,21 +1313,16 @@ gnuplot&gt; set output &#39;output.png&#39;
 複数のコマンドをひとつのファイルに書いておき、まとめて実行することができます。</p>
 <p>まずファイルを作りましょう。ここでは<code>ex.plt</code>とします（一般に<code>plt</code>という拡張子を用いる場合が多いです）。
 エディタで以下の内容を書いてみてください。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>set xlabel &#39;x&#39;
-set ylabel &#39;y&#39;
-set title &#39;Another cool graph&#39;
-set xrange [0:10]
-set yrange [-1:1]
-p exp(-x) * sin(10*x)
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>set xlabel &#39;x&#39;
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>set ylabel &#39;y&#39;
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>set title &#39;Another cool graph&#39;
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>set xrange [0:10]
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>set yrange [-1:1]
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>p exp(-x) * sin(10*x)
+</code></pre></div></p>
 <p>これらのコマンド群を一気に実行するには<code>load</code>というコマンドを使います。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; load &#39;ex.plt&#39;
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gnuplot&gt; load &#39;ex.plt&#39;
+</code></pre></div></p>
 <p><img alt="減衰曲線" src="../figs/expsin.png" /></p>
 <p>以下は筆者の個人的な意見です。
 色々なpltファイルを使っていると、お互いの設定が干渉しあって訳の分からないことになります。
@@ -1236,112 +1330,65 @@ p exp(-x) * sin(10*x)
 <code>qt</code>ターミナルだと思って作業していたら<code>png</code>用ターミナルだった、などなど。</p>
 <p>これらを防ぐために、pltファイルの先頭や末尾で設定を初期化しておくと安全です。</p>
 <p>以下は、pngファイルを作り終わったら<code>qt</code>ターミナルに戻る例です。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>reset
-set terminal png
-set output &quot;expsin.png&quot;
-
-set xlabel &#39;x&#39;
-set ylabel &#39;y&#39;
-set title &#39;Another cool graph&#39;
-set xrange [0:10]
-set yrange [-1:1]
-p exp(-x) * sin(10*x)
-
-set terminal qt
-reset
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>reset
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>set terminal png
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>set output &quot;expsin.png&quot;
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>set xlabel &#39;x&#39;
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>set ylabel &#39;y&#39;
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>set title &#39;Another cool graph&#39;
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>set xrange [0:10]
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>set yrange [-1:1]
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>p exp(-x) * sin(10*x)
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>set terminal qt
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>reset
+</code></pre></div></p>
 <h2 id="loadsave"><code>load</code>と<code>save</code></h2>
 <p>先ほど<code>load</code>というコマンドを学びましたが、この<code>load</code>と兄弟関係にあるコマンドが<code>save</code>です。
 <code>save</code>コマンドを用いることで、これまでに対話形式で実行してきたコマンドを先程自分で書いたpltファイルと同様な出力として得られます。
 例えば、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">7</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; p cos(x)
-gnuplot&gt; set xlabel &#39;x&#39;
-gnuplot&gt; set ylabel &#39;y&#39;
-gnuplot&gt; set terminal postscript
-gnuplot&gt; set output &#39;cos.ps&#39;
-gnuplot&gt; rep
-gnuplot&gt; save &#39;cos.plt&#39;
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>gnuplot&gt; p cos(x)
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>gnuplot&gt; set xlabel &#39;x&#39;
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>gnuplot&gt; set ylabel &#39;y&#39;
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>gnuplot&gt; set terminal postscript
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>gnuplot&gt; set output &#39;cos.ps&#39;
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>gnuplot&gt; rep
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>gnuplot&gt; save &#39;cos.plt&#39;
+</code></pre></div>
 としてみましょう。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>これをエディタで開いてみると、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">19</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">20</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">21</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">22</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">23</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">24</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">25</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">26</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">27</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">28</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">29</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">30</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>#!/usr/bin/gnuplot -persist
-#
-#    
-#       G N U P L O T
-#       Version 4.6 patchlevel 6    last modified September 2014
-#       Build System: Linux i686
-#    
-#       Copyright (C) 1986-1993, 1998, 2004, 2007-2014
-#       Thomas Williams, Colin Kelley and many others
-#    
-#       gnuplot home:     http://www.gnuplot.info
-#       faq, bugs, etc:   type &quot;help FAQ&quot;
-#       immediate help:   type &quot;help&quot;  (plot window: hit &#39;h&#39;)
-# set terminal postscript landscape noenhanced defaultplex \
-   leveldefault monochrome colortext \
-   dashed dashlength 1.0 linewidth 1.0 butt noclip \
-   nobackground \
-   palfuncparam 2000,0.003 \
-   &quot;Helvetica&quot; 14  fontscale 1.0 
-# set output &#39;cos.ps&#39;
-
-（略）
-
-set loadpath 
-set fontpath 
-set psdir
-set fit noerrorvariables noprescale
-GNUTERM = &quot;x11&quot;
-p cos(x)
-#    EOF
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>#!/usr/bin/gnuplot -persist
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>#
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>#    
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>#       G N U P L O T
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>#       Version 4.6 patchlevel 6    last modified September 2014
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>#       Build System: Linux i686
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>#    
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>#       Copyright (C) 1986-1993, 1998, 2004, 2007-2014
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>#       Thomas Williams, Colin Kelley and many others
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>#    
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>#       gnuplot home:     http://www.gnuplot.info
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>#       faq, bugs, etc:   type &quot;help FAQ&quot;
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>#       immediate help:   type &quot;help&quot;  (plot window: hit &#39;h&#39;)
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a># set terminal postscript landscape noenhanced defaultplex \
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>   leveldefault monochrome colortext \
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>   dashed dashlength 1.0 linewidth 1.0 butt noclip \
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>   nobackground \
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>   palfuncparam 2000,0.003 \
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>   &quot;Helvetica&quot; 14  fontscale 1.0 
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a># set output &#39;cos.ps&#39;
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>（略）
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>set loadpath 
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>set fontpath 
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>set psdir
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>set fit noerrorvariables noprescale
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>GNUTERM = &quot;x11&quot;
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>p cos(x)
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>#    EOF
+</code></pre></div>
 のように書かれていると思います。</p>
 <p>一瞬意味不明に見えるかも知れませんが、これは実際に<code>gnuplot&gt;</code>において入力することができるコマンドを並べただけなのです。
 自分で打ち込んでない部分（例えばここでは、<code>set loadpath</code>など）は、gnuplotが勝手に解釈してデフォルトの環境を出力してくれます。
@@ -1351,8 +1398,8 @@ p cos(x)
 ただし、<code>set terminal postscript</code>や<code>set output 'cos.ps'</code>のように、terminalのタイプを変更したり何かを出力したりするコマンドの部分は、<code>save</code>で出力したコマンドファイルではコメントアウトされます。
 皆さんのファイルでもきっとそうなっていることと思います（コマンドファイルのコメントアウトの最後の部分）。
 もし<code>load</code>することでpostscriptファイルを作りたければ、この部分のコメントアウトを消したうえで、先ほど学んだ <code>load</code>コマンドを用いるかあるいはktermなど普通のターミナル上で
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gnuplot cos.plt
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$ gnuplot cos.plt
+</code></pre></div>
 と入力することでpostscriptファイルを作ってやることができます。</p>
 <!-- 
 pltファイルはこれから研究をする上でとても強力な手段となります。
@@ -1360,29 +1407,20 @@ pltファイルはこれから研究をする上でとても強力な手段と�
 この時、いちいちgnuplotを立ち上げて何度も `plot sin(x)` などと打つのは面倒ですよね
 （まあ、3つぐらいなら面倒ではないかもしれませんが、$\sin{100 x}$までだとしたらどうでしょう）。
 そんな時は、前もってemacsなどで
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>#! /usr/bin/gnuplot
-set xrange [0:2*pi]
-set yrange [-1:1]
-set terminal postscript
-set output &quot;sin1x.ps&quot;
-p sin(x)
-set output &quot;sin2x.ps&quot;
-p sin(2*x)
-set output &quot;sin3x.ps&quot;
-p sin(3*x)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>#! /usr/bin/gnuplot
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>set xrange [0:2*pi]
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>set yrange [-1:1]
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>set terminal postscript
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>set output &quot;sin1x.ps&quot;
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>p sin(x)
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>set output &quot;sin2x.ps&quot;
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>p sin(2*x)
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>set output &quot;sin3x.ps&quot;
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>p sin(3*x)
+</code></pre></div>
 と書いておき、sintest.plt等の名前で保存しておきます。次に
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gnuplot sintest.plt
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$ gnuplot sintest.plt
+</code></pre></div>
 とすると、一発で3つのpostscriptファイルができてしまいます。
 
 後から学ぶと思いますが、unixのコマンドを用いれば、 $\sin{x}$ から $\sin{100x}$ まで出力するようなコマンドファイルだって簡単に作れてしまいます。

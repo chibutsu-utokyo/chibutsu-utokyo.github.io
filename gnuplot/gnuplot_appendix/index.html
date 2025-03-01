@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -964,6 +962,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1126,53 +1229,38 @@
 <h2 id="appendix-1-set-multiplot">Appendix 1 複数のグラフを描写する（<code>set multiplot</code>）</h2>
 <p>一度に複数のグラフを描写する場合には<code>set multiplot</code>コマンドを使います。
 このコマンドによりgnuplotは<code>multiplot</code>のモードに入ります。例えば
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set multiplot
-multiplot&gt; set size 1,0.5
-multiplot&gt; set origin 0,0.5
-multiplot&gt; plot sin(x)
-multiplot&gt; set origin 0,0
-multiplot&gt; plot cos(x)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gnuplot&gt; set multiplot
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>multiplot&gt; set size 1,0.5
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>multiplot&gt; set origin 0,0.5
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>multiplot&gt; plot sin(x)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>multiplot&gt; set origin 0,0
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>multiplot&gt; plot cos(x)
+</code></pre></div>
 とすると、上に<span class="arithmatex">\(\sin x\)</span>、下に<span class="arithmatex">\(\cos x\)</span>のグラフが描かれます。
 <code>set origin</code>コマンドはグラフの左下の位置を決め、
 <code>set size</code>コマンドはグラフの縦横のサイズを変更します。</p>
 <p><img alt="multiplot" src="../figs/multiplot.png" /></p>
 <p><code>multiplot</code>モードを終了させるには
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>multiplot&gt; unset multiplot
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>multiplot&gt; unset multiplot
+</code></pre></div>
 と入力して下さい。</p>
 <h2 id="appendix-2">Appendix 2： アニメーション</h2>
 <p>【以下の内容は過去の資料にあったものですが、やり方が下手すぎます。最近のgnuplotでは<code>for</code>文が使えるので、アニメーションを作りたい人は<code>for</code>文を使ったやり方を検索するとよいと思います。】</p>
 <p>コマンドファイルをうまく使うと、アニメーションを作ってやることができます。</p>
 <p>まず、以下のようなファイルを作り、<code>anim.plt</code>などの名前で保存しておきます。
 （<code>pause -1</code>→<code>i=i+0.5</code>→<code>rep</code>の部分は、コピペ等で好きな数だけ繰り返してください）
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>set xrange [-20:20]
-set yrange [0:2]
-i=0
-p exp(-(x+i)**2)
-pause -1
-i=i+0.5
-rep
-pause -1
-i=i+0.5
-rep
-（以下略）
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>set xrange [-20:20]
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>set yrange [0:2]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>i=0
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>p exp(-(x+i)**2)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>pause -1
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>i=i+0.5
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>rep
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>pause -1
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>i=i+0.5
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>rep
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>（以下略）
+</code></pre></div></p>
 <p>これを<code>load</code>すると、リターンを押すごとに画像が動いて見えるはずです。
 <code>pause</code>コマンドは<code>pause 秒数</code>でその秒数だけ停止する、というコマンドです。
 秒数を-1にしたときにはリターンが押されるまでその状態で停止します。
@@ -1183,18 +1271,16 @@ rep
 これは数学関数の<span class="arithmatex">\(\sin,\cos\)</span>などのように、gnuplot中で使える一般的な関数<span class="arithmatex">\(f(x)\)</span>を自分で定義することができるというものです。</p>
 <p>例えば次のような関数を表示したいとき
 $$ y = a\sin(x)\cos(x) \quad (a=1,2) $$
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; f(a,x) = a*sin(x)*cos(x)
-gnuplot&gt; plot f(1,x)
-gnuplot&gt; replot f(2,x)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; f(a,x) = a*sin(x)*cos(x)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>gnuplot&gt; plot f(1,x)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>gnuplot&gt; replot f(2,x)
+</code></pre></div>
 とすれば、いちいち似たような数式を入力することなく、2つの場合についてグラフを描くことができます。</p>
 <h2 id="appendix-4">Appendix 4： 三項演算子</h2>
 <p>例えばHeaviside関数（階段関数）のようにxの値によって関数の定義が変わってしまうようなグラフを描画するときに三項演算子というものを利用すると、簡単に描くことができます。</p>
 <p>三項演算子は次のような書き方をします。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>&lt;条件文&gt; ? &lt;条件が真の時の処理&gt; : &lt;条件が偽の時の処理&gt;
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;条件文&gt; ? &lt;条件が真の時の処理&gt; : &lt;条件が偽の時の処理&gt;
+</code></pre></div>
 具体例として、Heaviside関数を見てみましょう。
 Heaviside関数の定義は次のようになっています。
 $$
@@ -1204,46 +1290,43 @@ $$
  \end{cases}
 $$
 これを描くためには次のように入力します。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set yrange [-0.2:1.2]
-gnuplot&gt; plot (x &lt; 0) ? 0 : 1
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gnuplot&gt; set yrange [-0.2:1.2]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>gnuplot&gt; plot (x &lt; 0) ? 0 : 1
+</code></pre></div></p>
 <p><img alt="Heaviside" src="../figs/Heaviside.png" /></p>
 <h2 id="appendix-5-set-parametric">Appendix 5： 媒介変数の利用（<code>set parametric</code>）</h2>
 <p>これまで紹介したものはすべて <span class="arithmatex">\(y=f(x)\)</span> や <span class="arithmatex">\(z=f(x,y)\)</span> と表せるものでした。
 しかしこれだけでは表現できないものもあります。
 そんなとき、gnuplotでは媒介変数を利用することもできます。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; set parametric
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a> gnuplot&gt; set parametric
+</code></pre></div>
 と入力することで媒介変数モードとなります。
 このとき媒介変数として認識される変数は、二次元プロットなら「t」、
 三次元プロットなら「u,v」となります。
 次に円・球を描く例をのせます。</p>
 <p>円を描く
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set parametric
-gnuplot&gt; plot cos(t),sin(t)
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gnuplot&gt; set parametric
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>gnuplot&gt; plot cos(t),sin(t)
+</code></pre></div></p>
 <p>球を描く
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set parametric
-gnuplot&gt; splot sin(u)*cos(v),sin(u)*sin(v),cos(u)
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>gnuplot&gt; set parametric
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>gnuplot&gt; splot sin(u)*cos(v),sin(u)*sin(v),cos(u)
+</code></pre></div></p>
 <h2 id="appendix-6-gnuplotshellshell">Appendix 6： gnuplot上でのshellコマンドの利用（<code>shell, !</code>）</h2>
 <p>gnuplotから一時的にshellに抜けることができます。そのためには、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; shell
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a> gnuplot&gt; shell
+</code></pre></div>
 と打ちます。そうするとプロンプトがgnuplot起動前のものに戻るはずです。
 gnuplotに戻りたいときには<code>exit</code>でshellを終了してgnuplotのプロンプトに戻ってきます。</p>
 <p>1行だけのshellコマンドなら、<code>! command</code>のようしてgnuplot内から実行することもできます。
 例えば
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; !ls
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a> gnuplot&gt; !ls
+</code></pre></div>
 などとやってみてください。</p>
 <p>また、<code>pwd</code>と<code>cd</code>はgnuplotのコマンドラインからも実行できます（<code>cd</code>は<code>!</code>をつけると使えません）。</p>
 <p>以下の例のように、ディレクトリ名は必ず引用符で括る必要があることに注意してください。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; cd &#39;../&#39;
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a> gnuplot&gt; cd &#39;../&#39;
+</code></pre></div></p>
 <h2 id="appendix-7">Appendix 7： 最小二乗フィッティング</h2>
 <p>gnuplotの強力な機能の一つとして関数のフィッティング（当てはめ）があります。
 パラメータを含んだ関数を用意すると、データファイルの数値に対して適当なパラメータの数値を自動的に検索してくれます。
@@ -1252,64 +1335,61 @@ gnuplotに戻りたいときには<code>exit</code>でshellを終了してgnuplo
 まず、パラメータを含む関数<span class="arithmatex">\(f(x)\)</span>を定義します。
 関数フィッティングには<code>fit</code>コマンドを使います。
 オプションとして検索したいパラメータ名を、<code>via</code>に続けて与えます。</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code> gnuplot&gt; f(x) = a*x + b
- gnuplot&gt; fit f(x) &#39;linear.dat&#39; via a, b
- gnuplot&gt; plot &#39;linear.dat&#39;
- gnuplot&gt; replot f(x)
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a> gnuplot&gt; f(x) = a*x + b
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a> gnuplot&gt; fit f(x) &#39;linear.dat&#39; via a, b
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a> gnuplot&gt; plot &#39;linear.dat&#39;
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a> gnuplot&gt; replot f(x)
+</code></pre></div>
 <p>収束しない場合は、大雑把に検討をつけた初期値を手で与えてやれば上手くいく場合が多いです。
 例えば、関数 <span class="arithmatex">\(f(x)\)</span>を定義したあとに<span class="arithmatex">\(a = -3\)</span>などとして初期値を与えてから<code>fit</code>します。</p>
 <h2 id="appendix-8">Appendix 8： 画像の処理について</h2>
 <h3 id="gv">gv</h3>
 <p><code>gv</code> はターミナル上で、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gv ***.ps
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ gv ***.ps
+</code></pre></div>
 のように打つと画像がババっと表示されるコマンドです。
 簡単に図を確認する事ができるので今後よく使用すると思います。</p>
 <h3 id="image-magick">Image Magick</h3>
 <p>Image Magickはps, eps, jpg, png, gifなど多くの形式に対応した画像処理ソフトです。
 主に<code>display</code>というコマンドと<code>convert</code>というコマンドを使います。</p>
 <p><code>display</code>はターミナル上で、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ display ***.ps
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ display ***.ps
+</code></pre></div>
 のように打つとgvと同様に画像が表示されます。</p>
 <p><code>convert</code>は画像処理のためのコマンドです。
 ターミナル上で、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ convert ***.ps ***.pdf
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ convert ***.ps ***.pdf
+</code></pre></div>
 のように打つとpsファイルがpdfファイルに変換されます。</p>
 <p>他にも
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ convert -resize 80 file1 file2
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$ convert -resize 80 file1 file2
+</code></pre></div>
 と打つとfile1を80％に縮小した画像がfile2に書き込まれたり、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ convert -delay 50 hoge1.gif hoge2.gif hoge3.gif hogehoge.gif
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$ convert -delay 50 hoge1.gif hoge2.gif hoge3.gif hogehoge.gif
+</code></pre></div>
 と打つとhoge1から3が0.5秒ずつ流れるgifアニメーションを作ることができたりします。
 このconvertはかなり有用だと思いますので調べて使ってみてください。</p>
 <h3 id="gimp">gimp</h3>
 <p><code>gimp</code>はターミナル上で、
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ gimp ***.ps
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ gimp ***.ps
+</code></pre></div>
 のように打つと同様に画像が表示され、色々と手を加える事もできるコマンドです。</p>
 <h2 id="appendix-9">Appendix 9： エラーバーを付ける</h2>
 <p>観測値や実験値をグラフにする場合の多くは、そこにエラーバーを表示する必要があります。
 このような場合には<code>errorbars</code>というスタイルを指定します。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; set style data errorbars
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gnuplot&gt; set style data errorbars
+</code></pre></div>
 または
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot &#39;observation.dat&#39; with errorbars
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>gnuplot&gt; plot &#39;observation.dat&#39; with errorbars
+</code></pre></div></p>
 <p>データファイルには、3列または4列のデータが必要です。
 データが3列の場合にはそれぞれの行は <span class="arithmatex">\((x,y,\Delta y)\)</span> の組として解釈され、
 <span class="arithmatex">\((x,y\)</span>-<span class="arithmatex">\(\Delta y)\)</span> から <span class="arithmatex">\((x,y\)</span>+<span class="arithmatex">\(\Delta y)\)</span> までの線が引かれます。
 データが4列の場合には、それそれの列は <span class="arithmatex">\((x,y,y_{low},y_{high})\)</span> として解釈され、
 <span class="arithmatex">\((x,y_{low})\)</span> から <span class="arithmatex">\((x,y_{high})\)</span> までの線が引かれます。
 複数列のデータの中から使用する列を指定する場合には、次のように<code>using</code>を使います。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>gnuplot&gt; plot &#39;observation.dat&#39; using 1:4:3:5 with errorbars
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>gnuplot&gt; plot &#39;observation.dat&#39; using 1:4:3:5 with errorbars
+</code></pre></div></p>
 
 
 

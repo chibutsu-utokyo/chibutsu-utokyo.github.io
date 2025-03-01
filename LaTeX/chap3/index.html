@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -922,6 +920,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1048,14 +1151,11 @@
 </div>
 <h2 id="_1">タイトル・著者・日付</h2>
 <p>文書を作るときは，タイトル，著者，日付を書くのが一般的です．それぞれ<code>\title</code>，<code>\author</code>，<code>\date</code>を一般にはプリアンブルで用います．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">%プリアンブルで</span>
-<span style="color: #ff7b72">\title</span><span style="color: #e6edf3">{</span>タイトル<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\author</span><span style="color: #e6edf3">{</span>著者<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\date</span><span style="color: #e6edf3">{</span>日付<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #3D7B7B; font-style: italic">%プリアンブルで</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span style="color: #008000; font-weight: bold">\title</span><span style="color: #008000">{</span>タイトル<span style="color: #008000">}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span style="color: #008000; font-weight: bold">\author</span><span style="color: #008000">{</span>著者<span style="color: #008000">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span style="color: #008000; font-weight: bold">\date</span><span style="color: #008000">{</span>日付<span style="color: #008000">}</span>
+</code></pre></div>
 <p>この後で<code>\begin{document}</code>の後に<code>\maketitle</code>を用いることでこれらが出力されます．
 また，<code>\date</code>を書かないと自動的にコンパイルした日時が出力されます．日付を表示したくない場合には<code>\date{}</code>とするといいでしょう．</p>
 <h2 id="_2">文書の構造</h2>
@@ -1099,18 +1199,13 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #ff7b72">\section</span><span style="color: #e6edf3">{</span>節見出し<span style="color: #e6edf3">}</span>
-適当なイントロ
-<span style="color: #ff7b72">\subsection</span><span style="color: #e6edf3">{</span>小節見出し1<span style="color: #e6edf3">}</span>
-ほげほげ
-<span style="color: #ff7b72">\subsection</span><span style="color: #e6edf3">{</span>小節見出し2<span style="color: #e6edf3">}</span>
-ふがふが
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #008000; font-weight: bold">\section</span><span style="color: #008000">{</span>節見出し<span style="color: #008000">}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>適当なイントロ
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span style="color: #008000; font-weight: bold">\subsection</span><span style="color: #008000">{</span>小節見出し1<span style="color: #008000">}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>ほげほげ
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span style="color: #008000; font-weight: bold">\subsection</span><span style="color: #008000">{</span>小節見出し2<span style="color: #008000">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>ふがふが
+</code></pre></div>
 <p>また<code>\tableofcontents</code>を用いることで目次を出力することができます．なおLaTeXの技術的な理由から，目次を出力するには少なくとも2 回は処理する必要があります．</p>
 <h2 id="_3">書体</h2>
 <p>LaTeXでは書体を以下の3つの属性で管理しています．</p>
@@ -1181,10 +1276,9 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>このようにして<span style="color: #ff7b72">\textgt</span><span style="color: #e6edf3">{</span>ゴシック体<span style="color: #e6edf3">}</span>にします．<span style="color: #ff7b72">\\</span>
-違う属性なら<span style="color: #ff7b72">\textbf</span><span style="color: #e6edf3">{</span><span style="color: #ff7b72">\textsf</span><span style="color: #e6edf3">{</span>hoge<span style="color: #e6edf3">}}</span>みたいにもできます．
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>このようにして<span style="color: #008000; font-weight: bold">\textgt</span><span style="color: #008000">{</span>ゴシック体<span style="color: #008000">}</span>にします．<span style="color: #008000; font-weight: bold">\\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>違う属性なら<span style="color: #008000; font-weight: bold">\textbf</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\textsf</span><span style="color: #008000">{</span>hoge<span style="color: #008000">}}</span>みたいにもできます．
+</code></pre></div>
 <h2 id="_4">文字サイズ</h2>
 <p>文字サイズも変更することが可能です．変更するには以下のコマンドを使います．</p>
 <table>
@@ -1237,8 +1331,8 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>こんなふうに文字サイズを<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\LARGE</span> 大きく<span style="color: #e6edf3">}</span>したり<span style="color: #e6edf3">{</span><span style="color: #ff7b72">\footnotesize</span> 小さく<span style="color: #e6edf3">}</span>できます
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>こんなふうに文字サイズを<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\LARGE</span> 大きく<span style="color: #008000">}</span>したり<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\footnotesize</span> 小さく<span style="color: #008000">}</span>できます
+</code></pre></div>
 <h2 id="_5">箇条書き</h2>
 <p>LaTeXでは以下の3種類の箇条書き環境があります．</p>
 <ul>
@@ -1256,105 +1350,69 @@
   頭が単語になっている環境</li>
 </ul>
 <p>基本的な使い方は以下の通りです．description環境の場合には<code>\item[見出し]</code>となっている点に注意しましょう．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% itemize環境の場合</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>itemize<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\item</span> 要素1
-<span style="color: #ff7b72">\item</span> 要素2
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>itemize<span style="color: #e6edf3">}</span>
-<span style="color: #8b949e; font-style: italic">%description環境の場合</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>description<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\item</span><span style="color: #e6edf3">[大気海洋分野]</span> 適当な説明
-<span style="color: #ff7b72">\item</span><span style="color: #e6edf3">[固体地球分野]</span> 適当な説明
-<span style="color: #ff7b72">\item</span><span style="color: #e6edf3">[宇宙惑星分野]</span> 適当な説明
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>description<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #3D7B7B; font-style: italic">% itemize環境の場合</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>itemize<span style="color: #008000">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span style="color: #008000; font-weight: bold">\item</span> 要素1
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span style="color: #008000; font-weight: bold">\item</span> 要素2
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>itemize<span style="color: #008000">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span style="color: #3D7B7B; font-style: italic">%description環境の場合</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>description<span style="color: #008000">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span style="color: #008000; font-weight: bold">\item</span><span style="color: #687822">[大気海洋分野]</span> 適当な説明
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span style="color: #008000; font-weight: bold">\item</span><span style="color: #687822">[固体地球分野]</span> 適当な説明
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span style="color: #008000; font-weight: bold">\item</span><span style="color: #687822">[宇宙惑星分野]</span> 適当な説明
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>description<span style="color: #008000">}</span>
+</code></pre></div>
 <p>また，環境を入れ子にすることもできます．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">9</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">%入れ子にすると頭の記号が変わる</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>itemize<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\item</span> 要素1
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>itemize<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\item</span> 要素1-1
-<span style="color: #ff7b72">\item</span> 要素1-2
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>itemize<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\item</span> 要素2
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>itemize<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span style="color: #3D7B7B; font-style: italic">%入れ子にすると頭の記号が変わる</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>itemize<span style="color: #008000">}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span style="color: #008000; font-weight: bold">\item</span> 要素1
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>itemize<span style="color: #008000">}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span style="color: #008000; font-weight: bold">\item</span> 要素1-1
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span style="color: #008000; font-weight: bold">\item</span> 要素1-2
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>itemize<span style="color: #008000">}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span style="color: #008000; font-weight: bold">\item</span> 要素2
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>itemize<span style="color: #008000">}</span>
+</code></pre></div>
 <h2 id="_6">脚注</h2>
 <p><strong><code>\footnote</code></strong>を用いることで脚注をつけることができます．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>適当な文章に脚注をつけてみましょう．
-<span style="color: #ff7b72">\footnote</span><span style="color: #e6edf3">{</span>このように脚注をつけられます<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>適当な文章に脚注をつけてみましょう．
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span style="color: #008000; font-weight: bold">\footnote</span><span style="color: #008000">{</span>このように脚注をつけられます<span style="color: #008000">}</span>
+</code></pre></div>
 <h2 id="_7">引用・参考文献</h2>
 <p>論文などから文章を引用する際には<strong>quote環境</strong>か<strong>quotation環境</strong>を用います．quote環境では行頭の字下げがされず，quotation環境では字下げされます．用途によって適当に選ぶといいでしょう．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>ほげ山ほげ尾の「ほげの科学」には
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>quotation<span style="color: #e6edf3">}</span>
-適当な文章
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>quotation<span style="color: #e6edf3">}</span>
-というくだりがある．
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ほげ山ほげ尾の「ほげの科学」には
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>quotation<span style="color: #008000">}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>適当な文章
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>quotation<span style="color: #008000">}</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>というくだりがある．
+</code></pre></div>
 <p>また，文献から引用する際には参考文献を書く必要があります．この際には<strong>thebibliography環境</strong>と<strong><code>\cite</code></strong>を用います．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">8</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">%本文</span>
-ほげ山ほげ尾の「ほげの科学」~<span style="color: #ff7b72">\cite</span><span style="color: #e6edf3">{</span>ほげ<span style="color: #e6edf3">}</span>，ふが川ふが実の「ふが学」~<span style="color: #ff7b72">\cite</span><span style="color: #e6edf3">{</span>ふが<span style="color: #e6edf3">}</span>によると...
-
-<span style="color: #8b949e; font-style: italic">%参考文献</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>thebibliography<span style="color: #e6edf3">}{</span>9<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\bibitem</span><span style="color: #e6edf3">{</span>ほげ<span style="color: #e6edf3">}</span> ほげ山ほげ尾『ほげの科学』ほげ出版
-<span style="color: #ff7b72">\bibitem</span><span style="color: #e6edf3">{</span>ふが<span style="color: #e6edf3">}</span> ふが川ふが実『ふが学』ふが出版
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>thebibliography<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span style="color: #3D7B7B; font-style: italic">%本文</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ほげ山ほげ尾の「ほげの科学」~<span style="color: #008000; font-weight: bold">\cite</span><span style="color: #008000">{</span>ほげ<span style="color: #008000">}</span>，ふが川ふが実の「ふが学」~<span style="color: #008000; font-weight: bold">\cite</span><span style="color: #008000">{</span>ふが<span style="color: #008000">}</span>によると...
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span style="color: #3D7B7B; font-style: italic">%参考文献</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>thebibliography<span style="color: #008000">}{</span>9<span style="color: #008000">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span style="color: #008000; font-weight: bold">\bibitem</span><span style="color: #008000">{</span>ほげ<span style="color: #008000">}</span> ほげ山ほげ尾『ほげの科学』ほげ出版
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span style="color: #008000; font-weight: bold">\bibitem</span><span style="color: #008000">{</span>ふが<span style="color: #008000">}</span> ふが川ふが実『ふが学』ふが出版
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>thebibliography<span style="color: #008000">}</span>
+</code></pre></div>
 <p>本文で用いる<code>\cite</code>とthebibliography環境内で用いる<code>\bibitem</code>の引数の中身を同じにすることで，自動的に参照番号をつけてくれます．
 また，<code>\begin{thebibliography}{9}</code>の数字を参考文献の数に合わせて変える必要があります．参考文献の数が1桁ならば9を，2桁ならば99といった感じです．</p>
 <h2 id="_8">パッケージ</h2>
 <p>LaTeXそのままの機能には限界があります．これらの機能を拡張したり，機能を追加するために用いるのがパッケージです．TeX LiveというTeXのディストリビューションには非常に多くのパッケージが含まれています．また，TeX Liveに含まれないもののGitHub等で配布されているパッケージもあります．これらを適宜読み込んでいきます．</p>
 <p>パッケージを読み込むには<code>\usepackage</code>をプリアンブルで用います．例として<strong>scsnowman</strong>というパッケージを使ってみましょう．scsnowmanパッケージを読み込むと<code>\scsnowman</code>というコマンドが利用可能になります．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">7</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #ff7b72">\documentclass</span><span style="color: #e6edf3">[lualatex]{</span>jlreq<span style="color: #e6edf3">}</span>
-<span style="color: #8b949e; font-style: italic">%scsnowmanを読み込む</span>
-<span style="color: #ff7b72">\usepackage</span><span style="color: #e6edf3">{</span>scsnowman<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>document<span style="color: #e6edf3">}</span>
-<span style="color: #8b949e; font-style: italic">%\scsnowmanが使えるようになる</span>
-<span style="color: #ff7b72">\scsnowman</span>
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>document<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span style="color: #008000; font-weight: bold">\documentclass</span><span style="color: #687822">[lualatex]</span><span style="color: #008000">{</span>jlreq<span style="color: #008000">}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span style="color: #3D7B7B; font-style: italic">%scsnowmanを読み込む</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>scsnowman<span style="color: #008000">}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>document<span style="color: #008000">}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span style="color: #3D7B7B; font-style: italic">%\scsnowmanが使えるようになる</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span style="color: #008000; font-weight: bold">\scsnowman</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>document<span style="color: #008000">}</span>
+</code></pre></div>
 <p>また，パッケージによってはオプションがある場合があります．その場合は<code>\documentclass</code>と同様に<code>\usepackage[オプション]{パッケージ}</code>とします．</p>
 <p>TeX Liveに入っているパッケージの使い方はそれぞれのドキュメントにまとめられています．ローカルにTeX Liveをインストールした場合にはターミナルで</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6e7681"> </span>texdoc<span style="color: #6e7681"> </span>scsnowman
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span style="color: #bbbbbb"> </span>texdoc<span style="color: #bbbbbb"> </span>scsnowman
+</code></pre></div>
 <p>などのように<code>texdoc</code>を用いることで調べることができます．また同様の機能を<a href="https://texdoc.org/index.html">https://texdoc.org/index.html</a>から使用することができます．</p>
 
 

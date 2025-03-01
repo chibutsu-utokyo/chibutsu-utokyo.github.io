@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -913,6 +911,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1041,56 +1144,45 @@
 UTokyo-VPNの設定をしていない方は<a href="../VPN/">VPNのページ</a>を参照して、設定してください。</p>
 </div>
 <p>以下のコマンドでログインします。s123456は自身のアカウント名に変えてください。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ ssh s123456@dover.eps.s.u-tokyo.ac.jp
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ ssh s123456@dover.eps.s.u-tokyo.ac.jp
+</code></pre></div>
 <code>Are you sure you want to continue connecting (yes/no)?</code>と聞かれたら<code>yes</code>と答えてください。<br />
 上手くいけばパスワードを聞かれるはずなので、メールで送られてきたパスワードを入力してください。<br />
 パスワードを入力する際、入力した文字が画面に表示されないと思いますが、問題ありません。これはショルダーハッキングと呼ばれる攻撃に対抗する仕組みです。</p>
 <p>ログインが成功すると、以下のような画面になると思います。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># s123456は自身のアカウント名になります。
-s123456@dover:~$
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># s123456は自身のアカウント名になります。
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>s123456@dover:~$
+</code></pre></div>
 いろんなディレクトリやファイルを見て、このサーバー内を探検してみてください。
 doverには、Debianと呼ばれるLinuxディストリビューションが入っています。特にWindowsとは雰囲気がかなり異なっていると思います。<br />
 探検が終わったらホームディレクトリに戻りましょう。その後、適当にファイルを作ってください。後で使用します。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ cd
-$ echo &quot;後で使うテキストファイル&quot; &gt; sample1.txt
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ cd
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ echo &quot;後で使うテキストファイル&quot; &gt; sample1.txt
+</code></pre></div>
 終わったら<code>exit</code>でログアウトしましょう。</p>
 <h2 id="scp">SCPとは</h2>
 <p>次にSCPについて説明します。このコマンドはファイル等を転送するためのものです。<br />
 通信にSSHを用いるため、盗聴の心配はSSHと同じく殆どありません。</p>
 <h2 id="scp_1">SCPしてみよう</h2>
 <p>使い方は以下のとおりです。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># リモートサーバーから手元のPCにファイルを持ってくるとき
-$ scp ユーザー名@リモートサーバーのアドレス:持ってきたいファイルの場所 ファイルを置きたい場所
-
-# 手元のPCからリモートサーバーにファイルを送るとき
-$ scp 送りたいファイルの場所 ユーザー名@リモートサーバーのアドレス:ファイルを置きたい場所
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># リモートサーバーから手元のPCにファイルを持ってくるとき
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$ scp ユーザー名@リモートサーバーのアドレス:持ってきたいファイルの場所 ファイルを置きたい場所
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a># 手元のPCからリモートサーバーにファイルを送るとき
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$ scp 送りたいファイルの場所 ユーザー名@リモートサーバーのアドレス:ファイルを置きたい場所
+</code></pre></div></p>
 <p>早速使ってみましょう。先程作成したファイルを手元のPCに持ってくるには、次のコマンドを入力します。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># s123456は自身のアカウント名に変えること
-# ファイルを置く場所はカレントディレクトリを示す「.」にしているので、見逃さないように
-$ scp s123456@dover.eps.s.u-tokyo.ac.jp:~/sample1.txt .
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># s123456は自身のアカウント名に変えること
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a># ファイルを置く場所はカレントディレクトリを示す「.」にしているので、見逃さないように
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$ scp s123456@dover.eps.s.u-tokyo.ac.jp:~/sample1.txt .
+</code></pre></div>
 ファイルが送られてきたことを確認してください。</p>
 <p>次に手元のPCからファイルを送ってみましょう。適当にファイルを作成して、それを送ってみます。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ echo &quot;送るファイル&quot; &gt; sample2.txt
-
-# s123456は自身のアカウント名に変えること
-$ scp sample2.txt s123456@dover.eps.s.u-tokyo.ac.jp:~
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ echo &quot;送るファイル&quot; &gt; sample2.txt
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a># s123456は自身のアカウント名に変えること
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$ scp sample2.txt s123456@dover.eps.s.u-tokyo.ac.jp:~
+</code></pre></div>
 ちゃんと送られたかどうか、doverにSSHログインして確かめてみてください。</p>
 <h2 id="_1">公開鍵認証(余裕があれば)</h2>
 <p>SSHの認証(ユーザーが本人か確かめる方法)としてパスワード認証と公開鍵認証があります。
@@ -1098,119 +1190,75 @@ $ scp sample2.txt s123456@dover.eps.s.u-tokyo.ac.jp:~
 <p>まず、<code>ssh-keygen</code>コマンドを用いて公開鍵と秘密鍵のペアを作ります。
 コマンドが見つからない場合は別途対応してください。  <br />
 以下は、Powershellを用いて鍵を生成したときのものです。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">19</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">20</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">21</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>PS C:\Users\dareka&gt; ssh-keygen.exe
-Generating public/private rsa key pair.
-Enter file in which to save the key (C:\Users\dareka/.ssh/id_rsa): C:\Users\dareka/.ssh/id_rsa_dover # 鍵の名前は自由です。置き場所は.ssh下が良いと思います。
-Enter passphrase (empty for no passphrase): # パスワードは空でも大丈夫です。
-Enter same passphrase again:
-Your identification has been saved in C:\Users\dareka/.ssh/id_rsa_dover
-Your public key has been saved in C:\Users\dareka/.ssh/id_rsa_dover.pub
-The key fingerprint is:
-SHA256:df5KwL8V4h09b7IC865557oP11mYGnZI1TFANix2nzQ dareka@dareka
-The key&#39;s randomart image is:
-+---[RSA 3072]----+
-|            o=o+.|
-|           o.+.Eo|
-|          o = o o|
-|         o + . * |
-|        S o * *.o|
-|          o= B +=|
-|           +* *.+|
-|           o+*.+ |
-|          o+*B+  |
-+----[SHA256]-----+
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PS C:\Users\dareka&gt; ssh-keygen.exe
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Generating public/private rsa key pair.
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Enter file in which to save the key (C:\Users\dareka/.ssh/id_rsa): C:\Users\dareka/.ssh/id_rsa_dover # 鍵の名前は自由です。置き場所は.ssh下が良いと思います。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Enter passphrase (empty for no passphrase): # パスワードは空でも大丈夫です。
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Enter same passphrase again:
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Your identification has been saved in C:\Users\dareka/.ssh/id_rsa_dover
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Your public key has been saved in C:\Users\dareka/.ssh/id_rsa_dover.pub
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>The key fingerprint is:
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>SHA256:df5KwL8V4h09b7IC865557oP11mYGnZI1TFANix2nzQ dareka@dareka
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>The key&#39;s randomart image is:
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>+---[RSA 3072]----+
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>|            o=o+.|
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>|           o.+.Eo|
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>|          o = o o|
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>|         o + . * |
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>|        S o * *.o|
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>|          o= B +=|
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>|           +* *.+|
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>|           o+*.+ |
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>|          o+*B+  |
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>+----[SHA256]-----+
+</code></pre></div>
 これで、id_rsa_dover(秘密鍵)とid_rsa_dover.pub(公開鍵)が生成されました。</p>
 <p>公開鍵の方をリモートサーバーに置けば公開鍵認証の設定が完了します。<br />
 リモートサーバーでの置き場所は<code>~/.ssh</code>で、名前を<code>authorized_keys</code>にする必要があります。これは、doverに入っているSSHを管理するソフトウェアOpenSSHが、<code>~/.ssh/authorized_keys</code>から公開鍵を読み込むようになっているためらしいです。<br />
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">19</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># 公開鍵(.pubファイル)があるディレクトリに移動
-# s123456は自身のアカウント名に変えること
-$ cd ~/.ssh
-$ scp id_rsa_dover.pub s123456@dover.eps.s.u-tokyo.ac.jp:~
-
-# doverにログインする。ここではまだパスワードが必要
-$ ssh s123456@dover.eps.s.u-tokyo.ac.jp 
-
-# .sshディレクトリが無い場合は作成する
-$ mkdir .ssh
-
-# .sshディレクトリに先程送った公開鍵を移動させる
-$ mv id_rsa_dover.pub .ssh/
-
-# 名前を変える
-$ mv .ssh/id_rsa_dover.pub .ssh/authorized_keys
-
-# 権限を設定する
-$ chmod 700 .ssh
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># 公開鍵(.pubファイル)があるディレクトリに移動
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># s123456は自身のアカウント名に変えること
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>$ cd ~/.ssh
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>$ scp id_rsa_dover.pub s123456@dover.eps.s.u-tokyo.ac.jp:~
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a># doverにログインする。ここではまだパスワードが必要
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>$ ssh s123456@dover.eps.s.u-tokyo.ac.jp 
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a># .sshディレクトリが無い場合は作成する
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>$ mkdir .ssh
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a># .sshディレクトリに先程送った公開鍵を移動させる
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>$ mv id_rsa_dover.pub .ssh/
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a># 名前を変える
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>$ mv .ssh/id_rsa_dover.pub .ssh/authorized_keys
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a># 権限を設定する
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>$ chmod 700 .ssh
+</code></pre></div>
 これで設定は完了です。  </p>
 <p>ログインするコマンドは次のとおりです。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># s123456は自身のアカウント名に変えること
-$ ssh -i 秘密鍵の場所 s123456@dover.eps.s.u-tokyo.ac.jp
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># s123456は自身のアカウント名に変えること
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$ ssh -i 秘密鍵の場所 s123456@dover.eps.s.u-tokyo.ac.jp
+</code></pre></div>
 パスワードを聞かれずにログインできるか確認してください。</p>
 <h2 id="config">configファイル</h2>
 <p>公開鍵認証によって毎回パスワードを入力しなくてもよくなりましたが、その代わりに秘密鍵の場所を指定する必要がありました。<br />
 ここではconfigファイルを作って、さらに簡単にSSHやSCPが使えるようにしてみます。  </p>
 <p>まず、手元のPCで<code>~/.ssh</code>に移動します。configファイルが無い場合は新たに作成してください。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ cd ~/.ssh
-$ touch config
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ cd ~/.ssh
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$ touch config
+</code></pre></div></p>
 <p>次にconfigに以下の内容を書き込みます。メモ帳やVSCode等のエディタを用いると楽です。
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># s123456は自身のアカウント名に変えること
-Host dover
-    HostName dover.eps.s.u-tokyo.ac.jp
-    User s123456
-    IdentityFile ~\.ssh\id_rsa_dover
-</code></pre></div></td></tr></table></div></p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># s123456は自身のアカウント名に変えること
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Host dover
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    HostName dover.eps.s.u-tokyo.ac.jp
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    User s123456
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    IdentityFile ~\.ssh\id_rsa_dover
+</code></pre></div></p>
 <p>これで完了です。<br />
 改めてdoverにSSHログインします。入力するコマンドは以下になります
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>$ ssh dover
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ ssh dover
+</code></pre></div>
 ログインできるか確認してください。</p>
 <h2 id="_2">おわりに</h2>
 <p>研究生活が始まると、多かれ少なかれ外部のサーバーを使用することになります。<br />

@@ -46,8 +46,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/codeblock.css">
-    
       <link rel="stylesheet" href="../../stylesheets/headline.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -886,6 +884,111 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    はじめに
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/kadai2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -987,58 +1090,42 @@
   ただし，PDFでの出力が可能な場合には素直にPDFを使用したほうがいい</li>
 </ul>
 <p>graphicxパッケージを読み込むと<code>\includegraphics</code>（こっちはincludegraphic<strong>s</strong>です）が使用可能になります．具体的な使用方法は以下の通りです．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% プリアンブルで\usepackage{graphicx}</span>
-<span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">[オプション]{</span>ファイル名 or ファイルのパス<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #3D7B7B; font-style: italic">% プリアンブルで\usepackage{graphicx}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #687822">[オプション]</span><span style="color: #008000">{</span>ファイル名 or ファイルのパス<span style="color: #008000">}</span>
+</code></pre></div>
 <p>具体的には以下のように用います．
 まずはtexファイルと同じディレクトリに<code>sample.png</code>がある場合を考えます．この場合には以下のようになります．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% texファイルと同じディレクトリにsample.pngがある場合</span>
-画像を貼りたい場合には
-<span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">{</span>sample.png<span style="color: #e6edf3">}</span>
-とします．
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #3D7B7B; font-style: italic">% texファイルと同じディレクトリにsample.pngがある場合</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>画像を貼りたい場合には
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #008000">{</span>sample.png<span style="color: #008000">}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>とします．
+</code></pre></div>
 <p>次に，画像ファイルが多くなった場合を考えましょう．先ほどと同じようにtexファイルと同じディレクトリにすべてのファイルを配置しても構いません．しかし，あまりに多い場合には別のディレクトリにまとめておきたくなります．
 例えば以下のような構造でファイルを配置した場合を考えます．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic"># sample.texファイルのあるディレクトリにpictureディレクトリをつくり</span>
-<span style="color: #8b949e; font-style: italic"># そこに画像ファイルを配置していく</span>
-.
-├──<span style="color: #6e7681"> </span>picture
-│<span style="color: #6e7681">   </span>└──<span style="color: #6e7681"> </span>sample.png
-└──<span style="color: #6e7681"> </span>sample.tex
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #3D7B7B; font-style: italic"># sample.texファイルのあるディレクトリにpictureディレクトリをつくり</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span style="color: #3D7B7B; font-style: italic"># そこに画像ファイルを配置していく</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├──<span style="color: #bbbbbb"> </span>picture
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│<span style="color: #bbbbbb">   </span>└──<span style="color: #bbbbbb"> </span>sample.png
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>└──<span style="color: #bbbbbb"> </span>sample.tex
+</code></pre></div>
 <p>この場合には先ほどファイル名を入れた場所に相対パスを入力します．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>別のディレクトリに画像を配置した場合には
-<span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">{</span>./picture/sample.png<span style="color: #e6edf3">}</span>
-とします．
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>別のディレクトリに画像を配置した場合には
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #008000">{</span>./picture/sample.png<span style="color: #008000">}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>とします．
+</code></pre></div>
 <p>オプションには画像に関する様々な指定ができますが，頻繁に使うことになるのは画像の大きさに関するオプションでしょう．大きさを指定する際には<code>width</code>オプションと<code>height</code>オプションを利用します．これらのオプションは絶対値と相対値で指定することができます．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 絶対値で高さを50mmにする場合</span>
-<span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">[height=50mm]{</span>sample.png<span style="color: #e6edf3">}</span>
-<span style="color: #8b949e; font-style: italic">% 相対値で横幅を版面サイズの横幅の70%にする場合</span>
-<span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">[width=0.7\columnwidth]{</span>sample.png<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #3D7B7B; font-style: italic">% 絶対値で高さを50mmにする場合</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #687822">[height=50mm]</span><span style="color: #008000">{</span>sample.png<span style="color: #008000">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span style="color: #3D7B7B; font-style: italic">% 相対値で横幅を版面サイズの横幅の70%にする場合</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #687822">[width=0.7\columnwidth]</span><span style="color: #008000">{</span>sample.png<span style="color: #008000">}</span>
+</code></pre></div>
 <h2 id="_3">図の自動配置</h2>
 <p>LaTeXでは図を組版上最適な位置に配置してくれる機能があります．図の自動配置をしようするには<code>figure</code>環境を使用します．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>figure<span style="color: #e6edf3">}</span>[オプション]
-    ...
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>figure<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>figure<span style="color: #008000">}</span>[オプション]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    ...
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>figure<span style="color: #008000">}</span>
+</code></pre></div>
 <p>オプションでは図の配置位置をしていします．</p>
 <ul>
 <li><code>h</code>：可能であればその場所に図を出力する</li>
@@ -1050,75 +1137,45 @@
 <p>このようにfigure環境をもちいると自動的に図が最適な場所に配置される反面，望んだ場所に出力されないことがしばしばあります．強制的にその場所に図を出力したい場合には<code>float</code>パッケージを使用します．floatパッケージを読み込むと，上記の4つのほかに<code>H</code>オプションが追加され，これを用いると必ずその場所に出力することができます．</p>
 <h2 id="_4">キャプション・参照</h2>
 <p>レポートなどで図を貼る際にはキャプションがあるべきだと思います．また，本文中で図を参照したい場合もしばしばあるでしょう．これらはfloat環境の内部で<code>\caption</code>コマンドと<code>\ref</code>コマンドを使用することで実現可能です．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>図<span style="color: #ff7b72">\ref</span><span style="color: #e6edf3">{</span>fig:sample<span style="color: #e6edf3">}</span>はキャプションや参照の参考である．
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>figure<span style="color: #e6edf3">}</span>[htbp]
-    <span style="color: #8b949e; font-style: italic">% 画像が中央に揃うようにする</span>
-    <span style="color: #ff7b72">\centering</span>
-    <span style="color: #8b949e; font-style: italic">% 画像を読み込む</span>
-    <span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">[width=.7\columnwidth]{</span>sample.png<span style="color: #e6edf3">}</span>
-    <span style="color: #8b949e; font-style: italic">% キャプションをつける</span>
-    <span style="color: #ff7b72">\caption</span><span style="color: #e6edf3">{</span>適当なキャプション<span style="color: #e6edf3">}</span>
-    <span style="color: #8b949e; font-style: italic">% 本文中で画像を参照するための準備</span>
-    <span style="color: #ff7b72">\label</span><span style="color: #e6edf3">{</span>fig:sample<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>figure<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>図<span style="color: #008000; font-weight: bold">\ref</span><span style="color: #008000">{</span>fig:sample<span style="color: #008000">}</span>はキャプションや参照の参考である．
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>figure<span style="color: #008000">}</span>[htbp]
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span style="color: #3D7B7B; font-style: italic">% 画像が中央に揃うようにする</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span style="color: #008000; font-weight: bold">\centering</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span style="color: #3D7B7B; font-style: italic">% 画像を読み込む</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #687822">[width=.7\columnwidth]</span><span style="color: #008000">{</span>sample.png<span style="color: #008000">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span style="color: #3D7B7B; font-style: italic">% キャプションをつける</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span style="color: #008000; font-weight: bold">\caption</span><span style="color: #008000">{</span>適当なキャプション<span style="color: #008000">}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span style="color: #3D7B7B; font-style: italic">% 本文中で画像を参照するための準備</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span style="color: #008000; font-weight: bold">\label</span><span style="color: #008000">{</span>fig:sample<span style="color: #008000">}</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>figure<span style="color: #008000">}</span>
+</code></pre></div>
 <h2 id="_5">図の横並び配置</h2>
 <p>シミュレーションなどで初期条件を変えた場合の結果を左右にならべて表示したいといった場合があると思います．この場合には<code>minipage</code>環境を使用します．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>minipage<span style="color: #e6edf3">}{</span>幅<span style="color: #e6edf3">}</span>
-    ...
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>minipage<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>minipage<span style="color: #008000">}{</span>幅<span style="color: #008000">}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    ...
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>minipage<span style="color: #008000">}</span>
+</code></pre></div>
 <p>minipage環境内は先ほどのfigure環境と同じように記述します．また，幅の部分はminipage環境自体の横幅であり，<code>\includegraphics</code>で指定するそれとは異なる点に注意してください．</p>
-<div class="highlight" style="background: #0d1117"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 1</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 2</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 3</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 4</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 5</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 6</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 7</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 8</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;"> 9</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">10</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">11</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">12</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">13</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">14</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">15</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">16</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">17</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">18</span>
-<span style="color: #6e7681; background-color: #0d1117; padding-left: 5px; padding-right: 5px;">19</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #8b949e; font-style: italic">% 横並びさせたい画像をひとつのfigure環境にいれる</span>
-<span style="color: #8b949e; font-style: italic">% 2枚横並びにする場合</span>
-<span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>figure<span style="color: #e6edf3">}</span>
-    <span style="color: #ff7b72">\centering</span>
-    <span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>minipage<span style="color: #e6edf3">}{</span>0.4<span style="color: #ff7b72">\columnwidth</span><span style="color: #e6edf3">}</span> <span style="color: #8b949e; font-style: italic">% ひとつのminipageの幅を版面サイズの0.4倍とする</span>
-        <span style="color: #ff7b72">\centering</span>
-        <span style="color: #8b949e; font-style: italic">% 画像の横幅をminipageの1.0倍にする</span>
-        <span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">[width=\columnwidth]{</span>sample1.png<span style="color: #e6edf3">}</span>
-        <span style="color: #ff7b72">\caption</span><span style="color: #e6edf3">{</span>sample1<span style="color: #e6edf3">}</span>
-        <span style="color: #ff7b72">\label</span><span style="color: #e6edf3">{</span>fig:sample1<span style="color: #e6edf3">}</span>
-    <span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>minipage<span style="color: #e6edf3">}</span>
-        <span style="color: #ff7b72">\begin</span><span style="color: #e6edf3">{</span>minipage<span style="color: #e6edf3">}{</span>0.4<span style="color: #ff7b72">\columnwidth</span><span style="color: #e6edf3">}</span> <span style="color: #8b949e; font-style: italic">% ひとつのminipageの幅を版面サイズの0.4倍とする</span>
-        <span style="color: #ff7b72">\centering</span>
-        <span style="color: #8b949e; font-style: italic">% 画像の横幅をminipageの1.0倍にする</span>
-        <span style="color: #ff7b72">\includegraphics</span><span style="color: #e6edf3">[width=\columnwidth]{</span>sample2.png<span style="color: #e6edf3">}</span>
-        <span style="color: #ff7b72">\caption</span><span style="color: #e6edf3">{</span>sample2<span style="color: #e6edf3">}</span>
-        <span style="color: #ff7b72">\label</span><span style="color: #e6edf3">{</span>fig:sample2<span style="color: #e6edf3">}</span>
-    <span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>minipage<span style="color: #e6edf3">}</span>
-<span style="color: #ff7b72">\end</span><span style="color: #e6edf3">{</span>figure<span style="color: #e6edf3">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span style="color: #3D7B7B; font-style: italic">% 横並びさせたい画像をひとつのfigure環境にいれる</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span style="color: #3D7B7B; font-style: italic">% 2枚横並びにする場合</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>figure<span style="color: #008000">}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span style="color: #008000; font-weight: bold">\centering</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>minipage<span style="color: #008000">}{</span>0.4<span style="color: #008000; font-weight: bold">\columnwidth</span><span style="color: #008000">}</span> <span style="color: #3D7B7B; font-style: italic">% ひとつのminipageの幅を版面サイズの0.4倍とする</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span style="color: #008000; font-weight: bold">\centering</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span style="color: #3D7B7B; font-style: italic">% 画像の横幅をminipageの1.0倍にする</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #687822">[width=\columnwidth]</span><span style="color: #008000">{</span>sample1.png<span style="color: #008000">}</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span style="color: #008000; font-weight: bold">\caption</span><span style="color: #008000">{</span>sample1<span style="color: #008000">}</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span style="color: #008000; font-weight: bold">\label</span><span style="color: #008000">{</span>fig:sample1<span style="color: #008000">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>minipage<span style="color: #008000">}</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        <span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>minipage<span style="color: #008000">}{</span>0.4<span style="color: #008000; font-weight: bold">\columnwidth</span><span style="color: #008000">}</span> <span style="color: #3D7B7B; font-style: italic">% ひとつのminipageの幅を版面サイズの0.4倍とする</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>        <span style="color: #008000; font-weight: bold">\centering</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        <span style="color: #3D7B7B; font-style: italic">% 画像の横幅をminipageの1.0倍にする</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span style="color: #008000; font-weight: bold">\includegraphics</span><span style="color: #687822">[width=\columnwidth]</span><span style="color: #008000">{</span>sample2.png<span style="color: #008000">}</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>        <span style="color: #008000; font-weight: bold">\caption</span><span style="color: #008000">{</span>sample2<span style="color: #008000">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>        <span style="color: #008000; font-weight: bold">\label</span><span style="color: #008000">{</span>fig:sample2<span style="color: #008000">}</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>minipage<span style="color: #008000">}</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>figure<span style="color: #008000">}</span>
+</code></pre></div>
 
 
 
