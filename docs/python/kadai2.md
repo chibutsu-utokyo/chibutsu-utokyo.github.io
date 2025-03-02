@@ -2,7 +2,7 @@
 
 !!!note
     - 締め切りや提出方法・提出先については指示を出すのでそれに従ってください．
-    - 提出する際には全ての課題解答を単一のJupyter Notebookファイル `kadai2.ipynb` の別々のセルに入力して提出してください．
+    - 提出する際には全ての課題解答を単一のJupyter Notebookファイル `kadai2.ipynb` の別々のセルに入力して提出してください．Codespaceの `python` ディレクトリに `kadai2.ipynb` の提出ひな型がある（または[GitHub](https://github.com/chibutsu-utokyo/debian/blob/main/python/kadai2.ipynb) から直接ダウンロードできる）ので，それを使っても構いません．
     - 必ず提出する前にカーネルの再起動を行った後に，全てのセルを実行して結果を確認してください．
 
 !!!tip
