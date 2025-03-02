@@ -32,6 +32,7 @@ nav:
     - python/intro.md
     - python/kadai1.md
     - python/kadai2.md
+    - python/kadai3.md
 #theme
 theme:
   language: ja
