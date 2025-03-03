@@ -1090,10 +1090,10 @@ D \frac{\partial^2 f}{\partial x^2}
 多くの場面で登場する非常に重要な方程式である．
 初期条件として<span class="arithmatex">\(f(x, t=0) = \delta (x)\)</span>とし，この方程式を乱数を用いた
 モンテカルロ法によって解くプログラムを作成せよ．
-特に<span class="arithmatex">\(U = 0.2\)</span>，<span class="arithmatex">\(D = 1\)</span>の場合について<span class="arithmatex">\(t = 1, 2, 3, 4\)</span>での数値解と
+特に<span class="arithmatex">\(U = 1\)</span>，<span class="arithmatex">\(D = 1\)</span>の場合について<span class="arithmatex">\(t = 1, 2, 3, 4\)</span>での数値解と
 解析解（ヒストグラム）を同じプロット上に図示し，両者を比較できるようにすること．  </p>
 <p>具体的には，ある時刻の<span class="arithmatex">\(f(x, t)\)</span>を<span class="arithmatex">\(N\)</span>個の粒子で近似するには，プログラム中で
-各粒子の<span class="arithmatex">\(x\)</span>座標を表す長さ<span class="arithmatex">\(N\)</span>の配列を用意し，全ての<span class="arithmatex">\(x\)</span>座標を0に初期化する．<br />
+各粒子の<span class="arithmatex">\(x\)</span>座標を表す長さ<span class="arithmatex">\(N\)</span>のNumPy配列を用意し，全ての<span class="arithmatex">\(x\)</span>座標を0に初期化する．<br />
 各粒子の位置<span class="arithmatex">\(x_i (t) (i=1, 2, \ldots, N)\)</span>を時間ステップ<span class="arithmatex">\(\Delta t\)</span>だけ
 更新するには，乱数を用いて</p>
 <div class="arithmatex">\[
@@ -1103,6 +1103,16 @@ x_i (t + \tau) = x_i (t) + U \tau \pm \sqrt{2 D \Delta t}
 すなわち，<span class="arithmatex">\([0, 1)\)</span>区間の一様乱数<span class="arithmatex">\(r\)</span>を発生させ，<span class="arithmatex">\(r &lt; 0.5\)</span>の時には<span class="arithmatex">\(+\)</span>，
 それ以外では<span class="arithmatex">\(-\)</span>を選べばよい．
 このような確率的にランダムな運動をランダムウォークと呼ぶ．</p>
+<p>例えば
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span style="color: #bbbbbb"> </span>python<span style="color: #bbbbbb"> </span>kadai3-1.py
+</code></pre></div>
+と実行したときに以下のような図をファイルに出力できるようにすること．
+これは<span class="arithmatex">\(N = 10000\)</span>，<span class="arithmatex">\(\Delta t = 2 \times 10^{-4}\)</span>，とした場合の
+数値解と解析解の比較である．</p>
+<figure>
+<img alt="Diffusion" src="../figure/diffusion.png" width="600px" />
+<figcaption>移流拡散方程式の数値解</figcaption>
+</figure>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
@@ -1128,8 +1138,14 @@ f(x, t) = \frac{1}{2 \sqrt{\pi D t}}
 <a href="https://api.open-meteo.com/v1/forecast?latitude=35.6785&amp;longitude=139.6823&amp;hourly=temperature_2m,precipitation,windspeed_10m,winddirection_10m&amp;windspeed_unit=ms&amp;timezone=Asia%2FTokyo&amp;past_days=1">URL</a>
 を使って，ダウンロードしたデータのプロットをファイルに保存するプログラムを作成せよ．
 ただし，オプション無しで実行した場合には <code>openmeteo.png</code> というファイル名で，
-<code>-o</code> オプションでファイル名を指定した場合には，指定されたファイル名で保存するようにせよ．
-例えば以下のようなプロットが得られればよい．</p>
+<code>-o</code> オプションでファイル名を指定した場合には，指定されたファイル名で保存するようにせよ．</p>
+<p>例えば
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span style="color: #bbbbbb"> </span>python<span style="color: #bbbbbb"> </span>kadai3-2.py
+</code></pre></div>
+と実行したときに <code>openmeteo.png</code> として，
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span style="color: #bbbbbb"> </span>python<span style="color: #bbbbbb"> </span>kadai3-2.py<span style="color: #bbbbbb"> </span>-o<span style="color: #bbbbbb"> </span>tokyo.png
+</code></pre></div>
+と実行したときには <code>tokyo.png</code> として以下のような図が保存されるようにすればよい．</p>
 <figure>
 <img alt="Open-Meteo" src="../figure/openmeteo.png" width="600px" />
 <figcaption>Open-Meteo</figcaption>
@@ -1141,6 +1157,15 @@ f(x, t) = \frac{1}{2 \sqrt{\pi D t}}
 横軸は自動でこの例のようにフォーマットされる．</li>
 <li>この例のURLでは温度，降水量，風速と風向きをプロットしているが，ダウンロード
 するデータは自分でカスタマイズすることができる．</li>
+<li>コマンドラインオプションを処理するには <code>argparse</code> モジュールを使うとよい．</li>
+<li>指定されたURLから取得したJSON形式のデータをPyhonの辞書型に変換するには
+<code>requests</code> モジュールを使うとよい．例えば
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">get_url_data</span>(url):
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    r <span style="color: #666666">=</span> requests<span style="color: #666666">.</span>get(url)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    r<span style="color: #666666">.</span>raise_for_status()
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span style="color: #008000; font-weight: bold">return</span> r<span style="color: #666666">.</span>json()
+</code></pre></div>
+は指定されたURLからデータを取得し，辞書型に変換して返す関数である．</li>
 </ul>
 </div>
 <h2 id="3-3">課題3-3</h2>
@@ -1173,47 +1198,47 @@ f(x, t) = \frac{1}{2 \sqrt{\pi D t}}
 これと同じ計算を行う高速化した関数として <code>push_optimized</code> を実装せよ．<br />
 なお，ここでは <span class="arithmatex">\(c = 1\)</span>として，境界条件（<code>set_boundary_condition_naive</code>）は
 周期境界条件を用いている．境界条件の設定部分の高速化も忘れずにすること．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">set_boundary_condition_naive</span>(uv, lbx, ubx, lby, uby, lbz, ubz):
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            uv[lbx <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iy, iz] <span style="color: #666666">=</span> uv[ubx, iy, iz]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            uv[ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iy, iz] <span style="color: #666666">=</span> uv[lbx, iy, iz]
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            uv[ix, lby <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iz] <span style="color: #666666">=</span> uv[ix, uby, iz]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            uv[ix, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iz] <span style="color: #666666">=</span> uv[ix, lby, iz]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            uv[ix, iy, lbz <span style="color: #666666">-</span> <span style="color: #666666">1</span>] <span style="color: #666666">=</span> uv[ix, iy, ubz]
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            uv[ix, iy, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>] <span style="color: #666666">=</span> uv[ix, iy, lbz]
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">push_naive</span>(u, v, lbx, ubx, lby, uby, lbz, ubz, dt, dx, dy, dz):
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span style="color: #3D7B7B; font-style: italic"># vを更新</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                <span style="color: #3D7B7B; font-style: italic"># fmt: off</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                v[ix, iy, iz] <span style="color: #666666">+=</span> dt <span style="color: #666666">*</span> (
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                    <span style="color: #666666">+</span> (u[ix <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iy, iz] <span style="color: #666666">-</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> u[ix, iy, iz] <span style="color: #666666">+</span> u[ix <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iy, iz]) <span style="color: #666666">/</span> dx<span style="color: #666666">**2</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                    <span style="color: #666666">+</span> (u[ix, iy <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iz] <span style="color: #666666">-</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> u[ix, iy, iz] <span style="color: #666666">+</span> u[ix, iy <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iz]) <span style="color: #666666">/</span> dy<span style="color: #666666">**2</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>                    <span style="color: #666666">+</span> (u[ix, iy, iz <span style="color: #666666">+</span> <span style="color: #666666">1</span>] <span style="color: #666666">-</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> u[ix, iy, iz] <span style="color: #666666">+</span> u[ix, iy, iz <span style="color: #666666">-</span> <span style="color: #666666">1</span>]) <span style="color: #666666">/</span> dz<span style="color: #666666">**2</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                )
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                <span style="color: #3D7B7B; font-style: italic"># fmt: on</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span style="color: #3D7B7B; font-style: italic"># uを更新</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>            <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                u[ix, iy, iz] <span style="color: #666666">+=</span> v[ix, iy, iz] <span style="color: #666666">*</span> dt
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span style="color: #3D7B7B; font-style: italic"># 境界条件の設定</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    set_boundary_condition_naive(u, lbx, ubx, lby, uby, lbz, ubz)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">set_boundary_condition_naive</span>(uv, lbx, ubx, lby, uby, lbz, ubz):
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            uv[lbx <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iy, iz] <span style="color: #666666">=</span> uv[ubx, iy, iz]
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            uv[ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iy, iz] <span style="color: #666666">=</span> uv[lbx, iy, iz]
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            uv[ix, lby <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iz] <span style="color: #666666">=</span> uv[ix, uby, iz]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>            uv[ix, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iz] <span style="color: #666666">=</span> uv[ix, lby, iz]
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            uv[ix, iy, lbz <span style="color: #666666">-</span> <span style="color: #666666">1</span>] <span style="color: #666666">=</span> uv[ix, iy, ubz]
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>            uv[ix, iy, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>] <span style="color: #666666">=</span> uv[ix, iy, lbz]
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">push_naive</span>(u, v, lbx, ubx, lby, uby, lbz, ubz, dt, dx, dy, dz):
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span style="color: #3D7B7B; font-style: italic"># vを更新</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>            <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span style="color: #3D7B7B; font-style: italic"># fmt: off</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>                v[ix, iy, iz] <span style="color: #666666">+=</span> dt <span style="color: #666666">*</span> (
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>                    <span style="color: #666666">+</span> (u[ix <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iy, iz] <span style="color: #666666">-</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> u[ix, iy, iz] <span style="color: #666666">+</span> u[ix <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iy, iz]) <span style="color: #666666">/</span> dx<span style="color: #666666">**2</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>                    <span style="color: #666666">+</span> (u[ix, iy <span style="color: #666666">+</span> <span style="color: #666666">1</span>, iz] <span style="color: #666666">-</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> u[ix, iy, iz] <span style="color: #666666">+</span> u[ix, iy <span style="color: #666666">-</span> <span style="color: #666666">1</span>, iz]) <span style="color: #666666">/</span> dy<span style="color: #666666">**2</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>                    <span style="color: #666666">+</span> (u[ix, iy, iz <span style="color: #666666">+</span> <span style="color: #666666">1</span>] <span style="color: #666666">-</span> <span style="color: #666666">2</span> <span style="color: #666666">*</span> u[ix, iy, iz] <span style="color: #666666">+</span> u[ix, iy, iz <span style="color: #666666">-</span> <span style="color: #666666">1</span>]) <span style="color: #666666">/</span> dz<span style="color: #666666">**2</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>                )
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>                <span style="color: #3D7B7B; font-style: italic"># fmt: on</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span style="color: #3D7B7B; font-style: italic"># uを更新</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    <span style="color: #008000; font-weight: bold">for</span> ix <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbx, ubx <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>        <span style="color: #008000; font-weight: bold">for</span> iy <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lby, uby <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>            <span style="color: #008000; font-weight: bold">for</span> iz <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(lbz, ubz <span style="color: #666666">+</span> <span style="color: #666666">1</span>):
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>                u[ix, iy, iz] <span style="color: #666666">+=</span> v[ix, iy, iz] <span style="color: #666666">*</span> dt
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>    <span style="color: #3D7B7B; font-style: italic"># 境界条件の設定</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>    set_boundary_condition_naive(u, lbx, ubx, lby, uby, lbz, ubz)
 </code></pre></div>
 <p><code>kadai3-3.py</code> （ヒント参照）は <code>push_naive</code> を用いて波動方程式を解くプログラムを実装したもので，以下のように実行すると1行目に <code>push_naive</code> ， 2行目に <code>push_optimized</code> を50ステップ実行するのにかかった時間が出力される．ここでは <code>push_optimized</code> は内部で <code>push_naive</code> を呼ぶだけとなっているが，この関数を適宜修正すればよい．</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span style="color: #bbbbbb"> </span>python<span style="color: #bbbbbb"> </span>kadai3-3.py
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Elapsed<span style="color: #bbbbbb"> </span><span style="color: #008000">time</span><span style="color: #bbbbbb"> </span><span style="color: #666666">(</span>naive<span style="color: #666666">)</span><span style="color: #bbbbbb">           </span>:<span style="color: #bbbbbb"> </span><span style="color: #666666">4</span>.437e+00<span style="color: #bbbbbb"> </span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Elapsed<span style="color: #bbbbbb"> </span><span style="color: #008000">time</span><span style="color: #bbbbbb"> </span><span style="color: #666666">(</span>optimized<span style="color: #666666">)</span><span style="color: #bbbbbb">       </span>:<span style="color: #bbbbbb"> </span><span style="color: #666666">4</span>.640e+00<span style="color: #bbbbbb"> </span>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span style="color: #bbbbbb"> </span>python<span style="color: #bbbbbb"> </span>kadai3-3.py
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Elapsed<span style="color: #bbbbbb"> </span><span style="color: #008000">time</span><span style="color: #bbbbbb"> </span><span style="color: #666666">(</span>naive<span style="color: #666666">)</span><span style="color: #bbbbbb">           </span>:<span style="color: #bbbbbb"> </span><span style="color: #666666">4</span>.437e+00<span style="color: #bbbbbb"> </span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Elapsed<span style="color: #bbbbbb"> </span><span style="color: #008000">time</span><span style="color: #bbbbbb"> </span><span style="color: #666666">(</span>optimized<span style="color: #666666">)</span><span style="color: #bbbbbb">       </span>:<span style="color: #bbbbbb"> </span><span style="color: #666666">4</span>.640e+00<span style="color: #bbbbbb"> </span>
 </code></pre></div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -1223,7 +1248,7 @@ f(x, t) = \frac{1}{2 \sqrt{\pi D t}}
 </li>
 <li>
 <p>NumPy配列の配列演算や，<code>numba</code> や <code>f2py</code> や <code>cython</code> などを使う方法が考えられる．
-複数の方法を試して速度を比較してみるのも面白い．</p>
+100倍程度は高速化されるだろう．複数の方法を試して速度を比較してみるのも面白い．</p>
 </li>
 </ul>
 </div>
