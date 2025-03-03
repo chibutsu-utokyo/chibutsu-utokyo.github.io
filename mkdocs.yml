@@ -41,7 +41,9 @@ theme:
     text: Noto Sans JP
     code: Inconsolata
   palette:
+    scheme: default
     primary: blue grey
+  highlightjs: false
   features:
     - navigation.top
     # - toc.integrate
