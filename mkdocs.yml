@@ -9,6 +9,7 @@ nav:
     - unix/kadai1.md
     - unix/kadai2.md
   - Gnuplot:
+    - gnuplot/intro.md
     - gnuplot/gnuplot_1.md
     - gnuplot/gnuplot_2.md
     - gnuplot/gnuplot_3.md

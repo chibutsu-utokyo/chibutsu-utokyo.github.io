@@ -1,27 +1,6 @@
-# gnuplot（入門編）
+# 入門編
 
-## はじめに
-
-[gnuplot](http://www.gnuplot.info/) はUnixやWindows、Macなどの様々なプラットフォーム上で動く、簡単にデータや関数のプロットができる描画ツールです。
-線や点、等高線、ベクトル場などを、2Dおよび3Dで描くことができます。
-
-使い始めると奥が深く様々なことができるのですが、そのためにはいくつかのコマンドを覚える必要があります。
-ここでは、その中でも最も基本的なものについて説明をしていきます。
-ここに書かれている機能が全てではありませんので、高度なことをやりたい場合はオンラインマニュアル（後述）やインターネット等を参考にするとよいでしょう。
-少し古いですが、
-[gnuplot tips (not so Frequently Asked Questions)](http://lowrank.net/gnuplot/)
-というホームページが参考になります。
-[ここ](https://ss.scphys.kyoto-u.ac.jp/person/yonezawa/contents/program/gnuplot/index.html)
-にもgnuplotの詳しい解説があります。
-
-
-なおこのページは、過去の担当者が作成してくださったものをMarkdownに移植し、一部改変したものです。
-
-
-
-
-
-## gnuplot の起動と終了の仕方（`gnuplot, quit`など）
+## 起動と終了の仕方（`gnuplot, quit`など）
 
 まず始めに、gnuplotの起動と終了の仕方について説明します。
 
