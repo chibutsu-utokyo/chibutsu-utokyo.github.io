@@ -26,6 +26,6 @@ Unixの演習では [Github Codespace](https://github.com/chibutsu-utokyo/debian
 のワークスペースのルートディレクトリで実行するものとします．
 カレントディレクトリが分からなくなったときには，
 ```bash
-cd $CODESPACE_VSCODE_FOLDER
+$ cd $CODESPACE_VSCODE_FOLDER
 ```
 を実行するか，新しくターミナルを開いてください．

@@ -28,22 +28,47 @@
 
 ### Jupyter Notebook
 [Github Codespace](https://github.com/chibutsu-utokyo/debian) の `gnuplot` ディレクトリに
-`example.ipynb` というファイルがありますので，これを開いてください．  
-Jupyter Notebookでgnuplotを使うためには「gnuplotカーネル」を使う必要がありますので，
+`example.ipynb` というファイルがありますので，これを開いてください．Jupyter Notebookでgnuplotを
+使うためには「gnuplotカーネル」を使う必要があります．  
 右上の「カーネルを選択」→「Jupyter Kernel」→ 「gnuplot」の順に選択してください．  
-これで準備は完了です．全てのセルを実行してみてプロットが表示されることを確認してください．
-
+これで準備は完了です．全てのセルを実行してみてプロットが表示されることを確認してください．  
 以降は各セルにgnuplotのコマンドを記述して実行することでプロットを表示することができます．
 
 ### X11転送
 Codespaceには [SSH](../../RemoteAccess/SSH) を使ってリモート接続することができます．
 ちょっとややこしいですが，SSHを経由してX11転送という機能を使うと，リモートのウィンドウを
-ローカルのディスプレイに表示することができます．  
-これには
-[GitHub CLI](https://docs.github.com/ja/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli)
-を使うと便利です．これを適切に自分のPCにインストールした上で，
+ローカルのディスプレイに表示することができます．
 
+これにはコマンドラインからGitHubの操作ができるツールである
+[GitHub CLI](https://docs.github.com/ja/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli)
+を使うと便利です．リンク先を参考に自分のPCに適宜インストールしてください．
+
+インストールができたら，初回は認証が必要になります．
+以下のコマンドで
 ```bash
-gh codespace ssh name-of-your-codespace
+$ gh auth login
 ```
-してみてください．
+適宜指示に従って認証してください．
+認証が終了したら
+```bash
+$ gh codespace ssh -c CODESPACE-NAME
+```
+で `CODESPACE-NAME` という名前のインスタンスにSSH接続ができます．
+もしくは
+```bash
+$ gh codespace ssh
+```
+を実行するとCodespaceのインスタンスのリストが表示されるので，
+カーソルキーで選択してEnterを押すことでSSH接続ができます．
+
+この状態で例えば
+```bash
+$ xeyes
+```
+などのGUIアプリケーションを実行すると，ローカルのディスプレイに
+ウィンドウが表示されるはずです[^1]．
+このSSH接続した状態で `gnuplot` コマンドを使えば，プロットの
+ウィンドウはローカルのディスプレイに表示されます．
+
+[^1]: `~/.ssh/config` に `ForwardX11 yes` という
+設定をしておく必要があるかもしれません．
