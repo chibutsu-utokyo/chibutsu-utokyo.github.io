@@ -12,7 +12,7 @@
         <link rel="prev" href="../gnuplot_3/">
       
       
-        <link rel="next" href="../../LaTeX/chap1/">
+        <link rel="next" href="../kadai/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -619,6 +619,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kadai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -924,7 +945,7 @@
         
   
   <span class="md-ellipsis">
-    課題
+    提出課題
   </span>
   
 
@@ -1314,11 +1335,14 @@
 <p>数式中の変数の値を少し変えただけの複数のグラフを描画したいとき、複雑な数式だと入力する作業が面倒なだけでなく、入力ミスから全然違うグラフを描画してしまうということがおきやすくなります。
 そんな時に便利なのが関数定義という機能です。
 これは数学関数の<span class="arithmatex">\(\sin,\cos\)</span>などのように、gnuplot中で使える一般的な関数<span class="arithmatex">\(f(x)\)</span>を自分で定義することができるというものです。</p>
-<p>例えば次のような関数を表示したいとき
-$$ y = a\sin(x)\cos(x) \quad (a=1,2) $$
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; f(a,x) = a*sin(x)*cos(x)
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>gnuplot&gt; plot f(1,x)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>gnuplot&gt; replot f(2,x)
+<p>例えば次のような関数</p>
+<div class="arithmatex">\[
+y = a\sin(x)\cos(x) \quad (a=1,2)
+\]</div>
+<p>を表示したいとき</p>
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt;<span style="color: #bbbbbb"> </span>f<span style="color: #666666">(</span>a,x<span style="color: #666666">)</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>a*sin<span style="color: #666666">(</span>x<span style="color: #666666">)</span>*cos<span style="color: #666666">(</span>x<span style="color: #666666">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>gnuplot&gt;<span style="color: #bbbbbb"> </span>plot<span style="color: #bbbbbb"> </span>f<span style="color: #666666">(1</span>,x<span style="color: #666666">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>gnuplot&gt;<span style="color: #bbbbbb"> </span>replot<span style="color: #bbbbbb"> </span>f<span style="color: #666666">(2</span>,x<span style="color: #666666">)</span>
 </code></pre></div>
 とすれば、いちいち似たような数式を入力することなく、2つの場合についてグラフを描くことができます。</p>
 <h2 id="_3">三項演算子</h2>
@@ -1327,14 +1351,14 @@ $$ y = a\sin(x)\cos(x) \quad (a=1,2) $$
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;条件文&gt; ? &lt;条件が真の時の処理&gt; : &lt;条件が偽の時の処理&gt;
 </code></pre></div>
 具体例として、Heaviside関数を見てみましょう。
-Heaviside関数の定義は次のようになっています。
-$$
+Heaviside関数の定義は次のようになっています。</p>
+<div class="arithmatex">\[
  f(x) = \begin{cases}
-     1 &amp; ( x &gt; 0 )\
-     0 &amp; ( x &lt; 0 ) \
+     1 &amp; ( x &gt; 0 )\\
+     0 &amp; ( x &lt; 0 ) \\
  \end{cases}
-$$
-これを描くためには次のように入力します。
+\]</div>
+<p>これを描くためには次のように入力します。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gnuplot&gt; set yrange [-0.2:1.2]
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>gnuplot&gt; plot (x &lt; 0) ? 0 : 1
 </code></pre></div></p>
