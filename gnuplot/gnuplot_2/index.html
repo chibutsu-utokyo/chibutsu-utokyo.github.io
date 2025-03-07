@@ -601,6 +601,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kadai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -906,7 +927,7 @@
         
   
   <span class="md-ellipsis">
-    課題
+    提出課題
   </span>
   
 
@@ -1346,10 +1367,12 @@
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a> gnuplot&gt; set terminal qt
 </code></pre></div>
 とします。</p>
-<p><strong>注意1 <code>set output</code>をしないで他へ出力に切り替える（<code>set terminal qt</code>等する）とファイルが壊れることがあります。</strong></p>
-<p><strong>注意2 「<code>set terminal png</code>→<code>set output 'output.png'</code>→<code>plot sin(x)</code>」の順で作画したが、ファイルに書き込まれない」という事態が起こった方へ：
-これも、出力先と描きたいグラフを指定しただけで、書き込むという作業は行われていないためです。
-最後に<code>set output</code>を行ってください。</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li><code>set output</code>をしないで他へ出力に切り替える（<code>set terminal qt</code>等する）とファイルが壊れることがあります。</li>
+</ul>
+</div>
 <h2 id="pltload"><code>plt</code>ファイルと<code>load</code></h2>
 <p>ここまではすべて対話方式でコマンドを入力してきましたが、コマンドの数が多くなってくると面倒です。
 複数のコマンドをひとつのファイルに書いておき、まとめて実行することができます。</p>

@@ -463,6 +463,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gnuplot/kadai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -768,7 +789,7 @@
         
   
   <span class="md-ellipsis">
-    課題
+    提出課題
   </span>
   
 
@@ -1154,6 +1175,7 @@
 <li>締め切りや提出方法・提出先については指示を出すのでそれに従ってください．</li>
 <li>提出する際には全ての課題解答を単一のJupyter Notebookファイル <code>kadai2.ipynb</code> の別々のセルに入力して提出してください．Codespaceの <code>python</code> ディレクトリに <code>kadai2.ipynb</code> の提出ひな型がある（または<a href="https://github.com/chibutsu-utokyo/debian/blob/main/python/kadai2.ipynb">GitHub</a> から直接ダウンロードできる）ので，それを使っても構いません．</li>
 <li>必ず提出する前にカーネルの再起動を行った後に，全てのセルを実行して結果を確認してください．</li>
+<li><a href="https://utokyo-ipp.github.io/">テキスト</a>の2-2，3-1，3-3，5-3を適宜参照してください．</li>
 </ul>
 </div>
 <div class="admonition tip">
@@ -1263,14 +1285,24 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <figcaption>台形公式およびSimpsonの公式</figcaption>
 </figure>
 <h2 id="2-6">課題2-6</h2>
-<p>1次元セル・オートマトンを考えよう．<br />
-引数として初期値 <code>x</code> ，状態遷移数 <code>step</code> ，10進数のルール <code>decrule</code> を受け取り，
-各ステップ，各セルの状態を表す2次元配列を返す関数</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">cellular_automaton</span>(x, step, decrule):
+<p>1次元セル・オートマトン(Cellular Automaton)と呼ばれるモデルを考える．
+1次元的に並んだN個のセルが与えられ，各セルが0もしくは1という状態を持つとき，
+これを <span class="arithmatex">\(x_i (i=1, \ldots, N)\)</span> と表す．セルオートマトンでは <span class="arithmatex">\(k\)</span> 世代目の
+<span class="arithmatex">\(x^k_{i-1}, x^k_{i}, x^k_{i+1}\)</span> の状態からある規則に基づいて <span class="arithmatex">\(k+1\)</span> 世代目の
+<span class="arithmatex">\(x^{k+1}_i\)</span>を決定する．<span class="arithmatex">\(x^k_i\)</span>は0か1の2通りなので，
+<span class="arithmatex">\(x^k_{i-1}, x^k_{i}, x^k_{i+1}\)</span>の組111, 110, 101, 100, 011, 010, 001, 000の
+8パターンに対する<span class="arithmatex">\(x^{k+1}_{i}\)</span>を指定すれば良い．
+例えば 111→0, 110→0, 101→0, 100→1, 011→1, 010→1, 001→1, 000→0 という規則は
+<span class="arithmatex">\(x^{k+1}_{i}\)</span>を並べたものを2進数表記の整数と見ると
+<span class="arithmatex">\(00011110_2 = 30_{10}\)</span> (2進数表記の00011110は10進数では30)となるためルール30と
+呼ばれている．</p>
+<p>引数として初期値配列 <code>x</code> ，世代数 <code>m</code> ，10進数のルール <code>decrule</code> を受け取り，
+各世代，各セルの状態を表す2次元配列を返す関数</p>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">cellular_automaton</span>(x, m, decrule):
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span style="color: #666666">...</span>     <span style="color: #008000; font-weight: bold">pass</span>
 </code></pre></div>
 <p>を実装し，以下のように実行せよ．（ただし，境界の値は初期値のまま固定でよい．）</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> n <span style="color: #666666">=</span> <span style="color: #666666">256</span>
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> n <span style="color: #666666">=</span> <span style="color: #666666">256</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span style="color: #666666">&gt;&gt;&gt;</span> m <span style="color: #666666">=</span> n<span style="color: #666666">//2</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span style="color: #666666">&gt;&gt;&gt;</span> xzero <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,), dtype<span style="color: #666666">=</span>np<span style="color: #666666">.</span>int32)
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span style="color: #666666">&gt;&gt;&gt;</span> xzero[m] <span style="color: #666666">=</span> <span style="color: #666666">1</span>
@@ -1278,15 +1310,22 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span style="color: #666666">&gt;&gt;&gt;</span> y <span style="color: #666666">=</span> cellular_automaton(xzero, m, <span style="color: #666666">90</span>)
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span style="color: #666666">&gt;&gt;&gt;</span> plt<span style="color: #666666">.</span>imshow(y, origin<span style="color: #666666">=</span><span style="color: #BA2121">&#39;lower&#39;</span>, cmap<span style="color: #666666">=</span>plt<span style="color: #666666">.</span>cm<span style="color: #666666">.</span>gray_r)
 </code></pre></div>
-<p>ただし，NumPy配列を使うことでループを用いない実装とすること．<br />
-この結果は以下のようなシェルピンスキーのギャスケットと呼ばれる図形を生成する．</p>
+実行結果は以下の図のようになる．（これはシェルピンスキーのギャスケットと呼ばれる．）</p>
 <figure>
 <img alt="数値積分" src="../figure/game_of_life.png" width="500px" />
 <figcaption>1次元セル・オートマトン</figcaption>
 </figure>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>1次元のセル・オートマトンの詳細については <a href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3&gt;">Wikipedia</a> を参照．</p>
+<ul>
+<li>セル・オートマトンの詳細については <a href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3&gt;">Wikipedia</a> を参照．</li>
+<li>ルールは長さ8の整数配列を用いて記述することが出来る．
+<span class="arithmatex">\(x^k_{i-1}, x^k_{i}, x^k_{i+1}\)</span> の組をこの整数配列のインデックスに（例えば
+<span class="arithmatex">\(j = 2^0 \times x^{k}_{i-1} + 2^1 \times x^{k}_{i} + 2^2 \times x^{k}_{i+1}\)</span>
+のように）マッピングしてやると良い．</li>
+<li>この課題もNumPy配列を使ってできるだけループを使わない実装が望ましいが，
+安直にループを使う方が実装はしやすいかもしれない．</li>
+</ul>
 </div>
 
 
