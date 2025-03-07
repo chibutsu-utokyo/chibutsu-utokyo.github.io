@@ -1,10 +1,9 @@
-# 課題
+# 提出課題
 
 !!! Warning
     課題はCodespaceで行ってはいけません。情報漏洩のリスクがあります。  
     間違えてやってしまった場合は、早急にTAに連絡してください。
 
-## 課題
 559のサーバーである`dover.eps.s.u-tokyo.ac.jp`にSSHでログインしてください。UTokyo-VPNを経由する必要があります。  
 次に、`/home0/akutagawa2024/kadai.txt`をSCPコマンドを用いて自分のノートPCに転送してください。  
 そして、書かれている課題に対する答えを、doverの`/home0/akutagawa2024/submit`ディレクトリに送ってください。  

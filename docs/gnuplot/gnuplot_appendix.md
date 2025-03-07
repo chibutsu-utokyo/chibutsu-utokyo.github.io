@@ -65,9 +65,15 @@ rep
 そんな時に便利なのが関数定義という機能です。
 これは数学関数の$\sin,\cos$などのように、gnuplot中で使える一般的な関数$f(x)$を自分で定義することができるというものです。
 
-例えば次のような関数を表示したいとき
-$$ y = a\sin(x)\cos(x) \quad (a=1,2) $$
-```
+例えば次のような関数
+
+$$
+y = a\sin(x)\cos(x) \quad (a=1,2)
+$$
+
+を表示したいとき
+
+```bash
 gnuplot> f(a,x) = a*sin(x)*cos(x)
 gnuplot> plot f(1,x)
 gnuplot> replot f(2,x)
@@ -85,12 +91,14 @@ gnuplot> replot f(2,x)
 ```
 具体例として、Heaviside関数を見てみましょう。
 Heaviside関数の定義は次のようになっています。
+
 $$
  f(x) = \begin{cases}
  	 1 & ( x > 0 )\\
 	 0 & ( x < 0 ) \\
  \end{cases}
 $$
+
 これを描くためには次のように入力します。
 ```
 gnuplot> set yrange [-0.2:1.2]

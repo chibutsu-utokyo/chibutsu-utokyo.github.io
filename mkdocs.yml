@@ -14,6 +14,7 @@ nav:
     - gnuplot/gnuplot_2.md
     - gnuplot/gnuplot_3.md
     - gnuplot/gnuplot_appendix.md
+    - gnuplot/kadai.md
   - LaTeX:
     - LaTeX/chap1.md  # LaTeXの基礎知識
     - LaTeX/chap2.md  # LaTeXの基本(1)

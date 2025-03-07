@@ -26,8 +26,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> print("Hello, World!")
 Hello, World!
 ```
-のように ```>>> ` （プロンプト）以降にPythonのコードを入力するとその場で実行されます．  
-終了するには `exit()` と入力するか， `Ctrl-D` を押してください．
+のように `>>> ` （プロンプト）以降にPythonのコードを入力するとその場で実行されます．
+終了するには `exit()` と入力するか， `Ctrl-D` を押してください．  
+実際にはこれを使うことは多くないかもしれませんが，コマンドラインからちょっとした
+Pythonのコードを試す際には便利です．
 
 
 ### スクリプト

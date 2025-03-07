@@ -176,17 +176,8 @@ gnuplot> replot
 ```
 とします。
 
-**注意1 `set output`をしないで他へ出力に切り替える（`set terminal qt`等する）とファイルが壊れることがあります。**
-
-**注意2 「`set terminal png`→`set output 'output.png'`→`plot sin(x)`」の順で作画したが、ファイルに書き込まれない」という事態が起こった方へ：
-これも、出力先と描きたいグラフを指定しただけで、書き込むという作業は行われていないためです。
-最後に`set output`を行ってください。**
-
-
-
-
-
-
+!!!warning
+    - `set output`をしないで他へ出力に切り替える（`set terminal qt`等する）とファイルが壊れることがあります。
 
 
 ## `plt`ファイルと`load`
