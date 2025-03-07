@@ -1172,29 +1172,29 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>締め切りや提出方法・提出先については指示を出すのでそれに従ってください．</li>
-<li>提出する際には全ての課題解答を単一のJupyter Notebookファイル <code>kadai2.ipynb</code> の別々のセルに入力して提出してください．Codespaceの <code>python</code> ディレクトリに <code>kadai2.ipynb</code> の提出ひな型がある（または<a href="https://github.com/chibutsu-utokyo/debian/blob/main/python/kadai2.ipynb">GitHub</a> から直接ダウンロードできる）ので，それを使っても構いません．</li>
-<li>必ず提出する前にカーネルの再起動を行った後に，全てのセルを実行して結果を確認してください．</li>
-<li><a href="https://utokyo-ipp.github.io/">テキスト</a>の2-2，3-1，3-3，5-3を適宜参照してください．</li>
+<li>締め切りや提出方法・提出先については指示を出すのでそれに従ってください。</li>
+<li>提出する際には全ての課題解答を単一のJupyter Notebookファイル <code>kadai2.ipynb</code> の別々のセルに入力して提出してください。Codespaceの <code>python</code> ディレクトリに <code>kadai2.ipynb</code> の提出ひな型がある（または<a href="https://github.com/chibutsu-utokyo/debian/blob/main/python/kadai2.ipynb">GitHub</a> から直接ダウンロードできる）ので、それを使っても構いません。</li>
+<li>必ず提出する前にカーネルの再起動を行った後に、全てのセルを実行して結果を確認してください。</li>
+<li><a href="https://utokyo-ipp.github.io/">テキスト</a>の2-2、3-1、3-3、5-3を適宜参照してください。</li>
 </ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>numpyやmatplotlibを使う課題があるので，先頭のセルで
+<p>numpyやmatplotlibを使う課題があるので、先頭のセルで
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
 </code></pre></div>
-のように必要なモジュールをインポートしてください．</p>
+のように必要なモジュールをインポートしてください。</p>
 </div>
 <h2 id="2-1">課題2-1</h2>
-<p>tupleの便利な使い方として関数の引数の扱いが挙げられる．
+<p>tupleの便利な使い方として関数の引数の扱いが挙げられる。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">f</span>(<span style="color: #666666">*</span>args):
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span style="color: #666666">...</span>     <span style="color: #008000">print</span>(args) <span style="color: #3D7B7B; font-style: italic"># 全ての引数を出力</span>
 </code></pre></div>
-のように引数に <code>*</code> を指定すると，それ以降に与えた引数は全てtupleとして引数(この場合は <code>args</code> )に格納される．
-これは多数のあらかじめ個数の分からない引数を受け取るために使われる．これは位置指定引数(positional argument)などと呼ばれる．</p>
-<p>任意の個数・任意の型の引数を受け取り，受け取った全ての引数を出力する <code>print_args</code> 関数を作成し，以下のように実行せよ．
-Pythonの任意のオブジェクトを文字列表現に変換する <code>str</code> 関数を用いること．
+のように引数に <code>*</code> を指定すると、それ以降に与えた引数は全てtupleとして引数(この場合は <code>args</code> )に格納される。
+これは多数のあらかじめ個数の分からない引数を受け取るために使われる。これは位置指定引数(positional argument)などと呼ばれる。</p>
+<p>任意の個数・任意の型の引数を受け取り、受け取った全ての引数を出力する <code>print_args</code> 関数を作成し、以下のように実行せよ。
+Pythonの任意のオブジェクトを文字列表現に変換する <code>str</code> 関数を用いること。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> print_args(<span style="color: #BA2121">&#39;hello&#39;</span>, (<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>), [], {<span style="color: #BA2121">&#39;key&#39;</span> : <span style="color: #BA2121">&#39;val&#39;</span>}, <span style="color: #008000; font-weight: bold">None</span>)
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>args[  <span style="color: #666666">0</span>] <span style="color: #666666">=</span> hello
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>args[  <span style="color: #666666">1</span>] <span style="color: #666666">=</span> (<span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>)
@@ -1203,18 +1203,18 @@ Pythonの任意のオブジェクトを文字列表現に変換する <code>str<
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>args[  <span style="color: #666666">4</span>] <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">None</span>
 </code></pre></div></p>
 <h2 id="2-2">課題2-2</h2>
-<p>任意のlistを受け取りそこから重複するものを除いた新たなlistオブジェクトを返す関数 <code>unique</code> を作成し，以下のように実行せよ．
+<p>任意のlistを受け取りそこから重複するものを除いた新たなlistオブジェクトを返す関数 <code>unique</code> を作成し、以下のように実行せよ。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> unique([<span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #666666">1</span>, <span style="color: #BA2121">&#39;b&#39;</span>, <span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;c&#39;</span>, <span style="color: #666666">1</span>, <span style="color: #666666">2</span>, <span style="color: #666666">3</span>, <span style="color: #BA2121">&#39;b&#39;</span>, <span style="color: #BA2121">&#39;d&#39;</span>, <span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #666666">3</span>])
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>[<span style="color: #BA2121">&#39;a&#39;</span>, <span style="color: #666666">1</span>, <span style="color: #BA2121">&#39;b&#39;</span>, <span style="color: #666666">2</span>, <span style="color: #BA2121">&#39;c&#39;</span>, <span style="color: #666666">3</span>, <span style="color: #BA2121">&#39;d&#39;</span>]
 </code></pre></div>
-ただし重複するもの以外の順番は保持するものとする．</p>
+ただし重複するもの以外の順番は保持するものとする。</p>
 <h2 id="2-3">課題2-3</h2>
-<p>dictは関数のキーワード引数を受け取るときに用いると便利である．
+<p>dictは関数のキーワード引数を受け取るときに用いると便利である。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">f</span>(<span style="color: #666666">**</span>kwargs):
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span style="color: #666666">...</span>     <span style="color: #008000">print</span>(kwargs)
 </code></pre></div>
-のように引数に <code>**</code> を指定すると，それ以降の任意のキーワード引数がdictとして引数(この場合 <code>kwargs</code> )に格納される．</p>
-<p>任意個数のキーワード引数の引数名(キー)とその値を出力する関数 <code>process_kwargs</code> を作成し，以下のように実行せよ．
+のように引数に <code>**</code> を指定すると、それ以降の任意のキーワード引数がdictとして引数(この場合 <code>kwargs</code> )に格納される。</p>
+<p>任意個数のキーワード引数の引数名(キー)とその値を出力する関数 <code>process_kwargs</code> を作成し、以下のように実行せよ。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> process_kwargs(a<span style="color: #666666">=</span><span style="color: #BA2121">&#39;hi&#39;</span>, c<span style="color: #666666">=</span><span style="color: #BA2121">&#39;chao&#39;</span>, x<span style="color: #666666">=10</span>, y<span style="color: #666666">=20</span>, z<span style="color: #666666">=30</span>)
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>a hi
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>b <span style="color: #008000; font-weight: bold">None</span>
@@ -1223,10 +1223,10 @@ Pythonの任意のオブジェクトを文字列表現に変換する <code>str<
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>y <span style="color: #666666">20</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>z <span style="color: #666666">30</span>
 </code></pre></div>
-ただし，引数 <code>a</code>, <code>b</code> は必ず与えられるものとし，もし与えられなかった場合にはデフォルトでNoneを
-出力し，出力の順は引数名で辞書順にソートして出力せよ．</p>
+ただし、引数 <code>a</code>, <code>b</code> は必ず与えられるものとし、もし与えられなかった場合にはデフォルトでNoneを
+出力し、出力の順は引数名で辞書順にソートして出力せよ。</p>
 <h2 id="2-4">課題2-4</h2>
-<p>整数 <code>N</code> を引数として受け取り，以下の級数展開</p>
+<p>整数 <code>N</code> を引数として受け取り、以下の級数展開</p>
 <div class="arithmatex">\[
 e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 \]</div>
@@ -1234,15 +1234,15 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">approx_e</span>(N):
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span style="color: #666666">...</span>     <span style="color: #008000; font-weight: bold">pass</span>
 </code></pre></div>
-<p>を作成し，以下のように実行せよ．</p>
+<p>を作成し、以下のように実行せよ。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">print</span>(<span style="color: #BA2121">&#39;</span><span style="color: #A45A77; font-weight: bold">{:20}</span><span style="color: #BA2121"> : </span><span style="color: #A45A77; font-weight: bold">{:&gt;20.14e}</span><span style="color: #BA2121">&#39;</span><span style="color: #666666">.</span>format(<span style="color: #BA2121">&#39;Approximated&#39;</span>, approx_e(<span style="color: #666666">10</span>)))
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Approximated         : <span style="color: #666666">2.71828152557319e+00</span>
 </code></pre></div>
-<p>ただし，NumPy配列を使うことでループを用いない実装とすること．</p>
+<p>ただし、NumPy配列を使うことでループを用いない実装とすること。</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>ここで，階乗とガンマ関数の関係式 <span class="arithmatex">\(\Gamma(n) = (n-1)!\)</span> を用いるとよい．
-ガンマ関数は <code>scipy.special.gamma()</code> を用いればよい．以下はその使用例である．</p>
+<p>ここで、階乗とガンマ関数の関係式 <span class="arithmatex">\(\Gamma(n) = (n-1)!\)</span> を用いるとよい。
+ガンマ関数は <code>scipy.special.gamma()</code> を用いればよい。以下はその使用例である。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">scipy</span> <span style="color: #008000; font-weight: bold">import</span> special
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span style="color: #666666">&gt;&gt;&gt;</span> special<span style="color: #666666">.</span>gamma(<span style="color: #666666">3</span>)  <span style="color: #3D7B7B; font-style: italic"># 2!</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span style="color: #666666">2.0</span>
@@ -1262,7 +1262,7 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">simpson</span>(N):
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span style="color: #666666">...</span>    <span style="color: #008000; font-weight: bold">pass</span>
 </code></pre></div>
-<p>を作成し，以下のように実行せよ．ただし，引数 <code>N</code> は分割数である．</p>
+<p>を作成し、以下のように実行せよ。ただし、引数 <code>N</code> は分割数である。</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> M <span style="color: #666666">=</span> <span style="color: #666666">16</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span style="color: #666666">&gt;&gt;&gt;</span> n <span style="color: #666666">=</span> <span style="color: #666666">2**</span>(np<span style="color: #666666">.</span>arange(M)<span style="color: #666666">+1</span>)
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span style="color: #666666">&gt;&gt;&gt;</span> err1 <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(M, dtype<span style="color: #666666">=</span>np<span style="color: #666666">.</span>float64)
@@ -1278,30 +1278,30 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span style="color: #666666">&gt;&gt;&gt;</span> plt<span style="color: #666666">.</span>loglog()
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span style="color: #666666">&gt;&gt;&gt;</span> plt<span style="color: #666666">.</span>legend()
 </code></pre></div>
-<p>ただし，NumPy配列を使うことでループを用いない実装とすること．<br />
-実行結果は以下の図のようになる．</p>
+<p>ただし、NumPy配列を使うことでループを用いない実装とすること。<br />
+実行結果は以下の図のようになる。</p>
 <figure>
 <img alt="数値積分" src="../figure/numerical_integration.png" width="500px" />
 <figcaption>台形公式およびSimpsonの公式</figcaption>
 </figure>
 <h2 id="2-6">課題2-6</h2>
-<p>1次元セル・オートマトン(Cellular Automaton)と呼ばれるモデルを考える．
-1次元的に並んだN個のセルが与えられ，各セルが0もしくは1という状態を持つとき，
-これを <span class="arithmatex">\(x_i (i=1, \ldots, N)\)</span> と表す．セルオートマトンでは <span class="arithmatex">\(k\)</span> 世代目の
+<p>1次元セル・オートマトン(Cellular Automaton)と呼ばれるモデルを考える。
+1次元的に並んだN個のセルが与えられ、各セルが0もしくは1という状態を持つとき、
+これを <span class="arithmatex">\(x_i (i=1, \ldots, N)\)</span> と表す。セルオートマトンでは <span class="arithmatex">\(k\)</span> 世代目の
 <span class="arithmatex">\(x^k_{i-1}, x^k_{i}, x^k_{i+1}\)</span> の状態からある規則に基づいて <span class="arithmatex">\(k+1\)</span> 世代目の
-<span class="arithmatex">\(x^{k+1}_i\)</span>を決定する．<span class="arithmatex">\(x^k_i\)</span>は0か1の2通りなので，
+<span class="arithmatex">\(x^{k+1}_i\)</span>を決定する。<span class="arithmatex">\(x^k_i\)</span>は0か1の2通りなので、
 <span class="arithmatex">\(x^k_{i-1}, x^k_{i}, x^k_{i+1}\)</span>の組111, 110, 101, 100, 011, 010, 001, 000の
-8パターンに対する<span class="arithmatex">\(x^{k+1}_{i}\)</span>を指定すれば良い．
+8パターンに対する<span class="arithmatex">\(x^{k+1}_{i}\)</span>を指定すれば良い。
 例えば 111→0, 110→0, 101→0, 100→1, 011→1, 010→1, 001→1, 000→0 という規則は
 <span class="arithmatex">\(x^{k+1}_{i}\)</span>を並べたものを2進数表記の整数と見ると
 <span class="arithmatex">\(00011110_2 = 30_{10}\)</span> (2進数表記の00011110は10進数では30)となるためルール30と
-呼ばれている．</p>
-<p>引数として初期値配列 <code>x</code> ，世代数 <code>m</code> ，10進数のルール <code>decrule</code> を受け取り，
-各世代，各セルの状態を表す2次元配列を返す関数</p>
+呼ばれている。</p>
+<p>引数として初期値配列 <code>x</code> 、世代数 <code>m</code> 、10進数のルール <code>decrule</code> を受け取り、
+各世代、各セルの状態を表す2次元配列を返す関数</p>
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">cellular_automaton</span>(x, m, decrule):
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span style="color: #666666">...</span>     <span style="color: #008000; font-weight: bold">pass</span>
 </code></pre></div>
-<p>を実装し，以下のように実行せよ．（ただし，境界の値は初期値のまま固定でよい．）</p>
+<p>を実装し、以下のように実行せよ。（ただし、境界の値は初期値のまま固定でよい。）</p>
 <p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> n <span style="color: #666666">=</span> <span style="color: #666666">256</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span style="color: #666666">&gt;&gt;&gt;</span> m <span style="color: #666666">=</span> n<span style="color: #666666">//2</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span style="color: #666666">&gt;&gt;&gt;</span> xzero <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros((n,), dtype<span style="color: #666666">=</span>np<span style="color: #666666">.</span>int32)
@@ -1310,7 +1310,7 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span style="color: #666666">&gt;&gt;&gt;</span> y <span style="color: #666666">=</span> cellular_automaton(xzero, m, <span style="color: #666666">90</span>)
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span style="color: #666666">&gt;&gt;&gt;</span> plt<span style="color: #666666">.</span>imshow(y, origin<span style="color: #666666">=</span><span style="color: #BA2121">&#39;lower&#39;</span>, cmap<span style="color: #666666">=</span>plt<span style="color: #666666">.</span>cm<span style="color: #666666">.</span>gray_r)
 </code></pre></div>
-実行結果は以下の図のようになる．（これはシェルピンスキーのギャスケットと呼ばれる．）</p>
+実行結果は以下の図のようになる。（これはシェルピンスキーのギャスケットと呼ばれる。）</p>
 <figure>
 <img alt="数値積分" src="../figure/game_of_life.png" width="500px" />
 <figcaption>1次元セル・オートマトン</figcaption>
@@ -1318,13 +1318,13 @@ e \simeq \sum_{n=0}^{N} \frac{1}{n !}. \quad (0! = 1に注意せよ)
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
-<li>セル・オートマトンの詳細については <a href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3&gt;">Wikipedia</a> を参照．</li>
-<li>ルールは長さ8の整数配列を用いて記述することが出来る．
+<li>セル・オートマトンの詳細については <a href="https://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3#1%E6%AC%A1%E5%85%83%E3%82%BB%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9E%E3%83%88%E3%83%B3&gt;">Wikipedia</a> を参照。</li>
+<li>ルールは長さ8の整数配列を用いて記述することが出来る。
 <span class="arithmatex">\(x^k_{i-1}, x^k_{i}, x^k_{i+1}\)</span> の組をこの整数配列のインデックスに（例えば
 <span class="arithmatex">\(j = 2^0 \times x^{k}_{i-1} + 2^1 \times x^{k}_{i} + 2^2 \times x^{k}_{i+1}\)</span>
-のように）マッピングしてやると良い．</li>
-<li>この課題もNumPy配列を使ってできるだけループを使わない実装が望ましいが，
-安直にループを使う方が実装はしやすいかもしれない．</li>
+のように）マッピングしてやると良い。</li>
+<li>この課題もNumPy配列を使ってできるだけループを使わない実装が望ましいが、
+安直にループを使う方が実装はしやすいかもしれない。</li>
 </ul>
 </div>
 
