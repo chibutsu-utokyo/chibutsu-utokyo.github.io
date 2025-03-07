@@ -1157,58 +1157,58 @@
 にもgnuplotの詳しい解説があります。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>gnuplotは通常ターミナル上のコマンドラインで制御し，プロットが別のウィンドウに表示される
-仕様となっているため，GUI環境が無いCodespace上では使うことはできません．
-そのため，各自のPC上のgnuplotの利用をおすすめしておきますが，Codespaceで使う方法も紹介しておきます．</p>
+<p>gnuplotは通常ターミナル上のコマンドラインで制御し、プロットが別のウィンドウに表示される
+仕様となっているため、GUI環境が無いCodespace上では使うことはできません。
+そのため、各自のPC上のgnuplotの利用をおすすめしておきますが、Codespaceで使う方法も紹介しておきます。</p>
 </div>
 <h2 id="_2">インストール</h2>
-<p>559の端末にはgnuplotはインストールされていますのでそのまま使うことができます．<br />
-自分のPCにgnuplotをインストールして使う場合には，<a href="http://www.gnuplot.info/">公式サイト</a>
-から自分の環境に合ったものをダウンロードしてインストールしてください．<br />
-もし分からないことがあれば遠慮なくまわりの人に助けを求めてください．</p>
+<p>559の端末にはgnuplotはインストールされていますのでそのまま使うことができます。<br />
+自分のPCにgnuplotをインストールして使う場合には、<a href="http://www.gnuplot.info/">公式サイト</a>
+から自分の環境に合ったものをダウンロードしてインストールしてください。<br />
+もし分からないことがあれば遠慮なくまわりの人に助けを求めてください。</p>
 <h2 id="codespace">Codespaceでの使い方</h2>
-<p>以下では2種類の方法を紹介します．Jupyter Notebookを使う方法の方がお手軽だと思います．</p>
+<p>以下では2種類の方法を紹介します。Jupyter Notebookを使う方法の方がお手軽だと思います。</p>
 <h3 id="jupyter-notebook">Jupyter Notebook</h3>
 <p><a href="https://github.com/chibutsu-utokyo/debian">Github Codespace</a> の <code>gnuplot</code> ディレクトリに
-<code>example.ipynb</code> というファイルがありますので，これを開いてください．Jupyter Notebookでgnuplotを
-使うためには「gnuplotカーネル」を使う必要があります．<br />
-右上の「カーネルを選択」→「Jupyter Kernel」→ 「gnuplot」の順に選択してください．<br />
-これで準備は完了です．全てのセルを実行してみてプロットが表示されることを確認してください．<br />
-以降は各セルにgnuplotのコマンドを記述して実行することでプロットを表示することができます．</p>
+<code>example.ipynb</code> というファイルがありますので、これを開いてください。Jupyter Notebookでgnuplotを
+使うためには「gnuplotカーネル」を使う必要があります。<br />
+右上の「カーネルを選択」→「Jupyter Kernel」→ 「gnuplot」の順に選択してください。<br />
+これで準備は完了です。全てのセルを実行してみてプロットが表示されることを確認してください。<br />
+以降は各セルにgnuplotのコマンドを記述して実行することでプロットを表示することができます。</p>
 <h3 id="x11">X11転送</h3>
-<p>Codespaceには <a href="../../RemoteAccess/SSH/">SSH</a> を使ってリモート接続することができます．
-ちょっとややこしいですが，SSHを経由してX11転送という機能を使うと，リモートのウィンドウを
-ローカルのディスプレイに表示することができます．</p>
+<p>Codespaceには <a href="../../RemoteAccess/SSH/">SSH</a> を使ってリモート接続することができます。
+ちょっとややこしいですが、SSHを経由してX11転送という機能を使うと、リモートのウィンドウを
+ローカルのディスプレイに表示することができます。</p>
 <p>これにはコマンドラインからGitHubの操作ができるツールである
 <a href="https://docs.github.com/ja/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli">GitHub CLI</a>
-を使うと便利です．リンク先を参考に自分のPCに適宜インストールしてください．</p>
-<p>インストールができたら，初回は認証が必要になります．
+を使うと便利です。リンク先を参考に自分のPCに適宜インストールしてください。</p>
+<p>インストールができたら、初回は認証が必要になります。
 以下のコマンドで
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span style="color: #bbbbbb"> </span>gh<span style="color: #bbbbbb"> </span>auth<span style="color: #bbbbbb"> </span>login
 </code></pre></div>
-適宜指示に従って認証してください．
+適宜指示に従って認証してください。
 認証が終了したら
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span style="color: #bbbbbb"> </span>gh<span style="color: #bbbbbb"> </span>codespace<span style="color: #bbbbbb"> </span>ssh<span style="color: #bbbbbb"> </span>-c<span style="color: #bbbbbb"> </span>CODESPACE-NAME
 </code></pre></div>
-で <code>CODESPACE-NAME</code> という名前のインスタンスにSSH接続ができます．
+で <code>CODESPACE-NAME</code> という名前のインスタンスにSSH接続ができます。
 もしくは
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span style="color: #bbbbbb"> </span>gh<span style="color: #bbbbbb"> </span>codespace<span style="color: #bbbbbb"> </span>ssh
 </code></pre></div>
-を実行するとCodespaceのインスタンスのリストが表示されるので，
-カーソルキーで選択してEnterを押すことでSSH接続ができます．</p>
+を実行するとCodespaceのインスタンスのリストが表示されるので、
+カーソルキーで選択してEnterを押すことでSSH接続ができます。</p>
 <p>この状態で例えば
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span style="color: #bbbbbb"> </span>xeyes
 </code></pre></div>
-などのGUIアプリケーションを実行すると，ローカルのディスプレイに
-ウィンドウが表示されるはずです<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>．
-このSSH接続した状態で <code>gnuplot</code> コマンドを使えば，プロットの
-ウィンドウはローカルのディスプレイに表示されます．</p>
+などのGUIアプリケーションを実行すると、ローカルのディスプレイに
+ウィンドウが表示されるはずです<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。
+このSSH接続した状態で <code>gnuplot</code> コマンドを使えば、プロットの
+ウィンドウはローカルのディスプレイに表示されます。</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p><code>~/.ssh/config</code> に <code>ForwardX11 yes</code> という
-設定をしておく必要があるかもしれません．&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+設定をしておく必要があるかもしれません。&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

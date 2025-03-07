@@ -1181,15 +1181,15 @@
 
 
 <h1 id="_1">はじめに</h1>
-<p>PythonはCやFortranなどのプログラミング言語と違い，コンパイルが必要のないインタープリター型の言語です．
-そのため，一般には実行速度は遅いですが，その分非常に使いやすい言語となっています．  </p>
+<p>PythonはCやFortranなどのプログラミング言語と違い、コンパイルが必要のないインタープリター型の言語です。
+そのため、一般には実行速度は遅いですが、その分非常に使いやすい言語となっています。  </p>
 <h2 id="_2">テキストについて</h2>
-<p>東大の <a href="https://utokyo-ipp.github.io/">Pythonプログラミング入門</a> のテキストを適宜参考にしてください．</p>
+<p>東大の <a href="https://utokyo-ipp.github.io/">Pythonプログラミング入門</a> のテキストを適宜参考にしてください。</p>
 <h2 id="codespacepython">CodespaceのPython環境</h2>
-<p><a href="https://github.com/chibutsu-utokyo/debian">Github Codespace</a> でのPythonの使い方は以下の通りです．<br />
-自身で用意した環境や Google Colaboratory (Colab) を使ってもらっても構いませんが課題提出の指示には従ってください．</p>
-<p>Google Colabについては <a href="https://utokyo-ipp.github.io/">Pythonプログラミング入門</a> のテキストを参照してください．<br />
-ここに紹介する以外にも色々な実行方法がありますので好みに応じて使い分けてください．</p>
+<p><a href="https://github.com/chibutsu-utokyo/debian">Github Codespace</a> でのPythonの使い方は以下の通りです。<br />
+自身で用意した環境や Google Colaboratory (Colab) を使ってもらっても構いませんが課題提出の指示には従ってください。</p>
+<p>Google Colabについては <a href="https://utokyo-ipp.github.io/">Pythonプログラミング入門</a> のテキストを参照してください。<br />
+ここに紹介する以外にも色々な実行方法がありますので好みに応じて使い分けてください。</p>
 <h3 id="_3">インタラクティブシェル</h3>
 <p>ターミナルで <code>python</code> と入力すると
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span style="color: #bbbbbb"> </span>python
@@ -1197,40 +1197,40 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Type<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;help&quot;</span>,<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;copyright&quot;</span>,<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;credits&quot;</span><span style="color: #bbbbbb"> </span>or<span style="color: #bbbbbb"> </span><span style="color: #BA2121">&quot;license&quot;</span><span style="color: #bbbbbb"> </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #bbbbbb"> </span>more<span style="color: #bbbbbb"> </span>information.
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt;&gt;&gt;
 </code></pre></div>
-のように表示されます．
+のように表示されます。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span style="color: #666666">&gt;&gt;&gt;</span> <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Hello, World!&quot;</span>)
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Hello, World<span style="border: 1px solid #FF0000">!</span>
 </code></pre></div>
-のように <code>&gt;&gt;&gt;</code> （プロンプト）以降にPythonのコードを入力するとその場で実行されます．
-終了するには <code>exit()</code> と入力するか， <code>Ctrl-D</code> を押してください．<br />
-実際にはこれを使うことは多くないかもしれませんが，コマンドラインからちょっとした
-Pythonのコードを試す際には便利です．</p>
+のように <code>&gt;&gt;&gt;</code> （プロンプト）以降にPythonのコードを入力するとその場で実行されます。
+終了するには <code>exit()</code> と入力するか、 <code>Ctrl-D</code> を押してください。<br />
+実際にはこれを使うことは多くないかもしれませんが、コマンドラインからちょっとした
+Pythonのコードを試す際には便利です。</p>
 <h3 id="_4">スクリプト</h3>
-<p>Pythonのスクリプト（ソース）ファイルは <code>.py</code> という拡張子を持ちます．
-例えば，<code>hello.py</code> というファイルに以下のコードを書いたとします．
+<p>Pythonのスクリプト（ソース）ファイルは <code>.py</code> という拡張子を持ちます。
+例えば、<code>hello.py</code> というファイルに以下のコードを書いたとします。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;Hello, World!&quot;</span>)
 </code></pre></div>
-このファイルを実行するには，ターミナルで以下のように入力します．
+このファイルを実行するには、ターミナルで以下のように入力します。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span style="color: #bbbbbb"> </span>python<span style="color: #bbbbbb"> </span>hello.py
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Hello,<span style="color: #bbbbbb"> </span>World!
 </code></pre></div>
-このようにしてスクリプトファイルに書かれたPythonコードを実行することができます．</p>
+このようにしてスクリプトファイルに書かれたPythonコードを実行することができます。</p>
 <p><code>python</code> コマンドを使わずに通常のコマンドのようにスクリプトを実行するには</p>
 <p><div class="highlight" style="background: #f8f8f8"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#__codelineno-4-1">1</a></span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span style="color: #3D7B7B; font-style: italic">#!/usr/bin/env python</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span style="color: #008000">print</span>(<span style="color: #BA2121">&#39;Hello, World !&#39;</span>)
 </code></pre></div></td></tr></table></div>
-のように先頭に <code>#!</code> で始まる行を追加し，その後にPythonのインタープリターを指定します．
-この行はシェバン（shebang）と呼ばれます．</p>
-<p>このスクリプトを実行するには，まず実行権限を与える必要があります．
+のように先頭に <code>#!</code> で始まる行を追加し、その後にPythonのインタープリターを指定します。
+この行はシェバン（shebang）と呼ばれます。</p>
+<p>このスクリプトを実行するには、まず実行権限を与える必要があります。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span style="color: #bbbbbb"> </span>chmod<span style="color: #bbbbbb"> </span>+x<span style="color: #bbbbbb"> </span>hello.py
 </code></pre></div></p>
-<p>その後，以下のように実行します．
+<p>その後、以下のように実行します。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span style="color: #bbbbbb">  </span>$<span style="color: #bbbbbb"> </span>./hello.py
 </code></pre></div></p>
 <h3 id="jupyter-notebook">Jupyter Notebook</h3>
-<p>メニューの「表示」→「コマンドパレット」から <code>Create: New Jupyter Notebook</code> を選択すると新しいノートブックが開きます．
-使い方はほとんどGoogle Colabと同じです．必要に応じて <a href="https://utokyo-ipp.github.io/">Pythonプログラミング入門</a> を参照してください．</p>
+<p>メニューの「表示」→「コマンドパレット」から <code>Create: New Jupyter Notebook</code> を選択すると新しいノートブックが開きます。
+使い方はほとんどGoogle Colabと同じです。必要に応じて <a href="https://utokyo-ipp.github.io/">Pythonプログラミング入門</a> を参照してください。</p>
 <h2 id="_5">提出課題について</h2>
 <ul>
 <li><a href="../kadai1/">提出課題1</a></li>

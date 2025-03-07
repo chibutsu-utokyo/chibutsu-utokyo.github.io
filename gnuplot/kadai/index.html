@@ -1136,31 +1136,31 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>締め切りや提出方法・提出先については指示を出すのでそれに従ってください．</li>
+<li>締め切りや提出方法・提出先については指示を出すのでそれに従ってください。</li>
 <li>各課題についてプロットを作成するためのスクリプトファイル
-<code>kadai1.plt</code>, <code>kadai2.plt</code>, ... および，
+<code>kadai1.plt</code>, <code>kadai2.plt</code>, ... および、
 それによって作成されたプロット
-<code>kadai1.png</code>, <code>kadai2.png</code>, ... を提出すること．</li>
-<li>スクリプトファイルはloadするだけでグラフが表示されるものとします．</li>
-<li>できるだけ見やすいグラフになるように心がけてください．</li>
+<code>kadai1.png</code>, <code>kadai2.png</code>, ... を提出すること。</li>
+<li>スクリプトファイルはloadするだけでグラフが表示されるものとします。</li>
+<li>できるだけ見やすいグラフになるように心がけてください。</li>
 <li>各データファイルは
 <a href="https://github.com/chibutsu-utokyo/debian">Github Codespace</a>
-の <code>gnuplot</code> ディレクトリにも置いてあります．</li>
+の <code>gnuplot</code> ディレクトリにも置いてあります。</li>
 </ul>
 </div>
 <h2 id="1">課題1</h2>
-<p><span class="arithmatex">\(-1 \leq x \leq 1\)</span>, <span class="arithmatex">\(-1 \leq y \leq 1\)</span>の範囲で以下のグラフをプロットせよ．</p>
+<p><span class="arithmatex">\(-1 \leq x \leq 1\)</span>, <span class="arithmatex">\(-1 \leq y \leq 1\)</span>の範囲で以下のグラフをプロットせよ。</p>
 <ul>
-<li>半径1の円，ただし凡例は"circle"とする．</li>
-<li><span class="arithmatex">\(x=0\)</span>の直線，ただし凡例は"x = 0"とする．</li>
-<li><span class="arithmatex">\(y=0\)</span>の直線，ただし凡例は"y = 0"とする．</li>
+<li>半径1の円、ただし凡例は"circle"とする。</li>
+<li><span class="arithmatex">\(x=0\)</span>の直線、ただし凡例は"x = 0"とする。</li>
+<li><span class="arithmatex">\(y=0\)</span>の直線、ただし凡例は"y = 0"とする。</li>
 </ul>
-<p>ただし，グラフの縦横比は1:1とする．</p>
+<p>ただし、グラフの縦横比は1:1とする。</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
-<li><code>set parametric</code> で媒介変数を使ったプロットができる．</li>
-<li><code>set size square</code> で縦横比を1:1に設定できる．</li>
+<li><code>set parametric</code> で媒介変数を使ったプロットができる。</li>
+<li><code>set size square</code> で縦横比を1:1に設定できる。</li>
 </ul>
 </div>
 <h2 id="2">課題2</h2>
@@ -1168,83 +1168,83 @@
 <div class="arithmatex">\[
 f(x,y) = x^2 \exp \left(-x^2\right) y^2 \exp \left(-y^2\right)
 \]</div>
-<p>を3次元プロットせよ．ただし以下の条件を満たすこと．</p>
+<p>を3次元プロットせよ。ただし以下の条件を満たすこと。</p>
 <ul>
-<li>カラーマップでプロットすること．</li>
-<li>3次元的に見えない部分は隠れる（陰線処理）ように表示すること．</li>
-<li>底面に等高線をプロットすること．</li>
-<li>等高線は0から0.03刻みとすること．</li>
-<li>メッシュの数を増やすこと．</li>
-<li>x軸の周りに60度，z軸まわりに45度回転させた視点にすること．</li>
+<li>カラーマップでプロットすること。</li>
+<li>3次元的に見えない部分は隠れる（陰線処理）ように表示すること。</li>
+<li>底面に等高線をプロットすること。</li>
+<li>等高線は0から0.03刻みとすること。</li>
+<li>メッシュの数を増やすこと。</li>
+<li>x軸の周りに60度、z軸まわりに45度回転させた視点にすること。</li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
-<li>カラーマップは <code>set pm3d</code> で設定できる．</li>
-<li>陰線処理は <code>set hidden3d</code> で設定できる．</li>
-<li>等高線は <code>set contour</code> で，等高線の間隔は <code>set cntrparam</code> で設定できる．</li>
-<li>メッシュの数は <code>set isosamples</code> で設定できる．</li>
-<li>視点は <code>set view</code> で設定できる．</li>
+<li>カラーマップは <code>set pm3d</code> で設定できる。</li>
+<li>陰線処理は <code>set hidden3d</code> で設定できる。</li>
+<li>等高線は <code>set contour</code> で、等高線の間隔は <code>set cntrparam</code> で設定できる。</li>
+<li>メッシュの数は <code>set isosamples</code> で設定できる。</li>
+<li>視点は <code>set view</code> で設定できる。</li>
 </ul>
 </div>
 <h2 id="3">課題3</h2>
 <p><a href="https://github.com/chibutsu-utokyo/debian/blob/main/gnuplot/kadai3.dat">kadai3.dat</a>
-はバナナの輸入量のデータである．
-これを用いて以下の条件を満足するプロットを作成せよ．</p>
+はバナナの輸入量のデータである。
+これを用いて以下の条件を満足するプロットを作成せよ。</p>
 <ul>
-<li>横軸は年とすること．</li>
-<li>左側の <span class="arithmatex">\(y\)</span> 軸（第一軸）は総輸入量とすること．</li>
-<li>右側の <span class="arithmatex">\(y\)</span> 軸（第二軸）は各国の輸入量の総輸入量に対する割合とすること．</li>
-<li>各軸に適切なラベルをつけること．</li>
-<li>総輸入量は棒グラフでプロットし，凡例は"Total"とすること．</li>
-<li>各国の輸入量割合は折れ線グラフでプロットし，凡例は
-各国名（Taiwan, Ecuador, Philippines ）とすること．</li>
-<li>凡例は見やすい位置に表示すること．</li>
+<li>横軸は年とすること。</li>
+<li>左側の <span class="arithmatex">\(y\)</span> 軸（第一軸）は総輸入量とすること。</li>
+<li>右側の <span class="arithmatex">\(y\)</span> 軸（第二軸）は各国の輸入量の総輸入量に対する割合とすること。</li>
+<li>各軸に適切なラベルをつけること。</li>
+<li>総輸入量は棒グラフでプロットし、凡例は"Total"とすること。</li>
+<li>各国の輸入量割合は折れ線グラフでプロットし、凡例は
+各国名（Taiwan, Ecuador, Philippines ）とすること。</li>
+<li>凡例は見やすい位置に表示すること。</li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
-<li>2軸のグラフを作成するには，<code>set y2tics</code> で右の <span class="arithmatex">\(y\)</span> 軸を有効にし，<code>plot</code> コマンドで <code>axes x1y2</code> を指定する．</li>
-<li>棒グラフを作成するには <code>plot</code> コマンドで <code>with boxes</code> で指定する．</li>
-<li>凡例の設定は <code>set key</code> で指定する．</li>
+<li>2軸のグラフを作成するには、<code>set y2tics</code> で右の <span class="arithmatex">\(y\)</span> 軸を有効にし、<code>plot</code> コマンドで <code>axes x1y2</code> を指定する。</li>
+<li>棒グラフを作成するには <code>plot</code> コマンドで <code>with boxes</code> で指定する。</li>
+<li>凡例の設定は <code>set key</code> で指定する。</li>
 </ul>
 </div>
 <h2 id="4">課題4</h2>
-<p>大気が静水圧平衡になっているとき，地表気圧 <span class="arithmatex">\(p_0\)</span> を用いて</p>
+<p>大気が静水圧平衡になっているとき、地表気圧 <span class="arithmatex">\(p_0\)</span> を用いて</p>
 <div class="arithmatex">\[
 p(z) = p_0 \exp \left( -\frac{z}{H} \right) \tag{1} \label{eq:pressure}
 \]</div>
-<p>という関係が成り立つ．
-ここで <span class="arithmatex">\(H\)</span> はスケールハイトと呼ばれる量で，大気圧の厚さの目安を表す．</p>
+<p>という関係が成り立つ。
+ここで <span class="arithmatex">\(H\)</span> はスケールハイトと呼ばれる量で、大気圧の厚さの目安を表す。</p>
 <p><a href="https://github.com/chibutsu-utokyo/debian/blob/main/gnuplot/kadai4.dat">kadai4.dat</a>
-はラジオゾンデ観測によって得られた気圧の鉛直プロファイルである．
-1列目が高度 <span class="arithmatex">\(z\)</span> [m]，2列目が気圧 <span class="arithmatex">\(p\)</span> [hPa]，3列目が気圧の自然対数 <span class="arithmatex">\(\log (p)\)</span>となっている．
+はラジオゾンデ観測によって得られた気圧の鉛直プロファイルである。
+1列目が高度 <span class="arithmatex">\(z\)</span> [m]、2列目が気圧 <span class="arithmatex">\(p\)</span> [hPa]、3列目が気圧の自然対数 <span class="arithmatex">\(\log (p)\)</span>となっている。
 この観測データを理論式 <span class="arithmatex">\(\eqref{eq:pressure}\)</span> でフィッティングすることで
-スケールハイトを求め，以下の条件を満足するプロットを作成せよ．</p>
+スケールハイトを求め、以下の条件を満足するプロットを作成せよ。</p>
 <ul>
-<li>横軸を <span class="arithmatex">\(z\)</span> （1列目），縦軸を <span class="arithmatex">\(p\)</span> （2列目）をプロットし，凡例を"Observation"とする．</li>
-<li>フィッティングした理論式 <span class="arithmatex">\(\eqref{eq:pressure}\)</span> をプロットし，
-凡例を"Fitting"とする．</li>
-<li>フィッティングにより得られたスケールハイトをタイトルに表示する．</li>
-<li>横軸のラベルは"Height [m]"，縦軸のラベルは"Pressure [hPa]"とする．</li>
+<li>横軸を <span class="arithmatex">\(z\)</span> （1列目）、縦軸を <span class="arithmatex">\(p\)</span> （2列目）をプロットし、凡例を"Observation"とする。</li>
+<li>フィッティングした理論式 <span class="arithmatex">\(\eqref{eq:pressure}\)</span> をプロットし、
+凡例を"Fitting"とする。</li>
+<li>フィッティングにより得られたスケールハイトをタイトルに表示する。</li>
+<li>横軸のラベルは"Height [m]"、縦軸のラベルは"Pressure [hPa]"とする。</li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <ul>
-<li><span class="arithmatex">\(\log (p) = \log (p_0) - z / H\)</span> という関係があるため，
+<li><span class="arithmatex">\(\log (p) = \log (p_0) - z / H\)</span> という関係があるため、
 観測された <span class="arithmatex">\(\log (p)\)</span> と <span class="arithmatex">\(z\)</span> の関係を1次関数
 <span class="arithmatex">\(\log(p) = a + b * z\)</span> でフィッティングすればスケールハイトは
-<span class="arithmatex">\(H = -1/b\)</span> として求まる．つまり，
+<span class="arithmatex">\(H = -1/b\)</span> として求まる。つまり、
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gnuplot&gt;<span style="color: #bbbbbb"> </span>f<span style="color: #666666">(</span>x<span style="color: #666666">)</span><span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span>a*x<span style="color: #bbbbbb"> </span>+<span style="color: #bbbbbb"> </span>b
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>gnuplot&gt;<span style="color: #bbbbbb"> </span>fit<span style="color: #bbbbbb"> </span>f<span style="color: #666666">(</span>x<span style="color: #666666">)</span><span style="color: #bbbbbb"> </span><span style="color: #BA2121">&#39;kadai4.dat&#39;</span><span style="color: #bbbbbb"> </span>using<span style="color: #bbbbbb"> </span><span style="color: #666666">1</span>:3<span style="color: #bbbbbb"> </span>via<span style="color: #bbbbbb"> </span>a,<span style="color: #bbbbbb"> </span>b
 </code></pre></div>
-のようにフィッティングを行えばよい．これで <code>a</code> と <code>b</code> という
-変数にフィッティング結果の値が代入されるので，<code>H = -1/b</code> で
-スケールハイトを求めればよい．</li>
-<li>プロットするのは <span class="arithmatex">\(p(z)\)</span> であり <span class="arithmatex">\(\log(p(z))\)</span> ではないことに注意すること．</li>
+のようにフィッティングを行えばよい。これで <code>a</code> と <code>b</code> という
+変数にフィッティング結果の値が代入されるので、<code>H = -1/b</code> で
+スケールハイトを求めればよい。</li>
+<li>プロットするのは <span class="arithmatex">\(p(z)\)</span> であり <span class="arithmatex">\(\log(p(z))\)</span> ではないことに注意すること。</li>
 <li>スケールハイトをタイトルに表示するには
 <code>set title sprintf("H = %6.1f [m]", H)</code> などのように
-すればよい．</li>
+すればよい。</li>
 </ul>
 </div>
 
