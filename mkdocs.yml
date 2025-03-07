@@ -10,10 +10,10 @@ nav:
     - unix/kadai2.md
   - Gnuplot:
     - gnuplot/intro.md
-    - gnuplot/gnuplot_1.md
-    - gnuplot/gnuplot_2.md
-    - gnuplot/gnuplot_3.md
-    - gnuplot/gnuplot_appendix.md
+    - gnuplot/chap1.md
+    - gnuplot/chap2.md
+    - gnuplot/chap3.md
+    - gnuplot/appendix.md
     - gnuplot/kadai.md
   - LaTeX:
     - LaTeX/chap1.md  # LaTeXの基礎知識
