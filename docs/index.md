@@ -12,7 +12,7 @@
 - 場所： 理学部1号館559号室
 - 時間： 月・水・木の13:00-16:40（3限・4限）
 
-日程などの詳細は[こちら](introduction.pdf)を参照してください。
+日程などの詳細は[こちら](introduction2025.pdf)を参照してください。
 
 ## 演習の環境について
 ブラウザだけで演習課題に取り組めるUnixの開発環境として、演習の一部では [Github Codespace](https://github.com/chibutsu-utokyo/debian) を用います。  
