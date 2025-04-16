@@ -25,10 +25,10 @@ nav:
     - LaTeX/chap7.md  # 提出課題
   - Remote Access:
     - RemoteAccess/introduction.md  # イントロダクション
-    - RemoteAccess/SSH.md  # SSH
     - RemoteAccess/VPN.md  # VPN
-    - RemoteAccess/kadai.md  # 課題
+    - RemoteAccess/SSH.md  # SSH
     - RemoteAccess/559servers.md  # 559のサーバー群
+    - RemoteAccess/kadai.md  # 課題
     - RemoteAccess/cyberattack.md  # サイバー攻撃
   - Python:
     - python/intro.md

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../kadai/">
+        <link rel="prev" href="../SSH/">
       
       
-        <link rel="next" href="../cyberattack/">
+        <link rel="next" href="../kadai/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>559について(2024.4) - 地球惑星物理学演習</title>
+        <title>559について(2025.4) - 地球惑星物理学演習</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#55920244" class="md-skip">
+        <a href="#55920254" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              559について(2024.4)
+              559について(2025.4)
             
           </span>
         </div>
@@ -745,27 +745,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SSH
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../VPN/" class="md-nav__link">
         
   
@@ -787,11 +766,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../kadai/" class="md-nav__link">
+      <a href="../SSH/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    提出課題
+    SSH
   </span>
   
 
@@ -821,7 +800,7 @@
           
   
   <span class="md-ellipsis">
-    559について(2024.4)
+    559について(2025.4)
   </span>
   
 
@@ -832,7 +811,7 @@
         
   
   <span class="md-ellipsis">
-    559について(2024.4)
+    559について(2025.4)
   </span>
   
 
@@ -875,6 +854,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kadai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    提出課題
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1096,14 +1096,30 @@
   
 
 
-<h1 id="55920244">559について(2024.4)</h1>
+<h1 id="55920254">559について(2025.4)</h1>
 <h2 id="559">559のコンピュータたち</h2>
 <p>この部屋には、学生用のMac miniの他にサーバーが4台稼働しています。<br />
 ログインサーバー「dover」・Webサーバー「www-geoph」・ファイルサーバー「sakura」・計算サーバー「asano」です。  </p>
 <p>基本的にdoverを経由してsakuraやasanoを使うことができるような構成にしています。<br />
 このようなサーバーを通称「踏み台サーバー」と言い、セキュリティ強化のために設置しています。</p>
-<p>www-geophは昨年、公開していたWebサイトにXSS脆弱性が発見され、Webサーバーとしての仕事をクビになりましたが、稼働させ続けています。  </p>
-<p>昨今のノートPCの性能を考えると、計算機演習でこれらのサーバーを敢えて使おうとは思わないかもしれませんが、好きに使ってくれて構いません。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doverはログイン・踏み台専用のサーバーで、ディスク容量が小さいです。
+個人用のファイルは極力dover内には保存しないでください。
+doverに大量の個人ファイルを保存していることが発見された場合は<strong>予告なく削除します</strong>。</p>
+</div>
+<p>www-geophは昨年、公開していたWebサイトにXSS脆弱性が発見され、Webサーバーとしての仕事を一部クビになりましたが、稼働させ続けています。
+個人用のwebページを書き込んで公開することもできますから、興味のある方は使ってみてください。  </p>
+<p>sakuraには559室のmac miniからアクセスできる個人データが保存されています。
+個人データを全てsakuraに保存し同期することで、昨日とは違うmac miniを使用しても同じ環境が使用できるようになっています。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>559室のmac miniは128 GBと少量のSSDしか搭載していません。
+sakura上に同期されないデータは自動的に削除されます。
+詳しいことはTAに聞いてください。</p>
+</div>
+<p>昨今のノートPCの性能を考えると、計算機演習でこれらのサーバーを敢えて使おうとは思わないかもしれませんが、好きに使ってくれて構いません。<br />
+doverやasanoについては今後の授業や研究で使う必要が生じることがあるかもしれません。</p>
 <h2 id="_1">管理者を募集しています</h2>
 <p>559のサーバー群は有志の学生によって運用されています。<br />
 少しでもサーバー管理や情報セキュリティに興味を持った方は、2年後TAになり管理者に立候補してください。<br />

@@ -11,9 +11,12 @@ VPN(Virtual Private Network)とは、インターネットのような公衆回�
   
 [UTokyo-VPNのリンク](https://utelecon.adm.u-tokyo.ac.jp/utokyo_vpn/)  
 
-UTokyo Accountの多要素認証の有効化が必要であり、有効化されるまでに数十分かかる可能性があります。  
-可能なら、演習開始前に多要素認証の設定をしておきましょう。
+!!! Note
+    UTokyo Accountの多要素認証の有効化が必要であり、有効化されるまでに数十分かかる可能性があります。  
+    可能なら、演習開始前に多要素認証の設定をしておきましょう。
 
-
+それではUTokyo-VPNに接続してください。
+次の学内専用Webサイトにアクセスできるようになりましたね。  
+<http://www-geoph.eps.s.u-tokyo.ac.jp/ta/resume2022/>
 
 
