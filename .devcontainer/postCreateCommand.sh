@@ -1,5 +1,12 @@
-# directory permission
-find . -type d -print | xargs chmod 755
+#!/bin/bash
+set -euo pipefail
 
-# python modules
-python3 -m pip install -r .devcontainer/requirements.txt
+# directory permission
+find . -type d -print0 | xargs -0 chmod 755
+
+if ! command -v uv >/dev/null 2>&1; then
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+uv sync

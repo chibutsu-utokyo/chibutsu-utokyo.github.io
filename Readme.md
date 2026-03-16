@@ -1,56 +1,89 @@
 # 地球惑星物理学演習
-これは [MkDocs](https://www.mkdocs.org/) で作成された [地球惑星物理学演習ウェブ](https://chibutsu-utokyo.github.io/) のリポジトリです．  
-Markdown形式で記述したファイルをWebページに自動で変換してくれます．
+
+このリポジトリは，[地球惑星物理学演習ウェブ](https://chibutsu-utokyo.github.io/) を [MkDocs](https://www.mkdocs.org/) で管理するためのものです．
+主に `docs` ディレクトリ以下の Markdown ファイルを編集すると，ウェブサイトの内容が更新されます．
 
 > [!NOTE]
 > - このウェブを編集するには管理者に権限をリクエストしてください．
-> - Markdown形式についてはウェブに情報が多数ありますので適宜調べてくだい．
+> - Markdown の書き方は必要に応じて各自で調べてください．
 
-## ウェブ更新方法
+## 構成
 
-### VSCode起動方法
-ウェブ上でVSCodeを使って編集ができます．
-[ここ](https://github.com/chibutsu-utokyo/debian)
-を参考にmainブランチからVSCodeを起動してください．  
-必要なソフトウェア（mkdocs, mkdocs-material, pygments）は既にインストール済みです．
+- `docs/`: 公開するページ本文
+- `mkdocs.yml`: サイト全体の設定とナビゲーション
+- `.devcontainer/`: devcontainer 用設定
+- `site/`: `mkdocs build` で生成される公開用ファイル
 
-### ファイル群の説明
-`main`ブランチ下の`docs`ディレクトリにはMkDocsを用いてGitHub Pagesの
-ページを作成するために必要なファイル群が入っています．  
-基本的には`docs`ディレクトリ下に配置されているMarkdown形式のファイルを
-編集してください．
+新しい Markdown ファイルを追加した場合は，`mkdocs.yml` の `nav:` も更新してください．
 
-### 編集作業
-ターミナルで，リポジトリのトップディレクトリ（`mkdocs.yml`がある階層）において
+## セットアップ
+
+### devcontainer / Codespaces
+
+devcontainer では必要な Python 環境が自動でセットアップされます．
+VS Code から開く場合は [こちら](https://github.com/chibutsu-utokyo/debian) を参考にしてください．
+
+### ローカル環境
+
+ローカルに clone して作業する場合も，`uv` を使うと devcontainer と同じ Python パッケージ環境を再現できます．
+
 ```shell
-mkdocs serve
+uv python install 3.11.9
+uv sync
 ```
-とすると画面右下にダイアグラムが表示され，「ブラウザで開く」をクリックすると
-編集中のウェブサイトが表示されます．  
-編集結果はリアルタイムに反映されます．  
-終了するには`Ctrl+C`としてください．  
-（VSCodeのターミナルペインの「ポート」タブに表示される8000番ポートの
-URLからもアクセスすることができます．）
 
-新しいMarkdownファイルを追加した際には，`mkdocs.yml`内の`nav:`の
-項目を書き換えると，サイト左のメニューバーに表示されるようになります．
+このリポジトリでは Python 3.11.9 を使います．
+以後のコマンドは `uv run` 経由で実行してください．
 
-### 更新
-編集内容を更新は以下の手順で行ってください．
- **ウェブサイトの更新だけでなくソースの更新も必ず行ってください！**
+Markdown の句読点を統一したい場合は，必要に応じて次を実行してください．
 
-- ウェブサイトの更新
 ```shell
-mkdocs gh-deploy
+uv run python sanitize.py
 ```
-で https://chibutsu-utokyo.github.io/ に（数分程度で）更新が反映されます．  
-(`mkdocs build` で更新される `site` ディレクトリの中身が `gh-pages` 
-ブランチにpushされます．)
-- ソースの更新
+
+## 編集とプレビュー
+
+リポジトリのトップディレクトリ（`mkdocs.yml` がある階層）で次を実行してください．
+
 ```shell
-git commit -a # コミットメッセージを入力
+uv run mkdocs serve
+```
+
+ブラウザで `http://127.0.0.1:8000/` を開くと，編集中のサイトを確認できます．
+編集結果は保存後に自動で反映されます．終了は `Ctrl+C` です．
+
+公開用の静的ファイルだけを生成したい場合は次を使います．
+
+```shell
+uv run mkdocs build
+```
+
+## 更新手順
+
+### 通常の更新
+
+通常は，`main` ブランチに push すると GitHub Actions が自動でサイトを更新します．
+
+```shell
+git commit -a
 git push
 ```
-でリポジトリにソースの更新が反映されます．
-コミットメッセージはごく簡単なものでよいと思います．  
-（更新内容が `main` ブランチにpushされます．）
+
+数分後に https://chibutsu-utokyo.github.io/ に反映されます．
+
+### 手動デプロイ
+
+必要な場合はローカルから手動でデプロイすることもできます．
+
+```shell
+uv run mkdocs gh-deploy
+```
+
+これは `mkdocs build` で生成される `site/` の内容を `gh-pages` ブランチへ反映します．
+
+## 補足
+
+- Python 依存は `pyproject.toml` と `uv.lock` で管理しています
+- devcontainer とローカルの Python バージョンは `.python-version` でそろえています
+- `sanitize.py` は `docs/` 以下の Markdown の句読点を統一する前処理です
+- 生成物の確認は `uv run mkdocs build` で行えます

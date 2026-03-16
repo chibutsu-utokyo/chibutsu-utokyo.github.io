@@ -8,3 +8,5 @@
 *.toc
 *.dvi
 *.synctex.gz
+.venv/
+site/
