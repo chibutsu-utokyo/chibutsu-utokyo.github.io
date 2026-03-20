@@ -23,4 +23,4 @@
 
 ## 演習関連リンク
 - [地球惑星物理学演習演習Wiki](https://github.com/chibutsu-utokyo/chibutsu-utokyo.github.io/wiki)
-- [Fortran演習](https://amanotk.github.io/fortran-resume-public/)
+- [Fortran演習](https://amanotk.github.io/fortran-resume/)
