@@ -63,7 +63,6 @@ dependencies = [
     { name = "mkdocs" },
     { name = "mkdocs-material" },
     { name = "pygments" },
-    { name = "pymdown-extensions" },
     { name = "requests" },
     { name = "urllib3" },
 ]
@@ -73,7 +72,6 @@ requires-dist = [
     { name = "mkdocs", specifier = "==1.6.1" },
     { name = "mkdocs-material", specifier = "==9.7.6" },
     { name = "pygments", specifier = "==2.19.2" },
-    { name = "pymdown-extensions", specifier = ">=10.15" },
     { name = "requests", specifier = ">=2.33.0" },
     { name = "urllib3", specifier = ">=2.7.0" },
 ]
