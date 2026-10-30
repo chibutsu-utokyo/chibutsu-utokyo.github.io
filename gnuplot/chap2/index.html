@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1576,10 +1576,10 @@
 <p><code>plot</code>コマンドによってグラフを描くと、右上にそれがどういう曲線か表示されます（凡例）。
 これを変えるには<code>plot</code>コマンドの際に<code>title</code>という引数を加えます。
 曲線の名前の部分を ' または '' でくくることに注意して下さい。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; plot sin(x) title &#39;my cool plot&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; plot sin(x) title 'my cool plot'
 </code></pre></div></p>
 <p>曲線の名前を表示する必要がない時には
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gnuplot&gt; plot sin(x) title &#39;with name&#39;, cos(x) notitle
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gnuplot&gt; plot sin(x) title 'with name', cos(x) notitle
 </code></pre></div></p>
 <p>のようにします。</p>
 <p>凡例の表示場所を設定するには<code>set key</code>というコマンドを使います。
@@ -1610,11 +1610,11 @@
 <h3 id="set-xylabel-title">軸に名前をつける（<code>set x(y)label, title</code>）</h3>
 <p><span class="arithmatex">\(x\)</span>軸と<span class="arithmatex">\(y\)</span>軸が何を意味しているのか表示させてみましょう。
 これには<code>set xlabel</code>（または<code>ylabel</code>）を用います。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>gnuplot&gt; set xlabel &#39;axis 1&#39; 
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>gnuplot&gt; set ylabel &#39;axis 2&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>gnuplot&gt; set xlabel 'axis 1' 
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>gnuplot&gt; set ylabel 'axis 2'
 </code></pre></div>
 グラフ全体の表題を付けるには<code>set title</code>です。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gnuplot&gt; set title &#39;super title&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>gnuplot&gt; set title 'super title'
 </code></pre></div></p>
 <h3 id="xyset-size-ratio">x軸とy軸のスケール（<code>set size ratio</code>）</h3>
 <p>gnuplotでは、縦横のスケールを指定することが可能です。
@@ -1648,7 +1648,7 @@
 <code>plot sin(x)</code>しましょう。
 次に
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>gnuplot&gt; set terminal png
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>gnuplot&gt; set output &#39;output.png&#39;
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>gnuplot&gt; set output 'output.png'
 </code></pre></div>
 でターミナルをpng用に切り替えるとともに、ファイル名を指定します。
 このままでは出力先を指定しただけですから、ファイルには何も書き込まれていません。
@@ -1674,15 +1674,15 @@
 複数のコマンドをひとつのファイルに書いておき、まとめて実行することができます。</p>
 <p>まずファイルを作りましょう。ここでは<code>ex.plt</code>とします（一般に<code>plt</code>という拡張子を用いる場合が多いです）。
 エディタで以下の内容を書いてみてください。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>set xlabel &#39;x&#39;
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>set ylabel &#39;y&#39;
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>set title &#39;Another cool graph&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>set xlabel 'x'
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>set ylabel 'y'
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>set title 'Another cool graph'
 <a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>set xrange [0:10]
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>set yrange [-1:1]
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>p exp(-x) * sin(10*x)
 </code></pre></div></p>
 <p>これらのコマンド群を一気に実行するには<code>load</code>というコマンドを使います。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gnuplot&gt; load &#39;ex.plt&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>gnuplot&gt; load 'ex.plt'
 </code></pre></div></p>
 <p><img alt="減衰曲線" src="../figs/expsin.png" /></p>
 <p>以下は筆者の個人的な意見です。
@@ -1693,11 +1693,11 @@
 <p>以下は、pngファイルを作り終わったら<code>qt</code>ターミナルに戻る例です。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>reset
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>set terminal png
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>set output &quot;expsin.png&quot;
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>set output "expsin.png"
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>set xlabel &#39;x&#39;
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>set ylabel &#39;y&#39;
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>set title &#39;Another cool graph&#39;
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>set xlabel 'x'
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>set ylabel 'y'
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>set title 'Another cool graph'
 <a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>set xrange [0:10]
 <a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>set yrange [-1:1]
 <a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>p exp(-x) * sin(10*x)
@@ -1710,12 +1710,12 @@
 <code>save</code>コマンドを用いることで、これまでに対話形式で実行してきたコマンドを先程自分で書いたpltファイルと同様な出力として得られます。
 例えば、
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>gnuplot&gt; p cos(x)
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>gnuplot&gt; set xlabel &#39;x&#39;
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>gnuplot&gt; set ylabel &#39;y&#39;
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>gnuplot&gt; set xlabel 'x'
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>gnuplot&gt; set ylabel 'y'
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>gnuplot&gt; set terminal postscript
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>gnuplot&gt; set output &#39;cos.ps&#39;
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>gnuplot&gt; set output 'cos.ps'
 <a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>gnuplot&gt; rep
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>gnuplot&gt; save &#39;cos.plt&#39;
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>gnuplot&gt; save 'cos.plt'
 </code></pre></div>
 としてみましょう。<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p>これをエディタで開いてみると、
@@ -1730,15 +1730,15 @@
 <a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>#       Thomas Williams, Colin Kelley and many others
 <a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>#    
 <a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>#       gnuplot home:     http://www.gnuplot.info
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>#       faq, bugs, etc:   type &quot;help FAQ&quot;
-<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>#       immediate help:   type &quot;help&quot;  (plot window: hit &#39;h&#39;)
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>#       faq, bugs, etc:   type "help FAQ"
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>#       immediate help:   type "help"  (plot window: hit 'h')
 <a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a># set terminal postscript landscape noenhanced defaultplex \
 <a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>   leveldefault monochrome colortext \
 <a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>   dashed dashlength 1.0 linewidth 1.0 butt noclip \
 <a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>   nobackground \
 <a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>   palfuncparam 2000,0.003 \
-<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>   &quot;Helvetica&quot; 14  fontscale 1.0 
-<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a># set output &#39;cos.ps&#39;
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>   "Helvetica" 14  fontscale 1.0 
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a># set output 'cos.ps'
 <a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>
 <a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>（略）
 <a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>
@@ -1746,7 +1746,7 @@
 <a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>set fontpath 
 <a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>set psdir
 <a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>set fit noerrorvariables noprescale
-<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>GNUTERM = &quot;x11&quot;
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>GNUTERM = "x11"
 <a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>p cos(x)
 <a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>#    EOF
 </code></pre></div>
@@ -1772,11 +1772,11 @@ pltファイルはこれから研究をする上でとても強力な手段と�
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>set xrange [0:2*pi]
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>set yrange [-1:1]
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>set terminal postscript
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>set output &quot;sin1x.ps&quot;
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>set output "sin1x.ps"
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>p sin(x)
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>set output &quot;sin2x.ps&quot;
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>set output "sin2x.ps"
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>p sin(2*x)
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>set output &quot;sin3x.ps&quot;
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>set output "sin3x.ps"
 <a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>p sin(3*x)
 </code></pre></div>
 と書いておき、sintest.plt等の名前で保存しておきます。次に
@@ -1875,10 +1875,10 @@ unix(シェル)とコマンドファイルのコンビネーションによっ�
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../js/mathjax.js"></script>
       

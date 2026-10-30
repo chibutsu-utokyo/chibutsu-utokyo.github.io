@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1499,7 +1499,7 @@
 <p>グラフを表示したいのは形がわかっている関数ばかりではありません。
 ファイルに保存してあるデータを読み込んでそれをグラフにする時も当然あるでしょう。
 これにもやはり<code>plot</code>コマンドを用います。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gnuplot&gt; plot &#39;データファイルの名前&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>gnuplot&gt; plot 'データファイルの名前'
 </code></pre></div>
 のように、データファイルの名前（絶対パスor相対パス）を ' または '' でくくってやります。
 データファイルは一つ以上のスペースで区切られた <span class="arithmatex">\((x,y(,z...))\)</span> の組が複数行から成るものとします。
@@ -1524,7 +1524,7 @@
 ＃を含む行の＃以降はグラフには反映されません。
 後で見た時にそれが何のデータだったのかわかるような解説を書いておくと良いでしょう。</p>
 <p>さて、<code>reset</code>等でこれまでの設定を無効にしておいてから、
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gnuplot&gt; plot &#39;univ-19people.dat&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>gnuplot&gt; plot 'univ-19people.dat'
 </code></pre></div>
 と入力してみましょう。
 次のようなグラフが出力されます。</p>
@@ -1532,7 +1532,7 @@
 <p>データファイルに書かれているデータが複数列ある時、特に何も指定しなければ、1列目が<span class="arithmatex">\(x\)</span>軸、2列目が<span class="arithmatex">\(y\)</span>軸とみなされます。  </p>
 <p>列を指定してプロットする場合には、<code>plot</code>コマンドに<code>using</code>という引数を付けます。
 例えば1列目のデータを<span class="arithmatex">\(x\)</span>軸、3列目のデータを<span class="arithmatex">\(y\)</span>軸にとってグラフを描く場合には
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; plot &#39;univ-19people.dat&#39; using 1:3
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gnuplot&gt; plot 'univ-19people.dat' using 1:3
 </code></pre></div>
 のようにします。</p>
 <p>また、<code>using</code>はそれぞれのデータの各列に対応した値を列番号に<code>$</code>をつけて表すことができます。
@@ -1540,7 +1540,7 @@
 これを利用することによって、各列のデータをgnuplot上で演算してグラフに表示させることができます。</p>
 <p>例として、上の「18歳人口と大学入学人数」のデータにおいて2行目（18歳人口）と3行目（入学者数）の演算で「大学入学者数の18歳人口に対する比率」という値をグラフ表示させることができます。
 この場合の書式は次のようになります。</p>
-<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gnuplot&gt; p &#39;univ-19people.dat&#39; using 1:(100*$3/$2) w l
+<p><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gnuplot&gt; p 'univ-19people.dat' using 1:(100*$3/$2) w l
 </code></pre></div>
 なお<code>w l</code>は<code>with lines</code>の省略形です。</p>
 <p>デフォルトでは、スタイルは<code>points</code>になります。
@@ -1548,7 +1548,7 @@
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gnuplot&gt; set style data lines
 </code></pre></div>
 のように設定しておくか、もしくは
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gnuplot&gt; plot &#39;univ-19people.dat&#39; with line
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gnuplot&gt; plot 'univ-19people.dat' with line
 </code></pre></div>
 のように、毎回スタイルを指定します</p>
 <p>なお、スタイルとして<code>lines(points)</code>を設定した場合でも、データファイルが空行（何も書かれていない行）を含んでいると、空行の直前のデータと直後のデータの間には線は引かれません。</p>
@@ -1556,7 +1556,7 @@
 <p>データファイルで使っている単位と、描きたいグラフの単位が異なっていることはよくあることです。
 このような場合には<code>set xtics</code>（または<code>ytics</code>）コマンドを使って目盛の振り方を変更します。
 <code>univ-19people.dat</code>の1列目は西暦表示となっていますが、これを元号に直すには以下のようにします。
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gnuplot&gt; set xtics(&#39;S25&#39; 1950, &#39; &#39; 1955,  &#39;S35&#39; 1960, &#39; &#39; 1965, &#39;S45&#39; 1970, &#39; &#39; 1975, &#39;S55&#39; 1980, &#39; &#39; 1985,  &#39;H02&#39; 1990, &#39; &#39; 1995, &#39;H12&#39; 2000, &#39; &#39; 2005,  &#39;H22&#39; 2010, &#39; &#39; 2015, &#39;R2&#39; 2020)
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>gnuplot&gt; set xtics('S25' 1950, ' ' 1955,  'S35' 1960, ' ' 1965, 'S45' 1970, ' ' 1975, 'S55' 1980, ' ' 1985,  'H02' 1990, ' ' 1995, 'H12' 2000, ' ' 2005,  'H22' 2010, ' ' 2015, 'R2' 2020)
 </code></pre></div>
 これで、
 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020 の位置にはそれぞれ S25, S35, S45, S55, H02, H12, H22, R2 という目盛が振られ、
@@ -1640,7 +1640,7 @@
 <a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>  3 3 12 
 </code></pre></div>
 というファイル（<code>data3d.dat</code>）があったとすると、<code>plot</code>コマンド同様
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gnuplot&gt; splot &#39;data3d.dat&#39;
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>gnuplot&gt; splot 'data3d.dat'
 </code></pre></div>
 とすればよいです
 （注：バージョンによっては<code>splot</code>の前に<code>set parametric</code>を設定しなければならないかもしれません）。
@@ -1721,10 +1721,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../js/mathjax.js"></script>
       

